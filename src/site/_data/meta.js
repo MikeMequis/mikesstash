@@ -93,6 +93,7 @@ module.exports = async (data) => {
     bodyClasses: bodyClasses.join(" "),
     noteIconsSettings,
     timestampSettings,
+    siteDescription: process.env.SITE_DESCRIPTION || "A growing collection of ideas, useful links, projects, drawings, and little discoveries from across the web.",
     baseTheme: process.env.BASE_THEME || "dark",
     siteName: process.env.SITE_NAME_HEADER || "Digital Garden",
     siteLogoPath: logoPath,
