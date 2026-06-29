@@ -1,25 +1,26 @@
+:root {
+    --background-primary: #111111;
+    --background-secondary: #1A1A1A;
+    --text-normal: #ECECEC;
+    --interactive-accent: #8EDB3A;
+    --link-color: #9CFF2E;
+    --font-text: "Inter", sans-serif;
+    --font-monospace: "JetBrains Mono", monospace;
+}
+
 body {
     /***
       ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
       IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
-   ***/
-:root {
-    --background-primary:#111111;
-    --background-secondary:#1A1A1A;
-    --text-normal:#ECECEC;
-    --interactive-accent:#8EDB3A;
-    --link-color:#9CFF2E;
-    --font-text:"Inter", sans-serif;
-    --font-monospace:"JetBrains Mono", monospace;
-}
+    ***/
 
-.site-title {
-    margin: 0;
-}
+    .site-title {
+        margin: 0;
+    }
 
-.site-description {
-    margin-top: .3rem;
-    opacity: .75;
-    font-size: .9rem;
-}
+    .site-description {
+        margin-top: .3rem;
+        opacity: .75;
+        font-size: .9rem;
+    }
 }
