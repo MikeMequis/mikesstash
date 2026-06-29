@@ -2,13 +2,22 @@
     <nav class="navbar">
         <div class="navbar-inner">
             <a href="/" style="text-decoration: none;">
-                {% if meta.siteLogoPath %}
-                    <img class="site-logo" src="{{meta.siteLogoPath}}" alt="{{meta.siteName}}">
-                {% else %}
-                    <h1 style="margin: 15px !important;">{{meta.siteName}}</h1>
-                    <p class="site-description">{{ meta.siteDescription }}</p>
-                {% endif %}
-            </a>
+            {% if meta.siteLogoPath %}
+            <img class="site-logo"
+            src="{{ meta.siteLogoPath }}"
+            alt="{{ meta.siteName }}">
+    {% endif %}
+
+    <div class="site-title-group">
+        <h1>{{ meta.siteName }}</h1>
+
+        {% if meta.siteDescription %}
+            <p class="site-description">
+                {{ meta.siteDescription }}
+            </p>
+        {% endif %}
+    </div>
+</a>
         </div>
         {% if settings.dgEnableSearch === true%}
             {% include "components/searchButton.njk" %}

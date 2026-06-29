@@ -12,4 +12,14 @@ body {
     --font-text:"Inter", sans-serif;
     --font-monospace:"JetBrains Mono", monospace;
 }
+
+.site-title {
+    margin: 0;
+}
+
+.site-description {
+    margin-top: .3rem;
+    opacity: .75;
+    font-size: .9rem;
+}
 }
