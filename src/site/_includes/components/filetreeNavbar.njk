@@ -4,15 +4,17 @@
         {% for imp in dynamics.filetree.beforeTitle %}
             {% include imp %}
         {% endfor %}
-        {% if meta.siteLogoPath %}
-        <a href="/" style="text-decoration: none; flex: 1; display: flex; justify-content: center;">
+        <a href="/" style="text-decoration: none; flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+            {% if meta.siteLogoPath %}
                 <img class="site-logo" src="{{meta.siteLogoPath}}" alt="{{meta.siteName}}">
-        </a>
-        {% else %}
-        <a href="/" style="text-decoration: none; text-align: center;">
+            {% endif %}
+            <div class="site-title-group">
                 <h1 style="margin: 15px !important;">{{meta.siteName}}</h1>
+                {% if meta.siteDescription %}
+                    <p class="site-description">{{ meta.siteDescription }}</p>
+                {% endif %}
+            </div>
         </a>
-        {% endif %}
         {% for imp in dynamics.filetree.afterTitle %}
             {% include imp %}
         {% endfor %}
