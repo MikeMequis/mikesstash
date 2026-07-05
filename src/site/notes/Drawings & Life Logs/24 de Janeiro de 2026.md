@@ -8,7 +8,7 @@ A primeira personagem que fiz logo depois do Cabeça de Ovo, a heroína do **My 
 
 No caso da personagem, por ser uma personagem feminina (traços mais **suaves** e **circulares**), movimentos do braço todo são essenciais aqui. É mais fácil desenhar um círculo com o movimento de arco com o braço do que com a mão.
 
-Ironicamente, uma das dicas dadas por esse vídeo que achei na época foi, justamente, desenhar em uma **grande superfície**:
+Ironicamente, uma das dicas dadas por esse vídeo *(7:28)* que achei na época foi, justamente, desenhar em uma **grande superfície**:
 
 https://youtu.be/r7A6MSOiQMs?si=FiKnqMtJbHfk1G8c&t=448
 
