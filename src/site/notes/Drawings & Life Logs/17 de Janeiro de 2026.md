@@ -40,7 +40,7 @@ Nesse momento, internamente entrei em desespero. Eu passei, por três horas, mar
 
 >"Como que eu, um engenheiro de computação, que tirava boas notas em **desenho técnico**, não era capaz de desenhar um simples CÍRCULO?! Isso está muito errado..."
 
-Sabe a cena do filme **Whiplash**? O que o protagonista leva uma cadeirada do professor por não tocar no seu ritmo?
+Sabe a cena do filme **Whiplash**? A que o protagonista leva uma cadeirada do professor por não tocar no seu ritmo?
 
 https://youtu.be/yJ5r1TVR5Ao?si=Lsm0z9g4CySHWo-q
 
@@ -68,7 +68,7 @@ Finalmente, o resultado foi o que você está vendo abaixo: o **Gelado da Shopee
 >*Tempo de desenho - 3h* (contando surtos psicológicos internos)
 >*Referência: Mini Passo-a-passo do professor, sem personagem específico*
 
-Longe de ser perfeito e mais ainda de um personagem de anime, mas era o **início** da minha superação. E também o começo de outro fator essencial no desenho: **se soltar**. Se libertar do **perfeccionismo**. Se libertar da **preocupação pelo resultado final**. Apenas... Desenhar. Claro, com um objetivo, com uma metodologia, mas **não se deixar prende**r. Desenvolver a convicção aos poucos, e **se permitir errar**.
+Longe de ser perfeito e mais ainda de um personagem de anime, mas era o **início** da minha superação. E também o começo de outro fator essencial no desenho: **se soltar**. Se libertar do **perfeccionismo**. Se libertar da **preocupação pelo resultado final**. Apenas... Desenhar. Claro, com um objetivo, com uma metodologia, mas **não se deixar prender**. Desenvolver a convicção aos poucos, e **se permitir errar**.
 
 Desenhar é como **aprender um instrumento ou um idioma novo**. Além de descobrir e estudar, é essencial ter a prática durante o seu **cotidiano**. É produzir, por mais pequeno ou mais ruim que esteja, é continuar. É se perdoar e tentar de novo.
 
