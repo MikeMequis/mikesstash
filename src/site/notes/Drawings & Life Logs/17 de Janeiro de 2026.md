@@ -38,7 +38,7 @@ FUCKING.
 
 Nesse momento, internamente entrei em desespero. Eu passei, por três horas, martelando o mesmo pensamento pessimista:
 
->"Como que eu, um engenheiro de computação, que tirava boas notas em **desenho técnico**, não era capaz de desenhar um simples CÍRCULO?! Isso está muito errado..."
+>"Como que eu, um engenheiro de computação, que tirava boas notas em **desenho técnico**, não era capaz de desenhar um simples CÍRCULO a mão livre?! Isso está muito errado..."
 
 Sabe a cena do filme **Whiplash**? A que o protagonista leva uma cadeirada do professor por não tocar no seu ritmo?
 
