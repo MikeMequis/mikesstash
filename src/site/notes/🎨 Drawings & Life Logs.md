@@ -4,13 +4,13 @@
 
 Por trás de cada desenho, por cada escolha... Existe um motivo e uma história. Clique para ler e ver as minhas ilustrações realizadas durante o meu período livre e nas aulas de desenho.
 
-[[Drawings & Life Logs/17 de Janeiro de 2026\|17 de Janeiro de 2026]]
-[[Drawings & Life Logs/24 de Janeiro de 2026\|24 de Janeiro de 2026]]
-[[Drawings & Life Logs/29 de Janeiro de 2026\|29 de Janeiro de 2026]]
+[[Drawings & Life Logs/🥚 17 de Janeiro de 2026\|🥚 17 de Janeiro de 2026]]
+[[Drawings & Life Logs/⭕ 24 de Janeiro de 2026\|⭕ 24 de Janeiro de 2026]]
+[[Drawings & Life Logs/🪮 29 de Janeiro de 2026\|🪮 29 de Janeiro de 2026]]
+[[Drawings & Life Logs/🌙 31 de Janeiro de 2026\|🌙 31 de Janeiro de 2026]]
+[[Drawings & Life Logs/🧝‍♀️ 7 e 9 de Fevereiro de 2026\|🧝‍♀️ 7 e 9 de Fevereiro de 2026]]
+[[Drawings & Life Logs/👀 12 e 13 de Fevereiro de 2026\|👀 12 e 13 de Fevereiro de 2026]]
 
-~~[[Drawings & Life Logs/31 de Janeiro de 2026\|31 de Janeiro de 2026]]~~
-~~[[Drawings & Life Logs/7 e 9 de Fevereiro de 2026\|7 e 9 de Fevereiro de 2026]]~~
-~~[[Drawings & Life Logs/12 e 13 de Fevereiro de 2026\|12 e 13 de Fevereiro de 2026]]~~
 ~~[[Drawings & Life Logs/21 de Fevereiro de 2026\|21 de Fevereiro de 2026]]~~
 ~~[[Drawings & Life Logs/27 de Fevereiro de 2026\|27 de Fevereiro de 2026]]~~
 ~~[[Drawings & Life Logs/28 de Fevereiro de 2026\|28 de Fevereiro de 2026]]~~
