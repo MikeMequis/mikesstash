@@ -44,7 +44,7 @@ Sabe a cena do filme **Whiplash**? A que o protagonista leva uma cadeirada do pr
 
 https://youtu.be/yJ5r1TVR5Ao?si=Lsm0z9g4CySHWo-q
 
-Precisamente essa cena. Imagine ela repetindo, na sua mente, pela duração da aula inteira de desenho (Contexto: a aula tem **3h**). Você, se autoprojetando no lugar do aluno: levando gritos, tapas, humilhação que não parece ter fim. Parece exagero... Mas acredite, isso realmente aconteceu em minha mente.
+Imagine ela repetindo, na sua mente, pela duração da aula inteira de desenho (Contexto: a aula tem **3h**). Parece exagero... Mas acredite, isso realmente aconteceu em minha mente.
 
 Eu sei o que está pensando:
 

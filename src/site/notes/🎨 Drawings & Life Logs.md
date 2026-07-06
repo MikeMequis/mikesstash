@@ -6,8 +6,8 @@ Por trás de cada desenho, por cada escolha... Existe um motivo e uma história.
 
 [[Drawings & Life Logs/17 de Janeiro de 2026\|17 de Janeiro de 2026]]
 [[Drawings & Life Logs/24 de Janeiro de 2026\|24 de Janeiro de 2026]]
+[[Drawings & Life Logs/29 de Janeiro de 2026\|29 de Janeiro de 2026]]
 
-~~[[Drawings & Life Logs/29 de Janeiro de 2026\|29 de Janeiro de 2026]]~~
 ~~[[Drawings & Life Logs/31 de Janeiro de 2026\|31 de Janeiro de 2026]]~~
 ~~[[Drawings & Life Logs/7 e 9 de Fevereiro de 2026\|7 e 9 de Fevereiro de 2026]]~~
 ~~[[Drawings & Life Logs/12 e 13 de Fevereiro de 2026\|12 e 13 de Fevereiro de 2026]]~~
