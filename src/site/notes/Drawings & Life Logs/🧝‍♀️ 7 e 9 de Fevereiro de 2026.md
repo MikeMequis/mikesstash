@@ -8,7 +8,7 @@ Dos que desenhei até hoje, esse é o que considero o **mais fiel** a referênci
 
 Pelo menos não desenhei ela naquele [**ângulo difícil**](https://in.ign.com/frieren-beyond-journeys-end/247049/news/frieren-low-angle-drawing-challenge-takes-over-social-media), olhando pra cima...
 
->[!tip] **Desenho 5: Frieren Zoio**
+>[!tip] **Desenho 6: Frieren Zoio**
 >*Tempo de desenho - 4h*
 >*Referência: Frieren, de Sōsō no Frieren*
 

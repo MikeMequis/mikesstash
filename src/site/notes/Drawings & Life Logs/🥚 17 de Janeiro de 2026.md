@@ -16,7 +16,7 @@ Eles pediram: "Faça um rosto do jeito que você sabe fazer, do seu estilo". O r
 
 ![3Desenho.jpg](/img/user/img/3Desenho.jpg)
 
-...É, dá pra ver que ainda tinha **muito** para evoluir.
+... É, dá pra ver que ainda tinha **muito** para evoluir.
 
 ---
 

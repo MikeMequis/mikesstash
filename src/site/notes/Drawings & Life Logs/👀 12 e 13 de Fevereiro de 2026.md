@@ -12,7 +12,7 @@ Então, eu decidi experimentar fazendo o olho de espiral de novo, mas variando u
 ![9Desenho.jpg](/img/user/img/9Desenho.jpg)
 
 
->[!question] **Desenho 5.5: Experimento de Olhos em espiral**
+>[!question] **Desenho 6.5: Experimento de Olhos em espiral**
 >*Tempo de desenho - 1h*
 
 
