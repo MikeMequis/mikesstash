@@ -54,7 +54,7 @@ Formas geométricas & Esboço + Retoques e ajustes + Finalização.
 
 Tudo de uma vez só, ao mesmo tempo.
 
-Ficava constantemente retrabalhando o esboço. Eu estava literalmente **lapidando** o esboço. Não conseguir passar para a próxima etapa até que o círculo, a proporção, a curva, qualquer coisa que fosse no esboço, estivesse perfeito.
+Ficava constantemente retrabalhando o esboço. Eu estava literalmente **lapidando** o esboço. Não conseguia passar para a próxima etapa até que o círculo, a proporção, a curva, qualquer coisa que fosse no esboço, estivesse perfeito.
 
 O professor, depois de ver o meu desenho, disse:
 
@@ -64,7 +64,7 @@ Depois disso, e depois de dar conta da minha **insegurança** mais uma vez... Eu
 
 Eu só pensei:
 
->"Quer saber? F$%@-se. Vou desenhar **direto**. Não vou ficar ciscando. Vou confiar no esboço. Não vou pensar em **proporções** ou **frações**. Se ficar ruim, tudo bem. O próximo desenho me espera. Não vou pensar **na posição disso, posição daquilo**. Vou olhar a referência e **desenhar**."
+>"Quer saber? F$%@-se. Vou desenhar **direto**. Não vou ficar ciscando. Vou confiar no esboço. Não vou pensar em **proporções** ou **frações**. Se ficar ruim, ficou, vamos pro próximo. Não vou pensar **na posição disso, posição daquilo**. Vou olhar a referência e **desenhar**."
 
 O círculo caiu de vinte para dez minutos.
 Os olhos, de trinta para quinze.
@@ -101,7 +101,7 @@ Depois da Lyssa, que é um rosto humano com orelhas de gato, resolvi aumentar a 
 
 Esse aqui segue a direção da narrativa que desenvolvi lá em cima, então não tenho muito o que comentar aqui.
 
-Exceto o fato do professor olhar meu desenho, me olhar e perguntar se eu era *furry*.
+Exceto o fato do professor olhar meu desenho, depois me olhar e perguntar se eu era um *furry*.
 
 >[!info] Estes desenhos marcam um detalhe importante: as imagens utilizadas como referência foram **gerada por IA**. Na época em que fiz este estudo, **não conhecia** as discussões envolvendo o uso desse tipo de imagem no treinamento de modelos e seus impactos para **artistas**. Hoje procuro dar preferência a trabalhos publicados por artistas ou a fotografias. Vou deixar uma página detalhando essa questão para manter esse histórico **transparente** em vez de apagar ou fingir que nunca aconteceu, e também informar leitores a respeito do impacto negativo desse material.
 
