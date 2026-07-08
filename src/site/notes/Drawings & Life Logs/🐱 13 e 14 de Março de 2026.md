@@ -60,7 +60,7 @@ O professor, depois de ver o meu desenho, disse:
 
 >"Faça as linhas bem leves e de uma vez só. Não fique ciscando a folha. Se ficar ruim, você corrige depois. É muito mais fácil avaliar as proporções durante o esboço do que quando o desenho já está sendo finalizado."
 
-Depois disso, e depois de dar conta da minha **insegurança**... Eu liguei o **modo F%$@-se**.
+Depois disso, e depois de dar conta da minha **insegurança** mais uma vez... Eu liguei o **modo F%$@-se**.
 
 Eu só pensei:
 
@@ -71,19 +71,19 @@ Os olhos, de trinta para quinze.
 
 Pela primeira vez, eu desenhava antes de julgar.
 
-No fim, foi uma ilustração que teve curvas mais suaves e traços finos.
+No fim, tive uma ilustração que teve curvas mais suaves e traços finos.
 
 ![17Desenho.jpg](/img/user/img/17Desenho.jpg)
 
-Além de ficar muito mais fiel à referência, esse desenho saiu bem mais rápido. Pela primeira vez, tive a sensação de que eu não estava brigando comigo mesmo durante o processo. Eu simplesmente estava... desenhando.
+Além de estar bem fiel à referência, esse desenho saiu bem mais rápido. Pela primeira vez, tive a sensação de que eu não estava brigando comigo mesmo durante o processo. Eu simplesmente estava... desenhando.
 
 Foi uma experiência que me fez olhar o resultado e dizer:
 
 >"Nossa... Desenhar é **muito legal**."
 
-Depois disso, eu lembrei do:
+Depois disso, eu lembrei do meme:
 
->"[**Nóooo... É muito cremoso.**](https://www.youtube.com/watch?v=UGjddoPfx8w)"
+https://www.youtube.com/watch?v=UGjddoPfx8w
 
 >[!tip] **Desenho 13: Lyssa Wheeler**
 >*Tempo de desenho - 2h30*
@@ -92,11 +92,11 @@ Depois disso, eu lembrei do:
 
 Depois da Lyssa, que é um rosto humano com orelhas de gato, resolvi aumentar a dificuldade e partir para um personagem lobo. O processo continua iniciando por um rosto humano. Depois, adiciona-se o focinho (que é como encaixar uma pequena caixa na região da boca), seguido por pelos e orelhas.
 
->[!question] **Detalhe:** Apesar de ser um personagem antropomórfico, as orelhas são posicionadas de forma perpendicular ao eixo das orelhas humanas, preservando a anatomia do animal e deixando o resultado mais convincente e harmonioso, visualmente falando.
+>[!question] Detalhe: Apesar de ser um personagem antropomórfico, as orelhas são posicionadas de forma perpendicular ao eixo das orelhas humanas, preservando a anatomia do animal e deixando o resultado mais convincente.
 
 ![18Desenho.jpg](/img/user/img/18Desenho.jpg)
 
-Esse aqui segue a direção de toda a narrativa que desenvolvi lá em cima, então não tenho muito o que comentar aqui.
+Esse aqui segue a direção da narrativa que desenvolvi lá em cima, então não tenho muito o que comentar aqui.
 
 Exceto o fato do professor olhar meu desenho, me olhar e perguntar se eu era *furry*.
 
