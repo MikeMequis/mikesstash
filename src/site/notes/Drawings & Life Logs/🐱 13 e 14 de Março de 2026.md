@@ -6,7 +6,7 @@ Eu sei o que está pensando:
 
 >"Nossa, você fez **três** desenhos em **uma aula** só?!"
 
-... Não. Este desenho foi finalizado a **meia-noite**, um dia antes da aula. O **sono** falou mais alto e me fez registrar a data errada. Os outros dois, sim, foram realizados durante a aula. 
+... Não. O primeiro desenho foi finalizado a **meia-noite**, um dia antes da aula. O **sono** falou mais alto e me fez registrar a data errada. Os outros dois, sim, foram realizados durante a aula. 
 
 Eu tenho muito o que dizer aqui, então prepare os **óculos de leitura**.
 
