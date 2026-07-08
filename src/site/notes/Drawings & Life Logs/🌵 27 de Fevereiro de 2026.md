@@ -30,14 +30,13 @@ Os dois pensamentos envolvem ter a consciência da informação que é difícil.
 
 ![11Desenho.jpg](/img/user/img/11Desenho.jpg)
 
+>[!tip] **Desenho 8: Rancheira Destemida**
+>*Tempo de desenho - aprox. 2h30*
+
 Depois que mostrei para o professor, ele ensinou como desenha um chapéu **encaixado na cabeça da personagem**, e não **"apoiado"** na cabeça dela.
 
 Futuramente, nos dias [[Drawings & Life Logs/🤠 2 e 9 de Maio de 2026\|🤠 2 e 9 de Maio de 2026]], eu refiz essa personagem.
 E a evolução tá bem notória.
-
->[!tip] **Desenho 8: Rancheira Destemida**
->*Tempo de desenho - aprox. 2h30*
-
 
 ---
 

@@ -6,13 +6,12 @@ Esse teve uma mistura dos dois, contendo as linhas mais **rígidas e retas** da 
 
 ![7Desenho.jpg](/img/user/img/7Desenho.jpg)
 
-Dá pra notar bem como a falta de um **sombreamento** faz em um desenho, né? 
-Tenho a impressão que o pescoço tá fundido com o queixo, olha como ficou estranho...
-
 >[!tip] **Desenho 5: Megumi "Pescoço-Duro" Fushiguro**
 >*Tempo de desenho - 3h*
 >*Referência: Megumi Fushiguro, de Jujutsu Kaizen*
 
+Dá pra notar bem como a falta de um **sombreamento** faz em um desenho, né? 
+Tenho a impressão que o pescoço tá fundido com o queixo, olha como ficou estranho...
 
 ---
 

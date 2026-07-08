@@ -14,11 +14,11 @@ Aqui também a minha primeira tentativa de fazer um cabelo **despenteado** e cur
 
 ![13Desenho.jpg](/img/user/img/13Desenho.jpg)
 
-Antes que pergunte: **não**, a caveira não fui eu que fiz. Ela está profissional demais.
-
 >[!tip] **Desenho 9: Current Mood**
 >*Tempo de desenho - aprox. 2h30*
 >*Referência - Exemplo didático de professor*
+
+Antes que pergunte: **não**, a caveira não fui eu que fiz. Ela está profissional demais.
 
 ---
 

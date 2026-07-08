@@ -11,10 +11,8 @@ Então, eu decidi experimentar fazendo diferentes **variações** do olho de esp
 
 ![9Desenho.jpg](/img/user/img/9Desenho.jpg)
 
-
 >[!question] **Desenho 6.5: Experimento de Olhos em espiral**
 >*Tempo de desenho - aprox. 1h20*
-
 
 ---
 

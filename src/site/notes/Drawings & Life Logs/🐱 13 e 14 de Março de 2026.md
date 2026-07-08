@@ -14,6 +14,9 @@ Agora sim, falando do desenho em si. O primeiro, a da **Nyxa Vox**, que já apar
 
 ![16Desenho.jpg](/img/user/img/16Desenho.jpg)
 
+>[!tip] **Desenho 12: Alma de Performance e Loucura**
+>*Tempo de desenho - aprox. 3h20*
+
 De um lado, vemos a atriz, um **veículo** que interpreta a loucura em um **teatro**, diante do público.
 
 Do outro, vemos a **loucura**. A personagem que se banha no sangue dos inimigos e em sua própria **perdição**.
@@ -22,9 +25,6 @@ Do outro, vemos a **loucura**. A personagem que se banha no sangue dos inimigos 
 A insanidade que se deleita em seu próprio sangue.
 Em comum, compartilham o sorriso mortal que permeia a escuridão.
 Até que a última gargalhada seja a única canção.*
-
->[!tip] **Desenho 12: Alma de Performance e Loucura**
->*Tempo de desenho - aprox. 3h20*
 
 ---
 
@@ -75,6 +75,9 @@ No fim, tive uma ilustração que teve curvas mais suaves e traços finos.
 
 ![17Desenho.jpg](/img/user/img/17Desenho.jpg)
 
+>[!tip] **Desenho 13: Lyssa Wheeler**
+>*Tempo de desenho - 2h30*
+
 Além de estar bem fiel à referência, esse desenho saiu bem mais rápido. Pela primeira vez, tive a sensação de que eu não estava brigando comigo mesmo durante o processo. Eu simplesmente estava... desenhando.
 
 Foi uma experiência que me fez olhar o resultado e dizer:
@@ -85,9 +88,6 @@ Depois disso, eu lembrei do meme:
 
 https://www.youtube.com/watch?v=UGjddoPfx8w
 
->[!tip] **Desenho 13: Lyssa Wheeler**
->*Tempo de desenho - 2h30*
-
 ---
 
 Depois da Lyssa, que é um rosto humano com orelhas de gato, resolvi aumentar a dificuldade e partir para um personagem lobo. O processo continua iniciando por um rosto humano. Depois, adiciona-se o focinho (que é como encaixar uma pequena caixa na região da boca), seguido por pelos e orelhas.
@@ -96,15 +96,14 @@ Depois da Lyssa, que é um rosto humano com orelhas de gato, resolvi aumentar a 
 
 ![18Desenho.jpg](/img/user/img/18Desenho.jpg)
 
+>[!tip] **Desenho 14: Oliver Reed (lobo)**
+>*Tempo de desenho - 3h20*
+
 Esse aqui segue a direção da narrativa que desenvolvi lá em cima, então não tenho muito o que comentar aqui.
 
 Exceto o fato do professor olhar meu desenho, me olhar e perguntar se eu era *furry*.
 
->[!tip] **Desenho 14: Oliver Reed (lobo)**
->*Tempo de desenho - 3h20*
-
 >[!info] Estes desenhos marcam um detalhe importante: as imagens utilizadas como referência foram **gerada por IA**. Na época em que fiz este estudo, **não conhecia** as discussões envolvendo o uso desse tipo de imagem no treinamento de modelos e seus impactos para **artistas**. Hoje procuro dar preferência a trabalhos publicados por artistas ou a fotografias. Vou deixar uma página detalhando essa questão para manter esse histórico **transparente** em vez de apagar ou fingir que nunca aconteceu, e também informar leitores a respeito do impacto negativo desse material.
-
 
 ---
 

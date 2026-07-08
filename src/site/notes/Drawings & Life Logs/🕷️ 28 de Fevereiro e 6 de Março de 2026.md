@@ -14,6 +14,10 @@ O desenho em si não achei difícil, apenas **trabalhoso**.
 
 ![14Desenho.jpg](/img/user/img/14Desenho.jpg)
 
+>[!tip] **Desenho 10: Parker Lateral**
+>*Tempo de desenho - aprox. 3h30*
+>*Referência - Peni Parker, de um dos quadrilhões de Aranhaversos que existem*
+
 E agora você sabe o porquê. O desafio não era desenhar o perfil. Era **pintar o cabelo**.
 
 Não era um desafio de habilidade. Era de **durabilidade**.
@@ -21,10 +25,6 @@ Não era um desafio de habilidade. Era de **durabilidade**.
 O meu pulso **dói** só de olhar para esse cabelo. Eu lembro que foi cerca de **meia hora** só passando o grafite.
 
 ... Eu acho que o professor quis se vingar por copiar a referência dele. [Mas é só uma suspeita, não tenho provas](https://media1.tenor.com/m/GhKypU0mrlEAAAAd/dexter.gif).
-
->[!tip] **Desenho 10: Parker Lateral**
->*Tempo de desenho - aprox. 3h30*
->*Referência - Peni Parker, de um dos quadrilhões de Aranhaversos que existem*
 
 ---
 
