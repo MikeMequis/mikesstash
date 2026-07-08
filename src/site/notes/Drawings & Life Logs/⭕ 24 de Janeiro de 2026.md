@@ -25,5 +25,6 @@ Como estava no começo, o nervoso ainda estava em tona, então seguir esses cons
 >*Referência: Desenho anterior + Ochako Uraraka, de My Hero Academia*
 
 ---
+*Escrito em 5 de Julho de 2026*
 
 [[🎨 Drawings & Life Logs\|< Voltar]]

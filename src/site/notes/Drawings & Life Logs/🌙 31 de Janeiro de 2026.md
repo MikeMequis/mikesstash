@@ -16,4 +16,5 @@ Tenho a impressão que o pescoço tá fundido com o queixo, olha como ficou estr
 
 ---
 
+*Escrito em 6 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

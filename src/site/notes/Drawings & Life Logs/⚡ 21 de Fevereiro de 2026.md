@@ -19,4 +19,5 @@ Mas fiquei contente com a forma como incorporei o **olho** do experimento na per
 
 ---
 
+*Escrito em 6 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

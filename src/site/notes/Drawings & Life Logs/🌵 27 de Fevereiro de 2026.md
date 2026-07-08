@@ -41,4 +41,5 @@ E a evolução tá bem notória.
 
 ---
 
+*Escrito em 6 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

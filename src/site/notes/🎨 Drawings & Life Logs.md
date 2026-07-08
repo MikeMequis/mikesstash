@@ -12,11 +12,11 @@ Por trás de cada desenho, por cada escolha... Existe um motivo e uma história.
 [[Drawings & Life Logs/👀 12 e 13 de Fevereiro de 2026\|👀 12 e 13 de Fevereiro de 2026]]
 [[Drawings & Life Logs/⚡ 21 de Fevereiro de 2026\|⚡ 21 de Fevereiro de 2026]]
 [[Drawings & Life Logs/🌵 27 de Fevereiro de 2026\|🌵 27 de Fevereiro de 2026]]
+[[Drawings & Life Logs/¾ 28 de Fevereiro de 2026\|¾ 28 de Fevereiro de 2026]]
+[[Drawings & Life Logs/🕷️ 28 de Fevereiro e 6 de Março de 2026\|🕷️ 28 de Fevereiro e 6 de Março de 2026]]
+[[Drawings & Life Logs/🎸 7 de Março de 2026\|🎸 7 de Março de 2026]]
+[[Drawings & Life Logs/🐱 13 e 14 de Março de 2026\|🐱 13 e 14 de Março de 2026]]
 
-~~[[Drawings & Life Logs/28 de Fevereiro de 2026\|28 de Fevereiro de 2026]]~~
-~~[[Drawings & Life Logs/28 de Fevereiro e 6 de Março de 2026\|28 de Fevereiro e 6 de Março de 2026]]~~
-~~[[Drawings & Life Logs/7 de Março de 2026\|7 de Março de 2026]]~~
-~~[[Drawings & Life Logs/14 de Março de 2026\|14 de Março de 2026]]~~
 ~~[[Drawings & Life Logs/21 de Março de 2026\|21 de Março de 2026]]~~
 ~~[[Drawings & Life Logs/28 de Março de 2026\|28 de Março de 2026]]~~
 ~~[[Drawings & Life Logs/11 de Abril de 2026\|11 de Abril de 2026]]~~

@@ -14,4 +14,6 @@ Pelo menos não desenhei ela naquele [**ângulo difícil**](https://in.ign.com/f
 
 
 ---
+
+*Escrito em 6 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

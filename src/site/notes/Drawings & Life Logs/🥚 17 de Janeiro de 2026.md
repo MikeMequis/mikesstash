@@ -76,4 +76,7 @@ Desenhar é como **aprender um instrumento ou um idioma novo**. Além de descobr
 
 Não se preocupe, as ilustrações seguintes não terão muralhas de texto como este, só as mais importantes e mais impactantes.
 
+---
+*Escrito em 5 de Julho de 2026*
+
 [[🎨 Drawings & Life Logs\|< Voltar]]

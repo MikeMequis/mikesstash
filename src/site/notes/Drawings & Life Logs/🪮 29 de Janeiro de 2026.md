@@ -22,7 +22,7 @@ Isso aconteceu várias vezes durante os estudos. Às vezes, mover uma única mec
 
 Esse acabei desistindo no meio do caminho, principalmente por conta do **capacete** e pela referência ser uma imagem estilizada, com a personagem envolvida no meio da escuridão e mesclando traços claros com escuros. Mas fiquei contente com o traçado dos **olhos**, a "marca registrada" da personagem.
 
->[!info] Esse desenho marca um detalhe importante: a imagem utilizada como referência foi **gerada por IA**. Na época em que fiz este estudo, **não conhecia** as discussões envolvendo o uso desse tipo de imagem no treinamento de modelos e seus impactos para **artistas**. Hoje procuro gerar este tipo de conteúdo sempre que possível e dar preferência a trabalhos publicados por artistas ou a fotografias. Vou deixar uma página detalhando essa questão para manter esse histórico **transparente** em vez de apagar ou fingir que nunca aconteceu, e também informar leitores a respeito do impacto negativo desse material.
+>[!info] Esse desenho marca um detalhe importante: a imagem utilizada como referência foi **gerada por IA**. Na época em que fiz este estudo, **não conhecia** as discussões envolvendo o uso desse tipo de imagem no treinamento de modelos e seus impactos para **artistas**. Hoje procuro dar preferência a trabalhos publicados por artistas ou a fotografias. Vou deixar uma página detalhando essa questão para manter esse histórico **transparente** em vez de apagar ou fingir que nunca aconteceu, e também informar leitores a respeito do impacto negativo desse material.
 
 ![6Desenho.jpg](/img/user/img/6Desenho.jpg)
 
@@ -32,4 +32,5 @@ Esse acabei desistindo no meio do caminho, principalmente por conta do **capacet
 
 ---
 
+*Escrito em 5 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]
