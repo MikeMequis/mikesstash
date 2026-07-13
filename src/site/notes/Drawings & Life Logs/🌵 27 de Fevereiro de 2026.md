@@ -39,6 +39,5 @@ Futuramente, nos dias [[Drawings & Life Logs/🤠 2 e 9 de Maio de 2026\|🤠 2 
 E a evolução tá bem notória.
 
 ---
-
 *Escrito em 6 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

@@ -15,6 +15,5 @@ Então, eu decidi experimentar fazendo diferentes **variações** do olho de esp
 >*Tempo de desenho - aprox. 1h20*
 
 ---
-
 *Escrito em 6 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

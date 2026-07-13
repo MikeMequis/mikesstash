@@ -11,13 +11,12 @@ Também deve-se salientar que a **cabeleira** de dita figura demanda tempo, paci
 >[!tip] **Desenho 11: Voz de Nyxa Vox**
 >*Tempo de desenho - 3h*
 
-Ok, desligando o modo **esnobe** de escrever, o cabelo bagunçado foi um tópico recorrente em alguns dos meus desenhos antes e depois deste. Futuramente, tive a oportunidade de exercitar isso no dia [[Drawings & Life Logs/11 de Abril de 2026\|11 de Abril de 2026]], em que o professor notou a minha dificuldade em representar cabelos e fios bagunçados e felpudos.
+Ok, desligando o modo **esnobe** de escrever, o cabelo bagunçado foi um tópico recorrente em alguns dos meus desenhos antes e depois deste. Futuramente, tive a oportunidade de exercitar isso no dia [[Drawings & Life Logs/⏱11 de Abril de 2026\|⏱11 de Abril de 2026]], em que o professor notou a minha dificuldade em representar cabelos e fios bagunçados e felpudos.
 
 Esse dia sim, posso afirmar que ele queria levar o desafio até o limite.
 
 >[!info] Esse desenho marca um detalhe importante: a imagem utilizada como referência foi **gerada por IA**. Na época em que fiz este estudo, **não conhecia** as discussões envolvendo o uso desse tipo de imagem no treinamento de modelos e seus impactos para **artistas**. Hoje procuro dar preferência a trabalhos publicados por artistas ou a fotografias. Vou deixar uma página detalhando essa questão para manter esse histórico **transparente** em vez de apagar ou fingir que nunca aconteceu, e também informar leitores a respeito do impacto negativo desse material.
 
 ---
-
 *Escrito em 7 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

@@ -27,6 +27,5 @@ O meu pulso **dói** só de olhar para esse cabelo. Eu lembro que foi cerca de *
 ... Eu acho que o professor quis se vingar por copiar a referência dele. [Mas é só uma suspeita, não tenho provas](https://media1.tenor.com/m/GhKypU0mrlEAAAAd/dexter.gif).
 
 ---
-
 *Escrito em 7 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

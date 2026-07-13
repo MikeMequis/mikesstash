@@ -13,6 +13,5 @@ Dos que desenhei até hoje, esse é o que considero o **mais fiel** a referênci
 Pelo menos não desenhei ela naquele [**ângulo difícil**](https://in.ign.com/frieren-beyond-journeys-end/247049/news/frieren-low-angle-drawing-challenge-takes-over-social-media), olhando pra cima...
 
 ---
-
 *Escrito em 6 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

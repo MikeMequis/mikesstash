@@ -14,6 +14,5 @@ Dá pra notar bem como a falta de um **sombreamento** faz em um desenho, né?
 Tenho a impressão que o pescoço tá fundido com o queixo, olha como ficou estranho...
 
 ---
-
 *Escrito em 6 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

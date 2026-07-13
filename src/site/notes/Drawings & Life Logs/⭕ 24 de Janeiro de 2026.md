@@ -26,5 +26,4 @@ Como estava no começo, o nervoso ainda estava em tona, então seguir esses cons
 
 ---
 *Escrito em 5 de Julho de 2026*
-
 [[🎨 Drawings & Life Logs\|< Voltar]]

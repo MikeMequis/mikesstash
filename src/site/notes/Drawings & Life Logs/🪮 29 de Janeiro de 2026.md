@@ -31,6 +31,5 @@ Esse acabei desistindo no meio do caminho, principalmente por conta do **capacet
 >*Tempo de desenho - aprox. 1h45* (incompleto)
 
 ---
-
 *Escrito em 5 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

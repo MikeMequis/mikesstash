@@ -12,7 +12,10 @@ Não tinha **nada** a mostrar, e os desenhos que tinha eram perto de **6 anos at
 
 ...Mas mesmo assim, estava determinado. Comecei do zero absoluto? Comecei. **Só dei conta disso quando cheguei**?... Sim.
 
-Eles pediram: "Faça um rosto do jeito que você sabe fazer, do seu estilo". O resultado foi essa cabeça de alien embaixo (o do meio é do professor, só pra deixar claro a diferença de qualidade):
+Eles pediram: 
+> "Faça um rosto do jeito que você sabe fazer, do **seu estilo**".
+
+O resultado foi essa cabeça de *alien* embaixo (o do meio é do professor, só pra deixar claro a diferença de qualidade):
 
 ![3Desenho.jpg](/img/user/img/3Desenho.jpg)
 
@@ -20,7 +23,7 @@ Eles pediram: "Faça um rosto do jeito que você sabe fazer, do seu estilo". O r
 
 ---
 
-Certo, **primeiro rosto**. O professor inicia o desenho com um simples círculo. Depois disso, tem algumas linhas de referência e medidas conforme a metodologia [**Loomis**](https://www.21-draw.com/pt/loomis-method/). Ele teve a cordialidade e a disposição (achei muito legal, adorei quando pedi por outra abordagem para ensinar) para fazer até um mini **passo-a-passo** para desenhar o rosto: círculos, pizzas, altura de sobrancelha, dos olhos, formato do pescoço, entre outros.
+Certo, **primeiro rosto**. O professor inicia o desenho com um simples círculo. Depois disso, tem algumas linhas de referência e medidas conforme a metodologia [**Loomis**](https://www.21-draw.com/pt/loomis-method/). Ele teve a cordialidade e a disposição para fazer até um mini **passo-a-passo** para desenhar o rosto: círculos, pizzas, altura de sobrancelha, dos olhos, formato do pescoço, entre outros.
 
 ![2Desenho.jpg](/img/user/img/2Desenho.jpg)
 
@@ -56,9 +59,11 @@ Naquele momento, eu me projetava como o aluno e o professor **ao mesmo tempo**. 
 
 Naquele cenário, por parte dos colegas e dos professores, não tinha pressão. Não tinha estresse. Não tinha **nada** ativamente causando essa tortura. O professor tinha **disposição**, era descontraído, ria e brincava junto com os alunos, dava toda a **liberdade** e o tempo para os alunos desenharem.
 
-O próprio professor notou como estava. Eu estava a uma hora desenhando círculos e círculos em uma folha sem parar. Ele disse: "Cara, não fica se prendendo no círculo ou em deixar ele perfeito. Você está no **esboço** ainda, não tem sentido estar perfeito agora. Você começa e ajeita conforme for desenhando..."
+O próprio professor **notou** como estava. Eu estava a uma hora desenhando círculos e círculos em uma folha sem parar. Ele disse: 
 
-Então, eu parei e fiz isso. Pedi emprestado uma **régua** e um **compasso** e fiz uma estrutura base do rosto conforme as orientações do passo-a-passo.
+>"Cara, não fica se prendendo no círculo ou em deixar ele perfeito. Você está no **esboço** ainda, não tem sentido estar perfeito agora. Você começa e ajeita conforme for desenhando..."
+
+Então, eu parei e fiz exatamente isso. Pedi emprestado uma **régua** e um **compasso** e fiz uma estrutura base do rosto conforme as orientações do passo-a-passo.
 
 Finalmente, o resultado foi o que você está vendo abaixo: o **Gelado da Shopee**. O cabeça-de-ovo dos Incríveis. E ainda por cima com as linhas de referência tortas (eu notei isso enquanto escrevia).
 
@@ -78,5 +83,4 @@ Não se preocupe, as ilustrações seguintes não terão muralhas de texto como 
 
 ---
 *Escrito em 5 de Julho de 2026*
-
 [[🎨 Drawings & Life Logs\|< Voltar]]

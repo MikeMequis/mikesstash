@@ -106,6 +106,5 @@ Exceto o fato do professor olhar meu desenho, depois me olhar e perguntar se eu 
 >[!info] Estes desenhos marcam um detalhe importante: as imagens utilizadas como referência foram **gerada por IA**. Na época em que fiz este estudo, **não conhecia** as discussões envolvendo o uso desse tipo de imagem no treinamento de modelos e seus impactos para **artistas**. Hoje procuro dar preferência a trabalhos publicados por artistas ou a fotografias. Vou deixar uma página detalhando essa questão para manter esse histórico **transparente** em vez de apagar ou fingir que nunca aconteceu, e também informar leitores a respeito do impacto negativo desse material.
 
 ---
-
 *Escrito em 7 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]

@@ -21,6 +21,5 @@ Aqui também a minha primeira tentativa de fazer um cabelo **despenteado** e cur
 Antes que pergunte: **não**, a caveira não fui eu que fiz. Ela está profissional demais.
 
 ---
-
 *Escrito em 7 de Julho de 2026*
 [[🎨 Drawings & Life Logs\|< Voltar]]
