@@ -4,13 +4,13 @@
 
 Este foi um desafio que surgiu olhando ao redor em meu quarto, pensando em fazer um desenho de **observação**. Tinha acordado me sentindo **inspirado** e também mais cedo do que de costume, então tinha **tempo de sobra** o suficiente antes da aula.
 
-Foi um desafio principalmente por ter conhecimento **zero** em anatomia e, a única referência que tinha era esse vídeo da **Amaru** falando sobre isso:
+Só pensava em **realizar** o desenho, e não nas habilidades ou conhecimentos necessários. Queria **tentar**, pelo menos.
+
+Foi um desafio principalmente por ter conhecimento **zero** em anatomia e, a única referência que tinha era esse vídeo de **Amaru** falando sobre isso:
 
 https://youtu.be/IWv3XiwH2GQ?si=HT-wWbge9HUHxNZR
 
-Só pensava em **realizar** o desenho, e não nas habilidades ou conhecimentos necessários. Queria **tentar**, pelo menos.
-
-Uma dica que meus professores deram foi desenhar a estrutura base **em cima** da referência em si, auxiliando no **planejamento** e também dar uma noção de **proporção** dos elementos do todo. Portanto, segui este mesmo **raciocínio** para a imagem da pelúcia:
+A dica, fornecido tanto pelo próprio vídeo e por meus professores, foi desenhar a estrutura base **em cima** da referência em si, auxiliando no **planejamento** e também dar uma noção de **proporção** dos elementos do todo. Portanto, segui este mesmo **raciocínio** para a imagem da pelúcia:
 
 ![Referência.jpg](/img/user/img/Refer%C3%AAncia.jpg)
 
