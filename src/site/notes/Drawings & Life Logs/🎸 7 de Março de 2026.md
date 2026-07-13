@@ -11,7 +11,7 @@ Também deve-se salientar que a **cabeleira** de dita figura demanda tempo, paci
 >[!tip] **Desenho 11: Voz de Nyxa Vox**
 >*Tempo de desenho - 3h*
 
-Ok, desligando o modo **esnobe** de escrever, o cabelo bagunçado foi um tópico recorrente em alguns dos meus desenhos antes e depois deste. Futuramente, tive a oportunidade de exercitar isso no dia [[Drawings & Life Logs/⏱11 de Abril de 2026\|⏱11 de Abril de 2026]], em que o professor notou a minha dificuldade em representar cabelos e fios bagunçados e felpudos.
+Ok, desligando o modo **esnobe** de escrever, o cabelo bagunçado foi um tópico recorrente em alguns dos meus desenhos antes e depois deste. Futuramente, tive a oportunidade de exercitar isso no dia [[Drawings & Life Logs/⏱11 de Abril de 2026\|11 de Abril]], em que o professor notou a minha dificuldade em representar cabelos e fios bagunçados e felpudos.
 
 Esse dia sim, posso afirmar que ele queria levar o desafio até o limite.
 

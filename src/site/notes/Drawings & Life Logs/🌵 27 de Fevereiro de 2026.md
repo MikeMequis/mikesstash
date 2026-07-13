@@ -35,7 +35,7 @@ Os dois pensamentos envolvem ter a consciência da informação que é difícil.
 
 Depois que mostrei para o professor, ele ensinou como desenha um chapéu **encaixado na cabeça da personagem**, e não **"apoiado"** na cabeça dela.
 
-Futuramente, nos dias [[Drawings & Life Logs/🤠 2 e 9 de Maio de 2026\|🤠 2 e 9 de Maio de 2026]], eu refiz essa personagem.
+Futuramente, nos dias [[Drawings & Life Logs/🤠 2 e 9 de Maio de 2026\|2 e 9 de Maio]], eu refiz essa personagem.
 E a evolução tá bem notória.
 
 ---

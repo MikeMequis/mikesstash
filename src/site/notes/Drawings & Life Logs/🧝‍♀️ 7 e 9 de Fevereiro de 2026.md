@@ -6,7 +6,7 @@ Dos que desenhei até hoje, esse é o que considero o **mais fiel** a referênci
 
 ![8Desenho.jpg](/img/user/img/8Desenho.jpg)
 
->[!tip] **Desenho 6: Frieren Zoio**
+>[!tip] **Desenho 6: Frieren**
 >*Tempo de desenho - 4h*
 >*Referência: Frieren, de Sōsō no Frieren*
 

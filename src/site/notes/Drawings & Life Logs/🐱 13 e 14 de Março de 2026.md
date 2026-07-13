@@ -78,7 +78,7 @@ No fim, tive uma ilustração que teve curvas mais suaves e traços finos.
 >[!tip] **Desenho 13: Lyssa Wheeler**
 >*Tempo de desenho - 2h30*
 
-Além de estar bem fiel à referência, esse desenho saiu bem mais rápido. Pela primeira vez, tive a sensação de que eu não estava brigando comigo mesmo durante o processo. Eu simplesmente estava... desenhando.
+Além de estar bem fiel à referência, esse desenho saiu bem mais **rápido**. Pela primeira vez, tive a sensação de que eu não estava brigando comigo mesmo durante o processo. Eu simplesmente estava... desenhando.
 
 Foi uma experiência que me fez olhar o resultado e dizer:
 
@@ -90,9 +90,9 @@ https://www.youtube.com/watch?v=UGjddoPfx8w
 
 ---
 
-Depois da Lyssa, que é um rosto humano com orelhas de gato, resolvi aumentar a dificuldade e partir para um personagem lobo. O processo continua iniciando por um rosto humano. Depois, adiciona-se o focinho (que é como encaixar uma pequena caixa na região da boca), seguido por pelos e orelhas.
+Depois da Lyssa, que é um rosto humano com orelhas de gato, resolvi aumentar a dificuldade e partir para um **personagem lobo**. O processo continua iniciando por um rosto humano. Depois, adiciona-se o focinho (que é como encaixar uma pequena **caixa** na região da boca), seguido por pelos e orelhas.
 
->[!question] Detalhe: Apesar de ser um personagem antropomórfico, as orelhas são posicionadas de forma perpendicular ao eixo das orelhas humanas, preservando a anatomia do animal e deixando o resultado mais convincente.
+>[!question] Detalhe: Apesar de ser um personagem antropomórfico, as orelhas são posicionadas de forma **perpendicular** ao eixo das orelhas humanas, preservando a anatomia do animal e deixando o resultado mais convincente.
 
 ![18Desenho.jpg](/img/user/img/18Desenho.jpg)
 
