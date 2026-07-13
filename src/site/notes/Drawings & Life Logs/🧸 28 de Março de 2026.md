@@ -12,7 +12,7 @@ Só pensava em **realizar** o desenho, e não nas habilidades ou conhecimentos n
 
 Uma dica que meus professores deram foi desenhar a estrutura base **em cima** da referência em si, auxiliando no **planejamento** e também dar uma noção de **proporção** dos elementos do todo. Portanto, segui este mesmo **raciocínio** para a imagem da pelúcia:
 
-![Referência.jpg](/img/user/Refer%C3%AAncia.jpg)
+![Referência.jpg](/img/user/img/Refer%C3%AAncia.jpg)
 
 Curiosamente, o corpo da pelúcia era composta majoritariamente por **círculos**. De resto, tinha um **retângulo** aqui e ali, nos braços e pernas, e os **triângulos** em suas orelhas.
 
@@ -95,7 +95,7 @@ O [site oficial](https://www.noogy.com/) não tem absolutamente **nada** mencion
 
 O que tinha eram diferentes postagens de DeviantArt de fãs criando suas próprias pelúcias da personagem, mas nada vendido em escopo **nacional**.
 
->Mesma postagem, a propósito: ![Luto.png](/img/user/Luto.png)
+>Mesma postagem, a propósito: ![Luto.png](/img/user/img/Luto.png)
 
 Neste momento, tive um momento de **hiato** pela busca da pelúcia. Interrompi as buscas neste ponto quando era criança.
 
@@ -140,7 +140,7 @@ Ela chega em minha casa, bem no meio de uma **reunião** de trabalho.
 
 E com um **Fini vermelho** de brinde.
 
-![Fidget.jpg](/img/user/Fidget.jpg)
+![Fidget.jpg](/img/user/img/Fidget.jpg)
 
 Tipo... A artesã já tinha mandado fotos e vídeos do resultado antes de enviar, mas nossa... A qualidade era de **produto oficial**.
 
