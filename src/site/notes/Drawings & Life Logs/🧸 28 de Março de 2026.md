@@ -33,7 +33,6 @@ Pronto, sobre o desenho, é isso. Você pode retornar à listagem pelo botão ab
 
 [[🎨 Drawings & Life Logs\|< Voltar]]
 
-
 ---
 
 ... Espera, você quer saber a história da pelúcia? **Sério mesmo**?
@@ -100,6 +99,8 @@ Neste momento, tive um momento de **hiato** pela busca da pelúcia. Interrompi e
 Os anos foram passando. Não tinha me esquecido da pelúcia, mas dei **foco** para coisas mais importantes naquele momento: ensino médio, faculdade, trabalho...
 
 A pelúcia, **inconscientemente**, permanecia em minha mente. Por mais que não soubesse como prosseguir a partir daquele ponto... Eu queria a pelúcia.
+
+---
 
 ... Veio um **estalo**. O meu primeiro **salário** caiu na minha conta.
 
