@@ -10,6 +10,8 @@ Mas nossa... esse chapéu deu trabalho. Principalmente a **aba**, vista de lado.
 
 Até então, eu ainda tinha dificuldades em visualizar objetos de forma **tridimensional** durante o esboço. Elementos como a aba, o bordado e as diferentes partes do chapéu pareciam "**misturados**". Depois que essa estrutura ficava mais clara, aplicar o **sombreamento** foi mais prático.
 
+Outro fator que dificultou foi manter as **alturas** dos elementos nas duas perspectivas.
+
 ![23_24Desenho.jpg](/img/user/img/23_24Desenho.jpg)
 
 >[!tip] **Desenho 19 & 20: Rancheira Destemida, Segunda Versão**
