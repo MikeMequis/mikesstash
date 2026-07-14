@@ -10,7 +10,11 @@ Cheguei na aula experimental e fazem a verificação introdutória, mostrar como
 
 Não tinha **nada** a mostrar, e os desenhos que tinha eram perto de **6 anos atrás ou mais** (O último desenho que tinha feito era realmente do Ensino Médio... Período esse que terminei em **2020**).
 
-...Mas mesmo assim, estava determinado. Comecei do zero absoluto? Comecei. **Só dei conta disso quando cheguei**?... Sim.
+...Mas mesmo assim, estava determinado. 
+Comecei do zero absoluto? 
+Comecei.
+**Só dei conta disso quando cheguei**?
+... Sim.
 
 Eles pediram: 
 > "Faça um rosto do jeito que você sabe fazer, do **seu estilo**".
@@ -41,7 +45,7 @@ FUCKING.
 
 Nesse momento, internamente entrei em desespero. Eu passei, por três horas, martelando o mesmo pensamento pessimista:
 
->"Como que eu, um engenheiro de computação, que tirava boas notas em **desenho técnico**, não era capaz de desenhar um simples CÍRCULO?! Isso está muito errado..."
+>"Como que eu, um engenheiro de computação, que tirava boas notas em **desenho técnico**, não era capaz de desenhar um simples **CÍRCULO**?! Isso está muito errado..."
 
 Sabe a cena do filme [**Whiplash**](https://www.imdb.com/pt/title/tt2582802/)? A que o protagonista leva uma cadeirada do professor por não tocar no seu ritmo?
 
@@ -53,7 +57,7 @@ Eu sei o que está pensando:
 
 >"Nossa, então a aula foi horrível por ter que passar por essa tortura. **O professor deve ter te lascado demais** para te marcar assim. Se fosse eu, já teria saído da aula..."
 
-Não. Toda essa tortura, essa loucura... Era eu **frustrado** comigo mesmo. Foi precisamente uma barreira que precisava ser superada. Não na aula de desenho, mas na minha vida **como um todo**.
+**Não**. Toda essa tortura, essa loucura... Era eu **frustrado** comigo mesmo. Foi precisamente uma barreira que precisava ser superada. Não na aula de desenho, mas na minha vida **como um todo**.
 
 Naquele momento, eu me projetava como o aluno e o professor **ao mesmo tempo**. Era o meu **perfeccionismo** mais atrapalhando do que ajudando. Era a perfeição e a **insegurança** de que, se não começar do jeito certo, se nada do que fizer não for milimetricamente e metodicamente calculado, **não adiantava nem sequer o esforço**.
 
