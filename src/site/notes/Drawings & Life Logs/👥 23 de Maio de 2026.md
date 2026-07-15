@@ -10,7 +10,7 @@ O que foi realmente difícil era, a partir da referência e do meu próprio dese
 
 >[!tip] **Desenho 22: Duas perspectivas**
 >*Tempo de desenho - 3h30*
->*Referência: Folha de exercícios das aulas de desenho
+>*Referência: Folha de exercícios das aulas de desenho*
 
 Além do rosto que ficou mais **rechonchudo** que o original, fiquei contente de forma geral com o resultado. Principalmente pela **conquista** de desenhar os dois **simultaneamente** em uma **única aula**.
 
