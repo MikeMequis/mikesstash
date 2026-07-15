@@ -78,7 +78,7 @@ Só depois de um tempo que eu notei o quão ridículo esse pensamento era.
 
 Não o da pista do *Hot Wheels*. Esse brinquedo era **factualmente** incrível e másculo. Eu me refiro a crença.
 
-Por muito tempo, me importava **muito** com o que os outros iriam dizer. Até mesmo com o que meus **pais** iriam pensar se mostrasse essa pelúcia. Mas o que realmente importa é fazer aquilo que é **importante** para você mesmo. Afinal... Esta pelúcia é para **mim**, e mais ninguém. Quantos aos meus pais... Eles sempre queriam o meu bem. E não hesitariam em comprar, principalmente sabendo que era algo que **importava** para mim. 
+Por muito tempo, me importava **muito** com o que os outros iriam dizer. Até mesmo com o que meus **pais** iriam pensar se mostrasse essa pelúcia. Mas o que realmente importa é fazer aquilo que é **importante** para você mesmo. Afinal... Esta pelúcia é para **mim**. Quanto aos meus pais... Eles sempre queriam o meu bem. E não hesitariam em comprar, principalmente sabendo que era algo que **importava** para mim. 
 
 Legal, certo? Então não teria problema em comprar sabendo disso. Vamos tentar mais uma vez:
 
@@ -90,7 +90,7 @@ O segundo desafio.
 
 O [site oficial](https://www.noogy.com/) não tem absolutamente **nada** mencionando produtos oficiais.
 
-O que tinha eram diferentes postagens de DeviantArt de fãs criando suas próprias pelúcias da personagem, mas nada vendido em escopo **nacional**.
+O que tinha eram diferentes postagens de *DeviantArt* de fãs criando suas próprias pelúcias da personagem, mas nada vendido em escopo **nacional**.
 
 >Descrição da postagem do *DeviantArt*, a propósito: ![Luto.png](/img/user/img/Luto.png)
 
