@@ -26,7 +26,7 @@ No fim, tive o seguinte resultado:
 ![30Desenho.jpg](/img/user/img/30Desenho.jpg)
 
 >[!tip] **Desenho 26: Morte Espacial Iminente**
->*Tempo de desenho - aprox. 4h*
+>*Tempo de desenho - 4h*
 
 O detalhe de que mais gostei foram as **rachaduras** no visor. Com a ajuda do professor, consegui representar as trincas e os pequenos fragmentos de vidro flutuando ao redor, o que acabou reforçando bastante a sensação de **perigo**.
 
