@@ -222,8 +222,9 @@ Se tudo der certo, jogue e seja feliz!
 
 ### Fontes
 
-1. [GitHub — garrettjoecox/OOT Pull Request #64](https://github.com/garrettjoecox/OOT/pull/64)
+1. [GitHub — garrettjoecox/OOT Pull Request_#64](https://github.com/garrettjoecox/OOT/pull/64)
 2. [GitHub — garrettjoecox/anchor](https://github.com/garrettjoecox/anchor) — _contém mais informações, como alterar configurações de conexão, usar Docker, etc._
 3. [Deno — Guia de Instalação](https://docs.deno.com/runtime/getting_started/installation/)
 4. [GameBanana — Ocarina of Time Mods](https://gamebanana.com/mods/games/16121)
-5. [YouTube — Ocarina of Time Multiplayer Setup](https://www.youtube.com/watch?v=9YLnUKaJPVU) — pelo canal _A Couple of Average Gamers_
+5. YouTube — Ocarina of Time Multiplayer Setup — pelo canal _A Couple of Average Gamers_
+	https://www.youtube.com/watch?v=9YLnUKaJPVU
