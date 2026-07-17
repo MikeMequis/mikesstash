@@ -74,9 +74,41 @@ body.theme-dark {
     --yt-viz-bg: rgba(0, 0, 0, 0.55);
     --callout-tip: 155, 207, 0;
     --callout-info: 155, 207, 0;
+    --callout-question: 155, 207, 0;
+    --callout-warning: 184, 230, 46;
+    --callout-danger: 184, 230, 46;
     --theme-callout-tip-italic: var(--xbox-green);
     --theme-callout-surface-bg: var(--theme-surface);
     --theme-callout-surface-border: rgba(155, 207, 0, 0.35);
+    --theme-callout-text: #d8dcc8;
+    --theme-code-bg: rgba(0, 0, 0, 0.72);
+    --theme-code-border: rgba(155, 207, 0, 0.3);
+    --theme-code-text: #d4f0a0;
+    --theme-code-inline-bg: rgba(0, 0, 0, 0.75);
+    --theme-code-inline-text: var(--xbox-green-bright);
+    --theme-code-comment: #6a7a58;
+    --theme-code-keyword: var(--xbox-green-bright);
+    --theme-code-string: #c6e86a;
+    --theme-code-number: #9bcf00;
+    --theme-code-function: #d4f56a;
+    --theme-code-operator: #a8a8a8;
+    --theme-code-punctuation: #8a9a78;
+    --code-normal: var(--theme-code-text);
+    --code-background: var(--theme-code-bg);
+    --code-comment: var(--theme-code-comment);
+    --code-function: var(--theme-code-function);
+    --code-important: var(--xbox-green-bright);
+    --code-keyword: var(--theme-code-keyword);
+    --code-operator: var(--theme-code-operator);
+    --code-property: var(--theme-code-string);
+    --code-punctuation: var(--theme-code-punctuation);
+    --code-string: var(--theme-code-string);
+    --code-tag: var(--xbox-green);
+    --code-value: var(--theme-code-number);
+    --rendered-code-bg: var(--theme-code-inline-bg);
+    --rendered-code-text: var(--theme-code-inline-text);
+    --color-yellow: var(--xbox-green-bright);
+    --color-orange: var(--xbox-green);
     --theme-hr-color: rgba(155, 207, 0, 0.45);
     --hr-color: var(--theme-hr-color);
 }
@@ -145,10 +177,43 @@ body.theme-light {
     --yt-viz-bg: rgba(255, 255, 255, 0.72);
     --callout-tip: 74, 122, 18;
     --callout-info: 74, 122, 18;
+    --callout-question: 74, 122, 18;
+    --callout-warning: 74, 122, 18;
+    --callout-danger: 45, 74, 10;
+    --theme-callout-tip-italic: var(--xbox-green-dim);
     --theme-callout-tip-bg: rgba(155, 207, 0, 0.12);
     --theme-callout-tip-border: rgba(74, 122, 18, 0.35);
     --theme-callout-surface-bg: var(--theme-callout-tip-bg);
     --theme-callout-surface-border: var(--theme-callout-tip-border);
+    --theme-callout-text: #2d3d22;
+    --theme-code-bg: rgba(240, 245, 232, 0.98);
+    --theme-code-border: rgba(74, 122, 18, 0.28);
+    --theme-code-text: #1a2612;
+    --theme-code-inline-bg: rgba(232, 240, 216, 0.95);
+    --theme-code-inline-text: var(--xbox-green-dim);
+    --theme-code-comment: #6b7f58;
+    --theme-code-keyword: var(--xbox-green-dim);
+    --theme-code-string: #4a7a12;
+    --theme-code-number: #2d4a0a;
+    --theme-code-function: #3d6a10;
+    --theme-code-operator: #4a5e38;
+    --theme-code-punctuation: #6b7f58;
+    --code-normal: var(--theme-code-text);
+    --code-background: var(--theme-code-bg);
+    --code-comment: var(--theme-code-comment);
+    --code-function: var(--theme-code-function);
+    --code-important: var(--xbox-green-dim);
+    --code-keyword: var(--theme-code-keyword);
+    --code-operator: var(--theme-code-operator);
+    --code-property: var(--theme-code-string);
+    --code-punctuation: var(--theme-code-punctuation);
+    --code-string: var(--theme-code-string);
+    --code-tag: var(--xbox-green-dim);
+    --code-value: var(--theme-code-number);
+    --rendered-code-bg: var(--theme-code-inline-bg);
+    --rendered-code-text: var(--theme-code-inline-text);
+    --color-yellow: var(--xbox-green-dim);
+    --color-orange: var(--xbox-green);
     --theme-hr-color: rgba(74, 122, 18, 0.35);
     --hr-color: var(--theme-hr-color);
 }
@@ -415,58 +480,200 @@ body {
     }
 
     code,
-    pre {
-        border: var(--terminal-border-dim);
+    pre,
+    .markdown-rendered code,
+    .markdown-rendered pre {
+        border: 1px solid var(--theme-code-border);
         border-radius: 0;
-        background: var(--theme-surface-code);
-        color: var(--theme-accent-text);
+        background: var(--theme-code-bg);
+        color: var(--theme-code-text);
+        font-family: var(--font-monospace);
+        text-shadow: none;
+    }
+
+    :not(pre) > code,
+    .markdown-rendered :not(pre) > code,
+    .markdown-rendered p > code,
+    .markdown-rendered li > code {
+        padding: 0.12em 0.4em;
+        background: var(--rendered-code-bg);
+        color: var(--rendered-code-text);
+        border: 1px solid var(--theme-code-border);
+    }
+
+    pre,
+    .markdown-rendered pre {
+        padding: 0.85em 1em;
+        overflow-x: auto;
+
+        > code {
+            border: none;
+            background: transparent;
+            padding: 0;
+            color: inherit;
+        }
+    }
+
+    pre[class*="language-"],
+    code[class*="language-"],
+    .markdown-rendered pre[class*="language-"],
+    .markdown-rendered code[class*="language-"] {
+        border-radius: 0;
+        background: var(--theme-code-bg);
+        color: var(--theme-code-text);
+        text-shadow: none;
+        font-family: var(--font-monospace);
+    }
+
+    pre[class*="language-"],
+    .markdown-rendered pre[class*="language-"] {
+        border: 1px solid var(--theme-code-border);
+        padding: 0.85em 1em;
+    }
+
+    .token.comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+        color: var(--theme-code-comment) !important;
+    }
+
+    .token.punctuation {
+        color: var(--theme-code-punctuation) !important;
+    }
+
+    .token.property,
+    .token.tag,
+    .token.constant,
+    .token.symbol,
+    .token.deleted,
+    .token.boolean,
+    .token.number,
+    .token.class-name {
+        color: var(--theme-code-number) !important;
+    }
+
+    .token.selector,
+    .token.attr-name,
+    .token.string,
+    .token.char,
+    .token.builtin,
+    .token.inserted,
+    .token.atrule,
+    .token.attr-value {
+        color: var(--theme-code-string) !important;
+    }
+
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .token.variable {
+        color: var(--theme-code-operator) !important;
+    }
+
+    .token.function {
+        color: var(--theme-code-function) !important;
+    }
+
+    .token.keyword {
+        color: var(--theme-code-keyword) !important;
+    }
+
+    .token.regex,
+    .token.important {
+        color: var(--theme-code-string) !important;
     }
 
     .callout {
-        border: var(--terminal-border-dim);
+        --callout-color: var(--callout-tip);
+        --callout-border-width: 1px;
+        --callout-border-opacity: 1;
+        --callout-radius: 0;
+        --callout-blend-mode: normal;
+        border: 1px solid var(--theme-callout-surface-border);
         border-radius: 0;
-        background: var(--theme-surface);
+        background: var(--theme-callout-surface-bg);
         mix-blend-mode: normal;
+        box-shadow: none;
 
         .callout-title {
             gap: 0.75em;
+            color: var(--theme-callout-text);
+        }
+
+        .callout-title-inner,
+        .callout-title-inner p {
+            color: var(--theme-callout-text);
+            font-weight: 500;
+        }
+
+        .callout-content,
+        .callout-content p,
+        .callout-content li {
+            color: var(--theme-callout-text);
         }
 
         .callout-icon {
             margin-inline-end: 0.35em;
         }
+
+        .callout-icon,
+        .callout-icon svg,
+        .callout-icon .svg-icon {
+            color: var(--theme-accent-text);
+        }
+
+        strong,
+        b {
+            color: var(--theme-text-strong);
+        }
+
+        em,
+        i {
+            color: var(--theme-callout-tip-italic);
+        }
+
+        code {
+            background: var(--rendered-code-bg);
+            color: var(--rendered-code-text);
+            border: 1px solid var(--theme-code-border);
+        }
+
+        pre {
+            background: var(--theme-code-bg);
+            border: 1px solid var(--theme-code-border);
+        }
     }
 
     .callout[data-callout="tip"],
-    .callout[data-callout="hint"] {
+    .callout[data-callout="hint"],
+    .callout[data-callout="important"] {
         --callout-color: var(--callout-tip);
-
-        .callout-title,
-        .callout-title-inner,
-        .callout-icon,
-        .callout-icon svg,
-        .callout-icon .svg-icon {
-            color: var(--theme-accent-text);
-        }
     }
 
-    .callout[data-callout="info"] {
+    .callout[data-callout="info"],
+    .callout[data-callout="todo"] {
         --callout-color: var(--callout-info);
-        background: var(--theme-callout-surface-bg);
-        border-color: var(--theme-callout-surface-border);
+    }
 
-        .callout-title,
-        .callout-title-inner,
-        .callout-content,
-        .callout-content p {
-            color: var(--theme-text);
-        }
+    .callout[data-callout="question"],
+    .callout[data-callout="help"],
+    .callout[data-callout="faq"] {
+        --callout-color: var(--callout-question);
+    }
 
-        .callout-icon,
-        .callout-icon svg,
-        .callout-icon .svg-icon {
-            color: var(--theme-accent-text);
-        }
+    .callout[data-callout="warning"],
+    .callout[data-callout="caution"],
+    .callout[data-callout="attention"] {
+        --callout-color: var(--callout-warning);
+    }
+
+    .callout[data-callout="danger"],
+    .callout[data-callout="error"],
+    .callout[data-callout="failure"],
+    .callout[data-callout="fail"],
+    .callout[data-callout="bug"] {
+        --callout-color: var(--callout-danger);
     }
 
     .tag {
@@ -539,18 +746,16 @@ body {
     }
 }
 
-body.theme-light .callout[data-callout="tip"],
-body.theme-light .callout[data-callout="hint"],
-body.theme-light .callout[data-callout="info"] {
+body.theme-light .callout {
     background: var(--theme-callout-tip-bg);
     border-color: var(--theme-callout-tip-border);
 }
 
 body.theme-dark.markdown-rendered {
-    .callout[data-callout="tip"] .callout-content em,
-    .callout[data-callout="hint"] .callout-content em,
-    .callout[data-callout="tip"] .callout-content i,
-    .callout[data-callout="hint"] .callout-content i {
+    .callout .callout-content em,
+    .callout .callout-content i,
+    .callout .callout-title-inner em,
+    .callout .callout-title-inner i {
         color: var(--theme-callout-tip-italic);
     }
 }

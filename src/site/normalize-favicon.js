@@ -39,33 +39,37 @@ function normalizeFavicon(inputPath, outputPath) {
 
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
-  if (!isFinite(maxDim) || maxDim === 0 || maxDim <= MAX_DIM) {
-    fs.writeFileSync(outputPath, content);
-    return;
-  }
-
-  const scale = MAX_DIM / maxDim;
-  const newWidth = Math.round(effectiveWidth * scale);
-  const newHeight = Math.round(effectiveHeight * scale);
+  const needsScale = isFinite(maxDim) && maxDim > MAX_DIM;
+  const outWidth = needsScale
+    ? Math.round(effectiveWidth * (MAX_DIM / maxDim))
+    : effectiveWidth;
+  const outHeight = needsScale
+    ? Math.round(effectiveHeight * (MAX_DIM / maxDim))
+    : effectiveHeight;
 
   let newSvgTag = svgTag;
 
-  if (!viewBoxMatch) {
+  if (!viewBoxMatch && isFinite(effectiveWidth) && isFinite(effectiveHeight)) {
     newSvgTag = newSvgTag.replace(
       /<svg\b/i,
       `<svg viewBox="0 0 ${effectiveWidth} ${effectiveHeight}"`
     );
   }
 
-  if (widthMatch) {
-    newSvgTag = newSvgTag.replace(/\bwidth\s*=\s*"[^"]+"/i, `width="${newWidth}"`);
-  } else {
-    newSvgTag = newSvgTag.replace(/<svg\b/i, `<svg width="${newWidth}"`);
+  // Always emit explicit width/height so sharp doesn't compute density as NaN.
+  if (isFinite(outWidth)) {
+    if (/\bwidth\s*=\s*"/i.test(newSvgTag)) {
+      newSvgTag = newSvgTag.replace(/\bwidth\s*=\s*"[^"]+"/i, `width="${outWidth}"`);
+    } else {
+      newSvgTag = newSvgTag.replace(/<svg\b/i, `<svg width="${outWidth}"`);
+    }
   }
-  if (heightMatch) {
-    newSvgTag = newSvgTag.replace(/\bheight\s*=\s*"[^"]+"/i, `height="${newHeight}"`);
-  } else {
-    newSvgTag = newSvgTag.replace(/<svg\b/i, `<svg height="${newHeight}"`);
+  if (isFinite(outHeight)) {
+    if (/\bheight\s*=\s*"/i.test(newSvgTag)) {
+      newSvgTag = newSvgTag.replace(/\bheight\s*=\s*"[^"]+"/i, `height="${outHeight}"`);
+    } else {
+      newSvgTag = newSvgTag.replace(/<svg\b/i, `<svg height="${outHeight}"`);
+    }
   }
 
   fs.writeFileSync(outputPath, content.replace(svgTag, newSvgTag));

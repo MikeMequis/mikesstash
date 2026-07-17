@@ -15,12 +15,53 @@ const matterOptions = {
     },
   },
 };
-const faviconsPlugin = require("eleventy-plugin-gen-favicons");
+const genFavicons = require("eleventy-plugin-gen-favicons/favicon-gen");
+const genFaviconHtml = require("eleventy-plugin-gen-favicons/html-gen");
 const normalizeFavicon = require("./src/site/normalize-favicon.js");
 
 const FAVICON_SOURCE = "./src/site/favicon.svg";
 const FAVICON_NORMALIZED = "./.cache/favicon.normalized.svg";
+const FAVICON_OUTPUT_DIR = "dist";
+const FAVICON_OPTS = {
+  appleIconBgColor: "#123",
+  generateManifest: true,
+  manifestData: {},
+  skipCache: false,
+};
 normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
+
+// Eleventy renders pages in parallel; the stock favicons shortcode races on
+// Windows (EBUSY) when many templates write dist/favicon.svg at once.
+let faviconHtml = null;
+
+async function ensureFaviconsBuilt() {
+  if (faviconHtml) {
+    return faviconHtml;
+  }
+
+  const maxAttempts = 6;
+  let lastError;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
+      const files = await genFavicons(FAVICON_NORMALIZED, FAVICON_OUTPUT_DIR, {
+        ...FAVICON_OPTS,
+        skipCache: attempt > 1,
+      });
+      faviconHtml = await genFaviconHtml(files);
+      return faviconHtml;
+    } catch (err) {
+      lastError = err;
+      faviconHtml = null;
+      if (err && (err.code === "EBUSY" || err.code === "EPERM") && attempt < maxAttempts) {
+        await new Promise((resolve) => setTimeout(resolve, 150 * attempt));
+        continue;
+      }
+      throw err;
+    }
+  }
+  throw lastError;
+}
 const tocPlugin = require("eleventy-plugin-nesting-toc");
 const { parse } = require("node-html-parser");
 const htmlMinifier = require("html-minifier-terser");
@@ -720,11 +761,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/site/scripts");
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
   eleventyConfig.addPassthroughCopy({ "src/site/logo.*": "/" });
-  eleventyConfig.on("eleventy.before", () => {
-    normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
+  eleventyConfig.on("eleventy.before", async () => {
+    faviconHtml = null;
+    await ensureFaviconsBuilt();
   });
   eleventyConfig.addWatchTarget(FAVICON_SOURCE);
-  eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
+  eleventyConfig.addAsyncShortcode("favicons", async () => {
+    return ensureFaviconsBuilt();
+  });
   eleventyConfig.addPlugin(tocPlugin, {
     ul: true,
     tags: ["h1", "h2", "h3", "h4", "h5", "h6"],
