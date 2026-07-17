@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/ocarina-of-time-server-in-android-2025/","dg-note-properties":{}}
 ---
 
-# Como Hospedar um Servidor de Ocarina of Time/Ship of Harkinian no Android
+# ⚔️ Como Hospedar um Servidor de Ocarina of Time/Ship of Harkinian no Android
 
 > [!tip] Aconselhável possuir conexão estável para baixar e instalar programas necessários, além de manter os serviços ativos, e conectar um teclado físico (via Bluetooth ou cabo OTG). Também é possível usar o app **Hacker's Keyboard** ou configurar e conectar via SSH.
 

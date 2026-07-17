@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/minecraft-server-in-android-2024/","dg-note-properties":{}}
 ---
 
-# Como Hospedar um Servidor de Minecraft no Android
+# 🌱 Como Hospedar um Servidor de Minecraft no Android
 
 > [!tip] Aconselhável possuir um celular com 2GB a 4GB de RAM, conexão estável para baixar e instalar programas necessários, além de manter os serviços ativos, e conectar um teclado físico (via Bluetooth ou cabo OTG). Também é possível usar o app **Hacker's Keyboard**.
 
