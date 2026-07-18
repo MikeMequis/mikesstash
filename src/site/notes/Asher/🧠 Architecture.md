@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/architecture/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/asher/architecture/","dg-note-properties":{"dgShowComments":false}}
 ---
 
 ## Core Architecture (Launcher-First)

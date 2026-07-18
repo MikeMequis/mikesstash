@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/manager-app/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/asher/manager-app/","dg-note-properties":{"dgShowComments":false}}
 ---
 
 `Asher.App` is a WPF application built with **Prism**, **Material Design**, and a modular service layer.

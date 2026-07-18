@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/references/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/asher/references/","dg-note-properties":{"dgShowComments":false}}
 ---
 
 - **Harmony** — https://github.com/pardeike/Harmony

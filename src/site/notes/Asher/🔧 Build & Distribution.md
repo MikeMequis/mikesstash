@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/build-and-distribution/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/asher/build-and-distribution/","dg-note-properties":{"dgShowComments":false}}
 ---
 
 ## Requirements

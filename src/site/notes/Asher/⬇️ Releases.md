@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/releases/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/asher/releases/","dg-note-properties":{"dgShowComments":false}}
 ---
 
 # Releases

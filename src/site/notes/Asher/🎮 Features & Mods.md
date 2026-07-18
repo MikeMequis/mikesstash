@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/features-and-mods/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/asher/features-and-mods/","dg-note-properties":{"dgShowComments":false}}
 ---
 
 ## Confirmed Working Features

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/runtime-and-installation/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/asher/runtime-and-installation/","dg-note-properties":{"dgShowComments":false}}
 ---
 
 ## Runtime Flow Overview

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/status-and-roadmap/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/asher/status-and-roadmap/","dg-note-properties":{"dgShowComments":false}}
 ---
 
 ## Project Status Overview

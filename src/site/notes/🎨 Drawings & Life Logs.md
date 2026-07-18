@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/","dg-note-properties":{"dgShowComments":false}}
 ---
 
 Por trás de cada desenho, por cada escolha... Existe um motivo e uma história. Clique para ler e ver as minhas ilustrações realizadas durante o meu período livre e nas aulas de desenho.
