@@ -1,4 +1,6 @@
-{% if settings.dgShowComments === true and meta.giscus.repo and meta.giscus.repoId and meta.giscus.category and meta.giscus.categoryId %}
+{%- set hasNoteOverride = noteProps.dgShowComments is defined -%}
+{%- set showComments = noteProps.dgShowComments if hasNoteOverride else settings.dgShowComments -%}
+{% if showComments and meta.giscus.repo and meta.giscus.repoId and meta.giscus.category and meta.giscus.categoryId %}
 <section
   class="comments"
   data-giscus-light-theme="{{ meta.giscus.lightTheme }}"
