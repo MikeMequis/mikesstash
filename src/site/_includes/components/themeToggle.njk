@@ -33,6 +33,9 @@
     document.body.classList.add("theme-" + theme);
     localStorage.setItem("dg-theme", theme);
     updateToggleUi();
+    if (typeof window.updateGiscusTheme === "function") {
+      window.updateGiscusTheme(theme);
+    }
     if (window.lucide && typeof window.lucide.createIcons === "function") {
       window.lucide.createIcons();
     }

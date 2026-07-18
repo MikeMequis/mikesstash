@@ -1,0 +1,14 @@
+.comments {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--background-modifier-border);
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.giscus,
+.giscus-frame {
+  width: 100%;
+}

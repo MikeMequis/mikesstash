@@ -1,0 +1,71 @@
+{% if settings.dgShowComments === true and meta.giscus.repo and meta.giscus.repoId and meta.giscus.category and meta.giscus.categoryId %}
+<section
+  class="comments"
+  data-giscus-light-theme="{{ meta.giscus.lightTheme }}"
+  data-giscus-dark-theme="{{ meta.giscus.darkTheme }}"
+  aria-labelledby="comments-heading">
+  <h2 id="comments-heading">Comments</h2>
+  <div class="giscus"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="{{ meta.giscus.repo }}"
+    data-repo-id="{{ meta.giscus.repoId }}"
+    data-category="{{ meta.giscus.category }}"
+    data-category-id="{{ meta.giscus.categoryId }}"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="{{ meta.giscus.theme }}"
+    data-lang="{{ meta.mainLanguage }}"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <script>
+    (function () {
+      var comments = document.querySelector(".comments");
+      if (!comments) return;
+
+      function currentTheme() {
+        return document.body.classList.contains("theme-light") ? "light" : "dark";
+      }
+
+      window.updateGiscusTheme = function (theme) {
+        var frame = comments.querySelector("iframe.giscus-frame");
+        if (!frame || !frame.contentWindow) return;
+        var giscusTheme =
+          theme === "light"
+            ? comments.dataset.giscusLightTheme
+            : comments.dataset.giscusDarkTheme;
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: giscusTheme } } },
+          "https://giscus.app"
+        );
+      };
+
+      function bindThemeSync() {
+        var frame = comments.querySelector("iframe.giscus-frame");
+        if (!frame) return false;
+        frame.addEventListener(
+          "load",
+          function () {
+            window.updateGiscusTheme(currentTheme());
+          },
+          { once: true }
+        );
+        window.updateGiscusTheme(currentTheme());
+        return true;
+      }
+
+      if (!bindThemeSync()) {
+        var observer = new MutationObserver(function () {
+          if (bindThemeSync()) observer.disconnect();
+        });
+        observer.observe(comments, { childList: true, subtree: true });
+      }
+    })();
+  </script>
+</section>
+{% endif %}

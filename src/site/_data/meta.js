@@ -67,6 +67,17 @@ module.exports = async (data) => {
     showUpdated: process.env.SHOW_UPDATED_TIMESTAMP == "true",
   };
 
+  const giscus = {
+    repo: process.env.GISCUS_REPO || "",
+    repoId: process.env.GISCUS_REPO_ID || "",
+    category: process.env.GISCUS_CATEGORY || "",
+    categoryId: process.env.GISCUS_CATEGORY_ID || "",
+    lightTheme: process.env.GISCUS_THEME_LIGHT || "light",
+    darkTheme: process.env.GISCUS_THEME_DARK || "dark",
+  };
+  giscus.theme =
+    process.env.BASE_THEME === "light" ? giscus.lightTheme : giscus.darkTheme;
+
   const uiStrings = {
     backlinkHeader: process.env.UI_BACKLINK_HEADER || "Pages mentioning this page",
     noBacklinksMessage: process.env.UI_NO_BACKLINKS_MESSAGE || "No other pages mentions this page",
@@ -101,6 +112,7 @@ module.exports = async (data) => {
     siteBaseUrl: baseUrl,
     styleSettingsCss,
     uiStrings,
+    giscus,
     buildDate: new Date(),
   };
 
