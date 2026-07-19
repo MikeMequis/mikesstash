@@ -1,3 +1,5 @@
+const { resolveLocalizedTitle } = require("./langUtils");
+
 const wikiLinkRegex = /\[\[(.*?\|.*?)\]\]/g;
 const internalLinkRegex = /href="\/(.*?)"/g;
 // Match iframe src for canvas embedded files (internal links only, not external URLs)
@@ -120,7 +122,7 @@ async function getGraph(data) {
 
     nodes[v.url] = {
       id: idx,
-      title: v.data.title || v.fileSlug,
+      title: resolveLocalizedTitle(v.data.title, v.fileSlug, "pt"),
       url: v.url,
       group,
       home:

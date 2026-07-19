@@ -1,8 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/","dg-note-properties":{"dgShowComments":false}}
+{"title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"},"dg-publish":true,"permalink":"/drawings-and-life-logs/","dg-note-properties":{"dgShowComments":false}}
 ---
 
+:::lang pt
+
 Por trás de cada desenho, por cada escolha... Existe um motivo e uma história. Clique para ler e ver as minhas ilustrações realizadas durante o meu período livre e nas aulas de desenho.
+
+:::
+
+:::lang en
+
+Behind every drawing, behind every choice... There is a reason and a story. Click to read and see my illustrations made in free time and in drawing classes.
+
+:::
 
 [[Drawings & Life Logs/🥚 17 de Janeiro de 2026\|🥚 17 de Janeiro de 2026]]
 [[Drawings & Life Logs/⭕ 24 de Janeiro de 2026\|⭕ 24 de Janeiro de 2026]]
@@ -28,4 +38,14 @@ Por trás de cada desenho, por cada escolha... Existe um motivo e uma história.
 [[Drawings & Life Logs/🧢 26 de Junho de 2026\|🧢 26 de Junho de 2026]]
 [[Drawings & Life Logs/👽 27 de Junho e 4 de Julho de 2026\|👽 27 de Junho e 4 de Julho de 2026]]
 
+:::lang pt
+
 [[🏡 Home Page\|< Voltar]]
+
+:::
+
+:::lang en
+
+[[🏡 Home Page\|< Back]]
+
+:::

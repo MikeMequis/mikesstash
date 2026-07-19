@@ -1,5 +1,7 @@
 const { parse } = require("node-html-parser");
 const { upgradeYouTubeEmbeds } = require("./youtubeUtils");
+const { langPlugin } = require("./langPlugin");
+const { resolveLocalizedTitle } = require("./langUtils");
 
 const markdownFileTypeRegex = /\.(md|markdown)$/i;
 const isMarkdownPage = (inputPath) =>
@@ -82,10 +84,13 @@ async function ytAudioApiMiddleware(req, res, next) {
 }
 
 function userMarkdownSetup(md) {
-  // The md parameter stands for the markdown-it instance used throughout the site generator.
-  // Feel free to add any plugin you want here instead of /.eleventy.js
+  md.use(langPlugin);
 }
 function userEleventySetup(eleventyConfig) {
+  eleventyConfig.addFilter("localizedTitle", function (title, fallback, lang) {
+    return resolveLocalizedTitle(title, fallback, lang || "pt");
+  });
+
   eleventyConfig.addTransform("youtube-visualizer", function (content) {
     if (!isMarkdownPage(this.page.inputPath)) {
       return content;

@@ -13,8 +13,10 @@
                         {%if tocHtml %}
                               <div class="toc">
                                     <div class="toc-title-container">
-                                          <div class="toc-title">
-                                                {% if title %}{{ title }}{% else %}{{ page.fileSlug }}{% endif %}
+                                          <div class="toc-title"
+                                                data-title-pt="{{ userComputed.titles.pt }}"
+                                                data-title-en="{{ userComputed.titles.en }}">
+                                                {% if title %}{{ title | localizedTitle(page.fileSlug) }}{% else %}{{ page.fileSlug }}{% endif %}
                                           </div>
                                     </div>
                                     <div class="toc-container">

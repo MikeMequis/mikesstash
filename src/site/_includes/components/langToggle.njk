@@ -1,0 +1,65 @@
+<button
+  type="button"
+  id="lang-toggle"
+  class="lang-toggle-btn"
+  data-lang="pt"
+  onclick="toggleLang()"
+  aria-label="Switch to English"
+  title="Switch language">
+  <span class="lang-label lang-label-pt" aria-hidden="true">PT</span>
+  <span class="lang-label lang-label-en" aria-hidden="true">EN</span>
+</button>
+<script>
+(function () {
+  function currentLang() {
+    return document.body.classList.contains("lang-en") ? "en" : "pt";
+  }
+
+  function updateToggleUi() {
+    var btn = document.getElementById("lang-toggle");
+    if (!btn) return;
+    var lang = currentLang();
+    var next = lang === "pt" ? "en" : "pt";
+    btn.setAttribute(
+      "aria-label",
+      next === "en" ? "Switch to English" : "Mudar para Português"
+    );
+    btn.title = lang === "pt" ? "Português" : "English";
+    btn.dataset.lang = lang;
+  }
+
+  function updateLocalizedTitles(lang) {
+    document.querySelectorAll("[data-title-pt][data-title-en]").forEach(function (el) {
+      var nextTitle = lang === "en" ? el.dataset.titleEn : el.dataset.titlePt;
+      if (nextTitle == null) return;
+      if (el.tagName === "TITLE") {
+        el.textContent = nextTitle;
+      } else {
+        el.textContent = nextTitle;
+      }
+    });
+  }
+
+  window.applyLang = function (lang) {
+    if (lang !== "pt" && lang !== "en") return;
+    document.body.classList.remove("lang-pt", "lang-en");
+    document.body.classList.add("lang-" + lang);
+    document.documentElement.setAttribute("lang", lang);
+    localStorage.setItem("dg-lang", lang);
+    updateToggleUi();
+    updateLocalizedTitles(lang);
+    if (typeof window.updateGiscusLang === "function") {
+      window.updateGiscusLang(lang);
+    }
+  };
+
+  window.toggleLang = function () {
+    window.applyLang(currentLang() === "pt" ? "en" : "pt");
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    updateToggleUi();
+    updateLocalizedTitles(currentLang());
+  });
+})();
+</script>

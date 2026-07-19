@@ -1,3 +1,5 @@
+const { getLocalizedTitles } = require("./langUtils");
+
 // Natural sort comparison - handles numbers anywhere in the string
 const naturalCompare = (a, b) => {
   const aLower = a.toLowerCase();
@@ -94,6 +96,8 @@ function getPermalinkMeta(note, key) {
   let permalink = "/";
   let parts = note.filePathStem.split("/");
   let name = parts[parts.length - 1];
+  let namePt = name;
+  let nameEn = name;
   let noteIcon = process.env.NOTE_ICON_DEFAULT;
   let hide = false;
   let pinned = false;
@@ -106,7 +110,10 @@ function getPermalinkMeta(note, key) {
       permalink = "/";
     }    
     if (note.data.title) {
-      name = note.data.title;
+      const titles = getLocalizedTitles(note.data.title, name);
+      name = titles.default;
+      namePt = titles.pt;
+      nameEn = titles.en;
     }
     if (note.data.noteIcon) {
       noteIcon = note.data.noteIcon;
@@ -142,7 +149,7 @@ function getPermalinkMeta(note, key) {
     //ignore
   }
 
-  return [{ permalink, name, noteIcon, hide, pinned }, folders];
+  return [{ permalink, name, namePt, nameEn, noteIcon, hide, pinned }, folders];
 }
 
 function assignNested(obj, keyPath, value) {

@@ -47,6 +47,15 @@
         );
       };
 
+      window.updateGiscusLang = function (lang) {
+        var frame = comments.querySelector("iframe.giscus-frame");
+        if (!frame || !frame.contentWindow) return;
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { lang: lang } } },
+          "https://giscus.app"
+        );
+      };
+
       function bindThemeSync() {
         var frame = comments.querySelector("iframe.giscus-frame");
         if (!frame) return false;

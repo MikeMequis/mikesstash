@@ -257,4 +257,22 @@ describe("filetreeUtils", () => {
       expect(tree["treeonly.md"].hide).toBe(true);
     });
   });
+
+  describe("bilingual titles", () => {
+    it("stores pt and en display names for the filetree", () => {
+      const data = {
+        collections: {
+          note: [
+            makeNote("/fox", {
+              title: { pt: "🏡 Página Inicial", en: "🏡 Home Page" },
+            }),
+          ],
+        },
+      };
+      const tree = getFileTree(data);
+      expect(tree["fox.md"].name).toBe("🏡 Página Inicial");
+      expect(tree["fox.md"].namePt).toBe("🏡 Página Inicial");
+      expect(tree["fox.md"].nameEn).toBe("🏡 Home Page");
+    });
+  });
 });

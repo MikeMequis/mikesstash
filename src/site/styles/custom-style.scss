@@ -807,6 +807,72 @@ body.theme-dark.markdown-rendered {
     }
 }
 
+.lang-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 72px;
+    z-index: 120;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--terminal-border-dim);
+    border-radius: 0;
+    background: var(--theme-toggle-bg);
+    color: var(--theme-toggle-color);
+    cursor: pointer;
+    box-shadow: var(--theme-search-glow);
+    font-family: var(--font-monospace);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+        background: var(--theme-toggle-hover-bg);
+        color: var(--theme-toggle-hover-color);
+        border-color: var(--xbox-green-bright);
+    }
+
+    .lang-label-pt {
+        display: block;
+    }
+
+    .lang-label-en {
+        display: none;
+    }
+
+    &[data-lang="en"] .lang-label-pt {
+        display: none;
+    }
+
+    &[data-lang="en"] .lang-label-en {
+        display: block;
+    }
+}
+
+.dg-lang[data-lang="en"] {
+    display: none;
+}
+
+body.lang-pt .dg-lang[data-lang="pt"] {
+    display: contents;
+}
+
+body.lang-pt .dg-lang[data-lang="en"] {
+    display: none;
+}
+
+body.lang-en .dg-lang[data-lang="en"] {
+    display: contents;
+}
+
+body.lang-en .dg-lang[data-lang="pt"] {
+    display: none;
+}
+
 #tooltip-wrapper {
     border: var(--terminal-border) !important;
     border-radius: 0 !important;
