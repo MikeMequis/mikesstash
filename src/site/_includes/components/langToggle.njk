@@ -32,11 +32,17 @@
     document.querySelectorAll("[data-title-pt][data-title-en]").forEach(function (el) {
       var nextTitle = lang === "en" ? el.dataset.titleEn : el.dataset.titlePt;
       if (nextTitle == null) return;
-      if (el.tagName === "TITLE") {
-        el.textContent = nextTitle;
+      if (el.tagName === "IMG") {
+        el.alt = nextTitle;
       } else {
         el.textContent = nextTitle;
       }
+    });
+
+    document.querySelectorAll("[data-desc-pt][data-desc-en]").forEach(function (el) {
+      var nextDesc = lang === "en" ? el.dataset.descEn : el.dataset.descPt;
+      if (nextDesc == null) return;
+      el.textContent = nextDesc;
     });
   }
 

@@ -97,6 +97,25 @@ module.exports = async (data) => {
     canvasResetHint: process.env.UI_CANVAS_RESET_HINT || "Double-click to reset",
   };
 
+  const siteNameEn =
+    process.env.SITE_NAME_HEADER_EN ||
+    process.env.SITE_NAME_HEADER ||
+    "Digital Garden";
+  const siteNamePt =
+    process.env.SITE_NAME_HEADER_PT ||
+    process.env.SITE_NAME_HEADER ||
+    siteNameEn;
+  const siteDescriptionEn =
+    process.env.SITE_DESCRIPTION_EN ||
+    process.env.SITE_DESCRIPTION ||
+    "A growing collection of ideas, useful links, projects, drawings, and little discoveries from across the web.";
+  const siteDescriptionPt =
+    process.env.SITE_DESCRIPTION_PT ||
+    process.env.SITE_DESCRIPTION ||
+    siteDescriptionEn;
+  const mainLanguage = process.env.SITE_MAIN_LANGUAGE || "pt";
+  const useEnglishDefaults = mainLanguage === "en";
+
   const meta = {
     env: process.env.ELEVENTY_ENV,
     theme: process.env.THEME,
@@ -104,11 +123,19 @@ module.exports = async (data) => {
     bodyClasses: bodyClasses.join(" "),
     noteIconsSettings,
     timestampSettings,
-    siteDescription: process.env.SITE_DESCRIPTION || "A growing collection of ideas, useful links, projects, drawings, and little discoveries from across the web.",
+    siteDescription: useEnglishDefaults ? siteDescriptionEn : siteDescriptionPt,
+    siteDescriptions: {
+      pt: siteDescriptionPt,
+      en: siteDescriptionEn,
+    },
     baseTheme: process.env.BASE_THEME || "dark",
-    siteName: process.env.SITE_NAME_HEADER || "Digital Garden",
+    siteName: useEnglishDefaults ? siteNameEn : siteNamePt,
+    siteNames: {
+      pt: siteNamePt,
+      en: siteNameEn,
+    },
     siteLogoPath: logoPath,
-    mainLanguage: process.env.SITE_MAIN_LANGUAGE || "en",
+    mainLanguage,
     siteBaseUrl: baseUrl,
     styleSettingsCss,
     uiStrings,
