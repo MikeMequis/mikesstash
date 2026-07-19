@@ -73,6 +73,7 @@ const {
   userEleventySetup,
 } = require("./src/helpers/userSetup");
 const { basesPlugin } = require("./src/helpers/basesPlugin");
+const { getLocalizedTitles } = require("./src/helpers/langUtils");
 
 const Image = require("@11ty/eleventy-img");
 function transformImage(src, cls, alt, sizes, widths = ["500", "700", "auto"]) {
@@ -89,9 +90,19 @@ function transformImage(src, cls, alt, sizes, widths = ["500", "700", "auto"]) {
   return metadata;
 }
 
+function escapeHtmlAttr(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 function getAnchorLink(filePath, linkTitle) {
   const { attributes, innerHTML } = getAnchorAttributes(filePath, linkTitle);
-  return `<a ${Object.keys(attributes).map(key => `${key}="${attributes[key]}"`).join(" ")}>${innerHTML}</a>`;
+  return `<a ${Object.keys(attributes)
+    .map((key) => `${key}="${escapeHtmlAttr(attributes[key])}"`)
+    .join(" ")}>${innerHTML}</a>`;
 }
 
 function getAnchorAttributes(filePath, linkTitle) {
@@ -104,7 +115,13 @@ function getAnchorAttributes(filePath, linkTitle) {
   }
 
   let noteIcon = process.env.NOTE_ICON_DEFAULT;
-  const title = linkTitle ? linkTitle : fileName;
+  const pathBase = fileName
+    .replace(/\.(md|markdown|canvas)$/i, "")
+    .split("/")
+    .pop();
+  let title = linkTitle ? linkTitle : pathBase;
+  let titlePt = title;
+  let titleEn = title;
   let permalink = `/notes/${slugify(fileName)}`;
   let deadLink = false;
   try {
@@ -129,6 +146,22 @@ function getAnchorAttributes(filePath, linkTitle) {
     if (frontMatter.data.noteIcon) {
       noteIcon = frontMatter.data.noteIcon;
     }
+    if (frontMatter.data.title) {
+      const titles = getLocalizedTitles(frontMatter.data.title, pathBase);
+      const alias = linkTitle ? String(linkTitle) : "";
+      const usesNoteTitle =
+        !alias ||
+        alias === pathBase ||
+        alias === fileName ||
+        alias === titles.pt ||
+        alias === titles.en ||
+        alias === titles.default;
+      if (usesNoteTitle) {
+        title = titles.default;
+        titlePt = titles.pt;
+        titleEn = titles.en;
+      }
+    }
   } catch {
     deadLink = true;
   }
@@ -148,6 +181,8 @@ function getAnchorAttributes(filePath, linkTitle) {
       "class": "internal-link",
       "target": "",
       "data-note-icon": noteIcon,
+      "data-title-pt": titlePt,
+      "data-title-en": titleEn,
       "href": `${permalink}${headerLinkPath}`,
     },
     innerHTML: title,
@@ -402,12 +437,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("link", function(str) {
     return (
       str &&
-      str.replace(/\[\[(.*?\|.*?)\]\]/g, function(match, p1) {
+      str.replace(/\[\[([^\[\]]+?)\]\]/g, function(match, p1) {
         //Check if it is an embedded excalidraw drawing or mathjax javascript
         if (p1.indexOf("],[") > -1 || p1.indexOf('"$"') > -1) {
           return match;
         }
-        const [fileLink, linkTitle] = p1.split("|");
+        const parts = p1.split("|").map((part) => part.replace(/\\/g, "").trim());
+        const fileLink = parts[0];
+        const linkTitle = parts[1];
 
         return getAnchorLink(fileLink, linkTitle);
       })

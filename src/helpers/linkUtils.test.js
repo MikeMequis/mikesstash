@@ -44,4 +44,15 @@ describe("linkUtils getGraph hide flags", () => {
     expect(graph.nodes["/treeonly/"].hide).toBe(false);
     expect(graph.nodes["/treeonly/"].private).toBe(false);
   });
+
+  it("stores bilingual titles for backlink display", async () => {
+    const graph = await buildGraph([
+      makeNote("home", {
+        title: { pt: "🏡 Página Inicial", en: "🏡 Home Page" },
+      }),
+    ]);
+    expect(graph.nodes["/home/"].title).toBe("🏡 Página Inicial");
+    expect(graph.nodes["/home/"].titlePt).toBe("🏡 Página Inicial");
+    expect(graph.nodes["/home/"].titleEn).toBe("🏡 Home Page");
+  });
 });
