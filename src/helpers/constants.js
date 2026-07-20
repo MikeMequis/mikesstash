@@ -8,6 +8,5 @@ exports.ALL_NOTE_SETTINGS= [
     "dgEnableSearch",
     "dgShowToc",
     "dgLinkPreview",
-    "dgShowTags",
-    "dgShowComments"
+    "dgShowTags"
 ];
