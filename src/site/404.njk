@@ -13,9 +13,7 @@
 
         <link href="/styles/custom-style.css" rel="stylesheet">
     </head>
-    <body class="theme-{{meta.baseTheme}} lang-pt markdown-preview-view">
-        {% include "components/themeInit.njk" %}
-        {% include "components/langInit.njk" %}
+    <body class="theme-{{meta.baseTheme}} markdown-preview-view">
         <div class="content centered">
 
             {%-if not meta.themeStyle%}
@@ -25,8 +23,5 @@
             <p>If you got here from a link, this note is probably not made public</p>
             <a href="/">Go back home</a>
         </div>
-        {%include "components/lucideIcons.njk"%}
-        {% include "components/themeToggle.njk" %}
-        {% include "components/langToggle.njk" %}
     </body>
 </html>
