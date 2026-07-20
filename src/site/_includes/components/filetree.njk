@@ -3,7 +3,7 @@
         <div x-show="isOpen" style="display:none" class="{{'filelist' if step>0}}">
             {%if fileOrFolder.isNote and not fileOrFolder.hide %}
                 <div @click.stop class="notelink {{ 'active-note' if fileOrFolder.permalink === permalink}}">
-                    <a data-note-icon="{{fileOrFolder.noteIcon}}" data-title-pt="{{fileOrFolder.namePt}}" data-title-en="{{fileOrFolder.nameEn}}" style="text-decoration: none;" class="filename" href="{{fileOrFolder.permalink}}">{{fileOrFolder.name}}</a>
+                    <a data-note-icon="{{fileOrFolder.noteIcon}}" style="text-decoration: none;" class="filename" href="{{fileOrFolder.permalink}}">{{fileOrFolder.name}} </a>
                 </div>
             {% elif fileOrFolder.isFolder%}
                 <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as({{currentPath | dump}})}" @click.stop="isOpen=!isOpen">
@@ -36,17 +36,15 @@
         {% for imp in dynamics.filetree.beforeTitle %}
             {% include imp %}
         {% endfor %}
-         <a href="/" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; text-align: center;">
-            {% if meta.siteLogoPath %}
-                <img class="site-logo" src="{{meta.siteLogoPath}}" alt="{{meta.siteName}}" data-title-pt="{{meta.siteNames.pt}}" data-title-en="{{meta.siteNames.en}}">
-            {% endif %}
-            <div class="site-title-group">
-                <h1 data-title-pt="{{meta.siteNames.pt}}" data-title-en="{{meta.siteNames.en}}">{{meta.siteName}}</h1>
-                {% if meta.siteDescription %}
-                    <p class="site-description" data-desc-pt="{{meta.siteDescriptions.pt}}" data-desc-en="{{meta.siteDescriptions.en}}">{{ meta.siteDescription }}</p>
-                {% endif %}
-            </div>
+         {% if meta.siteLogoPath %}
+         <a href="/" style="text-decoration: none; display: flex; justify-content: center;">
+                   <img class="site-logo" src="{{meta.siteLogoPath}}" alt="{{meta.siteName}}">
          </a>
+         {% else %}
+         <a href="/" style="text-decoration: none; text-align: center;">
+                   <h1 style="text-align:center;">{{meta.siteName}}</h1>
+         </a>
+         {% endif %}
          {% for imp in dynamics.filetree.afterTitle %}
             {% include imp %}
         {% endfor %}
