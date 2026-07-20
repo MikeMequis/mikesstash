@@ -67,17 +67,6 @@ module.exports = async (data) => {
     showUpdated: process.env.SHOW_UPDATED_TIMESTAMP == "true",
   };
 
-  const giscus = {
-    repo: process.env.GISCUS_REPO || "",
-    repoId: process.env.GISCUS_REPO_ID || "",
-    category: process.env.GISCUS_CATEGORY || "",
-    categoryId: process.env.GISCUS_CATEGORY_ID || "",
-    lightTheme: process.env.GISCUS_THEME_LIGHT || "light",
-    darkTheme: process.env.GISCUS_THEME_DARK || "dark",
-  };
-  giscus.theme =
-    process.env.BASE_THEME === "light" ? giscus.lightTheme : giscus.darkTheme;
-
   const uiStrings = {
     backlinkHeader: process.env.UI_BACKLINK_HEADER || "Pages mentioning this page",
     noBacklinksMessage: process.env.UI_NO_BACKLINKS_MESSAGE || "No other pages mentions this page",
@@ -97,25 +86,6 @@ module.exports = async (data) => {
     canvasResetHint: process.env.UI_CANVAS_RESET_HINT || "Double-click to reset",
   };
 
-  const siteNameEn =
-    process.env.SITE_NAME_HEADER_EN ||
-    process.env.SITE_NAME_HEADER ||
-    "Digital Garden";
-  const siteNamePt =
-    process.env.SITE_NAME_HEADER_PT ||
-    process.env.SITE_NAME_HEADER ||
-    siteNameEn;
-  const siteDescriptionEn =
-    process.env.SITE_DESCRIPTION_EN ||
-    process.env.SITE_DESCRIPTION ||
-    "A growing collection of ideas, useful links, projects, drawings, and little discoveries from across the web.";
-  const siteDescriptionPt =
-    process.env.SITE_DESCRIPTION_PT ||
-    process.env.SITE_DESCRIPTION ||
-    siteDescriptionEn;
-  const mainLanguage = process.env.SITE_MAIN_LANGUAGE || "pt";
-  const useEnglishDefaults = mainLanguage === "en";
-
   const meta = {
     env: process.env.ELEVENTY_ENV,
     theme: process.env.THEME,
@@ -123,23 +93,13 @@ module.exports = async (data) => {
     bodyClasses: bodyClasses.join(" "),
     noteIconsSettings,
     timestampSettings,
-    siteDescription: useEnglishDefaults ? siteDescriptionEn : siteDescriptionPt,
-    siteDescriptions: {
-      pt: siteDescriptionPt,
-      en: siteDescriptionEn,
-    },
     baseTheme: process.env.BASE_THEME || "dark",
-    siteName: useEnglishDefaults ? siteNameEn : siteNamePt,
-    siteNames: {
-      pt: siteNamePt,
-      en: siteNameEn,
-    },
+    siteName: process.env.SITE_NAME_HEADER || "Digital Garden",
     siteLogoPath: logoPath,
-    mainLanguage,
+    mainLanguage: process.env.SITE_MAIN_LANGUAGE || "en",
     siteBaseUrl: baseUrl,
     styleSettingsCss,
     uiStrings,
-    giscus,
     buildDate: new Date(),
   };
 
