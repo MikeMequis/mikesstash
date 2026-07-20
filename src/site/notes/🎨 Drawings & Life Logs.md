@@ -1,5 +1,5 @@
 ---
-{"title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"},"dg-publish":true,"permalink":"/drawings-and-life-logs/","dg-note-properties":{"dgShowComments":false}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/","title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"}}}
 ---
 
 :::lang pt
