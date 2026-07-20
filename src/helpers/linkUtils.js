@@ -1,5 +1,3 @@
-const { getLocalizedTitlesFromNoteData } = require("./langUtils");
-
 const wikiLinkRegex = /\[\[(.*?\|.*?)\]\]/g;
 const internalLinkRegex = /href="\/(.*?)"/g;
 // Match iframe src for canvas embedded files (internal links only, not external URLs)
@@ -120,12 +118,9 @@ async function getGraph(data) {
     const content = templateContent?.content || "";
     noteContents.push(content);
 
-    const titles = getLocalizedTitlesFromNoteData(v.data, v.fileSlug);
     nodes[v.url] = {
       id: idx,
-      title: titles.default,
-      titlePt: titles.pt,
-      titleEn: titles.en,
+      title: v.data.title || v.fileSlug,
       url: v.url,
       group,
       home:
