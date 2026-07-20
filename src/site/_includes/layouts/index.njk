@@ -3,7 +3,7 @@
   <head>
     <title
       data-title-pt="{{ userComputed.titles.pt }}"
-      data-title-en="{{ userComputed.titles.en }}">{% if title %}{{ title | localizedTitle(page.fileSlug) }}{% else %}{{ page.fileSlug }}{% endif %}</title>
+      data-title-en="{{ userComputed.titles.en }}">{{ userComputed.titles.default }}</title>
     {%include "components/pageheader.njk"%}
     {% for imp in dynamics.common.head %}
       {% include imp %}
@@ -29,7 +29,7 @@
       {% if settings.dgShowInlineTitle === true %}
         <h1
           data-title-pt="{{ userComputed.titles.pt }}"
-          data-title-en="{{ userComputed.titles.en }}">{% if title %}{{ title | localizedTitle(page.fileSlug) }}{% else %}{{ page.fileSlug }}{% endif %}</h1>
+          data-title-en="{{ userComputed.titles.en }}">{{ userComputed.titles.default }}</h1>
       {% endif %}
 
       <div class="header-meta">

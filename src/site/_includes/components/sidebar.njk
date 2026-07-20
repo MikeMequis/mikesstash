@@ -16,7 +16,7 @@
                                           <div class="toc-title"
                                                 data-title-pt="{{ userComputed.titles.pt }}"
                                                 data-title-en="{{ userComputed.titles.en }}">
-                                                {% if title %}{{ title | localizedTitle(page.fileSlug) }}{% else %}{{ page.fileSlug }}{% endif %}
+                                                {% if userComputed.titles.default %}{{ userComputed.titles.default }}{% else %}{{ page.fileSlug }}{% endif %}
                                           </div>
                                     </div>
                                     <div class="toc-container">

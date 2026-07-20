@@ -1,7 +1,7 @@
 const { parse } = require("node-html-parser");
 const { upgradeYouTubeEmbeds } = require("./youtubeUtils");
 const { langPlugin } = require("./langPlugin");
-const { resolveLocalizedTitle } = require("./langUtils");
+const { resolveLocalizedTitle, getLocalizedTitlesFromNoteData } = require("./langUtils");
 
 const markdownFileTypeRegex = /\.(md|markdown)$/i;
 const isMarkdownPage = (inputPath) =>
@@ -90,6 +90,13 @@ function userEleventySetup(eleventyConfig) {
   eleventyConfig.addFilter("localizedTitle", function (title, fallback, lang) {
     return resolveLocalizedTitle(title, fallback, lang || "pt");
   });
+
+  eleventyConfig.addFilter("noteLocalizedTitle", function (data, fallback, lang) {
+    const titles = getLocalizedTitlesFromNoteData(data || {}, fallback);
+    if (lang && titles[lang]) return titles[lang];
+    return titles.default;
+  });
+
 
   eleventyConfig.addTransform("youtube-visualizer", function (content) {
     if (!isMarkdownPage(this.page.inputPath)) {

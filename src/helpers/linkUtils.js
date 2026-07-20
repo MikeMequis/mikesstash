@@ -1,4 +1,4 @@
-const { getLocalizedTitles } = require("./langUtils");
+const { getLocalizedTitlesFromNoteData } = require("./langUtils");
 
 const wikiLinkRegex = /\[\[(.*?\|.*?)\]\]/g;
 const internalLinkRegex = /href="\/(.*?)"/g;
@@ -120,7 +120,7 @@ async function getGraph(data) {
     const content = templateContent?.content || "";
     noteContents.push(content);
 
-    const titles = getLocalizedTitles(v.data.title, v.fileSlug);
+    const titles = getLocalizedTitlesFromNoteData(v.data, v.fileSlug);
     nodes[v.url] = {
       id: idx,
       title: titles.default,

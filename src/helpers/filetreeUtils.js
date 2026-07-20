@@ -1,4 +1,4 @@
-const { getLocalizedTitles } = require("./langUtils");
+const { getLocalizedTitlesFromNoteData } = require("./langUtils");
 
 // Natural sort comparison - handles numbers anywhere in the string
 const naturalCompare = (a, b) => {
@@ -109,8 +109,8 @@ function getPermalinkMeta(note, key) {
     if (note.data.tags && note.data.tags.indexOf("gardenEntry") != -1) {
       permalink = "/";
     }    
-    if (note.data.title) {
-      const titles = getLocalizedTitles(note.data.title, name);
+    if (note.data.title || note.data["dg-note-properties"] || note.data["title-pt"] || note.data["title-en"]) {
+      const titles = getLocalizedTitlesFromNoteData(note.data, name);
       name = titles.default;
       namePt = titles.pt;
       nameEn = titles.en;

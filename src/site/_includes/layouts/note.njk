@@ -6,7 +6,7 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
   <head>
     <title
       data-title-pt="{{ userComputed.titles.pt }}"
-      data-title-en="{{ userComputed.titles.en }}">{% if title %}{{ title | localizedTitle(page.fileSlug) }}{% else %}{{ page.fileSlug }}{% endif %}</title>
+      data-title-en="{{ userComputed.titles.en }}">{{ userComputed.titles.default }}</title>
     {%include "components/pageheader.njk"%}
     {% for imp in dynamics.common.head %}
       {% include imp %}
@@ -36,7 +36,7 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
           <h1
             data-note-icon="{% if noteIcon %}{{noteIcon}}{% else %}{{meta.noteIconsSettings.default}}{% endif %}"
             data-title-pt="{{ userComputed.titles.pt }}"
-            data-title-en="{{ userComputed.titles.en }}">{% if title %}{{ title | localizedTitle(page.fileSlug) }}{% else %}{{ page.fileSlug }}{% endif %}</h1>
+            data-title-en="{{ userComputed.titles.en }}">{{ userComputed.titles.default }}</h1>
         {% endif %}
         <div class="header-meta">
           {% if settings.dgShowTags === true and tags %}

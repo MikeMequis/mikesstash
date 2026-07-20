@@ -1,9 +1,9 @@
-const { getLocalizedTitles } = require("./langUtils");
+const { getLocalizedTitlesFromNoteData } = require("./langUtils");
 
 function userComputed(data) {
   const fallback = data.page && data.page.fileSlug ? data.page.fileSlug : "";
   return {
-    titles: getLocalizedTitles(data.title, fallback),
+    titles: getLocalizedTitlesFromNoteData(data, fallback),
   };
 }
 

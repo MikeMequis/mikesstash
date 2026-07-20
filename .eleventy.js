@@ -73,7 +73,7 @@ const {
   userEleventySetup,
 } = require("./src/helpers/userSetup");
 const { basesPlugin } = require("./src/helpers/basesPlugin");
-const { getLocalizedTitles } = require("./src/helpers/langUtils");
+const { getLocalizedTitlesFromNoteData } = require("./src/helpers/langUtils");
 
 const Image = require("@11ty/eleventy-img");
 function transformImage(src, cls, alt, sizes, widths = ["500", "700", "auto"]) {
@@ -146,8 +146,13 @@ function getAnchorAttributes(filePath, linkTitle) {
     if (frontMatter.data.noteIcon) {
       noteIcon = frontMatter.data.noteIcon;
     }
-    if (frontMatter.data.title) {
-      const titles = getLocalizedTitles(frontMatter.data.title, pathBase);
+    if (
+      frontMatter.data.title ||
+      frontMatter.data["dg-note-properties"] ||
+      frontMatter.data["title-pt"] ||
+      frontMatter.data["title-en"]
+    ) {
+      const titles = getLocalizedTitlesFromNoteData(frontMatter.data, pathBase);
       const alias = linkTitle ? String(linkTitle) : "";
       const usesNoteTitle =
         !alias ||
