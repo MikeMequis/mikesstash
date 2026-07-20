@@ -228,4 +228,3 @@ Se tudo der certo, jogue e seja feliz!
 4. [GameBanana — Ocarina of Time Mods](https://gamebanana.com/mods/games/16121)
 5. YouTube — Ocarina of Time Multiplayer Setup — pelo canal _A Couple of Average Gamers_
 	https://www.youtube.com/watch?v=9YLnUKaJPVU
-

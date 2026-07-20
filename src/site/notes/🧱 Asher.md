@@ -4,6 +4,8 @@
 
 **Asher** é uma plataforma de modding baseada em launcher para *Dust: An Elysian Tail*, com suporte a **patching de código em runtime** e **substituição de conteúdo** de forma segura, modular e reversível.
 
+[Link de Repositório](https://github.com/MikeMequis/Asher)
+
 [[Asher/🎯 Overview\|🎯 Overview]]
 [[Asher/🧠 Architecture\|🧠 Architecture]]
 [[Asher/🖥️ Manager App\|🖥️ Manager App]]
