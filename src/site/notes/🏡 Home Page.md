@@ -1,5 +1,5 @@
 ---
-{"title":{"pt":"🏡 Página Inicial","en":"🏡 Home Page"},"dg-publish":true,"permalink":"/home-page/","tags":["gardenEntry"],"dg-note-properties":{"permalink":"/home/","tags":["gardenEntry"],"dgShowComments":false}}
+{"dg-publish":true,"permalink":"/home-page/","title":{"pt":"🏡 Página Inicial","en":"🏡 Home Page"},"tags":["gardenEntry"],"dg-note-properties":{"permalink":"/home/","tags":["gardenEntry"],"dgShowComments":false,"title":{"pt":"🏡 Página Inicial","en":"🏡 Home Page"}}}
 ---
 
 ![sowy.jpg](/img/user/img/sowy.jpg)
@@ -30,7 +30,8 @@
 
 :::
 
-[[🎨 Drawings & Life Logs]]
-[[🧱 Asher]]
-[[🌱 Minecraft Server in Android (2024)]]
-[[⚔️ Ocarina of Time Server in Android (2025)]]
+[[🎨 Drawings & Life Logs\|🎨 Drawings & Life Logs]]
+[[🧱 Asher\|🧱 Asher]]
+[[🌱 Minecraft Server in Android (2024)\|🌱 Minecraft Server in Android (2024)]]
+[[⚔️ Ocarina of Time Server in Android (2025)\|⚔️ Ocarina of Time Server in Android (2025)]]
+

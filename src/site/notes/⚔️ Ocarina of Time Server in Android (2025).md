@@ -1,5 +1,5 @@
 ---
-{"title":{"pt":"⚔️ Servidor Ocarina of Time no Android (2025)","en":"⚔️ Ocarina of Time Server in Android (2025)"},"dg-publish":true,"permalink":"/ocarina-of-time-server-in-android-2025/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/ocarina-of-time-server-in-android-2025/","title":{"pt":"⚔️ Servidor Ocarina of Time no Android (2025)","en":"⚔️ Ocarina of Time Server in Android (2025)"},"dg-note-properties":{"title":{"pt":"⚔️ Servidor Ocarina of Time no Android (2025)","en":"⚔️ Ocarina of Time Server in Android (2025)"}}}
 ---
 
 # ⚔️ Como Hospedar um Servidor de Ocarina of Time/Ship of Harkinian no Android
@@ -228,3 +228,4 @@ Se tudo der certo, jogue e seja feliz!
 4. [GameBanana — Ocarina of Time Mods](https://gamebanana.com/mods/games/16121)
 5. YouTube — Ocarina of Time Multiplayer Setup — pelo canal _A Couple of Average Gamers_
 	https://www.youtube.com/watch?v=9YLnUKaJPVU
+
