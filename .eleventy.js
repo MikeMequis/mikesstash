@@ -98,15 +98,44 @@ function escapeHtmlAttr(value) {
     .replace(/>/g, "&gt;");
 }
 
+function escapeHtmlText(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+// Wikilinks are matched after markdown-it has already escaped &, <, > in the HTML.
+// Decode once here so titles/paths are real characters before we escape for output.
+function decodeHtmlEntities(value) {
+  let out = String(value);
+  for (let i = 0; i < 2; i++) {
+    const next = out
+      .replace(/&amp;/g, "&")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&#x27;/gi, "'");
+    if (next === out) break;
+    out = next;
+  }
+  return out;
+}
+
 function getAnchorLink(filePath, linkTitle) {
   const { attributes, innerHTML } = getAnchorAttributes(filePath, linkTitle);
   return `<a ${Object.keys(attributes)
     .map((key) => `${key}="${escapeHtmlAttr(attributes[key])}"`)
-    .join(" ")}>${innerHTML}</a>`;
+    .join(" ")}>${escapeHtmlText(innerHTML)}</a>`;
 }
 
 function getAnchorAttributes(filePath, linkTitle) {
-  let fileName = filePath.replaceAll("&amp;", "&");
+  let fileName = decodeHtmlEntities(filePath);
+  const decodedLinkTitle =
+    linkTitle != null && linkTitle !== ""
+      ? decodeHtmlEntities(linkTitle)
+      : linkTitle;
   let header = "";
   let headerLinkPath = "";
   if (fileName.includes("#")) {
@@ -119,7 +148,7 @@ function getAnchorAttributes(filePath, linkTitle) {
     .replace(/\.(md|markdown|canvas)$/i, "")
     .split("/")
     .pop();
-  let title = linkTitle ? linkTitle : pathBase;
+  let title = decodedLinkTitle ? decodedLinkTitle : pathBase;
   let titlePt = title;
   let titleEn = title;
   let permalink = `/notes/${slugify(fileName)}`;
@@ -153,7 +182,7 @@ function getAnchorAttributes(filePath, linkTitle) {
       frontMatter.data["title-en"]
     ) {
       const titles = getLocalizedTitlesFromNoteData(frontMatter.data, pathBase);
-      const alias = linkTitle ? String(linkTitle) : "";
+      const alias = decodedLinkTitle ? String(decodedLinkTitle) : "";
       const usesNoteTitle =
         !alias ||
         alias === pathBase ||
