@@ -15,53 +15,12 @@ const matterOptions = {
     },
   },
 };
-const genFavicons = require("eleventy-plugin-gen-favicons/favicon-gen");
-const genFaviconHtml = require("eleventy-plugin-gen-favicons/html-gen");
+const faviconsPlugin = require("eleventy-plugin-gen-favicons");
 const normalizeFavicon = require("./src/site/normalize-favicon.js");
 
 const FAVICON_SOURCE = "./src/site/favicon.svg";
 const FAVICON_NORMALIZED = "./.cache/favicon.normalized.svg";
-const FAVICON_OUTPUT_DIR = "dist";
-const FAVICON_OPTS = {
-  appleIconBgColor: "#123",
-  generateManifest: true,
-  manifestData: {},
-  skipCache: false,
-};
 normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
-
-// Eleventy renders pages in parallel; the stock favicons shortcode races on
-// Windows (EBUSY) when many templates write dist/favicon.svg at once.
-let faviconHtml = null;
-
-async function ensureFaviconsBuilt() {
-  if (faviconHtml) {
-    return faviconHtml;
-  }
-
-  const maxAttempts = 6;
-  let lastError;
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    try {
-      normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
-      const files = await genFavicons(FAVICON_NORMALIZED, FAVICON_OUTPUT_DIR, {
-        ...FAVICON_OPTS,
-        skipCache: attempt > 1,
-      });
-      faviconHtml = await genFaviconHtml(files);
-      return faviconHtml;
-    } catch (err) {
-      lastError = err;
-      faviconHtml = null;
-      if (err && (err.code === "EBUSY" || err.code === "EPERM") && attempt < maxAttempts) {
-        await new Promise((resolve) => setTimeout(resolve, 150 * attempt));
-        continue;
-      }
-      throw err;
-    }
-  }
-  throw lastError;
-}
 const tocPlugin = require("eleventy-plugin-nesting-toc");
 const { parse } = require("node-html-parser");
 const htmlMinifier = require("html-minifier-terser");
@@ -73,7 +32,6 @@ const {
   userEleventySetup,
 } = require("./src/helpers/userSetup");
 const { basesPlugin } = require("./src/helpers/basesPlugin");
-const { getLocalizedTitlesFromNoteData } = require("./src/helpers/langUtils");
 
 const Image = require("@11ty/eleventy-img");
 function transformImage(src, cls, alt, sizes, widths = ["500", "700", "auto"]) {
@@ -90,19 +48,9 @@ function transformImage(src, cls, alt, sizes, widths = ["500", "700", "auto"]) {
   return metadata;
 }
 
-function escapeHtmlAttr(value) {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/"/g, "&quot;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
-
 function getAnchorLink(filePath, linkTitle) {
   const { attributes, innerHTML } = getAnchorAttributes(filePath, linkTitle);
-  return `<a ${Object.keys(attributes)
-    .map((key) => `${key}="${escapeHtmlAttr(attributes[key])}"`)
-    .join(" ")}>${innerHTML}</a>`;
+  return `<a ${Object.keys(attributes).map(key => `${key}="${attributes[key]}"`).join(" ")}>${innerHTML}</a>`;
 }
 
 function getAnchorAttributes(filePath, linkTitle) {
@@ -115,13 +63,7 @@ function getAnchorAttributes(filePath, linkTitle) {
   }
 
   let noteIcon = process.env.NOTE_ICON_DEFAULT;
-  const pathBase = fileName
-    .replace(/\.(md|markdown|canvas)$/i, "")
-    .split("/")
-    .pop();
-  let title = linkTitle ? linkTitle : pathBase;
-  let titlePt = title;
-  let titleEn = title;
+  const title = linkTitle ? linkTitle : fileName;
   let permalink = `/notes/${slugify(fileName)}`;
   let deadLink = false;
   try {
@@ -146,27 +88,6 @@ function getAnchorAttributes(filePath, linkTitle) {
     if (frontMatter.data.noteIcon) {
       noteIcon = frontMatter.data.noteIcon;
     }
-    if (
-      frontMatter.data.title ||
-      frontMatter.data["dg-note-properties"] ||
-      frontMatter.data["title-pt"] ||
-      frontMatter.data["title-en"]
-    ) {
-      const titles = getLocalizedTitlesFromNoteData(frontMatter.data, pathBase);
-      const alias = linkTitle ? String(linkTitle) : "";
-      const usesNoteTitle =
-        !alias ||
-        alias === pathBase ||
-        alias === fileName ||
-        alias === titles.pt ||
-        alias === titles.en ||
-        alias === titles.default;
-      if (usesNoteTitle) {
-        title = titles.default;
-        titlePt = titles.pt;
-        titleEn = titles.en;
-      }
-    }
   } catch {
     deadLink = true;
   }
@@ -186,8 +107,6 @@ function getAnchorAttributes(filePath, linkTitle) {
       "class": "internal-link",
       "target": "",
       "data-note-icon": noteIcon,
-      "data-title-pt": titlePt,
-      "data-title-en": titleEn,
       "href": `${permalink}${headerLinkPath}`,
     },
     innerHTML: title,
@@ -442,14 +361,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("link", function(str) {
     return (
       str &&
-      str.replace(/\[\[([^\[\]]+?)\]\]/g, function(match, p1) {
+      str.replace(/\[\[(.*?\|.*?)\]\]/g, function(match, p1) {
         //Check if it is an embedded excalidraw drawing or mathjax javascript
         if (p1.indexOf("],[") > -1 || p1.indexOf('"$"') > -1) {
           return match;
         }
-        const parts = p1.split("|").map((part) => part.replace(/\\/g, "").trim());
-        const fileLink = parts[0];
-        const linkTitle = parts[1];
+        const [fileLink, linkTitle] = p1.split("|");
 
         return getAnchorLink(fileLink, linkTitle);
       })
@@ -803,14 +720,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/site/scripts");
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
   eleventyConfig.addPassthroughCopy({ "src/site/logo.*": "/" });
-  eleventyConfig.on("eleventy.before", async () => {
-    faviconHtml = null;
-    await ensureFaviconsBuilt();
+  eleventyConfig.on("eleventy.before", () => {
+    normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
   });
   eleventyConfig.addWatchTarget(FAVICON_SOURCE);
-  eleventyConfig.addAsyncShortcode("favicons", async () => {
-    return ensureFaviconsBuilt();
-  });
+  eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
   eleventyConfig.addPlugin(tocPlugin, {
     ul: true,
     tags: ["h1", "h2", "h3", "h4", "h5", "h6"],
