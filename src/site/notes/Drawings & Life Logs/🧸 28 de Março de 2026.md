@@ -143,6 +143,8 @@ Ela chega em minha casa, bem no meio de uma **reunião** de trabalho.
 
 E com um **Fini vermelho** de brinde.
 
+![Fidget.jpg](/img/user/img/Fidget.jpg)
+
 ![Fidget.gif](/img/user/img/Fidget.gif)
 
 Tipo... A artesã já tinha mandado fotos e vídeos do resultado antes de enviar, mas nossa... A qualidade era de **produto oficial**.

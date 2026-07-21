@@ -239,6 +239,8 @@ Se tudo der certo, jogue e seja feliz!
 5. YouTube — Ocarina of Time Multiplayer Setup — pelo canal _A Couple of Average Gamers_ 
 	https://www.youtube.com/watch?v=9YLnUKaJPVU
 
+[Post Original do LinkedIn](https://www.linkedin.com/posts/ugcPost-7390227348110954496-OWa0/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD35xZwBUhYqcLdrd2oPUKqiV2XwWJxL0C0)
+
 [[🏡 Home Page\|< Voltar]]
 
 :::
@@ -478,6 +480,8 @@ If everything works, play and have fun!
 4. [GameBanana — Ocarina of Time Mods](https://gamebanana.com/mods/games/16121)
 5. YouTube — Ocarina of Time Multiplayer Setup — by the channel _A Couple of Average Gamers_  
 	https://www.youtube.com/watch?v=9YLnUKaJPVU  
+
+[Original Post in LinkedIn](https://www.linkedin.com/posts/ugcPost-7390227348110954496-OWa0/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD35xZwBUhYqcLdrd2oPUKqiV2XwWJxL0C0)
 
 [[🏡 Home Page\|< Back]]
 
