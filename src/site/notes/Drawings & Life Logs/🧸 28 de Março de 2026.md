@@ -143,8 +143,7 @@ Ela chega em minha casa, bem no meio de uma **reunião** de trabalho.
 
 E com um **Fini vermelho** de brinde.
 
-![Fidget.jpg](/img/user/img/Fidget.jpg)
-
+![[Fidget.mp4]]
 Tipo... A artesã já tinha mandado fotos e vídeos do resultado antes de enviar, mas nossa... A qualidade era de **produto oficial**.
 
 Muito bem detalhado, com asas e cauda, e tudo mais. Segurando a pelúcia tinha até aquele peso de enchimento de **produto de qualidade**. Não aquele peso leve de pelúcia de Sonic que você compra na rua.

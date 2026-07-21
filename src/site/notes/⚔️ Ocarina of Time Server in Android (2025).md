@@ -6,6 +6,8 @@
 
 # ⚔️ Como Hospedar um Servidor de Ocarina of Time/Ship of Harkinian no Android
 
+![ZeldaServer.gif](/img/user/img/ZeldaServer.gif)
+
 > [!tip] Aconselhável possuir conexão estável para baixar e instalar programas necessários, além de manter os serviços ativos, e conectar um teclado físico (via Bluetooth ou cabo OTG). Também é possível usar o app **Hacker's Keyboard** ou configurar e conectar via SSH.
 
 > [!question] **Diferentemente do servidor de Minecraft, não é necessário um celular muito potente**, pois a quantidade necessária de memória RAM é aproximadamente entre **256 e 512 MB**.
@@ -244,6 +246,8 @@ Se tudo der certo, jogue e seja feliz!
 :::lang en
 
 # ⚔️ How to Host an Ocarina of Time/Ship of Harkinian Server on Android
+
+![ZeldaServer.gif](/img/user/img/ZeldaServer.gif)
 
 > [!tip] It's advisable to have a stable connection to download and install the necessary programs, keep the services running, and connect a physical keyboard (via Bluetooth or an OTG cable). You can also use the **Hacker's Keyboard** app or set up and connect via SSH.
 

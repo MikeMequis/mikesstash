@@ -6,6 +6,8 @@
 
 # 🌱 Como Hospedar um Servidor de Minecraft no Android
 
+![MineServer.gif](/img/user/img/MineServer.gif)
+
 > [!tip] Aconselhável possuir um celular com 2GB a 4GB de RAM, conexão estável para baixar e instalar programas necessários, além de manter os serviços ativos, e conectar um teclado físico (via Bluetooth ou cabo OTG). Também é possível usar o app **Hacker's Keyboard**.
 
 ## Etapa 1 — Instalação do Termux e Ubuntu
@@ -243,6 +245,8 @@ java -version
 :::lang en
 
 # 🌱 How to Host a Minecraft Server on Android
+
+![MineServer.gif](/img/user/img/MineServer.gif)
 
 > [!tip] It's advisable to have a phone with 2GB to 4GB of RAM, a stable connection to download and install the necessary programs, keep the services running, and connect a physical keyboard (via Bluetooth or an OTG cable). You can also use the **Hacker's Keyboard** app.
 
