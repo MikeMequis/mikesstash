@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/home-page/","title":{"pt":"🏡 Página Inicial","en":"🏡 Home Page"},"tags":["gardenEntry"],"dg-note-properties":{"permalink":"/home/","tags":["gardenEntry"],"dgShowComments":false,"title":{"pt":"🏡 Página Inicial","en":"🏡 Home Page"}}}
+{"dg-publish":true,"permalink":"/home-page/","title":{"pt":"🏡 Página Inicial","en":"🏡 Home Page"},"tags":["gardenEntry"],"dg-note-properties":{"permalink":"/home/","tags":["gardenEntry"],"dgShowComments":false,"dgShowLinkCards":true,"title":{"pt":"🏡 Página Inicial","en":"🏡 Home Page"}}}
 ---
 
 ![sowy.jpg](/img/user/img/sowy.jpg)

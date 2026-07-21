@@ -241,7 +241,7 @@
 
   window.addEventListener("load", function(event) 
   {
-    document.querySelectorAll('.internal-link').forEach(setupListeners);
+    document.querySelectorAll('.internal-link:not(.dg-link-card)').forEach(setupListeners);
     document.querySelectorAll('.backlink-card a').forEach(setupListeners);
   });
 </script>
