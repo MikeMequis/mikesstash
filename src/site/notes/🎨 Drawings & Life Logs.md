@@ -2,7 +2,6 @@
 {"dg-publish":true,"permalink":"/drawings-and-life-logs/","title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"}}}
 ---
 
-
 :::lang pt
 
 Por trás de cada desenho, por cada escolha... Existe um motivo e uma história. Clique para ler e ver as minhas ilustrações realizadas durante o meu período livre e nas aulas de desenho.
@@ -11,7 +10,7 @@ Por trás de cada desenho, por cada escolha... Existe um motivo e uma história.
 
 :::lang en
 
-Behind every drawing, behind every choice... There is a reason and a story. Click to read and see my illustrations made in free time and in drawing classes.
+Behind each drawing, behind each choice... There's a reason and a story. Click to read and see my illustrations made in free time and in drawing classes.
 
 :::
 

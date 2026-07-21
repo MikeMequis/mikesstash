@@ -1,12 +1,13 @@
 ---
-{"dg-publish":true,"permalink":"/asher/build-and-distribution/","dg-note-properties":{"dgShowComments":false}}
+{"dg-publish":true,"permalink":"/asher/build-and-distribution/","title":{"pt":"🔧 Build & Distribuição","en":"🔧 Build & Distribution"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🔧 Build & Distribuição","en":"🔧 Build & Distribution"}}}
 ---
 
+:::lang en
 ## Requirements
 
-- Visual Studio 2022 (or `dotnet` CLI)
-- **Platform: x86**
-- **Configuration: Release** (for distribution)
+- Visual Studio 2022 (`dotnet` CLI)
+- Platform: **x86**
+- Configuration: **Release** (for distribution)
 
 ## Steps
 
@@ -28,4 +29,37 @@
 - `Distribution/` is generated output and should not be committed
 
 ---
+[[🧱 Asher\|< Back]]
+
+:::
+
+:::lang pt
+## Requisitos
+
+- Visual Studio 2022 (CLI do `dotnet`)
+- Plataforma: **x86**
+- Configuração: **Release** (para distribuição)
+
+## Passos
+
+1. Compile a solução como **x86 Release** no Visual Studio
+2. Execute o script de distribuição a partir da raiz da pasta:
+
+```powershell
+.\PrepareDistribution.ps1
+```
+
+3. Execute `Distribution\Asher.App.exe` para instalar o Asher no local do jogo
+4. Após a instalação, use `[GameFolder]\Asher\Asher.App\Asher.App.exe` para o gerenciamento do dia a dia
+5. Inicie o jogo pela **Steam** ou pelo botão **Launch Game** da aplicação
+
+## Notas de distribuição
+
+- O `PrepareDistribution.ps1` empacota explicitamente o `0Harmony.dll` da versão **net472** — usar a build errada do Harmony causará erros de versão do `System.Runtime` na inicialização
+- O script copia o launcher, o runtime, o SDK, os mods padrão e a aplicação para `Distribution/`
+- `Distribution/` é uma saída gerada e não deve ser commitada
+
+---
 [[🧱 Asher\|< Voltar]]
+
+:::
