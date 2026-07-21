@@ -236,6 +236,10 @@ java -version
 2. [Reddit — Hosting a Minecraft Server on Android](https://www.reddit.com/r/Android/comments/glr4gc/hosting_a_minecraft_server_on_android_20/?rdt=57465) — _contém mais informações, como conexão via SSH, inserção de mundos criados anteriormente, instalação de Forge, e muito mais._
 3. [Termux Wiki — Hardware Keyboard](https://wiki.termux.com/wiki/Hardware_Keyboard) :::
 
+[[🏡 Home Page\|< Voltar]]
+
+:::
+
 :::lang en
 
 # 🌱 How to Host a Minecraft Server on Android
@@ -468,4 +472,8 @@ java -version
 
 1. [XDA Developers — Run Minecraft Server on Android](https://www.xda-developers.com/run-minecraft-server-android/)
 2. [Reddit — Hosting a Minecraft Server on Android](https://www.reddit.com/r/Android/comments/glr4gc/hosting_a_minecraft_server_on_android_20/?rdt=57465) — _contains more information, such as connecting via SSH, importing previously created worlds, installing Forge, and much more._
-3. [Termux Wiki — Hardware Keyboard](https://wiki.termux.com/wiki/Hardware_Keyboard) :::
+3. [Termux Wiki — Hardware Keyboard](https://wiki.termux.com/wiki/Hardware_Keyboard) 
+
+[[🏡 Home Page\|< Back]]
+
+:::
