@@ -1,10 +1,25 @@
 ---
-{"dg-publish":true,"permalink":"/asher/releases/","dg-note-properties":{"dgShowComments":false}}
+{"dg-publish":true,"permalink":"/asher/releases/","title":{"pt":"⬇️ Versões","en":"⬇️ Versions"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"⬇️ Versões","en":"⬇️ Versions"}}}
 ---
 
-# Releases
+:::lang pt
 
-- [v1.0.0](https://github.com/MikeMequis/Asher/releases/tag/v1.0.0) — First release
+# Versões
+
+- [v1.0.0](https://github.com/MikeMequis/Asher/releases/tag/v1.0.0) — Primeira Release
 
 ---
 [[🧱 Asher\|< Voltar]]
+
+:::
+
+:::lang en
+
+# Versões
+
+- [v1.0.0](https://github.com/MikeMequis/Asher/releases/tag/v1.0.0) — First Release
+
+---
+[[🧱 Asher\|< Back]]
+
+:::
