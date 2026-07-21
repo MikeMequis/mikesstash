@@ -224,7 +224,7 @@ deno -version
     - **Outras configurações:** você pode alternar a cor do seu personagem para diferenciar de outros jogadores ativos, definir seu nome e o ID da sala. Também é possível ativar/desativar janelas de localização dos jogadores (**Player Location Window**) e de ações realizadas no servidor (**Incoming Item Window**).
 3. Realizadas as configurações, selecione **Enable** para conectar-se ao servidor. Caso não funcione, verifique as configurações e se o servidor está rodando normalmente.
 
-> [!tip] **IMPORTANTE:** Caso esteja jogando no modo **Randomizer**, é importante que os jogadores utilizem a mesma _seed_. Outro aspecto importante é que os jogadores tenham um arquivo de save criado e carregado antes de acessar o servidor, preferencialmente no mesmo ponto de partida, para que todos estejam alinhados na progressão do jogo.
+> [!tip] **IMPORTANTE:** Jogadores devem possuir um arquivo de save criado e carregado antes de acessar o servidor, preferencialmente no mesmo ponto de partida, para que todos estejam alinhados na progressão do jogo. Caso esteja jogando no modo **Randomizer**, é importante que os jogadores utilizem a mesma _seed_. 
 
 Se tudo der certo, jogue e seja feliz!
 
@@ -463,10 +463,10 @@ deno -version
 2. Enter the following settings:
     - **Remote Interaction Scheme:** select `Anchor`.
     - **Remote IP & Port:** enter `0.tcp.ngrok.io` in the first field and the port in the second.
-    - **Other settings:** you can change your character's color to tell yourself apart from other active players, set your name and the room ID. You can also enable/disable the **Player Location Window** and the **Incoming Item Window**.
+    - **Other settings:** you can change your character's color to set yourself apart from other active players, set your name and the room ID. You can also enable/disable the **Player Location Window** and the **Incoming Item Window**.
 3. Once configured, select **Enable** to connect to the server. If it doesn't work, check your settings and whether the server is running properly.
 
-> [!tip] **IMPORTANT:** If you're playing in **Randomizer** mode, it's important that players use the same _seed_. Another important point is that players should have a save file created and loaded before joining the server, preferably at the same starting point, so everyone is aligned in game progression.
+> [!tip] **IMPORTANT:** Players should have a save file created and loaded before joining the server, preferably at the same starting point, so everyone is aligned in game progression. If you're playing in **Randomizer** mode, it's important that players use the same _seed_. 
 
 If everything works, play and have fun!
 
@@ -474,7 +474,7 @@ If everything works, play and have fun!
 
 ### Sources
 
-1. [GitHub — garrettjoecox/OOT Pull Request #64](https://github.com/garrettjoecox/OOT/pull/64)
+1. [GitHub — garrettjoecox/OOT Pull Request_#64](https://github.com/garrettjoecox/OOT/pull/64)
 2. [GitHub — garrettjoecox/anchor](https://github.com/garrettjoecox/anchor) — _contains more information, such as changing connection settings, using Docker, etc._
 3. [Deno — Installation Guide](https://docs.deno.com/runtime/getting_started/installation/)
 4. [GameBanana — Ocarina of Time Mods](https://gamebanana.com/mods/games/16121)
