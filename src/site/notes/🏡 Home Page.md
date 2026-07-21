@@ -16,6 +16,7 @@
 - [x] Descrever sobre o projeto Asher
 - [x] Implementar seção de comentários
 - [x] Implementar funcionalidade de globalização
+- [x] Implementar Link Cards
 - [ ] Traduzir todos os textos para Inglês/Português
 	- [x] Tutoriais de Servidor
 	- [x] Descrição de Asher
@@ -34,6 +35,7 @@
 - [x] Describe the Asher project
 - [x] Implement the comments section
 - [x] Implement globalization feature
+- [x] Implement Link Cards
 - [ ] Translate all text to English/Portuguese
 	- [x] Server Tutorials
 	- [x] Asher Description

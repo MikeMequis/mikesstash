@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/drawings-and-life-logs/","title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"}}}
 ---
 
+![Drawings.gif](/img/user/img/Drawings.gif)
+
 :::lang pt
 
 Por trás de cada desenho, por cada escolha... Existe um motivo e uma história. Clique para ler e ver as minhas ilustrações realizadas durante o meu período livre e nas aulas de desenho.
