@@ -25,7 +25,7 @@ Inspired by mature mod loaders such as **SMAPI**, Asher prioritizes **explicit i
 - ✅ Comprehensive logging for debugging
 
 ---
-[[🧱 Asher\|< Back]]
+[[🐱 Asher\|< Back]]
 
 :::
 
@@ -52,6 +52,6 @@ Inspirado em mod loaders maduros como o **SMAPI**, o Asher prioriza uma **ordem 
 - ✅ Registro de logs abrangente para depuração
 
 ---
-[[🧱 Asher\|< Voltar]]
+[[🐱 Asher\|< Voltar]]
 
 :::

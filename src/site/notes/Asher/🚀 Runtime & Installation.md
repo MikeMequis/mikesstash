@@ -82,7 +82,7 @@ After installation, the game directory looks like this:
 Folders are created automatically during installation.
 
 ---
-[[🧱 Asher\|< Back]]
+[[🐱 Asher\|< Back]]
 
 :::
 
@@ -167,6 +167,6 @@ Após a instalação, o diretório do jogo fica assim:
 As pastas são criadas automaticamente durante a instalação. 
 
 ---
-[[🧱 Asher\|< Voltar]]
+[[🐱 Asher\|< Voltar]]
 
 :::

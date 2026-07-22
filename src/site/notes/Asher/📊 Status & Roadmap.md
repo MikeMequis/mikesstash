@@ -110,7 +110,7 @@ Port and modernize other existing gameplay patches from **DustAetPatchingPlatfor
 - Automatic load order resolution
 
 ---
-[[🧱 Asher\|< Back]]
+[[🐱 Asher\|< Back]]
 
 :::
 
@@ -218,6 +218,6 @@ Portar e modernizar outros patches de gameplay já existentes do **DustAetPatchi
 
 ---
 
-[[🧱 Asher\|< Voltar]] 
+[[🐱 Asher\|< Voltar]] 
 
 :::

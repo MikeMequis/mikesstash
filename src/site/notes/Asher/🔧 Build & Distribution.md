@@ -29,7 +29,7 @@
 - `Distribution/` is generated output and should not be committed
 
 ---
-[[🧱 Asher\|< Back]]
+[[🐱 Asher\|< Back]]
 
 :::
 
@@ -60,6 +60,6 @@
 - `Distribution/` é uma saída gerada e não deve ser commitada
 
 ---
-[[🧱 Asher\|< Voltar]]
+[[🐱 Asher\|< Voltar]]
 
 :::

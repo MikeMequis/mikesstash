@@ -27,7 +27,7 @@
 All implemented as external, runtime-loaded mods in `Asher/Mods/`.
 
 ---
-[[🧱 Asher\|< Voltar]]
+[[🐱 Asher\|< Voltar]]
 
 :::
 
@@ -57,6 +57,6 @@ All implemented as external, runtime-loaded mods in `Asher/Mods/`.
 Todos implementados como mods externos, carregados em tempo de execução, em `Asher/Mods/`. 
 
 ---
-[[🧱 Asher\|< Voltar]]
+[[🐱 Asher\|< Voltar]]
 
 :::

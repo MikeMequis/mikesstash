@@ -66,7 +66,7 @@ A companion **WPF manager app** (`Asher.App`) handles installation, mod manageme
 ```
 
 ---
-[[🧱 Asher\|< Back]]
+[[🐱 Asher\|< Back]]
 
 :::
 
@@ -135,6 +135,6 @@ Um **app gerenciador WPF** complementar (`Asher.App`) cuida da instalação, do 
 
 ```
 
-[[🧱 Asher\|< Voltar]]
+[[🐱 Asher\|< Voltar]]
 
 :::

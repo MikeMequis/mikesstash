@@ -9,7 +9,7 @@
 - [v1.0.0](https://github.com/MikeMequis/Asher/releases/tag/v1.0.0) — Primeira Release
 
 ---
-[[🧱 Asher\|< Voltar]]
+[[🐱 Asher\|< Voltar]]
 
 :::
 
@@ -20,6 +20,6 @@
 - [v1.0.0](https://github.com/MikeMequis/Asher/releases/tag/v1.0.0) — First Release
 
 ---
-[[🧱 Asher\|< Back]]
+[[🐱 Asher\|< Back]]
 
 :::

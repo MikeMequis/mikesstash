@@ -37,7 +37,7 @@ When Asher is already installed (detected from settings or from running inside `
 - **Desktop shortcut** — optional shortcut to `Asher.App.exe` after installation
 
 ---
-[[🧱 Asher\|< Back]]
+[[🐱 Asher\|< Back]]
 
 :::
 
@@ -74,6 +74,6 @@ Quando o Asher já está instalado (detectado pelas configurações ou por estar
 - **Atalho na área de trabalho** — atalho opcional para o `Asher.App.exe` após a instalação
 
 ---
-[[🧱 Asher\|< Voltar]]
+[[🐱 Asher\|< Voltar]]
 
 :::
