@@ -11,7 +11,7 @@ Este retrabalho me ensinou outro aspecto **interessante** do desenho: quando voc
 
 Isso aconteceu várias vezes durante os estudos. Às vezes, mover uma única mecha alguns milímetros fazia toda a estrutura do rosto parecer errada, exigindo novos ajustes nas proporções.
 
-![5Desenho.jpg](/img/user/img/5Desenho.jpg)
+![5Desenho.jpg](/img/user/img/Drawings/5Desenho.jpg)
 
 
 >[!tip] **Desenho 3: Bakugo Sacana**
@@ -24,7 +24,7 @@ Esse acabei desistindo no meio do caminho, principalmente por conta do **capacet
 
 >[!info] Esse desenho marca um detalhe importante: a imagem utilizada como referência foi **gerada por IA**. Na época em que fiz este estudo, **não conhecia** as discussões envolvendo o uso desse tipo de imagem no treinamento de modelos e seus impactos para **artistas**. Hoje procuro dar preferência a trabalhos publicados por artistas ou a fotografias. Vou deixar uma página detalhando essa questão para manter esse histórico **transparente** em vez de apagar ou fingir que nunca aconteceu, e também informar leitores a respeito do impacto negativo desse material.
 
-![6Desenho.jpg](/img/user/img/6Desenho.jpg)
+![6Desenho.jpg](/img/user/img/Drawings/6Desenho.jpg)
 
 
 >[!tip] **Desenho 4: Nyxa Vox na escuridão**

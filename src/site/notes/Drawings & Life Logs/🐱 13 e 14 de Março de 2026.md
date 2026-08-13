@@ -12,7 +12,7 @@ Eu tenho muito o que dizer aqui, então prepare os **óculos de leitura**.
 
 Agora sim, falando do desenho em si. O primeiro, a da **Nyxa Vox**, que já apareceu em imagens anteriores. Apesar da aparência, este desenho não representa uma **dupla personalidade**. Ele retrata uma **parte da história** da Nyxa.
 
-![16Desenho.jpg](/img/user/img/16Desenho.jpg)
+![16Desenho.jpg](/img/user/img/Drawings/16Desenho.jpg)
 
 >[!tip] **Desenho 12: Alma de Performance e Loucura**
 >*Tempo de desenho - aprox. 3h20*
@@ -73,7 +73,7 @@ Pela primeira vez, eu desenhava antes de julgar.
 
 No fim, tive uma ilustração que teve curvas mais suaves e traços finos.
 
-![17Desenho.jpg](/img/user/img/17Desenho.jpg)
+![17Desenho.jpg](/img/user/img/Drawings/17Desenho.jpg)
 
 >[!tip] **Desenho 13: Lyssa Wheeler**
 >*Tempo de desenho - 2h30*
@@ -94,7 +94,7 @@ Depois da Lyssa, que é um rosto humano com orelhas de gato, resolvi aumentar a 
 
 >[!question] Detalhe: Apesar de ser um personagem antropomórfico, as orelhas são posicionadas de forma **perpendicular** ao eixo das orelhas humanas, preservando a anatomia do animal e deixando o resultado mais convincente.
 
-![18Desenho.jpg](/img/user/img/18Desenho.jpg)
+![18Desenho.jpg](/img/user/img/Drawings/18Desenho.jpg)
 
 >[!tip] **Desenho 14: Oliver Reed (lobo)**
 >*Tempo de desenho - 3h20*

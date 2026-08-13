@@ -12,7 +12,7 @@ Até então, eu ainda tinha dificuldades em visualizar objetos de forma **tridim
 
 Outro fator que dificultou foi manter as **alturas** dos elementos nas duas perspectivas.
 
-![23_24Desenho.jpg](/img/user/img/23_24Desenho.jpg)
+![23_24Desenho.jpg](/img/user/img/Drawings/23_24Desenho.jpg)
 
 >[!tip] **Desenho 19 & 20: Rancheira Destemida, Segunda Versão**
 >*Tempo de desenho - 3h*

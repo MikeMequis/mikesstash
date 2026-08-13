@@ -10,7 +10,7 @@ Em um domingo à tarde, quis fazer algo diferente com minha namorada. Em vez de 
 
 Então peguei uma referência básica da internet e segui explicando, aos poucos, o mesmo passo a passo que aprendi na primeira aula, seguindo uma lógica similar a que o professor me ensinou.
 
-![27Desenho.jpg](/img/user/img/27Desenho.jpg)
+![27Desenho.jpg](/img/user/img/Drawings/27Desenho.jpg)
 
 >[!tip] **Desenho 23: Perfil básico**
 >*Tempo de desenho - aprox. 2h30*
@@ -26,7 +26,7 @@ https://youtu.be/2h_OG7C01c0?si=WX8zXSfAfD85y2Qv
 
 Enfim, o que realmente me chamou a atenção foi o desenho dela.
 
-![M1Desenho.jpg](/img/user/img/M1Desenho.jpg)
+![M1Desenho.jpg](/img/user/img/Drawings/M1Desenho.jpg)
 
 Eu bati o olho na proporção e no formato do rosto e logo lembrei da primeira vez que fiz um rosto do zero em [[Drawings & Life Logs/⚡ 21 de Fevereiro de 2026\|21 de Fevereiro]].
 

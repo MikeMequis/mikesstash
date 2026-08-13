@@ -12,7 +12,7 @@ Mas a ideia é essa mesmo, no fim das contas. É seguir se **desafiando**, encon
 
 O desenho em si não achei difícil, apenas **trabalhoso**.
 
-![14Desenho.jpg](/img/user/img/14Desenho.jpg)
+![14Desenho.jpg](/img/user/img/Drawings/14Desenho.jpg)
 
 >[!tip] **Desenho 10: Parker Lateral**
 >*Tempo de desenho - aprox. 3h30*

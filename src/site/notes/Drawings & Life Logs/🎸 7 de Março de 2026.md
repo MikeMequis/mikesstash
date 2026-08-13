@@ -6,7 +6,7 @@ Essa representação, ilustrada com o usufruto de lapiseiras de 0.7 e 2 milímet
 
 Também deve-se salientar que a **cabeleira** de dita figura demanda tempo, paciência e habilidades das quais o autor não possuía no instante em que foi traçado.
 
-![15Desenho.jpg](/img/user/img/15Desenho.jpg)
+![15Desenho.jpg](/img/user/img/Drawings/15Desenho.jpg)
 
 >[!tip] **Desenho 11: Voz de Nyxa Vox**
 >*Tempo de desenho - 3h*

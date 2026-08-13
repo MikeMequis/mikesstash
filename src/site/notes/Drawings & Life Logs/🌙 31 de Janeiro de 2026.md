@@ -4,7 +4,7 @@
 
 Esse teve uma mistura dos dois, contendo as linhas mais **rígidas e retas** da estrutura facial masculina e as linhas mais **curvas** em seu cabelo (dessa vez acertei na proporção do cabelo em relação ao rosto). Dessa vez, o desafio que tive foi desenhar a gola (dá para notar que a linha do queixo está na **mesma** que a da gola) que me confundiu um pouco enquanto desenhava, e o **pescoço**.
 
-![7Desenho.jpg](/img/user/img/7Desenho.jpg)
+![7Desenho.jpg](/img/user/img/Drawings/7Desenho.jpg)
 
 >[!tip] **Desenho 5: Megumi "Pescoço-Duro" Fushiguro**
 >*Tempo de desenho - 3h*

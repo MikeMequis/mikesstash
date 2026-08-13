@@ -18,7 +18,7 @@ Ah, importante também, a **forma de segurar** o lápis/lapiseira também ajudam
 
 Como estava no começo, o nervoso ainda estava em tona, então seguir esses conselhos foi mais difícil na hora H.
 
-![4Desenho.jpg](/img/user/img/4Desenho.jpg)
+![4Desenho.jpg](/img/user/img/Drawings/4Desenho.jpg)
 
 >[!tip] **Desenho 2: Ochako Uraraka Cearense**
 >*Tempo de desenho - 3h*

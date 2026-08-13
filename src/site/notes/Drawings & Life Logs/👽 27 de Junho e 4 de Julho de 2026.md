@@ -23,7 +23,7 @@ Veio outra ideia totalmente aleatória:
 
 No fim, tive o seguinte resultado:
 
-![30Desenho.jpg](/img/user/img/30Desenho.jpg)
+![30Desenho.jpg](/img/user/img/Drawings/30Desenho.jpg)
 
 >[!tip] **Desenho 26: Morte Espacial Iminente**
 >*Tempo de desenho - 4h*

@@ -9,7 +9,7 @@ No meu caso, tenho proximidade com uma **mistura de linhas retas e curvas no des
 Então, eu decidi experimentar fazendo diferentes **variações** do olho de espiral, analisando o que melhor se adequa a personagem e dar um toque de **originalidade**, principalmente com a **íris circular** no centro.
 
 
-![9Desenho.jpg](/img/user/img/9Desenho.jpg)
+![9Desenho.jpg](/img/user/img/Drawings/9Desenho.jpg)
 
 >[!question] **Desenho 6.5: Experimento de olhos em espiral**
 >*Tempo de desenho - aprox. 1h20*

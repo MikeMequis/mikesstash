@@ -16,7 +16,7 @@ Finalmente, o **rosto** da Lyssa também precisou de ajustes. Inicialmente ficou
 
 Foi uma corrida de gato e rato que parecia **interminável**, de forma geral. Mas fiquei contente com o resultado de qualquer forma.
 
-![28Desenho.jpg](/img/user/img/28Desenho.jpg)
+![28Desenho.jpg](/img/user/img/Drawings/28Desenho.jpg)
 
 >[!tip] **Desenho 24: Oliver e Lyssa**
 >*Tempo de desenho - 6h (3h + 3h)*

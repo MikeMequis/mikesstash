@@ -8,7 +8,7 @@ Queria, novamente, fazer um desenho de **observação** utilizando algum objeto 
 
 Já que o boné estava, em maior parte, desenhado mesmo, resolvi aproveitar e transformá-la em uma garota em perspectiva de **três quartos**, usando boné e óculos. Tornou-se um bom exercício para retomar após o período de hiato no desenho anterior.
 
-![29Desenho.jpg](/img/user/img/29Desenho.jpg)
+![29Desenho.jpg](/img/user/img/Drawings/29Desenho.jpg)
 
 >[!tip] **Desenho 25: Nerdinha Contente**
 >*Tempo de desenho - aprox. 1h40*

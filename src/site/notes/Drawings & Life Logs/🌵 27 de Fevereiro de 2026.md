@@ -28,7 +28,7 @@ E:
 
 Os dois pensamentos envolvem ter a consciência da informação que é difícil. A diferença está na abordagem a partir dessa informação.
 
-![11Desenho.jpg](/img/user/img/11Desenho.jpg)
+![11Desenho.jpg](/img/user/img/Drawings/11Desenho.jpg)
 
 >[!tip] **Desenho 8: Rancheira Destemida**
 >*Tempo de desenho - aprox. 2h30*

@@ -21,7 +21,7 @@ Eles pediram:
 
 O resultado foi essa cabeça de *alien* embaixo (o do meio é do professor, só pra deixar claro a diferença de qualidade):
 
-![3Desenho.jpg](/img/user/img/3Desenho.jpg)
+![3Desenho.jpg](/img/user/img/Drawings/3Desenho.jpg)
 
 ... É, dá pra ver que ainda tinha **muito** para evoluir.
 
@@ -29,7 +29,7 @@ O resultado foi essa cabeça de *alien* embaixo (o do meio é do professor, só 
 
 Certo, **primeiro rosto**. O professor inicia o desenho com um simples círculo. Depois disso, tem algumas linhas de referência e medidas conforme a metodologia [**Loomis**](https://www.21-draw.com/pt/loomis-method/). Ele teve a cordialidade e a disposição para fazer até um mini **passo-a-passo** para desenhar o rosto: círculos, pizzas, altura de sobrancelha, dos olhos, formato do pescoço, entre outros.
 
-![2Desenho.jpg](/img/user/img/2Desenho.jpg)
+![2Desenho.jpg](/img/user/img/Drawings/2Desenho.jpg)
 
 ---
 
@@ -71,7 +71,7 @@ Então, eu parei e fiz exatamente isso. Pedi emprestado uma **régua** e um **co
 
 Finalmente, o resultado foi o que você está vendo abaixo: o **Gelado da Shopee**. O cabeça-de-ovo dos Incríveis. E ainda por cima com as linhas de referência tortas (eu notei isso enquanto escrevia).
 
-![1Desenho.jpg](/img/user/img/1Desenho.jpg)
+![1Desenho.jpg](/img/user/img/Drawings/1Desenho.jpg)
 
 >[!tip] **Desenho 1: Cabeça de Ovo**
 >*Tempo de desenho - 3h* (contando surtos psicológicos internos)

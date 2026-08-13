@@ -6,7 +6,7 @@ Esta foi a minha **primeira** tentativa em desenhar um personagem **original**.
 
 Inicialmente pensei em refazer a personagem **Nyxa**, porém mudando características e fazendo logo de cabeça, **sem olhar referência alguma**.
 
-![10Desenho.jpg](/img/user/img/10Desenho.jpg)
+![10Desenho.jpg](/img/user/img/Drawings/10Desenho.jpg)
 
 >[!tip] **Desenho 7: Rockeira Woke**
 >*Tempo de desenho - 3h*

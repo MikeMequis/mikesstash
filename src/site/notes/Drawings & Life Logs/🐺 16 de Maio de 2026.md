@@ -6,7 +6,7 @@ Este foi um exercício de **meio perfil** que pensei em fazer a partir de um des
 
 Um detalhe que chamou a minha atenção durante o esboço foram as **orelhas**. Elas pareciam estranhas, mas eu não conseguia dizer exatamente o motivo. Enquanto finalizava o desenho, a professora sugeriu adicionar detalhes dos **pelos** e do **interior** da orelha. Só consegui enxergar a diferença depois de fazer a correção (E também depois de lutar para não me confundir com a linha logo à direita).
 
-![25Desenho.jpg](/img/user/img/25Desenho.jpg)
+![25Desenho.jpg](/img/user/img/Drawings/25Desenho.jpg)
 
 >[!tip] **Desenho 21: Oliver lateral**
 >*Tempo de desenho - 2h30*

@@ -12,7 +12,7 @@ Um pequeno refúgio para te levar desde as **ferramentas** mais úteis até os *
 
 :::lang en
 
-A small sanctuary to take you from the most **useful** tools to the most unexpected **pastimes**.
+A small refuge to take you from the most **useful tools** to the most unexpected **pastimes**.
 
 :::
 

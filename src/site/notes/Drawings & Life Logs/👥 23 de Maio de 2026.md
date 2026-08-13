@@ -6,7 +6,7 @@ Este foi um **desafio** que eu me impus a fazer no desenho. O exercício propost
 
 O que foi realmente difícil era, a partir da referência e do meu próprio desenho, recriar o **mesmo rosto em meio perfil**, com expressão de surpresa, a direita.
 
-![26Desenho.png](/img/user/img/26Desenho.png)
+![26Desenho.png](/img/user/img/Drawings/26Desenho.png)
 
 >[!tip] **Desenho 22: Duas perspectivas**
 >*Tempo de desenho - 3h30*

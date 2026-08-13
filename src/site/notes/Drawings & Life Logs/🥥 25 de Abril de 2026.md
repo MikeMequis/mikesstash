@@ -6,7 +6,7 @@ Esse foi um desenho **osso duro de roer**. A maior parte tive que **refazer** e 
 
 Outro detalhe notado pelo professor é o formato do **crânio**, no caso dessa referência em específico: ao invés de um formato **circular** na nuca do personagem, como os anteriores, este tem um formato de **elipse** (ou, nas palavras do professor, a fruta de coco), o que é bem evidente no cabelo dela.
 
-![22Desenho.jpg](/img/user/img/22Desenho.jpg)
+![22Desenho.jpg](/img/user/img/Drawings/22Desenho.jpg)
 
 >[!tip] **Desenho 18: Natalie Reyes**
 >*Tempo de desenho - 3h*

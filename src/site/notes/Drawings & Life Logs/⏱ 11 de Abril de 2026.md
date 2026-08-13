@@ -18,7 +18,7 @@ Este era de **lascar** o pião.
 
 ... Mas fico contente com o resultado. Não só com o resultado, mas em como foi bom em ter enfrentado o desafio e em como me ajudou nos desenhos **futuros**. Foi praticamente um **exercício**.
 
-![21Desenho.jpg](/img/user/img/21Desenho.jpg)
+![21Desenho.jpg](/img/user/img/Drawings/21Desenho.jpg)
 
 >[!tip] **Desenho 17: Cabelos de Vento**
 >*Tempo de desenho - 2h30*
