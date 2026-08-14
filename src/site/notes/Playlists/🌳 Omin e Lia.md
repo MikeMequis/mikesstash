@@ -8,7 +8,7 @@
 
 **Mood:** *Warm · Adventurous · Nostalgic · Whimsical*
 
-[[🎧 Playlists\|< Voltar]]
+[[🎧 Playlists\|< Back]]
 
 :::
 
@@ -18,7 +18,7 @@
 
 **Clima:** *Acolhedor · Aventureiro · Nostálgico · Encantador*
 
-[[🎧 Playlists\|< Back]]
+[[🎧 Playlists\|< Voltar]]
 
 :::
 

@@ -10,7 +10,7 @@
 
 **Mood:** *Chaotic · Aggressive · Theatrical · Violent*
 
-[[🎧 Playlists\|< Voltar]]
+[[🎧 Playlists\|< Back]]
 
 :::
 
@@ -22,14 +22,16 @@
 
 **Clima:** *Caótico · Agressivo · Teatral · Violento*
 
-[[🎧 Playlists\|< Back]]
+[[🎧 Playlists\|< Voltar]]
 
 :::
 
 https://music.youtube.com/playlist?list=PLEo4kE9vpvsM&si=BJovglRv0afkDW0W
 
-https://music.youtube.com/playlist?list=PLR6Y5vm30z9A&si=ObyB_DFtsG8EUo3_
-
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7LMo6BzPNzFmR9b6dTg4pP?utm_source=generator&si=1019485191ea42d1" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+---
+
+https://music.youtube.com/playlist?list=PLR6Y5vm30z9A&si=ObyB_DFtsG8EUo3_
 
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0b1PvrWhHkwiVyDA23hn6d?utm_source=generator&si=4fd8db00773b4a75" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

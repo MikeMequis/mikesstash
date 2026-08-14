@@ -8,7 +8,7 @@
 
 **Mood:** *Ominous · Tense · Predatory · Unstable*
 
-[[🎧 Playlists\|< Voltar]]
+[[🎧 Playlists\|< Back]]
 
 :::
 
@@ -18,7 +18,7 @@
 
 **Clima:** *Sinistro · Tenso · Predatório · Instável*
 
-[[🎧 Playlists\|< Back]]
+[[🎧 Playlists\|< Voltar]]
 
 :::
 

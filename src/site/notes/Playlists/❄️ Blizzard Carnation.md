@@ -8,7 +8,7 @@
 
 **Mood:** *Melancholic · Haunting · Cold · Hopeful*
 
-[[🎧 Playlists\|< Voltar]]
+[[🎧 Playlists\|< Back]]
 
 :::
 
@@ -18,7 +18,7 @@
 
 **Clima:** *Melancólico · Assombrado · Gélido · Esperançoso*
 
-[[🎧 Playlists\|< Back]]
+[[🎧 Playlists\|< Voltar]]
 
 :::
 

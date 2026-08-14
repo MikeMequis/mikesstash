@@ -8,7 +8,7 @@
 
 **Mood:** *Abstract · Transcendent · Contrasting · Spiritual*
 
-[[🎧 Playlists\|< Voltar]]
+[[🎧 Playlists\|< Back]]
 
 :::
 
@@ -18,7 +18,7 @@
 
 **Clima:** *Abstrato · Transcendente · Contrastante · Espiritual*
 
-[[🎧 Playlists\|< Back]]
+[[🎧 Playlists\|< Voltar]]
 
 :::
 

@@ -8,7 +8,7 @@
 
 **Mood:** *Somber · Emotional · Unsettling · Tender*
 
-[[🎧 Playlists\|< Voltar]]
+[[🎧 Playlists\|< Back]]
 
 :::
 
@@ -18,7 +18,7 @@
 
 **Clima:** *Sombrio · Emotivo · Inquietante · Delicado*
 
-[[🎧 Playlists\|< Back]]
+[[🎧 Playlists\|< Voltar]]
 
 :::
 

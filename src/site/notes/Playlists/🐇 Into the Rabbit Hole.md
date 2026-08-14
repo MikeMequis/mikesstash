@@ -8,7 +8,7 @@
 
 **Mood:** *Mysterious · Unsettling · Surreal · Enigmatic*
 
-[[🎧 Playlists\|< Voltar]]
+[[🎧 Playlists\|< Back]]
 
 :::
 
@@ -18,7 +18,7 @@
 
 **Clima:** *Misterioso · Inquietante · Surreal · Enigmático*
 
-[[🎧 Playlists\|< Back]]
+[[🎧 Playlists\|< Voltar]]
 
 :::
 

@@ -8,7 +8,7 @@
 
 **Mood:** *Ethereal · Contemplative · Melancholic · Mysterious*
 
-[[🎧 Playlists\|< Voltar]]
+[[🎧 Playlists\|< Back]]
 
 :::
 
@@ -18,7 +18,7 @@
 
 **Clima:** *Etéreo · Contemplativo · Melancólico · Misterioso*
 
-[[🎧 Playlists\|< Back]]
+[[🎧 Playlists\|< Voltar]]
 
 :::
 

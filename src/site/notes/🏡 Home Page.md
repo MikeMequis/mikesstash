@@ -17,6 +17,7 @@
 - [x] Implementar seção de comentários
 - [x] Implementar funcionalidade de globalização
 - [x] Implementar Link Cards
+- [x] Inserir página de Playlists & Embeds
 - [ ] Escrever tópicos do Refúgio da Web
 - [ ] Traduzir todos os textos para Inglês/Português
 	- [x] Tutoriais de Servidor
@@ -36,6 +37,7 @@
 - [x] Implement the comments section
 - [x] Implement globalization feature
 - [x] Implement Link Cards
+- [x] Insert Playlists page & Embeds
 - [ ] Write Web Haven topics
 - [ ] Translate all text to English/Portuguese
 	- [x] Server Tutorials
