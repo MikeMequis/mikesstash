@@ -22,6 +22,8 @@ Pequena página de utensílios úteis para os ratos da internet.
 
 [Build Your Own X](https://github.com/codecrafters-io/build-your-own-x?utm_source=chatgpt.com) → Quer criar seu próprio **império tecnológico** do zero, desde os editores de texto mais simples até as _engines_ mais complexas? Comece aqui.
 
+[[🏡 Home Page\|< Voltar]]
+
 :::
 
 :::lang en
@@ -41,5 +43,7 @@ A small collection of useful tools for the internet rats.
 [Temp Mail](https://temp-mail.org/pt?utm_source=chatgpt.com) → One of many online tools that generates a temporary **email address**. Protect your privacy and avoid handing your real address to services you will probably never use again.
 
 [Build Your Own X](https://github.com/codecrafters-io/build-your-own-x?utm_source=chatgpt.com) → Want to build your own **technology empire** from scratch, from the simplest text editors to complex _game engines_? Start here.
+
+[[🏡 Home Page\|< Back]]
 
 :::

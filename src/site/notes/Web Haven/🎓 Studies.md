@@ -34,6 +34,8 @@
 
 [easyABNTeX2](https://gitlab.com/zerowhy/easy-abntex2?utm_source=chatgpt.com) → O que antes seria uma dor de cabeça para **formatar um artigo segundo as normas ABNT** no Word pode se tornar muito mais simples com a biblioteca abnTeX2.
 
+[[🏡 Home Page\|< Voltar]]
+
 :::
 
 :::lang en
@@ -65,5 +67,7 @@
 [VARK](https://vark-learn.com/questionario-vark-2/?utm_source=chatgpt.com) → Personally, one of the most useful websites for any student, regardless of age or academic level. The greatest learning tool is discovering your own **learning method**, and this simple questionnaire can help point you in the right direction.
 
 [easyABNTeX2](https://gitlab.com/zerowhy/easy-abntex2?utm_source=chatgpt.com) → What used to be a headache when **formatting an academic paper according to ABNT standards** in Word becomes much easier with the abnTeX2 library.
+
+[[🏡 Home Page\|< Back]]
 
 :::
