@@ -18,6 +18,19 @@ describe("extractYouTubeId", () => {
       extractYouTubeId("https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=share")
     ).toBe("dQw4w9WgXcQ");
   });
+
+  it("does not treat playlist embeds as videos", () => {
+    expect(
+      extractYouTubeId(
+        "https://www.youtube.com/embed/videoseries?list=PLEo4kE9vpvsM"
+      )
+    ).toBeNull();
+    expect(
+      extractYouTubeId(
+        "https://music.youtube.com/playlist?list=PLEo4kE9vpvsM"
+      )
+    ).toBeNull();
+  });
 });
 
 describe("upgradeYouTubeEmbeds", () => {

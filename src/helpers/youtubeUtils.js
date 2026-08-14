@@ -8,9 +8,13 @@ const YOUTUBE_ID_PATTERNS = [
 
 function extractYouTubeId(url) {
   if (!url || typeof url !== "string") return null;
+  if (/\/embed\/videoseries(?:\?|$)/i.test(url)) return null;
+  if (/(?:music\.)?youtube\.com\/playlist\?/i.test(url)) return null;
   for (const pattern of YOUTUBE_ID_PATTERNS) {
     const match = url.match(pattern);
-    if (match && match[1]) return match[1];
+    if (match && match[1] && match[1].toLowerCase() !== "videoseries") {
+      return match[1];
+    }
   }
   return null;
 }
@@ -47,6 +51,7 @@ function upgradeYouTubeEmbeds(root) {
 
   for (const embed of content.querySelectorAll(".youtube-embed")) {
     if (embed.closest(".yt-visualizer-player")) continue;
+    if (embed.closest(".playlist-embed")) continue;
     const iframe = embed.querySelector("iframe");
     if (!iframe) continue;
     const videoId = extractYouTubeId(iframe.getAttribute("src") || "");
@@ -56,6 +61,7 @@ function upgradeYouTubeEmbeds(root) {
 
   for (const anchor of content.querySelectorAll("a[href]")) {
     if (anchor.closest(".yt-visualizer-player")) continue;
+    if (anchor.closest(".playlist-embed")) continue;
     const videoId = extractYouTubeId(anchor.getAttribute("href") || "");
     if (!videoId) continue;
 

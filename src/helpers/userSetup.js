@@ -2,6 +2,7 @@ const fs = require("fs");
 const { parse } = require("node-html-parser");
 const matter = require("gray-matter");
 const { upgradeYouTubeEmbeds } = require("./youtubeUtils");
+const { upgradePlaylistEmbeds } = require("./playlistEmbedUtils");
 const { langPlugin } = require("./langPlugin");
 const { resolveLocalizedTitle, getLocalizedTitlesFromNoteData } = require("./langUtils");
 const {
@@ -127,6 +128,15 @@ function userEleventySetup(eleventyConfig) {
     }
     const parsed = parse(content);
     upgradeYouTubeEmbeds(parsed);
+    return parsed.toString();
+  });
+
+  eleventyConfig.addTransform("playlist-embeds", function (content) {
+    if (!isMarkdownPage(this.page.inputPath)) {
+      return content;
+    }
+    const parsed = parse(content);
+    upgradePlaylistEmbeds(parsed);
     return parsed.toString();
   });
 
