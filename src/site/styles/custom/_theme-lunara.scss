@@ -6,9 +6,7 @@ body.theme-lunara {
 
     color-scheme: dark;
 
-    .content {
-        padding-top: 24px;
-    }
+    --dg-content-padding-top: 24px;
 
     --mono-rgb-0: 0, 0, 0;
     --mono-rgb-100: 255, 255, 255;

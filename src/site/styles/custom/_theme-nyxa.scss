@@ -6,9 +6,7 @@ body.theme-nyxa {
 
     color-scheme: light;
 
-    .content {
-        padding-top: 40px;
-    }
+    --dg-content-padding-top: 40px;
 
     --mono-rgb-0: 255, 255, 255;
     --mono-rgb-100: 0, 0, 0;
