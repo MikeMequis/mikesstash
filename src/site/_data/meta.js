@@ -75,8 +75,37 @@ module.exports = async (data) => {
     lightTheme: process.env.GISCUS_THEME_LIGHT || "light",
     darkTheme: process.env.GISCUS_THEME_DARK || "dark",
   };
-  giscus.theme =
-    process.env.BASE_THEME === "light" ? giscus.lightTheme : giscus.darkTheme;
+
+  // Theme registry: comma-separated "id:Label:giscusTheme" entries.
+  // Example: "dark:Dark:noborder_dark,light:Light:noborder_light"
+  // giscusTheme is optional; falls back to the dark giscus theme when omitted.
+  const parseThemes = (raw) => {
+    const defaults = [
+      { id: "dark", label: "Dark", giscusTheme: giscus.darkTheme },
+      { id: "light", label: "Light", giscusTheme: giscus.lightTheme },
+    ];
+    if (!raw) return defaults;
+    const entries = raw
+      .split(",")
+      .map((part) => part.trim())
+      .filter(Boolean)
+      .map((part) => {
+        const [id, label, giscusTheme] = part.split(":").map((s) => (s || "").trim());
+        return { id, label: label || id, giscusTheme: giscusTheme || "" };
+      })
+      .filter((t) => t.id);
+    return entries.length ? entries : defaults;
+  };
+
+  const themes = parseThemes(process.env.THEMES);
+  const baseTheme = process.env.BASE_THEME || "dark";
+  const defaultTheme = themes.find((t) => t.id === baseTheme) || themes[0];
+  const giscusThemeFor = (themeId) => {
+    const match = themes.find((t) => t.id === themeId);
+    if (match && match.giscusTheme) return match.giscusTheme;
+    return giscus.darkTheme;
+  };
+  giscus.theme = giscusThemeFor(defaultTheme.id);
 
   const uiStrings = {
     backlinkHeader: process.env.UI_BACKLINK_HEADER || "Pages mentioning this page",
@@ -128,7 +157,8 @@ module.exports = async (data) => {
       pt: siteDescriptionPt,
       en: siteDescriptionEn,
     },
-    baseTheme: process.env.BASE_THEME || "dark",
+    baseTheme: defaultTheme.id,
+    themes,
     siteName: useEnglishDefaults ? siteNameEn : siteNamePt,
     siteNames: {
       pt: siteNamePt,

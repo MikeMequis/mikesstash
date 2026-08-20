@@ -1,0 +1,94 @@
+body {
+    --dg-content-padding-top: 40px;
+    --dg-content-padding-top-mobile: 100px;
+    --dg-graph-border-radius: 0;
+    --dg-search-box-radius: 0;
+    --dg-search-input-radius: 0;
+    --dg-search-result-radius: 0;
+    --dg-search-btn-radius: 0;
+    --dg-graph-ctrl-radius: 0;
+    --dg-mermaid-radius: 0;
+    --dg-notelink-hover-bg: var(--theme-accent);
+    --dg-search-highlight-bg: var(--theme-accent);
+    --dg-search-highlight-color: var(--theme-on-accent);
+
+    background: var(--theme-bg-gradient);
+    background-attachment: fixed;
+    color: var(--theme-text);
+    font-family: var(--font-text);
+
+    .site-title {
+        margin: 0;
+    }
+
+    .site-description {
+        margin-top: 0.3rem;
+        opacity: 0.85;
+        font-size: 0.85rem;
+        color: var(--theme-accent-muted);
+    }
+
+    .site-title-group h1 {
+        color: var(--theme-accent-text);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-shadow: var(--theme-title-shadow);
+    }
+
+    .content {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    .filetree-wrapper {
+        background: var(--theme-panel-sidebar);
+        border-right: var(--terminal-border);
+    }
+
+    .filetree-sidebar {
+        color: var(--theme-text-muted);
+    }
+
+    .navbar {
+        background: var(--theme-panel-navbar);
+        border-bottom: var(--terminal-border);
+    }
+
+    .foldername-wrapper {
+        color: var(--theme-accent-subtle);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-size: 0.75rem;
+    }
+
+    .notelink {
+        border-left: 2px solid transparent;
+        border-radius: 0;
+        color: var(--theme-text-nav);
+
+        &:hover {
+            background-color: var(--theme-accent);
+            color: var(--theme-on-accent);
+
+            .filename,
+            a {
+                color: var(--theme-on-accent) !important;
+            }
+        }
+    }
+
+    .notelink.active-note {
+        border-left-color: var(--theme-accent-bright);
+        background-color: var(--theme-accent);
+        color: var(--theme-on-accent);
+
+        .filename {
+            color: var(--theme-on-accent) !important;
+        }
+    }
+
+    .filelist {
+        border-left: var(--terminal-border-dim);
+    }
+}

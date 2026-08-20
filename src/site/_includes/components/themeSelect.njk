@@ -1,0 +1,107 @@
+<button
+  type="button"
+  id="theme-select"
+  class="theme-select-btn"
+  onclick="toggleThemeMenu(event)"
+  aria-haspopup="menu"
+  aria-expanded="false"
+  aria-label="Select theme"
+  title="Select theme">
+  <i data-lucide="palette" class="theme-select-icon" aria-hidden="true"></i>
+</button>
+<div
+  id="theme-menu"
+  class="theme-select-menu"
+  role="menu"
+  aria-label="Available themes"
+  hidden>
+  {% for theme in meta.themes %}
+  <button
+    type="button"
+    class="theme-option"
+    role="menuitemradio"
+    data-theme-id="{{ theme.id }}"
+    onclick="applyTheme('{{ theme.id }}')"
+    aria-checked="false">
+    <span class="theme-option-label">{{ theme.label }}</span>
+  </button>
+  {% endfor %}
+</div>
+<script>
+(function () {
+  var themes = {{ meta.themes | jsonify | safe }};
+  var baseTheme = "{{ meta.baseTheme }}";
+
+  function currentTheme() {
+    var classes = document.body.classList;
+    for (var i = 0; i < themes.length; i++) {
+      if (classes.contains("theme-" + themes[i].id)) return themes[i].id;
+    }
+    return baseTheme;
+  }
+
+  function updateMenuUi() {
+    var menu = document.getElementById("theme-menu");
+    var btn = document.getElementById("theme-select");
+    if (menu) {
+      var active = currentTheme();
+      menu.querySelectorAll(".theme-option").forEach(function (opt) {
+        var isActive = opt.getAttribute("data-theme-id") === active;
+        opt.setAttribute("aria-checked", isActive ? "true" : "false");
+        opt.classList.toggle("active", isActive);
+      });
+    }
+    if (btn) {
+      btn.setAttribute("aria-expanded", menu && !menu.hidden ? "true" : "false");
+    }
+  }
+
+  window.applyTheme = function (theme) {
+    var found = themes.some(function (t) { return t.id === theme; });
+    if (!found) return;
+    themes.forEach(function (t) {
+      document.body.classList.remove("theme-" + t.id);
+    });
+    document.body.classList.add("theme-" + theme);
+    localStorage.setItem("dg-theme", theme);
+    updateMenuUi();
+    if (typeof window.updateGiscusTheme === "function") {
+      window.updateGiscusTheme(theme);
+    }
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+      window.lucide.createIcons();
+    }
+  };
+
+  window.toggleThemeMenu = function (event) {
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    var menu = document.getElementById("theme-menu");
+    if (!menu) return;
+    menu.hidden = !menu.hidden;
+    updateMenuUi();
+  };
+
+  function closeThemeMenu() {
+    var menu = document.getElementById("theme-menu");
+    if (menu && !menu.hidden) {
+      menu.hidden = true;
+      updateMenuUi();
+    }
+  }
+
+  document.addEventListener("click", function (event) {
+    var btn = document.getElementById("theme-select");
+    if (btn && btn.contains(event.target)) return;
+    closeThemeMenu();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeThemeMenu();
+  });
+
+  document.addEventListener("DOMContentLoaded", updateMenuUi);
+})();
+</script>

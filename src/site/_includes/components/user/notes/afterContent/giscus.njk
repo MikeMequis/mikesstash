@@ -30,17 +30,27 @@
       var comments = document.querySelector(".comments");
       if (!comments) return;
 
+      var themes = {{ meta.themes | jsonify | safe }};
+      var defaultThemeId = "{{ meta.baseTheme }}";
+
       function currentTheme() {
-        return document.body.classList.contains("theme-light") ? "light" : "dark";
+        var classes = document.body.classList;
+        for (var i = 0; i < themes.length; i++) {
+          if (classes.contains("theme-" + themes[i].id)) return themes[i].id;
+        }
+        return defaultThemeId;
       }
 
       window.updateGiscusTheme = function (theme) {
         var frame = comments.querySelector("iframe.giscus-frame");
         if (!frame || !frame.contentWindow) return;
+        var match = null;
+        for (var i = 0; i < themes.length; i++) {
+          if (themes[i].id === theme) { match = themes[i]; break; }
+        }
         var giscusTheme =
-          theme === "light"
-            ? comments.dataset.giscusLightTheme
-            : comments.dataset.giscusDarkTheme;
+          (match && match.giscusTheme) ||
+          comments.dataset.giscusDarkTheme;
         frame.contentWindow.postMessage(
           { giscus: { setConfig: { theme: giscusTheme } } },
           "https://giscus.app"

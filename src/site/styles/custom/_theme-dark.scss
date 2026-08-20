@@ -1,0 +1,93 @@
+body.theme-dark {
+    --background-primary: #000000;
+    --background-secondary: #050805;
+    --background-modifier-border: rgba(155, 207, 0, 0.45);
+    --text-normal: #f2f2f2;
+    --text-muted: #a8a8a8;
+    --text-faint: #6a6a6a;
+    --text-accent: var(--xbox-green-bright);
+    --link-color: var(--xbox-green-bright);
+    --link-color-hover: #d4f56a;
+    --link-external-color: var(--xbox-green-bright);
+
+    /* ──────────────── Accent (component highlights) ──────────────── */
+    --theme-accent: var(--xbox-green);
+    --theme-accent-bright: var(--xbox-green-bright);
+    --theme-accent-rgb: 155, 207, 0;
+    --interactive-accent: var(--theme-accent);
+    --theme-toggle-hover-bg: var(--theme-accent);
+    --theme-toggle-hover-color: #000000;
+    --theme-on-accent: #000000;
+    --color-orange: var(--theme-accent);
+
+    --terminal-border: 2px solid rgba(155, 207, 0, 0.55);
+    --terminal-border-dim: 1px solid rgba(155, 207, 0, 0.3);
+    --theme-bg-gradient:
+        radial-gradient(ellipse 130% 90% at 8% -5%, rgba(74, 122, 18, 0.55) 0%, transparent 52%),
+        radial-gradient(ellipse 90% 70% at 100% 100%, rgba(48, 96, 0, 0.4) 0%, transparent 48%),
+        linear-gradient(175deg, #0c160c 0%, #000000 38%, #000000 62%, #081008 100%);
+    --theme-text: #f2f2f2;
+    --theme-text-strong: var(--xbox-green-bright);
+    --theme-text-em: #d8d8d8;
+    --theme-text-muted: #a8a8a8;
+    --theme-text-nav: #d0d0d0;
+    --theme-accent-text: var(--xbox-green-bright);
+    --theme-accent-muted: rgba(184, 230, 46, 0.65);
+    --theme-accent-subtle: rgba(184, 230, 46, 0.75);
+    --theme-accent-hint: rgba(184, 230, 46, 0.7);
+    --theme-accent-placeholder: rgba(184, 230, 46, 0.45);
+    --theme-accent-placeholder-focus: rgba(155, 207, 0, 0.35);
+    --theme-title-shadow: 0 0 18px var(--xbox-green-glow);
+    --theme-h1-shadow: 0 0 12px var(--xbox-green-glow);
+    --theme-panel-sidebar: linear-gradient(180deg, rgba(8, 16, 8, 0.92) 0%, rgba(0, 0, 0, 0.96) 100%);
+    --theme-panel-navbar: linear-gradient(180deg, rgba(8, 16, 8, 0.95) 0%, rgba(0, 0, 0, 0.98) 100%);
+    --theme-surface: rgba(0, 0, 0, 0.55);
+    --theme-surface-strong: rgba(0, 0, 0, 0.65);
+    --theme-surface-input: rgba(0, 0, 0, 0.7);
+    --theme-surface-input-focus: rgba(8, 16, 8, 0.9);
+    --theme-surface-modal: rgba(0, 0, 0, 0.94);
+    --theme-surface-code: rgba(0, 0, 0, 0.55);
+    --theme-surface-blockquote: rgba(0, 0, 0, 0.45);
+    --theme-surface-table-head: rgba(74, 122, 18, 0.2);
+    --theme-surface-keys: rgba(0, 0, 0, 0.6);
+    --theme-surface-keys-hover: rgba(0, 0, 0, 0.15);
+    --theme-overlay: rgba(0, 0, 0, 0.88);
+    --theme-tooltip-bg: rgba(0, 0, 0, 0.95);
+    --theme-tooltip-text: #f2f2f2;
+    --theme-toggle-bg: rgba(0, 0, 0, 0.72);
+    --theme-toggle-color: var(--xbox-green-bright);
+    --theme-heading: #f2f2f2;
+    --theme-search-glow: 0 0 24px var(--xbox-green-glow);
+    --theme-tooltip-glow: 0 0 20px var(--xbox-green-glow);
+    --dg-search-divider-color: rgba(155, 207, 0, 0.28);
+    --dg-graph-border-color: rgba(155, 207, 0, 0.45);
+    --dg-overlay-bg: rgba(0, 0, 0, 0.88);
+    --yt-viz-gradient-start: #000000;
+    --yt-viz-gradient-end: #9bcf00;
+    --yt-viz-bg: rgba(0, 0, 0, 0.55);
+    --callout-tip: 155, 207, 0;
+    --callout-info: 155, 207, 0;
+    --callout-question: 155, 207, 0;
+    --callout-warning: 184, 230, 46;
+    --callout-danger: 184, 230, 46;
+    --theme-callout-tip-italic: var(--xbox-green);
+    --theme-callout-surface-bg: var(--theme-surface);
+    --theme-callout-surface-border: rgba(155, 207, 0, 0.35);
+    --theme-callout-text: #d8dcc8;
+    --theme-code-bg: rgba(0, 0, 0, 0.72);
+    --theme-code-border: rgba(155, 207, 0, 0.3);
+    --theme-code-text: #d4f0a0;
+    --theme-code-inline-bg: rgba(0, 0, 0, 0.75);
+    --theme-code-inline-text: var(--xbox-green-bright);
+    --theme-code-comment: #6a7a58;
+    --theme-code-keyword: var(--xbox-green-bright);
+    --theme-code-string: #c6e86a;
+    --theme-code-number: #9bcf00;
+    --theme-code-function: #d4f56a;
+    --theme-code-operator: #a8a8a8;
+    --theme-code-punctuation: #8a9a78;
+    --code-important: var(--xbox-green-bright);
+    --code-tag: var(--xbox-green);
+    --color-yellow: var(--xbox-green-bright);
+    --theme-hr-color: rgba(155, 207, 0, 0.45);
+}

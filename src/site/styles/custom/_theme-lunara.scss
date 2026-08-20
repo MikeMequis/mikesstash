@@ -1,0 +1,349 @@
+body.theme-lunara {
+
+    /* ═══════════════════════════════════════════════
+       LUNARA — DEEP MOON
+       ═══════════════════════════════════════════════ */
+
+    color-scheme: dark;
+
+    .content {
+        padding-top: 24px;
+    }
+
+    --mono-rgb-0: 0, 0, 0;
+    --mono-rgb-100: 255, 255, 255;
+
+    --color-base-00: #050711;
+    --color-base-05: #0b1020;
+    --color-base-10: #17152d;
+    --color-base-20: #1e1c38;
+    --color-base-25: #2a2844;
+    --color-base-30: #34324f;
+    --color-base-35: #403e5e;
+    --color-base-40: #565478;
+    --color-base-50: #6c6a90;
+    --color-base-60: #9694ad;
+    --color-base-70: #b3b0cb;
+    --color-base-100: #ffffff;
+
+    --background-primary: #050711;
+    --background-secondary: #0b1020;
+    --background-modifier-border: rgba(142, 134, 199, 0.28);
+
+    /* ─────────────── Typography ─────────────── */
+
+    --font-text:
+        "Lora",
+        Georgia,
+        serif;
+
+    --font-monospace:
+        "DM Mono",
+        "JetBrains Mono",
+        monospace;
+
+    --text-normal: #deddf0;
+    --text-muted: #9694ad;
+    --text-faint: #626176;
+
+    --text-accent: #bcb7e5;
+
+    --link-color: #bcb7e5;
+    --link-color-hover: #e8e6ff;
+    --link-external-color: #9f98d8;
+
+    /* ─────────────── Accent (component highlights) ─────────────── */
+
+    --theme-accent: #8e86c7;
+    --theme-accent-bright: #bcb7e5;
+    --theme-accent-rgb: 142, 134, 199;
+    --interactive-accent: var(--theme-accent);
+    --theme-toggle-hover-bg: var(--theme-accent);
+    --theme-toggle-hover-color: #050711;
+    --theme-on-accent: #050711;
+    --color-orange: #b59a6b;
+
+    /* ─────────────── Lunara Palette ─────────────── */
+
+    --lunara-space: #050711;
+    --lunara-night: #0b1020;
+    --lunara-surface: #17152d;
+
+    --lunara-violet: #8e86c7;
+    --lunara-lavender: #bcb7e5;
+    --lunara-moon: #e8e6ff;
+
+    --lunara-starlight: #ffffff;
+
+    --lunara-blue:
+        #6875a8;
+
+    --lunara-glow:
+        rgba(142, 134, 199, 0.22);
+
+    /* ─────────────── Borders ─────────────── */
+
+    --terminal-border:
+        1px solid rgba(188, 183, 229, 0.34);
+
+    --terminal-border-dim:
+        1px solid rgba(142, 134, 199, 0.18);
+
+    /* ─────────────── Background ─────────────── */
+
+    --theme-bg-gradient:
+        radial-gradient(ellipse 130% 90% at 8% -5%, rgba(142, 134, 199, 0.5) 0%, transparent 52%),
+        radial-gradient(ellipse 90% 70% at 100% 100%, rgba(104, 117, 168, 0.4) 0%, transparent 48%),
+        linear-gradient(175deg, #1b1740 0%, #0a0818 38%, #06040f 62%, #14112b 100%);
+
+    /* ─────────────── Text ─────────────── */
+
+    --theme-text: #deddf0;
+
+    --theme-text-strong:
+        var(--lunara-moon);
+
+    --theme-text-em:
+        #c9c6df;
+
+    --theme-text-muted:
+        #9694ad;
+
+    --theme-text-nav:
+        #b3b0cb;
+
+    --theme-accent-text:
+        var(--lunara-lavender);
+
+    --theme-accent-muted:
+        rgba(188, 183, 229, 0.62);
+
+    --theme-accent-subtle:
+        rgba(188, 183, 229, 0.76);
+
+    --theme-accent-hint:
+        rgba(188, 183, 229, 0.66);
+
+    --theme-accent-placeholder:
+        rgba(188, 183, 229, 0.38);
+
+    --theme-accent-placeholder-focus:
+        rgba(142, 134, 199, 0.32);
+
+    /* ─────────────── Shadows ─────────────── */
+
+    --theme-title-shadow:
+        0 0 18px rgba(188, 183, 229, 0.20),
+        0 0 45px rgba(104, 117, 168, 0.10);
+
+    --theme-h1-shadow:
+        0 0 14px rgba(188, 183, 229, 0.18);
+
+    /* ─────────────── Panels ─────────────── */
+
+    --theme-panel-sidebar:
+        linear-gradient(180deg, rgba(16, 20, 42, 0.94) 0%, rgba(4, 5, 12, 0.98) 100%);
+
+    --theme-panel-navbar:
+        linear-gradient(180deg, rgba(16, 20, 42, 0.96) 0%, rgba(5, 7, 17, 0.98) 100%);
+
+    --theme-surface:
+        rgba(14, 15, 31, 0.64);
+
+    --theme-surface-strong:
+        rgba(20, 19, 39, 0.82);
+
+    --theme-surface-input:
+        rgba(4, 5, 12, 0.76);
+
+    --theme-surface-input-focus:
+        rgba(15, 16, 33, 0.94);
+
+    --theme-surface-modal:
+        rgba(5, 6, 14, 0.97);
+
+    /* ─────────────── Content ─────────────── */
+
+    --theme-surface-code:
+        rgba(2, 3, 8, 0.78);
+
+    --theme-surface-blockquote:
+        rgba(142, 134, 199, 0.07);
+
+    --theme-surface-table-head:
+        rgba(142, 134, 199, 0.13);
+
+    --theme-surface-keys:
+        rgba(12, 13, 28, 0.78);
+
+    --theme-surface-keys-hover:
+        rgba(188, 183, 229, 0.10);
+
+    /* ─────────────── Overlay ─────────────── */
+
+    --theme-overlay:
+        rgba(2, 3, 8, 0.88);
+
+    --theme-tooltip-bg:
+        rgba(7, 8, 18, 0.97);
+
+    --theme-tooltip-text:
+        #e8e6ff;
+
+    --theme-toggle-bg:
+        rgba(9, 10, 22, 0.88);
+
+    --theme-toggle-color:
+        var(--lunara-lavender);
+
+    --theme-heading:
+        #e8e6ff;
+
+    /* ─────────────── Search / Graph ─────────────── */
+
+    --theme-search-glow:
+        0 0 24px rgba(188, 183, 229, 0.18);
+
+    --theme-tooltip-glow:
+        0 0 18px rgba(142, 134, 199, 0.20);
+
+    --dg-search-divider-color:
+        rgba(188, 183, 229, 0.20);
+
+    --dg-graph-border-color:
+        rgba(142, 134, 199, 0.34);
+
+    --dg-overlay-bg:
+        rgba(2, 3, 8, 0.88);
+
+    /* ─────────────── YouTube ─────────────── */
+
+    --yt-viz-gradient-start:
+        #050711;
+
+    --yt-viz-gradient-end:
+        #8e86c7;
+
+    --yt-viz-bg:
+        rgba(5, 7, 17, 0.68);
+
+    /* ─────────────── Callouts ─────────────── */
+
+    --callout-tip:
+        142, 134, 199;
+
+    --callout-info:
+        104, 117, 168;
+
+    --callout-question:
+        188, 183, 229;
+
+    --callout-warning:
+        169, 145, 105;
+
+    --callout-danger:
+        158, 92, 112;
+
+    --theme-callout-tip-italic:
+        var(--lunara-lavender);
+
+    --theme-callout-surface-bg:
+        rgba(142, 134, 199, 0.07);
+
+    --theme-callout-surface-border:
+        rgba(188, 183, 229, 0.24);
+
+    --theme-callout-text:
+        #d1cfe2;
+
+    /* ─────────────── Code ─────────────── */
+
+    --theme-code-bg:
+        rgba(2, 3, 8, 0.84);
+
+    --theme-code-border:
+        rgba(142, 134, 199, 0.26);
+
+    --theme-code-text:
+        #d4d2e4;
+
+    --theme-code-inline-bg:
+        rgba(142, 134, 199, 0.10);
+
+    --theme-code-inline-text:
+        var(--lunara-lavender);
+
+    --theme-code-comment:
+        #626176;
+
+    --theme-code-keyword:
+        #bcb7e5;
+
+    --theme-code-string:
+        #9f98d8;
+
+    --theme-code-number:
+        #8e86c7;
+
+    --theme-code-function:
+        #d0cceb;
+
+    --theme-code-operator:
+        #9694ad;
+
+    --theme-code-punctuation:
+        #74738a;
+
+    --code-important:
+        var(--lunara-moon);
+
+    --code-tag:
+        var(--lunara-lavender);
+
+    --color-yellow:
+        #b59a6b;
+
+    --theme-hr-color:
+        rgba(188, 183, 229, 0.28);
+}
+
+body.theme-lunara h1 {
+    font-family:
+        "Allura",
+        "Cormorant Garamond",
+        cursive;
+
+    font-size: 3.2em;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+
+    color: #e8e6ff;
+
+    text-shadow:
+        0 0 18px rgba(188, 183, 229, 0.22),
+        0 0 45px rgba(104, 117, 168, 0.12);
+}
+
+body.theme-lunara h2,
+body.theme-lunara h3 {
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.015em;
+}
+
+body.theme-lunara h2::before {
+    content: "✦";
+    margin-right: 0.45em;
+
+    color: #bcb7e5;
+
+    font-family: serif;
+
+    text-shadow:
+        0 0 10px rgba(188, 183, 229, 0.55);
+}

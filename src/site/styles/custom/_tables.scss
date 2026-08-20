@@ -1,0 +1,17 @@
+body {
+    table,
+    th,
+    td {
+        border: var(--terminal-border-dim);
+    }
+
+    th {
+        background: var(--theme-surface-table-head);
+    }
+
+    hr {
+        border: none;
+        border-top: var(--hr-thickness, 2px) solid var(--theme-hr-color);
+        border-color: var(--theme-hr-color);
+    }
+}

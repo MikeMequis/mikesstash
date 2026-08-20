@@ -1,0 +1,25 @@
+:root {
+    --xbox-green: #9bcf00;
+    --xbox-green-bright: #b8e62e;
+    --xbox-green-dim: #4a7a12;
+    --xbox-green-deep: #2d4a0a;
+    --xbox-green-glow: rgba(155, 207, 0, 0.22);
+    --font-text: "JetBrains Mono", "Courier New", Courier, monospace;
+    --font-monospace: "JetBrains Mono", "Courier New", Courier, monospace;
+}
+
+body.theme-dark,
+body.theme-light {
+    --font-text: "JetBrains Mono", "Courier New", Courier, monospace;
+    --font-monospace: "JetBrains Mono", "Courier New", Courier, monospace;
+}
+
+body.theme-lunara {
+    --font-text: "DM Sans", "Segoe UI", sans-serif;
+    --font-monospace: "DM Mono", "JetBrains Mono", monospace;
+}
+
+body.theme-nyxa {
+    --font-text: "Space Grotesk", "Segoe UI", sans-serif;
+    --font-monospace: "JetBrains Mono", "Cascadia Code", monospace;
+}

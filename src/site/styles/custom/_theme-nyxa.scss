@@ -1,0 +1,432 @@
+body.theme-nyxa {
+
+    /* ═══════════════════════════════════════════════
+       NYXA — REDLINE
+       ═══════════════════════════════════════════════ */
+
+    color-scheme: light;
+
+    .content {
+        padding-top: 40px;
+    }
+
+    --mono-rgb-0: 255, 255, 255;
+    --mono-rgb-100: 0, 0, 0;
+
+    --color-base-00: #fffdf9;
+    --color-base-05: #fbf9f5;
+    --color-base-10: #f2f0ec;
+    --color-base-20: #e8e5df;
+    --color-base-25: #dbd7d0;
+    --color-base-30: #c9c4bd;
+    --color-base-35: #bdb7af;
+    --color-base-40: #a39d95;
+    --color-base-50: #8f8981;
+    --color-base-60: #77706a;
+    --color-base-70: #5c5550;
+    --color-base-100: #181616;
+
+    --background-primary: #fffdf9;
+    --background-secondary: #f2f0ec;
+    --background-modifier-border: rgba(20, 20, 20, 0.30);
+
+    /* ─────────────── Typography ─────────────── */
+
+    --font-text:
+        "Barlow Condensed",
+        "Arial Narrow",
+        sans-serif;
+
+    --font-monospace:
+        "JetBrains Mono",
+        "Courier New",
+        monospace;
+
+    --text-normal: #181616;
+    --text-muted: #555050;
+    --text-faint: #8c8585;
+
+    --text-accent: #e21b23;
+
+    --link-color: #d9161f;
+    --link-color-hover: #ff1e2d;
+    --link-external-color: #b90f18;
+
+    /* ─────────────── Accent (component highlights) ─────────────── */
+
+    --theme-accent: #e21b23;
+    --theme-accent-bright: #ff1e2d;
+    --theme-accent-rgb: 226, 27, 35;
+    --interactive-accent: var(--theme-accent);
+    --theme-toggle-hover-bg: var(--theme-accent);
+    --theme-toggle-hover-color: #fffdf9;
+    --theme-on-accent: #fffdf9;
+    --color-orange: var(--nyxa-yellow);
+
+    /* ─────────────── Nyxa Palette ─────────────── */
+
+    --nyxa-red: #e21b23;
+    --nyxa-red-bright: #ff1e2d;
+    --nyxa-red-dark: #9e1018;
+
+    --nyxa-black: #111111;
+    --nyxa-ink: #181616;
+
+    --nyxa-white: #fffdf9;
+    --nyxa-paper: #f2f0ec;
+
+    --nyxa-yellow: #ffd52f;
+
+    --nyxa-gray: #8c8585;
+
+    --nyxa-red-glow:
+        rgba(226, 27, 35, 0.20);
+
+    /* ─────────────── Borders ─────────────── */
+
+    --terminal-border:
+        3px solid #181616;
+
+    --terminal-border-dim:
+        2px solid rgba(24, 22, 22, 0.28);
+
+    /* ─────────────── Background ─────────────── */
+
+    --theme-bg-gradient:
+        radial-gradient(ellipse 120% 85% at 5% -5%, rgba(226, 27, 35, 0.34) 0%, transparent 52%),
+        radial-gradient(ellipse 90% 65% at 100% 100%, rgba(255, 213, 47, 0.3) 0%, transparent 50%),
+        linear-gradient(175deg, #fefdf8 0%, #ffffff 42%, #ffffff 58%, #f4f0e8 100%);
+
+    /* ─────────────── Text ─────────────── */
+
+    --theme-text:
+        #181616;
+
+    --theme-text-strong:
+        var(--nyxa-black);
+
+    --theme-text-em:
+        #272323;
+
+    --theme-text-muted:
+        #555050;
+
+    --theme-text-nav:
+        #252222;
+
+    --theme-accent-text:
+        var(--nyxa-red);
+
+    --theme-accent-muted:
+        rgba(226, 27, 35, 0.64);
+
+    --theme-accent-subtle:
+        rgba(226, 27, 35, 0.80);
+
+    --theme-accent-hint:
+        rgba(226, 27, 35, 0.68);
+
+    --theme-accent-placeholder:
+        rgba(226, 27, 35, 0.42);
+
+    --theme-accent-placeholder-focus:
+        rgba(226, 27, 35, 0.26);
+
+    /* ─────────────── Shadows ─────────────── */
+
+    --theme-title-shadow:
+        4px 4px 0 rgba(24, 22, 22, 0.14);
+
+    --theme-h1-shadow:
+        3px 3px 0 rgba(226, 27, 35, 0.16);
+
+    /* ─────────────── Panels ─────────────── */
+
+    --theme-panel-sidebar:
+        linear-gradient(180deg, #ffffff 0%, #f2f0ec 100%);
+
+    --theme-panel-navbar:
+        linear-gradient(180deg, #ffffff 0%, #f5f3ef 100%);
+
+    --theme-surface:
+        rgba(255, 255, 255, 0.78);
+
+    --theme-surface-strong:
+        rgba(255, 255, 255, 0.94);
+
+    --theme-surface-input:
+        rgba(255, 255, 255, 0.96);
+
+    --theme-surface-input-focus:
+        #ffffff;
+
+    --theme-surface-modal:
+        rgba(255, 255, 255, 0.98);
+
+    /* ─────────────── Content ─────────────── */
+
+    --theme-surface-code:
+        rgba(242, 240, 236, 0.94);
+
+    --theme-surface-blockquote:
+        rgba(226, 27, 35, 0.06);
+
+    --theme-surface-table-head:
+        rgba(226, 27, 35, 0.12);
+
+    --theme-surface-keys:
+        rgba(242, 240, 236, 0.90);
+
+    --theme-surface-keys-hover:
+        rgba(226, 27, 35, 0.12);
+
+    /* ─────────────── Overlay ─────────────── */
+
+    --theme-overlay:
+        rgba(17, 17, 17, 0.72);
+
+    --theme-tooltip-bg:
+        #181616;
+
+    --theme-tooltip-text:
+        #fffdf9;
+
+    --theme-toggle-bg:
+        #fffdf9;
+
+    --theme-toggle-color:
+        var(--nyxa-red);
+
+    --theme-heading:
+        #181616;
+
+    /* ─────────────── Search / Graph ─────────────── */
+
+    --theme-search-glow:
+        0 0 0 3px rgba(226, 27, 35, 0.10);
+
+    --theme-tooltip-glow:
+        4px 4px 0 rgba(226, 27, 35, 0.18);
+
+    --dg-search-divider-color:
+        rgba(24, 22, 22, 0.24);
+
+    --dg-graph-border-color:
+        rgba(226, 27, 35, 0.40);
+
+    --dg-overlay-bg:
+        rgba(17, 17, 17, 0.72);
+
+    /* ─────────────── YouTube ─────────────── */
+
+    --yt-viz-gradient-start:
+        #ffffff;
+
+    --yt-viz-gradient-end:
+        #e21b23;
+
+    --yt-viz-bg:
+        rgba(255, 255, 255, 0.76);
+
+    /* ─────────────── Callouts ─────────────── */
+
+    --callout-tip:
+        226, 27, 35;
+
+    --callout-info:
+        24, 24, 24;
+
+    --callout-question:
+        226, 27, 35;
+
+    --callout-warning:
+        255, 213, 47;
+
+    --callout-danger:
+        158, 16, 24;
+
+    --theme-callout-tip-italic:
+        var(--nyxa-red);
+
+    --theme-callout-surface-bg:
+        rgba(226, 27, 35, 0.06);
+
+    --theme-callout-surface-border:
+        rgba(226, 27, 35, 0.34);
+
+    --theme-callout-text:
+        #272323;
+
+    /* ─────────────── Code ─────────────── */
+
+    --theme-code-bg:
+        #f2f0ec;
+
+    --theme-code-border:
+        rgba(24, 22, 22, 0.28);
+
+    --theme-code-text:
+        #181616;
+
+    --theme-code-inline-bg:
+        rgba(226, 27, 35, 0.08);
+
+    --theme-code-inline-text:
+        var(--nyxa-red-dark);
+
+    --theme-code-comment:
+        #777070;
+
+    --theme-code-keyword:
+        #b90f18;
+
+    --theme-code-string:
+        #d9161f;
+
+    --theme-code-number:
+        #9e1018;
+
+    --theme-code-function:
+        #181616;
+
+    --theme-code-operator:
+        #555050;
+
+    --theme-code-punctuation:
+        #777070;
+
+    --code-important:
+        var(--nyxa-red);
+
+    --code-tag:
+        var(--nyxa-red-dark);
+
+    --color-yellow:
+        var(--nyxa-yellow);
+
+    --theme-hr-color:
+        rgba(226, 27, 35, 0.45);
+}
+
+body.theme-nyxa h1 {
+    font-family:
+        "Daft Font",
+        Impact,
+        sans-serif;
+
+    font-weight: 400;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+
+    color: var(--nyxa-ink);
+
+    text-shadow:
+        4px 4px 0 rgba(226, 27, 35, 0.22);
+}
+
+body.theme-nyxa h2 {
+    font-family:
+        "Rubik Dirt",
+        Impact,
+        sans-serif;
+
+    font-weight: 400;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+
+    color: var(--nyxa-ink);
+
+    text-shadow:
+        3px 3px 0 rgba(226, 27, 35, 0.22);
+}
+
+body.theme-nyxa h3 {
+    font-family:
+        "Barlow Condensed",
+        "Arial Narrow",
+        sans-serif;
+
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: var(--nyxa-ink);
+}
+
+body.theme-nyxa a {
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(226, 27, 35, 0.45);
+}
+
+body.theme-nyxa a:hover {
+    color: #ff1e2d;
+    text-shadow:
+        2px 2px 0 rgba(226, 27, 35, 0.12);
+}
+
+body.theme-nyxa hr {
+    border: 0;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e21b23 10%,
+            #181616 50%,
+            #e21b23 90%,
+            transparent
+        );
+
+    transform: rotate(-0.5deg);
+}
+
+body.theme-nyxa h1 {
+    font-family: "Daft Font", sans-serif;
+
+    font-size: clamp(2rem, 5vw, 4rem);
+
+    line-height: 0.85;
+
+    text-transform: uppercase;
+
+    color: var(--nyxa-red);
+
+    transform: rotate(-1.5deg);
+
+    text-shadow:
+        3px 3px 0 var(--nyxa-black);
+}
+
+body.theme-nyxa .nyxa-title {
+    position: relative;
+
+    font-family: "Daft Font", sans-serif;
+
+    color: var(--nyxa-red);
+
+    z-index: 1;
+}
+
+body.theme-nyxa .nyxa-title::before {
+    content: attr(data-text);
+
+    position: absolute;
+
+    inset: 0;
+
+    font-family: "Knewave Outline", sans-serif;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px var(--nyxa-gray);
+
+    transform:
+        translate(5px, 5px)
+        rotate(1deg);
+
+    z-index: -1;
+
+    pointer-events: none;
+}

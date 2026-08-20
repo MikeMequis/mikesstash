@@ -1,8 +1,13 @@
 <script>
 (function () {
+  var themes = {{ meta.themes | jsonify | safe }};
+  var ids = themes.map(function (t) { return t.id; });
   var stored = localStorage.getItem("dg-theme");
-  if (stored === "light" || stored === "dark") {
-    document.body.classList.remove("theme-dark", "theme-light");
+  if (ids.indexOf(stored) !== -1) {
+    document.body.classList.remove.apply(
+      document.body.classList,
+      ids.map(function (id) { return "theme-" + id; })
+    );
     document.body.classList.add("theme-" + stored);
   }
 })();

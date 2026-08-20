@@ -1,0 +1,20 @@
+body.theme-dark,
+body.theme-light,
+body.theme-lunara,
+body.theme-nyxa {
+    --bold-color: var(--theme-text-strong);
+    --color-emphasis: var(--theme-text-strong);
+    --code-normal: var(--theme-code-text);
+    --code-background: var(--theme-code-bg);
+    --code-comment: var(--theme-code-comment);
+    --code-function: var(--theme-code-function);
+    --code-keyword: var(--theme-code-keyword);
+    --code-operator: var(--theme-code-operator);
+    --code-property: var(--theme-code-string);
+    --code-punctuation: var(--theme-code-punctuation);
+    --code-string: var(--theme-code-string);
+    --code-value: var(--theme-code-number);
+    --rendered-code-bg: var(--theme-code-inline-bg);
+    --rendered-code-text: var(--theme-code-inline-text);
+    --hr-color: var(--theme-hr-color);
+}
