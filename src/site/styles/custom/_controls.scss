@@ -149,9 +149,11 @@ a.view-toggle-btn {
     display: flex;
     align-items: center;
     justify-content: center;
+    appearance: none;
     border: var(--terminal-border-dim);
     border-radius: 0;
     background: var(--theme-toggle-bg);
+    background-color: var(--theme-toggle-bg);
     color: var(--theme-toggle-color);
     cursor: pointer;
     box-shadow: var(--theme-search-glow);
@@ -160,10 +162,12 @@ a.view-toggle-btn {
     font-weight: 700;
     letter-spacing: 0.04em;
     text-decoration: none;
+    user-select: none;
     transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 
     &:hover {
         background: var(--theme-toggle-hover-bg);
+        background-color: var(--theme-toggle-hover-bg);
         color: var(--theme-toggle-hover-color);
         border-color: var(--theme-accent-bright);
         text-decoration: none;

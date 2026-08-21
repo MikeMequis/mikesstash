@@ -145,6 +145,23 @@ module.exports = async (data) => {
   const mainLanguage = process.env.SITE_MAIN_LANGUAGE || "pt";
   const useEnglishDefaults = mainLanguage === "en";
 
+  const portfolioNameEn =
+    process.env.PORTFOLIO_NAME_HEADER_EN ||
+    process.env.PORTFOLIO_NAME_HEADER ||
+    siteNameEn;
+  const portfolioNamePt =
+    process.env.PORTFOLIO_NAME_HEADER_PT ||
+    process.env.PORTFOLIO_NAME_HEADER ||
+    portfolioNameEn;
+  const portfolioDescriptionEn =
+    process.env.PORTFOLIO_DESCRIPTION_EN ||
+    process.env.PORTFOLIO_DESCRIPTION ||
+    siteDescriptionEn;
+  const portfolioDescriptionPt =
+    process.env.PORTFOLIO_DESCRIPTION_PT ||
+    process.env.PORTFOLIO_DESCRIPTION ||
+    portfolioDescriptionEn;
+
   const meta = {
     env: process.env.ELEVENTY_ENV,
     theme: process.env.THEME,
@@ -163,6 +180,18 @@ module.exports = async (data) => {
     siteNames: {
       pt: siteNamePt,
       en: siteNameEn,
+    },
+    portfolioSiteName: useEnglishDefaults ? portfolioNameEn : portfolioNamePt,
+    portfolioSiteNames: {
+      pt: portfolioNamePt,
+      en: portfolioNameEn,
+    },
+    portfolioSiteDescription: useEnglishDefaults
+      ? portfolioDescriptionEn
+      : portfolioDescriptionPt,
+    portfolioSiteDescriptions: {
+      pt: portfolioDescriptionPt,
+      en: portfolioDescriptionEn,
     },
     siteLogoPath: logoPath,
     mainLanguage,

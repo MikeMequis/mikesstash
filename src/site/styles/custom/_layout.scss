@@ -66,6 +66,14 @@ body {
         border-left: 2px solid transparent;
         border-radius: 0;
         color: var(--theme-text-nav);
+        padding: 0;
+
+        .filename {
+            display: block;
+            width: 100%;
+            padding: var(--dg-notelink-padding);
+            text-decoration: none;
+        }
 
         &:hover {
             background-color: var(--theme-accent);
