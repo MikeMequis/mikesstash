@@ -74,7 +74,7 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
       {% for imp in dynamics.notes.beforeContent %}
         {% include imp %}
       {% endfor %}
-      {{ content | hideDataview | taggify | link | safe}}
+      {{ content | hideDataview | taggify | link(portfolioContext) | safe}}
       {% for imp in dynamics.common.afterContent %}
         {% include imp %}
       {% endfor %}
@@ -99,6 +99,7 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
       {% include imp %}
     {% endfor %}
     {%include "components/lucideIcons.njk"%}
+    {% include "components/viewToggle.njk" %}
     {% include "components/themeSelect.njk" %}
     {% include "components/langToggle.njk" %}
     {% include "components/youtubeVisualizer.njk" %}

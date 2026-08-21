@@ -58,6 +58,21 @@ function isLinkCardsEnabled(frontMatter = {}, env = process.env) {
   return env.dgShowLinkCards === "true";
 }
 
+function isPortfolioViewable(data = {}) {
+  const noteProps =
+    data && typeof data === "object"
+      ? data["dg-note-properties"] || {}
+      : {};
+
+  if (Object.prototype.hasOwnProperty.call(noteProps, "isPortfolioViewable")) {
+    return !!noteProps.isPortfolioViewable;
+  }
+  if (Object.prototype.hasOwnProperty.call(data, "isPortfolioViewable")) {
+    return !!data.isPortfolioViewable;
+  }
+  return false;
+}
+
 function readFrontMatterFromFile(filePath) {
   try {
     const raw = fs.readFileSync(filePath, "utf8");
@@ -279,19 +294,10 @@ function isStandaloneInternalLinkParagraph(paragraph) {
   return getStandaloneInternalLinks(paragraph).length === 1;
 }
 
-function buildCardHtml(anchor, meta) {
-  const href = anchor.getAttribute("href") || "#";
-  const titlePt =
-    anchor.getAttribute("data-title-pt") ||
-    (meta && meta.titles.pt) ||
-    anchor.text ||
-    "";
-  const titleEn =
-    anchor.getAttribute("data-title-en") ||
-    (meta && meta.titles.en) ||
-    titlePt;
+function buildCardHtmlFromMeta(href, meta, noteIcon = "") {
+  const titlePt = (meta && meta.titles.pt) || "";
+  const titleEn = (meta && meta.titles.en) || titlePt;
   const titleDefault = meta ? meta.titles.default : titlePt || titleEn;
-  const noteIcon = anchor.getAttribute("data-note-icon") || "";
   const image = meta && meta.image ? meta.image : "";
   const emoji = (meta && meta.emoji) || extractLeadingEmoji(titleDefault);
   const descPt = (meta && meta.descriptions.pt) || "";
@@ -328,6 +334,31 @@ function buildCardHtml(anchor, meta) {
     ${supportHtml}
   </span>
 </a>`;
+}
+
+function buildCardHtml(anchor, meta) {
+  const href = anchor.getAttribute("href") || "#";
+  const titlePt =
+    anchor.getAttribute("data-title-pt") ||
+    (meta && meta.titles.pt) ||
+    anchor.text ||
+    "";
+  const titleEn =
+    anchor.getAttribute("data-title-en") ||
+    (meta && meta.titles.en) ||
+    titlePt;
+  const titleDefault = meta ? meta.titles.default : titlePt || titleEn;
+  const noteIcon = anchor.getAttribute("data-note-icon") || "";
+
+  // Build synthetic meta preserving anchor-resolved titles
+  const syntheticMeta = {
+    titles: { pt: titlePt, en: titleEn, default: titleDefault },
+    image: meta && meta.image ? meta.image : "",
+    emoji: (meta && meta.emoji) || "",
+    descriptions: meta ? meta.descriptions : { pt: "", en: "" },
+  };
+
+  return buildCardHtmlFromMeta(href, syntheticMeta, noteIcon);
 }
 
 function parseSnippet(html) {
@@ -422,8 +453,39 @@ function upgradeLinkCards(root, options = {}) {
   }
 }
 
+function renderPortfolioCards(notes, basePath = "") {
+  const index = getNoteCardIndex();
+  const cards = [];
+
+  for (const note of notes) {
+    if (!isPortfolioViewable(note.data)) continue;
+
+    const href = basePath + note.url;
+    const meta = lookupCardMeta(note.url, index);
+    const noteIcon = note.data.noteIcon || process.env.NOTE_ICON_DEFAULT || "";
+
+    if (meta) {
+      cards.push(buildCardHtmlFromMeta(href, meta, noteIcon));
+    } else {
+      const titles = getLocalizedTitlesFromNoteData(note.data, note.fileSlug);
+      const fallbackMeta = {
+        titles,
+        image: "",
+        emoji: extractLeadingEmoji(titles.default),
+        descriptions: { pt: "", en: "" },
+      };
+      cards.push(buildCardHtmlFromMeta(href, fallbackMeta, noteIcon));
+    }
+  }
+
+  if (cards.length === 0) return "";
+
+  return `<div class="dg-link-cards">${cards.join("\n")}</div>`;
+}
+
 module.exports = {
   isLinkCardsEnabled,
+  isPortfolioViewable,
   buildNoteCardIndex,
   getNoteCardIndex,
   clearNoteCardIndex,
@@ -435,6 +497,8 @@ module.exports = {
   truncateText,
   normalizePermalink,
   buildCardHtml,
+  buildCardHtmlFromMeta,
+  renderPortfolioCards,
   isStandaloneInternalLinkParagraph,
   noteCardIndexBuildId: () => noteCardIndexBuildId,
 };

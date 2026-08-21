@@ -7,9 +7,16 @@ const { langPlugin } = require("./langPlugin");
 const { resolveLocalizedTitle, getLocalizedTitlesFromNoteData } = require("./langUtils");
 const {
   isLinkCardsEnabled,
+  isPortfolioViewable,
   upgradeLinkCards,
   clearNoteCardIndex,
+  renderPortfolioCards,
 } = require("./linkCardsUtils");
+const {
+  canonicalPermalink,
+  getPortfolioProjectUrls,
+  isPortfolioReachable,
+} = require("./portfolioUtils");
 
 const jsYamlForMatter = require(
   require.resolve("js-yaml", { paths: [require.resolve("gray-matter")] })
@@ -147,10 +154,15 @@ function userEleventySetup(eleventyConfig) {
     }
 
     let frontMatter = {};
-    try {
-      frontMatter = matter(fs.readFileSync(inputPath, "utf8"), matterOptions).data || {};
-    } catch {
-      frontMatter = {};
+    const aliasNote = this.page && this.page.note;
+    if (aliasNote && aliasNote.data) {
+      frontMatter = aliasNote.data;
+    } else {
+      try {
+        frontMatter = matter(fs.readFileSync(inputPath, "utf8"), matterOptions).data || {};
+      } catch {
+        frontMatter = {};
+      }
     }
 
     if (!isLinkCardsEnabled(frontMatter)) {
@@ -160,6 +172,19 @@ function userEleventySetup(eleventyConfig) {
     const parsed = parse(content);
     upgradeLinkCards(parsed);
     return parsed.toString();
+  });
+
+  eleventyConfig.addFilter("portfolioCards", function (notes) {
+    return renderPortfolioCards(notes || [], "/portfolio");
+  });
+
+  eleventyConfig.addCollection("portfolio", function (collectionApi) {
+    const all = collectionApi.getFilteredByTag("note");
+    const projectUrls = getPortfolioProjectUrls(all);
+    return all.filter((item) => {
+      const url = item.url || canonicalPermalink(item.data);
+      return isPortfolioReachable(url, projectUrls);
+    });
   });
 
   eleventyConfig.setServerOptions({

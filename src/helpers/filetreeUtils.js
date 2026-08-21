@@ -1,4 +1,5 @@
 const { getLocalizedTitlesFromNoteData } = require("./langUtils");
+const { isPortfolioViewable } = require("./linkCardsUtils");
 
 // Natural sort comparison - handles numbers anywhere in the string
 const naturalCompare = (a, b) => {
@@ -164,11 +165,19 @@ function assignNested(obj, keyPath, value) {
   obj[keyPath[lastKeyIndex]] = value;
 }
 
-function getFileTree(data) {
+function getFileTree(data, opts = {}) {
+  const { filter, basePath, group } = opts;
   const tree = {};
   (data.collections.note || []).forEach((note) => {
+    if (filter && !filter(note.data)) {
+      return;
+    }
     const [meta, folders] = getPermalinkMeta(note);
-    assignNested(tree, folders, { isNote: true, ...meta });
+    if (basePath) {
+      meta.permalink = basePath + meta.permalink;
+    }
+    const targetFolders = group ? group(note, meta, folders) : folders;
+    assignNested(tree, targetFolders, { isNote: true, ...meta });
   });
   const navigationOrder = data.navigationOrder || null;
   const fileTree = sortTree(tree, navigationOrder, "/");

@@ -1,0 +1,17 @@
+---
+permalink: /portfolio/
+layout: layouts/note.njk
+title: Portfolio
+dgShowComments: false
+---
+
+<h1 data-title-pt="Portfólio" data-title-en="Portfolio">Portfólio</h1>
+<p
+  class="portfolio-tagline"
+  data-desc-pt="Trabalho selecionado — projetos, ferramentas e experimentos técnicos."
+  data-desc-en="Selected work — projects, tools, and technical experiments."
+>
+  Trabalho selecionado — projetos, ferramentas e experimentos técnicos.
+</p>
+
+{{ collections.note | portfolioCards | safe }}
