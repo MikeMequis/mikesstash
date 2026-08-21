@@ -1,4 +1,5 @@
 const { getLocalizedTitlesFromNoteData } = require("./langUtils");
+const { isGardenVisible } = require("./visibilityUtils");
 
 const wikiLinkRegex = /\[\[(.*?\|.*?)\]\]/g;
 const internalLinkRegex = /href="\/(.*?)"/g;
@@ -99,7 +100,9 @@ async function getGraph(data) {
   let stemURLs = {};
   let homeAlias = "/";
 
-  const notes = data.collections.note || [];
+  const notes = (data.collections.note || []).filter((note) =>
+    isGardenVisible(note.data)
+  );
 
   // Clear caches from any previous build (e.g. --watch mode)
   basesQueryCache.clear();

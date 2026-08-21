@@ -7,7 +7,6 @@ const { langPlugin } = require("./langPlugin");
 const { resolveLocalizedTitle, getLocalizedTitlesFromNoteData } = require("./langUtils");
 const {
   isLinkCardsEnabled,
-  isPortfolioViewable,
   upgradeLinkCards,
   clearNoteCardIndex,
   renderPortfolioCards,
@@ -17,6 +16,7 @@ const {
   getPortfolioProjectUrls,
   isPortfolioReachable,
 } = require("./portfolioUtils");
+const { isGardenVisible } = require("./visibilityUtils");
 
 const jsYamlForMatter = require(
   require.resolve("js-yaml", { paths: [require.resolve("gray-matter")] })
@@ -176,6 +176,10 @@ function userEleventySetup(eleventyConfig) {
 
   eleventyConfig.addFilter("portfolioCards", function (notes) {
     return renderPortfolioCards(notes || [], "/portfolio");
+  });
+
+  eleventyConfig.addFilter("gardenVisible", function (notes) {
+    return (notes || []).filter((note) => isGardenVisible(note.data));
   });
 
   eleventyConfig.addCollection("portfolio", function (collectionApi) {

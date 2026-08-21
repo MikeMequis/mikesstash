@@ -1,5 +1,4 @@
 const { getLocalizedTitlesFromNoteData } = require("./langUtils");
-const { isPortfolioViewable } = require("./linkCardsUtils");
 
 // Natural sort comparison - handles numbers anywhere in the string
 const naturalCompare = (a, b) => {

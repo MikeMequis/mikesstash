@@ -1,7 +1,10 @@
 const { getGraph } = require("../../helpers/linkUtils");
 const { getFileTree } = require("../../helpers/filetreeUtils");
-const { isPortfolioViewable } = require("../../helpers/linkCardsUtils");
 const { getLocalizedTitlesFromNoteData } = require("../../helpers/langUtils");
+const {
+  isPortfolioVisible,
+  isGardenVisible,
+} = require("../../helpers/visibilityUtils");
 const {
   canonicalPermalink,
   getPortfolioProjectUrls,
@@ -25,7 +28,7 @@ function computePortfolioGroup(data) {
   const notes = data.collections.note || [];
   const projectTitles = {};
   notes.forEach((note) => {
-    if (isPortfolioViewable(note.data)) {
+    if (isPortfolioVisible(note.data)) {
       const titles = getLocalizedTitlesFromNoteData(note.data, note.fileSlug);
       projectTitles[note.url] = titles.default;
     }
@@ -48,10 +51,10 @@ module.exports = {
   filetree: (data) => {
     const ctx = computePortfolioContext(data);
     if (!ctx) {
-      return getFileTree(data);
+      return getFileTree(data, { filter: isGardenVisible });
     }
     const filter = (noteData) => {
-      if (isPortfolioViewable(noteData)) {
+      if (isPortfolioVisible(noteData)) {
         return true;
       }
       if (!ctx.projectPrefix) {

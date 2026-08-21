@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/","title":{"pt":"🐱 Asher","en":"🐱 Asher"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewable":true,"title":{"pt":"🐱 Asher","en":"🐱 Asher"}}}
+{"dg-publish":true,"permalink":"/asher/","title":{"pt":"🐱 Asher","en":"🐱 Asher"},"dg-note-properties":{"dgShowComments":false,"displayMode":"both","title":{"pt":"🐱 Asher","en":"🐱 Asher"}}}
 ---
 
 ![Asher.gif](/img/user/img/Asher.gif)

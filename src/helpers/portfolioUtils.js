@@ -1,4 +1,4 @@
-const { isPortfolioViewable } = require("./linkCardsUtils");
+const { isPortfolioVisible } = require("./visibilityUtils");
 
 function canonicalPermalink(data) {
   if (data && data.tags && data.tags.indexOf("gardenEntry") !== -1) return "/";
@@ -8,7 +8,7 @@ function canonicalPermalink(data) {
 function getPortfolioProjectUrls(notes) {
   const urls = new Set();
   (notes || []).forEach((n) => {
-    if (isPortfolioViewable(n.data)) {
+    if (isPortfolioVisible(n.data)) {
       const u = n.url || canonicalPermalink(n.data);
       if (u) urls.add(u);
     }

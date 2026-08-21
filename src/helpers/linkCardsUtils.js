@@ -3,6 +3,7 @@ const path = require("path");
 const { globSync } = require("glob");
 const matter = require("gray-matter");
 const { getLocalizedTitlesFromNoteData } = require("./langUtils");
+const { isPortfolioVisible } = require("./visibilityUtils");
 
 const NOTES_DIR = path.join(process.cwd(), "src", "site", "notes");
 const DESC_MAX_LEN = 160;
@@ -56,21 +57,6 @@ function isLinkCardsEnabled(frontMatter = {}, env = process.env) {
     return !!frontMatter.dgShowLinkCards;
   }
   return env.dgShowLinkCards === "true";
-}
-
-function isPortfolioViewable(data = {}) {
-  const noteProps =
-    data && typeof data === "object"
-      ? data["dg-note-properties"] || {}
-      : {};
-
-  if (Object.prototype.hasOwnProperty.call(noteProps, "isPortfolioViewable")) {
-    return !!noteProps.isPortfolioViewable;
-  }
-  if (Object.prototype.hasOwnProperty.call(data, "isPortfolioViewable")) {
-    return !!data.isPortfolioViewable;
-  }
-  return false;
 }
 
 function readFrontMatterFromFile(filePath) {
@@ -458,7 +444,7 @@ function renderPortfolioCards(notes, basePath = "") {
   const cards = [];
 
   for (const note of notes) {
-    if (!isPortfolioViewable(note.data)) continue;
+    if (!isPortfolioVisible(note.data)) continue;
 
     const href = basePath + note.url;
     const meta = lookupCardMeta(note.url, index);
@@ -485,7 +471,6 @@ function renderPortfolioCards(notes, basePath = "") {
 
 module.exports = {
   isLinkCardsEnabled,
-  isPortfolioViewable,
   buildNoteCardIndex,
   getNoteCardIndex,
   clearNoteCardIndex,
