@@ -6,11 +6,15 @@
 
 :::lang pt
 
+# 🌌 Refúgio da Web
+
 Um pequeno refúgio para te levar desde as **ferramentas** mais úteis até os **passatempos** mais inesperados.
 
 :::
 
 :::lang en
+
+# 🌌 Web Haven
 
 A small refuge to take you from the most **useful tools** to the most unexpected **pastimes**.
 

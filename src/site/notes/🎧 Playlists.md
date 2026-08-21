@@ -4,6 +4,8 @@
 
 ![head-bang-head-banging.gif](/img/user/img/head-bang-head-banging.gif)
 
+# 🎧 Playlists
+
 :::lang pt
 
 A minha maior inspiração para explorar, imaginar, criar narrativas e personagens é a música. Aventure-se por estas playlists que trilham as minhas histórias.
