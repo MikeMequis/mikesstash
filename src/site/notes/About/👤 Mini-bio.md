@@ -8,7 +8,7 @@ Quer conhecer mais sobre o criador do site? Aqui é o lugar certo.
 
 ## Mini-bio
 
-Meu nome é **Marcelo Medeiros**, mas na internet você provavelmente vai me encontrar como **Mike**ou **MikeMequis**.
+Meu nome é **Marcelo Medeiros**, mas na internet você provavelmente vai me encontrar como **Mike** ou **MikeMequis**.
 
 Sou um **Engenheiro de Computação** e gosto de explorar diferentes áreas da tecnologia, programação, jogos, arte e tudo que desperta minha curiosidade — o que explica a variedade de coisas por aqui. No lado profissional, tenho experiência principalmente com desenvolvimento em **C#/.NET**, além de outras tecnologias e ferramentas que aparecem em projetos pessoais.
 

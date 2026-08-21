@@ -22,7 +22,7 @@ O conteúdo do site pode mudar com o tempo, mas o que você encontrará por aqui
 - Tutoriais e experiências explorando o potencial do Linux em um simples celular Android;
 - Textos e histórias para ler de forma descontraída e natural.
 
-O site ainda está em desenvolvimento, construído durante o meu tempo livre. Algumas partes estão prontas, outras sendo experimentadas e criadas sempre que uma ideia nova surge no meio do caminho. Acredite, é algo bem frequente.
+O site ainda está em desenvolvimento, construído durante o meu tempo livre. Algumas partes estão prontas, outras sendo experimentadas e criadas sempre que uma ideia nova surge no meio do caminho.
 
 Explore e divirta-se!
 ;)
@@ -59,7 +59,7 @@ The content of the site may change over time, but what you can find around here 
 - Tutorials and experiments exploring the potential of Linux on a simple Android phone;
 - Texts and stories meant to be read in a relaxed and natural way.
 
-The site is still under development, built during my free time. Some parts are finished, others are still being experimented created whenever a new idea finds its way into the project. Trust me, it's pretty frequent.
+The site is still under development, built during my free time. Some parts are finished, others are still being experimented created whenever a new idea finds its way into the project.
 
 Explore and have fun!
 ;)
