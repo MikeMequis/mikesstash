@@ -2,11 +2,10 @@
 {"dg-publish":true,"permalink":"/minecraft-server-in-android-2024/","title":{"pt":"🌱 Servidor Minecraft no Android (2024)","en":"🌱 Minecraft Server in Android (2024)"},"dg-note-properties":{"title":{"pt":"🌱 Servidor Minecraft no Android (2024)","en":"🌱 Minecraft Server in Android (2024)"}}}
 ---
 
-:::lang pt
-
-# 🌱 Como Hospedar um Servidor de Minecraft no Android
-
 ![MineServer.gif](/img/user/img/MineServer.gif)
+
+:::lang pt
+# 🌱 Como Hospedar um Servidor de Minecraft no Android
 
 Quer hospedar um servidor de *Minecraft* para jogar com seus amigos? Só precisa de um celular Android e a configuração de um servidor Linux. É bem simples, juro.
 
@@ -247,10 +246,7 @@ java -version
 :::
 
 :::lang en
-
 # 🌱 How to Host a Minecraft Server on Android
-
-![MineServer.gif](/img/user/img/MineServer.gif)
 
 Want to host a *Minecraft* server to play with your friends? All it requires is an Android phone and the Linux server configuration. It's pretty simple, I swear.
 

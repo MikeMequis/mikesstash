@@ -2,11 +2,11 @@
 {"dg-publish":true,"permalink":"/sobre/","title":{"pt":"ℹ️ Sobre","en":"ℹ️ About"},"dg-note-properties":{"dgShowComments":false,"displayMode":"garden","title":{"pt":"ℹ️ Sobre","en":"ℹ️ About"},"dgShowLinkCards":true}}
 ---
 
-:::lang pt
-
 # 🏡 Mike's Stash
 
-Primeiro, **boas-vindas** ao site!
+:::lang pt
+
+**Boas-vindas** ao site!
 
 Este espaço virtual reúne e mostra a minha parte criativa: minhas preferências, descobertas, histórias, projetos e muito mais. Em vez de criar apenas um site estático de **blog**, ou um simples perfil genérico de [Linktree](https://linktr.ee/), eu queria ir além: criar um espaço com a **minha cara**, feito de forma **simples**, **prática** e **gratuita**.
 
@@ -41,9 +41,7 @@ Explore e divirta-se!
 
 :::lang en
 
-# 🏡 Mike's Stash
-
-First of all, **welcome to the site!**
+**Welcome to the site!**
 
 This is a little corner of the internet where I gather and share my creative side: my preferences, discoveries, stories, projects, and much more. Instead of creating just another static **blog**, or a generic [Linktree](https://linktr.ee/) profile, I wanted to go a little further: create a space with **my own personality**, built in a way that is **simple**, **practical**, and **free**.
 
