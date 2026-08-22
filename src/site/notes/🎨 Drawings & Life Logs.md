@@ -20,6 +20,8 @@ Behind each drawing, behind each choice... There's a reason and a story. Make yo
 
 :::
 
+[[Drawings & Life Logs/🎦 Image Viewer\|🎦 Image Viewer]]
+
 [[Drawings & Life Logs/🥚 17 de Janeiro de 2026\|🥚 17 de Janeiro de 2026]]
 [[Drawings & Life Logs/⭕ 24 de Janeiro de 2026\|⭕ 24 de Janeiro de 2026]]
 [[Drawings & Life Logs/🪮 29 de Janeiro de 2026\|🪮 29 de Janeiro de 2026]]

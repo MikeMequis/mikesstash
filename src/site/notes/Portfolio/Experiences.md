@@ -1,9 +1,9 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/experiences/","title":{"pt":"Experiências","en":"Experiences"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"title":{"pt":"Experiências","en":"Experiences"}}}
+{"dg-publish":true,"permalink":"/portfolio/experiences/","title":{"pt":"🏆 Experiências","en":"🏆 Experiences"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"title":{"pt":"🏆 Experiências","en":"🏆 Experiences"}}}
 ---
 
 :::lang pt
-# Experiências
+# 🏆 Experiências
 
 ## 💻 Experiência profissional
 
@@ -154,7 +154,7 @@ A aplicação contou com uma interface gráfica desenvolvida em **Windows Forms*
 :::
 
 :::lang en
-# Experiences
+# 🏆 Experiences
 
 ## 💻 Professional experience
 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/linux-servers-on-android-project-overview/","title":{"pt":"Servidores Linux em Android — Visão geral de projetos","en":"Linux Servers on Android - Project Overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"title":{"pt":"Servidores Linux em Android — Visão geral de projetos","en":"Linux Servers on Android - Project Overview"}}}
+{"dg-publish":true,"permalink":"/portfolio/linux-servers-on-android-project-overview/","title":{"pt":"🐧 Servidores Linux em Android — Visão geral de projetos","en":"🐧 Linux Servers on Android - Project Overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"title":{"pt":"🐧 Servidores Linux em Android — Visão geral de projetos","en":"🐧 Linux Servers on Android - Project Overview"}}}
 ---
 
 
@@ -9,7 +9,7 @@
 ---
 
 :::lang pt
-# Servidores Linux em Android — Visão geral de projetos
+# 🐧 Servidores Linux em Android — Visão geral de projetos
 
 ## 🌱 Minecraft Server in Android (2024)
 
@@ -182,7 +182,7 @@ Mais do que simplesmente hospedar dois jogos, os projetos serviram como pequenos
 :::
 
 :::lang en
-# Linux servers on Android — Projects overview
+# 🐧 Linux servers on Android — Projects overview
 
 ## 🌱 Minecraft Server in Android (2024)
 
