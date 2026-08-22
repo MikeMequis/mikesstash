@@ -103,6 +103,7 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
     {% include "components/themeSelect.njk" %}
     {% include "components/langToggle.njk" %}
     {% include "components/youtubeVisualizer.njk" %}
+    {% include "components/imageViewerScript.njk" %}
     {% if contentClasses and "canvas-page" in contentClasses %}
       {%include "components/canvasScript.njk"%}
     {% endif %}

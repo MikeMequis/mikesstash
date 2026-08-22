@@ -4,6 +4,7 @@ const matter = require("gray-matter");
 const { upgradeYouTubeEmbeds } = require("./youtubeUtils");
 const { upgradePlaylistEmbeds } = require("./playlistEmbedUtils");
 const { langPlugin } = require("./langPlugin");
+const { imageViewerPlugin } = require("./imageViewerPlugin");
 const { resolveLocalizedTitle, getLocalizedTitlesFromNoteData } = require("./langUtils");
 const {
   isLinkCardsEnabled,
@@ -112,6 +113,7 @@ async function ytAudioApiMiddleware(req, res, next) {
 
 function userMarkdownSetup(md) {
   md.use(langPlugin);
+  md.use(imageViewerPlugin);
 }
 function userEleventySetup(eleventyConfig) {
   eleventyConfig.addFilter("localizedTitle", function (title, fallback, lang) {
