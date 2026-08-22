@@ -6,13 +6,17 @@
 
 :::lang pt
 
-Por trás de cada desenho, por cada escolha... Existe um motivo e uma história. Clique para ler e ver as minhas ilustrações realizadas durante o meu período livre e nas aulas de desenho.
+# 🎨 Desenhos e Diários
+
+Por trás de cada desenho, por cada escolha... Existe um motivo e uma história. Fique a vontade para ver e ler o meu progresso nas aulas de desenho.
 
 :::
 
 :::lang en
 
-Behind each drawing, behind each choice... There's a reason and a story. Click to read and see my illustrations made in free time and in drawing classes.
+# 🎨 Drawings & Life Logs
+
+Behind each drawing, behind each choice... There's a reason and a story. Make yourself comfortable and view and read my progress on my drawing lessons.
 
 :::
 

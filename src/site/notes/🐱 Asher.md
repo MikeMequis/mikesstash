@@ -4,6 +4,8 @@
 
 ![Asher.gif](/img/user/img/Asher.gif)
 
+# 🐱 Asher
+
 :::lang pt
 
 **Asher** é uma plataforma de modding baseada em launcher para [_Dust: An Elysian Tail_](https://store.steampowered.com/app/236090/Dust_An_Elysian_Tail/), com suporte a **patching de código em runtime** e **substituição de conteúdo** de forma segura, modular e reversível.
