@@ -123,15 +123,14 @@ function decodeHtmlEntities(value) {
   return out;
 }
 
-function getAnchorLink(filePath, linkTitle, portfolioContext) {
-  const { attributes, innerHTML } = getAnchorAttributes(filePath, linkTitle, portfolioContext);
+function getAnchorLink(filePath, linkTitle) {
+  const { attributes, innerHTML } = getAnchorAttributes(filePath, linkTitle);
   return `<a ${Object.keys(attributes)
     .map((key) => `${key}="${escapeHtmlAttr(attributes[key])}"`)
     .join(" ")}>${escapeHtmlText(innerHTML)}</a>`;
 }
 
-function getAnchorAttributes(filePath, linkTitle, portfolioContext) {
-  const portfolioPrefix = portfolioContext ? portfolioContext.projectPrefix : "";
+function getAnchorAttributes(filePath, linkTitle) {
   let fileName = decodeHtmlEntities(filePath);
   const decodedLinkTitle =
     linkTitle != null && linkTitle !== ""
@@ -199,17 +198,6 @@ function getAnchorAttributes(filePath, linkTitle, portfolioContext) {
     }
   } catch {
     deadLink = true;
-  }
-
-  if (!deadLink && portfolioContext) {
-    if (permalink === "/") {
-      permalink = "/portfolio/";
-    } else if (
-      permalink === portfolioPrefix ||
-      (portfolioPrefix && permalink.startsWith(portfolioPrefix))
-    ) {
-      permalink = "/portfolio" + permalink;
-    }
   }
 
   if (deadLink) {
@@ -480,7 +468,7 @@ module.exports = function(eleventyConfig) {
     return date && date.toISOString();
   });
 
-  eleventyConfig.addFilter("link", function(str, ctx) {
+  eleventyConfig.addFilter("link", function(str) {
     return (
       str &&
       str.replace(/\[\[([^\[\]]+?)\]\]/g, function(match, p1) {
@@ -492,7 +480,7 @@ module.exports = function(eleventyConfig) {
         const fileLink = parts[0];
         const linkTitle = parts[1];
 
-        return getAnchorLink(fileLink, linkTitle, ctx);
+        return getAnchorLink(fileLink, linkTitle);
       })
     );
   });

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/linux-servers-on-android-project-overview/","title":{"pt":"Servidores Linux em Android — Visão geral de projetos","en":"Linux Servers on Android - Project Overview"},"dg-note-properties":{"dgShowComments":false,"displayMode":"portfolio","title":{"pt":"Servidores Linux em Android — Visão geral de projetos","en":"Linux Servers on Android - Project Overview"}}}
+{"dg-publish":true,"permalink":"/portfolio/linux-servers-on-android-project-overview/","title":{"pt":"Servidores Linux em Android — Visão geral de projetos","en":"Linux Servers on Android - Project Overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"title":{"pt":"Servidores Linux em Android — Visão geral de projetos","en":"Linux Servers on Android - Project Overview"}}}
 ---
 
 

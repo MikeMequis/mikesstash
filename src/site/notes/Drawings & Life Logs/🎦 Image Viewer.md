@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/image-viewer/","title":{"pt":"🎦 Visualizador de imagens","en":"🎦 Image Viewer"},"dg-note-properties":{"dgShowComments":false,"dgShowImageViewer":true,"displayMode":"garden","title":{"pt":"🎦 Visualizador de imagens","en":"🎦 Image Viewer"}}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/image-viewer/","title":{"pt":"🎦 Visualizador de imagens","en":"🎦 Image Viewer"},"dg-note-properties":{"dgShowComments":false,"dgShowImageViewer":true,"title":{"pt":"🎦 Visualizador de imagens","en":"🎦 Image Viewer"}}}
 ---
 
 :::dg-viewer

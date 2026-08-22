@@ -1,42 +1,11 @@
-const { isPortfolioVisible } = require("./visibilityUtils");
-
-function canonicalPermalink(data) {
-  if (data && data.tags && data.tags.indexOf("gardenEntry") !== -1) return "/";
-  return (data && data.permalink) || "";
-}
-
-function getPortfolioProjectUrls(notes) {
-  const urls = new Set();
-  (notes || []).forEach((n) => {
-    if (isPortfolioVisible(n.data)) {
-      const u = n.url || canonicalPermalink(n.data);
-      if (u) urls.add(u);
-    }
-  });
-  return Array.from(urls);
-}
-
-function isPortfolioReachable(url, projectUrls) {
-  if (!url) return false;
-  return projectUrls.some((p) => url === p || url.startsWith(p));
-}
-
-function currentProjectPrefix(canonicalUrl, projectUrls) {
-  return projectUrls.find((p) => canonicalUrl === p || canonicalUrl.startsWith(p)) || "";
-}
-
-function toPortfolioLink(canonicalLink, projectPrefix) {
-  if (!projectPrefix) return canonicalLink;
-  if (canonicalLink === projectPrefix || canonicalLink.startsWith(projectPrefix)) {
-    return "/portfolio" + canonicalLink;
-  }
-  return canonicalLink;
+function isPortfolioNote(note) {
+  if (!note) return false;
+  const stem = String(note.filePathStem || "").replace(/\\/g, "/");
+  const parts = stem.split("/notes/");
+  const rel = parts.length > 1 ? parts[parts.length - 1] : stem;
+  return rel === "Portfolio" || rel.startsWith("Portfolio/");
 }
 
 module.exports = {
-  canonicalPermalink,
-  getPortfolioProjectUrls,
-  isPortfolioReachable,
-  currentProjectPrefix,
-  toPortfolioLink,
+  isPortfolioNote,
 };

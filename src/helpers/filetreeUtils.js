@@ -168,7 +168,7 @@ function getFileTree(data, opts = {}) {
   const { filter, basePath, group } = opts;
   const tree = {};
   (data.collections.note || []).forEach((note) => {
-    if (filter && !filter(note.data)) {
+    if (filter && !filter(note.data, note)) {
       return;
     }
     const [meta, folders] = getPermalinkMeta(note);

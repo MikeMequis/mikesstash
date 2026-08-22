@@ -1,37 +1,21 @@
-const DISPLAY_MODES = ["garden", "portfolio", "both"];
-const DEFAULT_DISPLAY_MODE = "garden";
-
-function getDisplayMode(data = {}) {
+function isPortfolioViewableOnly(data = {}) {
   const noteProps =
     data && typeof data === "object" ? data["dg-note-properties"] || {} : {};
 
-  let raw;
-  if (Object.prototype.hasOwnProperty.call(noteProps, "displayMode")) {
-    raw = noteProps.displayMode;
-  } else if (Object.prototype.hasOwnProperty.call(data, "displayMode")) {
-    raw = data.displayMode;
+  if (Object.prototype.hasOwnProperty.call(noteProps, "isPortfolioViewableOnly")) {
+    return !!noteProps.isPortfolioViewableOnly;
   }
-
-  if (DISPLAY_MODES.includes(raw)) {
-    return raw;
+  if (Object.prototype.hasOwnProperty.call(data, "isPortfolioViewableOnly")) {
+    return !!data.isPortfolioViewableOnly;
   }
-  return DEFAULT_DISPLAY_MODE;
-}
-
-function isPortfolioVisible(data) {
-  const mode = getDisplayMode(data);
-  return mode === "portfolio" || mode === "both";
+  return false;
 }
 
 function isGardenVisible(data) {
-  const mode = getDisplayMode(data);
-  return mode === "garden" || mode === "both";
+  return !isPortfolioViewableOnly(data);
 }
 
 module.exports = {
-  DISPLAY_MODES,
-  DEFAULT_DISPLAY_MODE,
-  getDisplayMode,
-  isPortfolioVisible,
+  isPortfolioViewableOnly,
   isGardenVisible,
 };

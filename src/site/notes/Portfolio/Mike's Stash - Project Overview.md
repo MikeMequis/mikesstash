@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/mike-s-stash-project-overview/","title":{"pt":"Mike's Stash - Visão geral de projeto","en":"Mike's Stash - Project overview"},"dg-note-properties":{"dgShowComments":false,"displayMode":"portfolio","title":{"pt":"Mike's Stash - Visão geral de projeto","en":"Mike's Stash - Project overview"}}}
+{"dg-publish":true,"permalink":"/portfolio/mike-s-stash-project-overview/","title":{"pt":"Mike's Stash - Visão geral de projeto","en":"Mike's Stash - Project overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"title":{"pt":"Mike's Stash - Visão geral de projeto","en":"Mike's Stash - Project overview"}}}
 ---
 
 :::lang pt

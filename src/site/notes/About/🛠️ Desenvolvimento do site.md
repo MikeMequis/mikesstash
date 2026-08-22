@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/about/desenvolvimento-do-site/","title":{"pt":"🛠️ Desenvolvimento do site","en":"🛠️ Website development"},"dg-note-properties":{"dgShowComments":false,"displayMode":"garden","title":{"pt":"🛠️ Desenvolvimento do site","en":"🛠️ Website development"}}}
+{"dg-publish":true,"permalink":"/about/desenvolvimento-do-site/","title":{"pt":"🛠️ Desenvolvimento do site","en":"🛠️ Website development"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🛠️ Desenvolvimento do site","en":"🛠️ Website development"}}}
 ---
 
 :::lang pt

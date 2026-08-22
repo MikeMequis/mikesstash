@@ -3,7 +3,6 @@ const path = require("path");
 const { globSync } = require("glob");
 const matter = require("gray-matter");
 const { getLocalizedTitlesFromNoteData } = require("./langUtils");
-const { isPortfolioVisible } = require("./visibilityUtils");
 
 const NOTES_DIR = path.join(process.cwd(), "src", "site", "notes");
 const DESC_MAX_LEN = 160;
@@ -439,14 +438,12 @@ function upgradeLinkCards(root, options = {}) {
   }
 }
 
-function renderPortfolioCards(notes, basePath = "") {
+function renderPortfolioCards(notes) {
   const index = getNoteCardIndex();
   const cards = [];
 
   for (const note of notes) {
-    if (!isPortfolioVisible(note.data)) continue;
-
-    const href = basePath + note.url;
+    const href = note.url;
     const meta = lookupCardMeta(note.url, index);
     const noteIcon = note.data.noteIcon || process.env.NOTE_ICON_DEFAULT || "";
 

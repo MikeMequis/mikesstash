@@ -13,9 +13,7 @@ const {
   renderPortfolioCards,
 } = require("./linkCardsUtils");
 const {
-  canonicalPermalink,
-  getPortfolioProjectUrls,
-  isPortfolioReachable,
+  isPortfolioNote,
 } = require("./portfolioUtils");
 const { isGardenVisible } = require("./visibilityUtils");
 
@@ -177,7 +175,7 @@ function userEleventySetup(eleventyConfig) {
   });
 
   eleventyConfig.addFilter("portfolioCards", function (notes) {
-    return renderPortfolioCards(notes || [], "/portfolio");
+    return renderPortfolioCards(notes || []);
   });
 
   eleventyConfig.addFilter("gardenVisible", function (notes) {
@@ -185,12 +183,7 @@ function userEleventySetup(eleventyConfig) {
   });
 
   eleventyConfig.addCollection("portfolio", function (collectionApi) {
-    const all = collectionApi.getFilteredByTag("note");
-    const projectUrls = getPortfolioProjectUrls(all);
-    return all.filter((item) => {
-      const url = item.url || canonicalPermalink(item.data);
-      return isPortfolioReachable(url, projectUrls);
-    });
+    return collectionApi.getFilteredByTag("note").filter((item) => isPortfolioNote(item));
   });
 
   eleventyConfig.setServerOptions({

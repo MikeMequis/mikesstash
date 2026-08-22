@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/about/mini-bio/","title":{"pt":"👤 Links pessoais & Mini-bio","en":"👤 Personal links & Mini-bio"},"dg-note-properties":{"dgShowComments":false,"displayMode":"garden","title":{"pt":"👤 Links pessoais & Mini-bio","en":"👤 Personal links & Mini-bio"}}}
+{"dg-publish":true,"permalink":"/about/mini-bio/","title":{"pt":"👤 Links pessoais & Mini-bio","en":"👤 Personal links & Mini-bio"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"👤 Links pessoais & Mini-bio","en":"👤 Personal links & Mini-bio"}}}
 ---
 
 :::lang pt
