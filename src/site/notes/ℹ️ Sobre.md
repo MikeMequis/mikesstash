@@ -6,7 +6,7 @@
 
 :::lang pt
 
-**Boas-vindas** ao site!
+**Boas-vindas ao site!**
 
 Este espaço virtual reúne e mostra a minha parte criativa: minhas preferências, descobertas, histórias, projetos e muito mais. Em vez de criar apenas um site estático de **blog**, ou um simples perfil genérico de [Linktree](https://linktr.ee/), eu queria ir além: criar um espaço com a **minha cara**, feito de forma **simples**, **prática** e **gratuita**.
 
@@ -26,16 +26,6 @@ O site ainda está em desenvolvimento, construído durante o meu tempo livre. Al
 
 Explore e divirta-se!
 ;)
-
----
-
-[[About/👤 Mini-bio\|👤 Mini-bio]]
-[[About/🛠️ Desenvolvimento do site\|🛠️ Desenvolvimento do site]]
-
----
-
-*Última atualização em 21 de Agosto de 2026*
-[[🏡 Home Page\|< Voltar]]
 
 :::
 
@@ -61,6 +51,24 @@ The site is still under development, built during my free time. Some parts are f
 
 Explore and have fun!
 ;)
+
+:::
+
+---
+
+[[About/👤 Mini-bio\|👤 Mini-bio]]
+[[About/🛠️ Desenvolvimento do site\|🛠️ Desenvolvimento do site]]
+
+---
+
+:::lang pt
+
+*Última atualização em 21 de Agosto de 2026*
+[[🏡 Home Page\|< Voltar]]
+
+:::
+
+:::lang en
 
 *Last updated in August 21th, 2026*
 [[🏡 Home Page\|< Back]]
