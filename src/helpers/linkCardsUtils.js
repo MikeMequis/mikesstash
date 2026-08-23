@@ -4,6 +4,7 @@ const { globSync } = require("glob");
 const matter = require("gray-matter");
 const { getLocalizedTitlesFromNoteData } = require("./langUtils");
 const { stripViewerRegions } = require("./imageViewerUtils");
+const { getPortfolioOrder } = require("./portfolioUtils");
 
 const NOTES_DIR = path.join(process.cwd(), "src", "site", "notes");
 const DESC_MAX_LEN = 160;
@@ -448,7 +449,15 @@ function renderPortfolioCards(notes) {
   const index = getNoteCardIndex();
   const cards = [];
 
-  for (const note of notes) {
+  const sortedNotes = (notes || []).slice().sort((a, b) => {
+    const aOrder = getPortfolioOrder(a.data);
+    const bOrder = getPortfolioOrder(b.data);
+    const aNum = aOrder == null ? Infinity : aOrder;
+    const bNum = bOrder == null ? Infinity : bOrder;
+    return aNum - bNum;
+  });
+
+  for (const note of sortedNotes) {
     const href = note.url;
     const meta = lookupCardMeta(note.url, index);
     const noteIcon = note.data.noteIcon || process.env.NOTE_ICON_DEFAULT || "";
