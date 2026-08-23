@@ -1,4 +1,6 @@
+---
 {"dg-publish":true,"permalink":"/portfolio/drawings-selected-works/","title":{"pt":"✏️ Desenhos - Imagens selecionadas","en":"✏️ Drawings - Selected Works"},"dg-note-properties":{"dgShowComments":false,"dgShowImageViewer":true,"isPortfolioViewableOnly":true,"portfolioOrder":6,"title":{"pt":"✏️ Desenhos - Imagens selecionadas","en":"✏️ Drawings - Selected Works"}}}
+---
 
 :::dg-viewer
 
