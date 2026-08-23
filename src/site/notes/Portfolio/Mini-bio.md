@@ -1,6 +1,4 @@
----
-{"dg-publish":true,"permalink":"/portfolio/mini-bio/","title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"}}}
----
+{"dg-publish":true,"permalink":"/portfolio/mini-bio/","title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"},"dg-note-properties":{"dgShowComments":false,"portfolioOrder":1,"isPortfolioViewableOnly":true,"title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"}}}
 
 # 👤 Marcelo Medeiros
 

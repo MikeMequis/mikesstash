@@ -1,6 +1,4 @@
----
-{"dg-publish":true,"permalink":"/portfolio/asher/","title":{"pt":"🛠️ Asher","en":"🛠️ Asher"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"title":{"pt":"🛠️ Asher","en":"🛠️ Asher"}}}
----
+{"dg-publish":true,"permalink":"/portfolio/asher/","title":{"pt":"🛠️ Asher","en":"🛠️ Asher"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"portfolioOrder":4,"title":{"pt":"🛠️ Asher","en":"🛠️ Asher"}}}
 
 :::lang pt
 

@@ -1,4 +1,5 @@
 const { getLocalizedTitlesFromNoteData } = require("./langUtils");
+const { getPortfolioOrder } = require("./portfolioUtils");
 
 // Natural sort comparison - handles numbers anywhere in the string
 const naturalCompare = (a, b) => {
@@ -32,21 +33,41 @@ const naturalCompare = (a, b) => {
   return 0;
 };
 
-const sortTree = (unsorted, navigationOrder, currentPath) => {
+const defaultTreeCompare = (unsorted, a, b) => {
+  let a_pinned = unsorted[a].pinned || false;
+  let b_pinned = unsorted[b].pinned || false;
+  if (a_pinned != b_pinned) {
+    return a_pinned ? -1 : 1;
+  }
+  const a_is_note = a.indexOf(".md") > -1;
+  const b_is_note = b.indexOf(".md") > -1;
+  if (a_is_note && !b_is_note) return 1;
+  if (!a_is_note && b_is_note) return -1;
+  return naturalCompare(a, b);
+};
+
+const toPortfolioOrder = (node) => {
+  const value = node && node.portfolioOrder;
+  return typeof value === "number" && Number.isFinite(value) ? value : Infinity;
+};
+
+/**
+ * Portfolio navbar comparator: explicit `portfolioOrder` first (numeric,
+ * missing -> last), then the default pinned/folder/natural ordering.
+ */
+const portfolioOrderCompare = (unsorted, a, b) => {
+  const aOrder = toPortfolioOrder(unsorted[a]);
+  const bOrder = toPortfolioOrder(unsorted[b]);
+  if (aOrder !== bOrder) return aOrder - bOrder;
+  return defaultTreeCompare(unsorted, a, b);
+};
+
+const sortTree = (unsorted, navigationOrder, currentPath, compare) => {
   const orderList = navigationOrder && navigationOrder[currentPath];
 
-  const defaultCompare = (a, b) => {
-    let a_pinned = unsorted[a].pinned || false;
-    let b_pinned = unsorted[b].pinned || false;
-    if (a_pinned != b_pinned) {
-      return a_pinned ? -1 : 1;
-    }
-    const a_is_note = a.indexOf(".md") > -1;
-    const b_is_note = b.indexOf(".md") > -1;
-    if (a_is_note && !b_is_note) return 1;
-    if (!a_is_note && b_is_note) return -1;
-    return naturalCompare(a, b);
-  };
+  const effectiveCompare = compare
+    ? (a, b) => compare(unsorted, a, b)
+    : (a, b) => defaultTreeCompare(unsorted, a, b);
 
   let orderedKeys;
 
@@ -70,11 +91,11 @@ const sortTree = (unsorted, navigationOrder, currentPath) => {
     }
     const unorderedKeys = Object.keys(unsorted)
       .filter((k) => !resolvedSet.has(k))
-      .sort(defaultCompare);
+      .sort(effectiveCompare);
 
     orderedKeys = [...resolvedOrdered, ...unorderedKeys];
   } else {
-    orderedKeys = Object.keys(unsorted).sort(defaultCompare);
+    orderedKeys = Object.keys(unsorted).sort(effectiveCompare);
   }
 
   const orderedTree = orderedKeys.reduce((obj, key) => {
@@ -85,7 +106,7 @@ const sortTree = (unsorted, navigationOrder, currentPath) => {
   for (const key of Object.keys(orderedTree)) {
     if (orderedTree[key].isFolder) {
       const childPath = currentPath === "/" ? `/${key}` : `${currentPath}/${key}`;
-      orderedTree[key] = sortTree(orderedTree[key], navigationOrder, childPath);
+      orderedTree[key] = sortTree(orderedTree[key], navigationOrder, childPath, compare);
     }
   }
 
@@ -102,6 +123,7 @@ function getPermalinkMeta(note, key) {
   let hide = false;
   let pinned = false;
   let folders = null;
+  let portfolioOrder = null;
   try {
     if (note.data.permalink) {
       permalink = note.data.permalink;
@@ -126,6 +148,7 @@ function getPermalinkMeta(note, key) {
     if (note.data.pinned) {
       pinned = note.data.pinned;
     }
+    portfolioOrder = getPortfolioOrder(note.data);
     if (note.data["dg-path"]) {
       folders = note.data["dg-path"].split("/");
     } else {
@@ -149,7 +172,10 @@ function getPermalinkMeta(note, key) {
     //ignore
   }
 
-  return [{ permalink, name, namePt, nameEn, noteIcon, hide, pinned }, folders];
+  return [
+    { permalink, name, namePt, nameEn, noteIcon, hide, pinned, portfolioOrder },
+    folders,
+  ];
 }
 
 function assignNested(obj, keyPath, value) {
@@ -165,7 +191,7 @@ function assignNested(obj, keyPath, value) {
 }
 
 function getFileTree(data, opts = {}) {
-  const { filter, basePath, group } = opts;
+  const { filter, basePath, group, compare } = opts;
   const tree = {};
   (data.collections.note || []).forEach((note) => {
     if (filter && !filter(note.data, note)) {
@@ -179,8 +205,9 @@ function getFileTree(data, opts = {}) {
     assignNested(tree, targetFolders, { isNote: true, ...meta });
   });
   const navigationOrder = data.navigationOrder || null;
-  const fileTree = sortTree(tree, navigationOrder, "/");
+  const fileTree = sortTree(tree, navigationOrder, "/", compare);
   return fileTree;
 }
 
 exports.getFileTree = getFileTree;
+exports.portfolioOrderCompare = portfolioOrderCompare;

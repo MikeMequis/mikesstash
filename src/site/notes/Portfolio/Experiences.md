@@ -1,6 +1,4 @@
----
-{"dg-publish":true,"permalink":"/portfolio/experiences/","title":{"pt":"🏆 Experiências","en":"🏆 Experiences"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"title":{"pt":"🏆 Experiências","en":"🏆 Experiences"}}}
----
+{"dg-publish":true,"permalink":"/portfolio/experiences/","title":{"pt":"🏆 Experiências","en":"🏆 Experiences"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"portfolioOrder":2,"title":{"pt":"🏆 Experiências","en":"🏆 Experiences"}}}
 
 :::lang pt
 # 🏆 Experiências

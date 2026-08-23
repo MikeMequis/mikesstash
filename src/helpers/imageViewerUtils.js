@@ -15,6 +15,39 @@ function isImageViewerEnabled(frontMatter) {
   return false;
 }
 
+/**
+ * Remove all complete `:::dg-viewer ... :::dg-viewer` regions from a note body.
+ * Reuses the same open/close marker semantics as findViewerRegion, so card
+ * metadata extraction can ignore viewer presentation content. Unmatched
+ * markers are left in place rather than dropped.
+ */
+function stripViewerRegions(source) {
+  const lines = String(source || "").split(/\r?\n/);
+  const out = [];
+  let i = 0;
+  while (i < lines.length) {
+    if (lines[i].trim() === VIEWER_MARKER) {
+      let close = -1;
+      for (let j = i + 1; j < lines.length; j++) {
+        if (lines[j].trim() === VIEWER_MARKER) {
+          close = j;
+          break;
+        }
+      }
+      if (close === -1) {
+        out.push(lines[i]);
+        i++;
+      } else {
+        i = close + 1;
+      }
+      continue;
+    }
+    out.push(lines[i]);
+    i++;
+  }
+  return out.join("\n");
+}
+
 function findViewerRegion(source) {
   const lines = source.split(/\r?\n/);
   let startLine = -1;
@@ -169,6 +202,7 @@ module.exports = {
   VIEWER_MARKER,
   isImageViewerEnabled,
   findViewerRegion,
+  stripViewerRegions,
   parseViewerRegion,
   buildViewerHtml,
   renderStaticHtml,

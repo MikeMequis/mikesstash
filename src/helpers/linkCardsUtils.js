@@ -3,6 +3,7 @@ const path = require("path");
 const { globSync } = require("glob");
 const matter = require("gray-matter");
 const { getLocalizedTitlesFromNoteData } = require("./langUtils");
+const { stripViewerRegions } = require("./imageViewerUtils");
 
 const NOTES_DIR = path.join(process.cwd(), "src", "site", "notes");
 const DESC_MAX_LEN = 160;
@@ -206,10 +207,15 @@ function buildNoteCardIndex(notesDir = NOTES_DIR) {
     const titles = getLocalizedTitlesFromNoteData(parsed.data, path.basename(stem));
     const image = extractFirstImage(parsed.content);
     const descriptions = extractDescriptions(parsed.content);
+    const portfolioContent = stripViewerRegions(parsed.content);
+    const imagePortfolio = extractFirstImage(portfolioContent);
+    const descriptionsPortfolio = extractDescriptions(portfolioContent);
     const card = {
       titles,
       image,
       descriptions,
+      imagePortfolio,
+      descriptionsPortfolio,
       emoji: extractLeadingEmoji(titles.default),
     };
 
@@ -448,7 +454,12 @@ function renderPortfolioCards(notes) {
     const noteIcon = note.data.noteIcon || process.env.NOTE_ICON_DEFAULT || "";
 
     if (meta) {
-      cards.push(buildCardHtmlFromMeta(href, meta, noteIcon));
+      const portfolioMeta = Object.assign({}, meta, {
+        image: meta.imagePortfolio != null ? meta.imagePortfolio : meta.image,
+        descriptions:
+          meta.descriptionsPortfolio || meta.descriptions || { pt: "", en: "" },
+      });
+      cards.push(buildCardHtmlFromMeta(href, portfolioMeta, noteIcon));
     } else {
       const titles = getLocalizedTitlesFromNoteData(note.data, note.fileSlug);
       const fallbackMeta = {

@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   isImageViewerEnabled,
   findViewerRegion,
+  stripViewerRegions,
   parseViewerRegion,
   buildViewerHtml,
   renderStaticHtml,
@@ -76,6 +77,44 @@ after`;
     const source = `:::dg-viewer\n![a](/a.jpg)\n:::dg-viewer\nmiddle\n:::dg-viewer\n![b](/b.jpg)\n:::dg-viewer`;
     const result = findViewerRegion(source);
     expect(result.regionLines).toEqual(["![a](/a.jpg)"]);
+  });
+});
+
+describe("stripViewerRegions", () => {
+  it("removes a complete viewer region and keeps surrounding content", () => {
+    const source = `before
+:::dg-viewer
+![a](/a.jpg)
+:::dg-viewer
+after`;
+    expect(stripViewerRegions(source)).toBe(`before\nafter`);
+  });
+
+  it("removes multiple viewer regions", () => {
+    const source = `:::dg-viewer
+![a](/a.jpg)
+:::dg-viewer
+middle
+:::dg-viewer
+![b](/b.jpg)
+:::dg-viewer
+end`;
+    expect(stripViewerRegions(source)).toBe(`middle\nend`);
+  });
+
+  it("keeps content when no region is present", () => {
+    const source = `intro\n\n![cover](/cover.jpg)\n\ntext`;
+    expect(stripViewerRegions(source)).toBe(source);
+  });
+
+  it("leaves an unmatched open marker in place", () => {
+    const source = `:::dg-viewer\n![a](/a.jpg)`;
+    expect(stripViewerRegions(source)).toBe(source);
+  });
+
+  it("handles CRLF line endings", () => {
+    const source = `a\r\n:::dg-viewer\r\n![x](/x.jpg)\r\n:::dg-viewer\r\nb`;
+    expect(stripViewerRegions(source)).toBe(`a\nb`);
   });
 });
 

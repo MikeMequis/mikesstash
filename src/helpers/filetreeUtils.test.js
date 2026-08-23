@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getFileTree } from "./filetreeUtils.js";
+import { getFileTree, portfolioOrderCompare } from "./filetreeUtils.js";
 
 // Helper to build a minimal note object for testing
 function makeNote(filePathStem, data = {}) {
@@ -229,6 +229,75 @@ describe("filetreeUtils", () => {
 
       expect(keys[0]).toBe("alpha.md");
       expect(keys[1]).toBe("zebra.md");
+    });
+  });
+
+  describe("portfolioOrder", () => {
+    it("sorts notes by explicit portfolioOrder", () => {
+      const data = {
+        collections: {
+          note: [
+            makeNote("/beta", { "dg-note-properties": { portfolioOrder: 3 } }),
+            makeNote("/alpha", { "dg-note-properties": { portfolioOrder: 1 } }),
+            makeNote("/gamma", { "dg-note-properties": { portfolioOrder: 2 } }),
+          ],
+        },
+      };
+      const tree = getFileTree(data, { compare: portfolioOrderCompare });
+      expect(Object.keys(tree)).toEqual(["alpha.md", "gamma.md", "beta.md"]);
+    });
+
+    it("places notes without portfolioOrder after ordered notes", () => {
+      const data = {
+        collections: {
+          note: [
+            makeNote("/zeta"),
+            makeNote("/alpha", { "dg-note-properties": { portfolioOrder: 1 } }),
+            makeNote("/beta"),
+          ],
+        },
+      };
+      const tree = getFileTree(data, { compare: portfolioOrderCompare });
+      expect(Object.keys(tree)).toEqual(["alpha.md", "beta.md", "zeta.md"]);
+    });
+
+    it("uses natural ordering as tiebreaker for equal portfolioOrder", () => {
+      const data = {
+        collections: {
+          note: [
+            makeNote("/zebra", { "dg-note-properties": { portfolioOrder: 1 } }),
+            makeNote("/alpha", { "dg-note-properties": { portfolioOrder: 1 } }),
+          ],
+        },
+      };
+      const tree = getFileTree(data, { compare: portfolioOrderCompare });
+      expect(Object.keys(tree)).toEqual(["alpha.md", "zebra.md"]);
+    });
+
+    it("reads portfolioOrder from top-level frontmatter too", () => {
+      const data = {
+        collections: {
+          note: [
+            makeNote("/beta", { portfolioOrder: 2 }),
+            makeNote("/alpha", { portfolioOrder: 1 }),
+          ],
+        },
+      };
+      const tree = getFileTree(data, { compare: portfolioOrderCompare });
+      expect(Object.keys(tree)).toEqual(["alpha.md", "beta.md"]);
+    });
+
+    it("keeps default natural order when no compare is provided", () => {
+      const data = {
+        collections: {
+          note: [
+            makeNote("/beta", { "dg-note-properties": { portfolioOrder: 1 } }),
+            makeNote("/alpha", { "dg-note-properties": { portfolioOrder: 2 } }),
+          ],
+        },
+      };
+      const tree = getFileTree(data);
+      expect(Object.keys(tree)).toEqual(["alpha.md", "beta.md"]);
     });
   });
 

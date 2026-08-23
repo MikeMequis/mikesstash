@@ -1,5 +1,5 @@
 const { getGraph } = require("../../helpers/linkUtils");
-const { getFileTree } = require("../../helpers/filetreeUtils");
+const { getFileTree, portfolioOrderCompare } = require("../../helpers/filetreeUtils");
 const { isGardenVisible } = require("../../helpers/visibilityUtils");
 const { isPortfolioNote } = require("../../helpers/portfolioUtils");
 const { userComputed } = require("../../helpers/userUtils");
@@ -20,6 +20,7 @@ module.exports = {
           const idx = folders.indexOf("Portfolio");
           return idx === 0 ? folders.slice(1) : folders;
         },
+        compare: portfolioOrderCompare,
       });
     }
     return getFileTree(data, { filter: isGardenVisible });
