@@ -3,6 +3,8 @@ import { parse } from "node-html-parser";
 import {
   isLinkCardsEnabled,
   extractDescriptions,
+  getCardDescriptionsFromNoteData,
+  resolveNoteDescriptions,
   extractFirstImage,
   extractLeadingEmoji,
   truncateText,
@@ -81,7 +83,7 @@ Texto útil da nota.
     expect(extractDescriptions(content).pt).toBe("Texto útil da nota.");
   });
 
-  it("prefers tip callout text for tutorial-style notes", () => {
+  it("skips tip callouts and uses first prose instead", () => {
     const content = `:::lang pt
 
 # Título
@@ -90,13 +92,76 @@ Texto útil da nota.
 
 > [!tip] Precisa de 2GB de RAM e conexão estável.
 
+Texto útil da nota.
+
 ## Etapa 1
 
 1. Baixe Termux.
 
 :::
 `;
-    expect(extractDescriptions(content).pt).toContain("2GB de RAM");
+    expect(extractDescriptions(content).pt).toBe("Texto útil da nota.");
+    expect(extractDescriptions(content).pt).not.toContain("2GB de RAM");
+  });
+
+  it("reads bilingual cardDescription from dg-note-properties", () => {
+    expect(
+      getCardDescriptionsFromNoteData({
+        "dg-note-properties": {
+          cardDescription: {
+            pt: "Resumo do card em português.",
+            en: "Card summary in English.",
+          },
+        },
+      })
+    ).toEqual({
+      pt: "Resumo do card em português.",
+      en: "Card summary in English.",
+    });
+  });
+
+  it("reads a plain string cardDescription", () => {
+    expect(
+      getCardDescriptionsFromNoteData({ cardDescription: "Single summary." })
+    ).toEqual({ pt: "Single summary.", en: "Single summary." });
+  });
+
+  it("prefers cardDescription over body excerpt", () => {
+    const content = `:::lang pt
+
+Parágrafo do corpo que não deve aparecer no card.
+
+:::
+`;
+    expect(
+      resolveNoteDescriptions(
+        {
+          "dg-note-properties": {
+            cardDescription: {
+              pt: "Descrição explícita.",
+              en: "Explicit description.",
+            },
+          },
+        },
+        content
+      )
+    ).toEqual({
+      pt: "Descrição explícita.",
+      en: "Explicit description.",
+    });
+  });
+
+  it("falls back to body excerpt when cardDescription is absent", () => {
+    const content = `:::lang pt
+
+Texto do corpo.
+
+:::
+`;
+    expect(resolveNoteDescriptions({}, content)).toEqual({
+      pt: "Texto do corpo.",
+      en: "Texto do corpo.",
+    });
   });
 
   it("extracts the first markdown image", () => {

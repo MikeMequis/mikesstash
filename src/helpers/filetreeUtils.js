@@ -1,5 +1,5 @@
 const { getLocalizedTitlesFromNoteData } = require("./langUtils");
-const { getPortfolioOrder } = require("./portfolioUtils");
+const { getNavOrder } = require("./portfolioUtils");
 
 // Natural sort comparison - handles numbers anywhere in the string
 const naturalCompare = (a, b) => {
@@ -46,18 +46,18 @@ const defaultTreeCompare = (unsorted, a, b) => {
   return naturalCompare(a, b);
 };
 
-const toPortfolioOrder = (node) => {
-  const value = node && node.portfolioOrder;
+const toNavOrder = (node) => {
+  const value = node && node.navOrder;
   return typeof value === "number" && Number.isFinite(value) ? value : Infinity;
 };
 
 /**
- * Portfolio navbar comparator: explicit `portfolioOrder` first (numeric,
- * missing -> last), then the default pinned/folder/natural ordering.
+ * Navbar comparator for Garden and Portfolio: explicit `navOrder` first
+ * (numeric, missing -> last), then the default pinned/folder/natural ordering.
  */
-const portfolioOrderCompare = (unsorted, a, b) => {
-  const aOrder = toPortfolioOrder(unsorted[a]);
-  const bOrder = toPortfolioOrder(unsorted[b]);
+const navOrderCompare = (unsorted, a, b) => {
+  const aOrder = toNavOrder(unsorted[a]);
+  const bOrder = toNavOrder(unsorted[b]);
   if (aOrder !== bOrder) return aOrder - bOrder;
   return defaultTreeCompare(unsorted, a, b);
 };
@@ -123,7 +123,7 @@ function getPermalinkMeta(note, key) {
   let hide = false;
   let pinned = false;
   let folders = null;
-  let portfolioOrder = null;
+  let navOrder = null;
   try {
     if (note.data.permalink) {
       permalink = note.data.permalink;
@@ -148,7 +148,7 @@ function getPermalinkMeta(note, key) {
     if (note.data.pinned) {
       pinned = note.data.pinned;
     }
-    portfolioOrder = getPortfolioOrder(note.data);
+    navOrder = getNavOrder(note.data);
     if (note.data["dg-path"]) {
       folders = note.data["dg-path"].split("/");
     } else {
@@ -173,7 +173,16 @@ function getPermalinkMeta(note, key) {
   }
 
   return [
-    { permalink, name, namePt, nameEn, noteIcon, hide, pinned, portfolioOrder },
+    {
+      permalink,
+      name,
+      namePt,
+      nameEn,
+      noteIcon,
+      hide,
+      pinned,
+      navOrder,
+    },
     folders,
   ];
 }
@@ -210,4 +219,4 @@ function getFileTree(data, opts = {}) {
 }
 
 exports.getFileTree = getFileTree;
-exports.portfolioOrderCompare = portfolioOrderCompare;
+exports.navOrderCompare = navOrderCompare;

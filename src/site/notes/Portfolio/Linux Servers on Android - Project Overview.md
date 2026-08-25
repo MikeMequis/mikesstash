@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/linux-servers-on-android-project-overview/","title":{"pt":"🐧 Servidores Linux em Android — Visão geral de projetos","en":"🐧 Linux Servers on Android - Project Overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"portfolioOrder":5,"title":{"pt":"🐧 Servidores Linux em Android — Visão geral de projetos","en":"🐧 Linux Servers on Android - Project Overview"}}}
+{"dg-publish":true,"permalink":"/portfolio/linux-servers-on-android-project-overview/","title":{"pt":"🐧 Servidores Linux em Android — Visão geral de projetos","en":"🐧 Linux Servers on Android - Project Overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":5,"title":{"pt":"🐧 Servidores Linux em Android — Visão geral de projetos","en":"🐧 Linux Servers on Android - Project Overview"},"cardDescription":{"pt":"Experimentos com servidores Linux executados em dispositivos Android, explorando serviços, automação, acesso remoto e diferentes usos para hardware reaproveitado.","en":"Experiments with Linux servers running on Android devices, exploring services, automation, remote access, and different uses for reused hardware."}}}
 ---
 
 [[🌱 Minecraft Server in Android (2024)\|🌱 Minecraft Server in Android (2024)]]
@@ -176,7 +176,7 @@ Juntos, eles representam experiências práticas com:
 
 Mais do que simplesmente hospedar dois jogos, os projetos serviram como pequenos laboratórios para entender **como diferentes aplicações podem ser adaptadas para funcionar dentro de ambientes com recursos e restrições incomuns**.
 
-[[🏡 Home Page\|< Voltar]]
+[< Voltar](/portfolio/)
 
 :::
 
@@ -349,6 +349,6 @@ Together, they represent hands-on experience with:
 
 Rather than simply hosting two games, these projects served as small laboratories for understanding **how different applications can be adapted to run in environments with unusual resource constraints and limitations**.
 
-[[🏡 Home Page\|< Back]]
+[< Back](/portfolio/)
 
 :::

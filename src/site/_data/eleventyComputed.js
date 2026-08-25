@@ -1,5 +1,5 @@
 const { getGraph } = require("../../helpers/linkUtils");
-const { getFileTree, portfolioOrderCompare } = require("../../helpers/filetreeUtils");
+const { getFileTree, navOrderCompare } = require("../../helpers/filetreeUtils");
 const { isGardenVisible } = require("../../helpers/visibilityUtils");
 const { isPortfolioNote } = require("../../helpers/portfolioUtils");
 const { userComputed } = require("../../helpers/userUtils");
@@ -20,10 +20,13 @@ module.exports = {
           const idx = folders.indexOf("Portfolio");
           return idx === 0 ? folders.slice(1) : folders;
         },
-        compare: portfolioOrderCompare,
+        compare: navOrderCompare,
       });
     }
-    return getFileTree(data, { filter: isGardenVisible });
+    return getFileTree(data, {
+      filter: isGardenVisible,
+      compare: navOrderCompare,
+    });
   },
   viewToggle: (data) => {
     const url = (data.page && data.page.url) || "";

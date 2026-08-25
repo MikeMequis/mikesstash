@@ -148,19 +148,19 @@ module.exports = async (data) => {
   const portfolioNameEn =
     process.env.PORTFOLIO_NAME_HEADER_EN ||
     process.env.PORTFOLIO_NAME_HEADER ||
-    siteNameEn;
+    "Portfolio";
   const portfolioNamePt =
     process.env.PORTFOLIO_NAME_HEADER_PT ||
     process.env.PORTFOLIO_NAME_HEADER ||
-    portfolioNameEn;
+    "Portfólio";
   const portfolioDescriptionEn =
     process.env.PORTFOLIO_DESCRIPTION_EN ||
     process.env.PORTFOLIO_DESCRIPTION ||
-    siteDescriptionEn;
+    "Projects, experiences, and selected work in programming, software engineering, and digital creation.";
   const portfolioDescriptionPt =
     process.env.PORTFOLIO_DESCRIPTION_PT ||
     process.env.PORTFOLIO_DESCRIPTION ||
-    portfolioDescriptionEn;
+    "Projetos, experiências e trabalhos selecionados em programação, engenharia de software e criação digital.";
 
   const meta = {
     env: process.env.ELEVENTY_ENV,

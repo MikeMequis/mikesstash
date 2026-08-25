@@ -4,10 +4,10 @@ const { globSync } = require("glob");
 const matter = require("gray-matter");
 const { getLocalizedTitlesFromNoteData } = require("./langUtils");
 const { stripViewerRegions } = require("./imageViewerUtils");
-const { getPortfolioOrder } = require("./portfolioUtils");
+const { getNavOrder } = require("./portfolioUtils");
 
 const NOTES_DIR = path.join(process.cwd(), "src", "site", "notes");
-const DESC_MAX_LEN = 160;
+const DESC_MAX_LEN = 200;
 
 const jsYamlForMatter = require(
   require.resolve("js-yaml", { paths: [require.resolve("gray-matter")] })
@@ -116,21 +116,6 @@ function extractLangBodies(content) {
 function firstParagraphFromBody(body) {
   if (!body) return "";
 
-  // Prefer supporting text from tip/info callouts when present.
-  // Use \r?\n — JS `.` does not match `\r`, so plain `\n` fails on CRLF files.
-  const tipMatch =
-    />\s*\[!(?:tip|info|note)\][^\r\n]*\r?\n((?:>.*(?:\r?\n|$))+)/i.exec(body) ||
-    />\s*\[!(?:tip|info|note)\]\s*(.+?)(?:\r?\n|$)/i.exec(body);
-  if (tipMatch) {
-    const tipText = tipMatch[1]
-      .split(/\r?\n/)
-      .map((line) => line.replace(/^>\s?/, "").trim())
-      .filter(Boolean)
-      .join(" ");
-    const truncatedTip = truncateText(tipText);
-    if (truncatedTip) return truncatedTip;
-  }
-
   const lines = body.split(/\r?\n/);
   const chunks = [];
   for (const line of lines) {
@@ -159,6 +144,45 @@ function extractDescriptions(content) {
   }
   const fallback = firstParagraphFromBody(content);
   return { pt: fallback, en: fallback };
+}
+
+/**
+ * Optional explicit card support text from frontmatter.
+ * Supports string or { pt, en } on top-level or dg-note-properties.
+ * Returns null when absent so callers can fall back to body excerpt.
+ */
+function getCardDescriptionsFromNoteData(data = {}) {
+  const props =
+    data && typeof data === "object" ? data["dg-note-properties"] || {} : {};
+
+  let value;
+  if (Object.prototype.hasOwnProperty.call(props, "cardDescription")) {
+    value = props.cardDescription;
+  } else if (Object.prototype.hasOwnProperty.call(data, "cardDescription")) {
+    value = data.cardDescription;
+  } else {
+    return null;
+  }
+
+  if (value == null || value === "") return null;
+
+  if (typeof value === "string" || typeof value === "number") {
+    const text = truncateText(String(value));
+    return text ? { pt: text, en: text } : null;
+  }
+
+  if (typeof value === "object" && !Array.isArray(value)) {
+    const pt = truncateText(value.pt || "");
+    const en = truncateText(value.en || "");
+    if (!pt && !en) return null;
+    return { pt: pt || en, en: en || pt };
+  }
+
+  return null;
+}
+
+function resolveNoteDescriptions(data, content) {
+  return getCardDescriptionsFromNoteData(data) || extractDescriptions(content);
 }
 
 function extractLeadingEmoji(title) {
@@ -207,10 +231,13 @@ function buildNoteCardIndex(notesDir = NOTES_DIR) {
     const stem = relative.replace(/\.(md|markdown)$/i, "").replace(/\\/g, "/");
     const titles = getLocalizedTitlesFromNoteData(parsed.data, path.basename(stem));
     const image = extractFirstImage(parsed.content);
-    const descriptions = extractDescriptions(parsed.content);
+    const descriptions = resolveNoteDescriptions(parsed.data, parsed.content);
     const portfolioContent = stripViewerRegions(parsed.content);
     const imagePortfolio = extractFirstImage(portfolioContent);
-    const descriptionsPortfolio = extractDescriptions(portfolioContent);
+    const descriptionsPortfolio = resolveNoteDescriptions(
+      parsed.data,
+      portfolioContent
+    );
     const card = {
       titles,
       image,
@@ -450,8 +477,8 @@ function renderPortfolioCards(notes) {
   const cards = [];
 
   const sortedNotes = (notes || []).slice().sort((a, b) => {
-    const aOrder = getPortfolioOrder(a.data);
-    const bOrder = getPortfolioOrder(b.data);
+    const aOrder = getNavOrder(a.data);
+    const bOrder = getNavOrder(b.data);
     const aNum = aOrder == null ? Infinity : aOrder;
     const bNum = bOrder == null ? Infinity : bOrder;
     return aNum - bNum;
@@ -494,6 +521,8 @@ module.exports = {
   lookupCardMeta,
   upgradeLinkCards,
   extractDescriptions,
+  getCardDescriptionsFromNoteData,
+  resolveNoteDescriptions,
   extractFirstImage,
   extractLeadingEmoji,
   truncateText,

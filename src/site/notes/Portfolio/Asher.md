@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/asher/","title":{"pt":"🛠️ Asher","en":"🛠️ Asher"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"portfolioOrder":4,"title":{"pt":"🛠️ Asher","en":"🛠️ Asher"}}}
+{"dg-publish":true,"permalink":"/portfolio/asher/","title":{"pt":"🛠️ Asher","en":"🛠️ Asher"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":4,"title":{"pt":"🛠️ Asher","en":"🛠️ Asher"},"cardDescription":{"pt":"Plataforma de modding para Dust: An Elysian Tail, desenvolvida para explorar patching de código em runtime e uma infraestrutura modular para criação e gerenciamento de mods.","en":"Modding platform for Dust: An Elysian Tail, built to explore runtime code patching and a modular infrastructure for creating and managing mods."}}}
 ---
 
 :::lang pt
@@ -14,7 +14,7 @@ O projeto combina **patching de código em runtime** e **substituição de conte
 
 [Repositório](https://github.com/MikeMequis/Asher)
 
-> Documentação técnica detalhada: [Asher (Jardim)](https://chatgpt.com/g/g-p-6a42dcae811c81918f6cc388d7999777-digital-garden-setup/c/%F0%9F%90%B1%20Asher)
+> Documentação técnica detalhada: [Asher (Jardim)](/asher/)
 
 ## 🎯 Objetivo
 
@@ -184,6 +184,8 @@ O desenvolvimento do Asher envolve competências em:
 
 Mais do que um projeto de modificação de jogo, o Asher representa um estudo prático de como **construir uma camada de extensibilidade sobre uma aplicação existente**, conciliando limitações impostas pelo software original com uma arquitetura própria para instalação, execução e gerenciamento de modificações.
 
+[< Voltar](/portfolio/)
+
 :::
 
 :::lang en
@@ -198,7 +200,7 @@ The project combines **runtime code patching** and **content replacement**, aimi
 
 [Repository](https://github.com/MikeMequis/Asher)
 
-> Detailed technical documentation: [Asher (Garden)](https://chatgpt.com/g/g-p-6a42dcae811c81918f6cc388d7999777-digital-garden-setup/c/%F0%9F%90%B1%20Asher)
+> Detailed technical documentation: [Asher (Garden)](/asher/)
 
 ## 🎯 Objective
 
@@ -367,5 +369,7 @@ Asher involves practical experience with:
     
 
 Rather than being simply a game modification project, Asher represents a practical study of how to **build an extensibility layer around an existing application**, balancing constraints imposed by the original software with a custom architecture for installing, executing, and managing modifications.
+
+[< Back](/portfolio/)
 
 :::

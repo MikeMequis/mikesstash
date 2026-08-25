@@ -7,20 +7,20 @@ function isPortfolioNote(note) {
 }
 
 /**
- * Resolve an explicit Portfolio navbar ordering value.
- * Reads the `portfolioOrder` property, honoring the same note-level
+ * Resolve an explicit navbar ordering value for Garden and Portfolio.
+ * Reads the `navOrder` property, honoring the same note-level
  * `dg-note-properties` override convention used by the other note settings.
  * Returns a finite number, or null when absent/invalid (-> sort last).
  */
-function getPortfolioOrder(data = {}) {
+function getNavOrder(data = {}) {
   const noteProps =
     data && typeof data === "object" ? data["dg-note-properties"] || {} : {};
 
   let value;
-  if (Object.prototype.hasOwnProperty.call(noteProps, "portfolioOrder")) {
-    value = noteProps.portfolioOrder;
-  } else if (Object.prototype.hasOwnProperty.call(data, "portfolioOrder")) {
-    value = data.portfolioOrder;
+  if (Object.prototype.hasOwnProperty.call(noteProps, "navOrder")) {
+    value = noteProps.navOrder;
+  } else if (Object.prototype.hasOwnProperty.call(data, "navOrder")) {
+    value = data.navOrder;
   }
 
   if (value === undefined || value === null || value === "") return null;
@@ -30,5 +30,5 @@ function getPortfolioOrder(data = {}) {
 
 module.exports = {
   isPortfolioNote,
-  getPortfolioOrder,
+  getNavOrder,
 };

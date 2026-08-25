@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/mini-bio/","title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"},"dg-note-properties":{"dgShowComments":false,"portfolioOrder":1,"isPortfolioViewableOnly":true,"title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"}}}
+{"dg-publish":true,"permalink":"/portfolio/mini-bio/","title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"},"dg-note-properties":{"dgShowComments":false,"navOrder":1,"isPortfolioViewableOnly":true,"title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"},"cardDescription":{"pt":"Engenheiro de Computação e desenvolvedor interessado em software, jogos, modding e experimentação técnica, explorando diferentes formas de transformar ideias em projetos.","en":"Computer engineer and developer interested in software, games, modding, and technical experimentation, exploring different ways to turn ideas into projects."}}}
 ---
 
 # 👤 Marcelo Medeiros
@@ -22,7 +22,7 @@ Este portfólio reúne alguns desses projetos e experimentos, destacando não ap
 
 *C# · .NET · WPF · XAML · Prism · Entity Framework · SQL · SQL Server · C++ · Python · Git*
 
-[[🏡 Home Page\|< Voltar]]
+[< Voltar](/portfolio/)
 
 :::
 
@@ -43,6 +43,6 @@ This portfolio brings together some of these projects and experiments, highlight
 
 *C# · .NET · WPF · XAML · Prism · Entity Framework · SQL · SQL Server · C++ · Python · Git*
 
-[[🏡 Home Page\|< Back]]
+[< Back](/portfolio/)
 
 :::

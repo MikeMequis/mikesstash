@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/playlists/","title":{"pt":"🎧 Playlists","en":"🎧 Playlists"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🎧 Playlists","en":"🎧 Playlists"}}}
+{"dg-publish":true,"permalink":"/playlists/","title":{"pt":"🎧 Playlists","en":"🎧 Playlists"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🎧 Playlists","en":"🎧 Playlists"},"navOrder":8}}
 ---
 
 ![head-bang-head-banging.gif](/img/user/img/head-bang-head-banging.gif)

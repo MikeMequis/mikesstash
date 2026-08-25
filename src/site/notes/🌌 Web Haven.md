@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/web-haven/","title":{"pt":"🌌 Refúgio da Web","en":"🌌 Web Haven"},"dg-note-properties":{"title":{"pt":"🌌 Refúgio da Web","en":"🌌 Web Haven"},"dgShowLinkCards":true}}
+{"dg-publish":true,"permalink":"/web-haven/","title":{"pt":"🌌 Refúgio da Web","en":"🌌 Web Haven"},"dg-note-properties":{"title":{"pt":"🌌 Refúgio da Web","en":"🌌 Web Haven"},"dgShowLinkCards":true,"navOrder":5}}
 ---
 
 ![web_haven.gif](/img/user/img/web_haven.gif)

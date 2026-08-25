@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/experiences/","title":{"pt":"🏆 Experiências","en":"🏆 Experiences"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"portfolioOrder":2,"title":{"pt":"🏆 Experiências","en":"🏆 Experiences"}}}
+{"dg-publish":true,"permalink":"/portfolio/experiences/","title":{"pt":"🏆 Experiências","en":"🏆 Experiences"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":2,"title":{"pt":"🏆 Experiências","en":"🏆 Experiences"},"cardDescription":{"pt":"Experiências acadêmicas e profissionais em desenvolvimento de software, reunindo projetos, aprendizados e tecnologias utilizadas ao longo da formação.","en":"Academic and professional experiences in software development, bringing together projects, learnings, and technologies used throughout my education."}}}
 ---
 
 :::lang pt
@@ -149,7 +149,7 @@ A aplicação contou com uma interface gráfica desenvolvida em **Windows Forms*
 
 **Pensamento analítico · Criatividade · Organização · Gestão de prioridades · Tomada de decisão · Aprendizado contínuo**
 
-[[🏡 Home Page\|< Voltar]]
+[< Voltar](/portfolio/)
 
 :::
 
@@ -300,6 +300,6 @@ The application featured a graphical interface developed with **Windows Forms**,
 
 **Analytical thinking · Creativity · Organization · Priority management · Decision-making · Continuous learning**
 
-[[🏡 Home Page\|< Back]]
+[< Back](/portfolio/)
 
 :::

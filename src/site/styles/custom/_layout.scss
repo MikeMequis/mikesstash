@@ -1,4 +1,6 @@
 body {
+    /* ~1080px keeps 3 link-card columns near the old ~340px card width */
+    --dg-content-max-width: 1080px;
     --dg-content-padding-top: 40px;
     --dg-content-padding-top-mobile: 200px;
     --dg-graph-border-radius: 0;

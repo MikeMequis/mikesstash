@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/drawings-selected-works/","title":{"pt":"✏️ Desenhos - Imagens selecionadas","en":"✏️ Drawings - Selected Works"},"dg-note-properties":{"dgShowComments":false,"dgShowImageViewer":true,"isPortfolioViewableOnly":true,"portfolioOrder":6,"title":{"pt":"✏️ Desenhos - Imagens selecionadas","en":"✏️ Drawings - Selected Works"}}}
+{"dg-publish":true,"permalink":"/portfolio/drawings-selected-works/","title":{"pt":"✏️ Desenhos - Imagens selecionadas","en":"✏️ Drawings - Selected Works"},"dg-note-properties":{"dgShowComments":false,"dgShowImageViewer":true,"isPortfolioViewableOnly":true,"navOrder":6,"title":{"pt":"✏️ Desenhos - Imagens selecionadas","en":"✏️ Drawings - Selected Works"},"cardDescription":{"pt":"Uma seleção de desenhos e estudos produzidos ao longo do tempo, reunindo diferentes personagens, técnicas e experimentações visuais.","en":"A selection of drawings and studies produced over time, bringing together different characters, techniques, and visual experiments."}}}
 ---
 
 :::dg-viewer
@@ -15,3 +15,15 @@
 ![26Desenho.png](/img/user/img/Drawings/26Desenho.png)
 
 :::dg-viewer
+
+:::lang pt
+
+[< Voltar](/portfolio/)
+
+:::
+
+:::lang en
+
+[< Back](/portfolio/)
+
+:::

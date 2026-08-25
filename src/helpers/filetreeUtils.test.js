@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getFileTree, portfolioOrderCompare } from "./filetreeUtils.js";
+import { getFileTree, navOrderCompare } from "./filetreeUtils.js";
 
 // Helper to build a minimal note object for testing
 function makeNote(filePathStem, data = {}) {
@@ -232,58 +232,58 @@ describe("filetreeUtils", () => {
     });
   });
 
-  describe("portfolioOrder", () => {
-    it("sorts notes by explicit portfolioOrder", () => {
+  describe("navOrder", () => {
+    it("sorts notes by explicit navOrder", () => {
       const data = {
         collections: {
           note: [
-            makeNote("/beta", { "dg-note-properties": { portfolioOrder: 3 } }),
-            makeNote("/alpha", { "dg-note-properties": { portfolioOrder: 1 } }),
-            makeNote("/gamma", { "dg-note-properties": { portfolioOrder: 2 } }),
+            makeNote("/beta", { "dg-note-properties": { navOrder: 3 } }),
+            makeNote("/alpha", { "dg-note-properties": { navOrder: 1 } }),
+            makeNote("/gamma", { "dg-note-properties": { navOrder: 2 } }),
           ],
         },
       };
-      const tree = getFileTree(data, { compare: portfolioOrderCompare });
+      const tree = getFileTree(data, { compare: navOrderCompare });
       expect(Object.keys(tree)).toEqual(["alpha.md", "gamma.md", "beta.md"]);
     });
 
-    it("places notes without portfolioOrder after ordered notes", () => {
+    it("places notes without navOrder after ordered notes", () => {
       const data = {
         collections: {
           note: [
             makeNote("/zeta"),
-            makeNote("/alpha", { "dg-note-properties": { portfolioOrder: 1 } }),
+            makeNote("/alpha", { "dg-note-properties": { navOrder: 1 } }),
             makeNote("/beta"),
           ],
         },
       };
-      const tree = getFileTree(data, { compare: portfolioOrderCompare });
+      const tree = getFileTree(data, { compare: navOrderCompare });
       expect(Object.keys(tree)).toEqual(["alpha.md", "beta.md", "zeta.md"]);
     });
 
-    it("uses natural ordering as tiebreaker for equal portfolioOrder", () => {
+    it("uses natural ordering as tiebreaker for equal navOrder", () => {
       const data = {
         collections: {
           note: [
-            makeNote("/zebra", { "dg-note-properties": { portfolioOrder: 1 } }),
-            makeNote("/alpha", { "dg-note-properties": { portfolioOrder: 1 } }),
+            makeNote("/zebra", { "dg-note-properties": { navOrder: 1 } }),
+            makeNote("/alpha", { "dg-note-properties": { navOrder: 1 } }),
           ],
         },
       };
-      const tree = getFileTree(data, { compare: portfolioOrderCompare });
+      const tree = getFileTree(data, { compare: navOrderCompare });
       expect(Object.keys(tree)).toEqual(["alpha.md", "zebra.md"]);
     });
 
-    it("reads portfolioOrder from top-level frontmatter too", () => {
+    it("reads navOrder from top-level frontmatter too", () => {
       const data = {
         collections: {
           note: [
-            makeNote("/beta", { portfolioOrder: 2 }),
-            makeNote("/alpha", { portfolioOrder: 1 }),
+            makeNote("/beta", { navOrder: 2 }),
+            makeNote("/alpha", { navOrder: 1 }),
           ],
         },
       };
-      const tree = getFileTree(data, { compare: portfolioOrderCompare });
+      const tree = getFileTree(data, { compare: navOrderCompare });
       expect(Object.keys(tree)).toEqual(["alpha.md", "beta.md"]);
     });
 
@@ -291,8 +291,8 @@ describe("filetreeUtils", () => {
       const data = {
         collections: {
           note: [
-            makeNote("/beta", { "dg-note-properties": { portfolioOrder: 1 } }),
-            makeNote("/alpha", { "dg-note-properties": { portfolioOrder: 2 } }),
+            makeNote("/beta", { "dg-note-properties": { navOrder: 1 } }),
+            makeNote("/alpha", { "dg-note-properties": { navOrder: 2 } }),
           ],
         },
       };

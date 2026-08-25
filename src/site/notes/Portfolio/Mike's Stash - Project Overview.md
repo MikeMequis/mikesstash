@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/mike-s-stash-project-overview/","title":{"pt":"🌐 Mike's Stash - Visão geral de projeto","en":"🌐 Mike's Stash - Project overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"portfolioOrder":3,"title":{"pt":"🌐 Mike's Stash - Visão geral de projeto","en":"🌐 Mike's Stash - Project overview"}}}
+{"dg-publish":true,"permalink":"/portfolio/mike-s-stash-project-overview/","title":{"pt":"🌐 Mike's Stash - Visão geral de projeto","en":"🌐 Mike's Stash - Project overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":3,"title":{"pt":"🌐 Mike's Stash - Visão geral de projeto","en":"🌐 Mike's Stash - Project overview"},"cardDescription":{"pt":"Meu espaço pessoal na web, desenvolvido como um Digital Garden para organizar projetos, experimentos, referências e registros de aprendizado.","en":"My personal space on the web, built as a Digital Garden to organize projects, experiments, references, and learning notes."}}}
 ---
 
 :::lang pt
@@ -153,7 +153,7 @@ O desenvolvimento do _Mike's Stash_ envolveu principalmente:
 
 O projeto demonstra minha capacidade de **partir de uma solução existente, compreender sua arquitetura e estendê-la para atender requisitos que não faziam parte de sua implementação original**.
 
-[[🏡 Home Page\|< Voltar]]
+[< Voltar](/portfolio/)
 
 :::
 
@@ -308,6 +308,6 @@ The development of _Mike's Stash_ involved:
 
 The project demonstrates my ability to **start from an existing solution, understand its architecture, and extend it to fulfill requirements that were not part of its original implementation**.
 
-[[🏡 Home Page\|< Back]]
+[< Back](/portfolio/)
 
 :::
