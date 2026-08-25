@@ -11,7 +11,7 @@ const {
   upgradeLinkCards,
   clearNoteCardIndex,
   renderPortfolioCards,
-  stripLeadingContentGifs,
+  stripLeadingCardImage,
 } = require("./linkCardsUtils");
 const {
   isPortfolioNote,
@@ -148,12 +148,12 @@ function userEleventySetup(eleventyConfig) {
     return parsed.toString();
   });
 
-  eleventyConfig.addTransform("strip-leading-card-gifs", function (content) {
+  eleventyConfig.addTransform("strip-leading-card-image", function (content) {
     if (!isMarkdownPage(this.page && this.page.inputPath)) {
       return content;
     }
     const parsed = parse(content);
-    stripLeadingContentGifs(parsed);
+    stripLeadingCardImage(parsed);
     return parsed.toString();
   });
 

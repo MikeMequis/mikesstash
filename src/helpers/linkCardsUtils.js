@@ -102,37 +102,8 @@ function extractFirstImage(content) {
   return "";
 }
 
-/**
- * Optional explicit card image from frontmatter (top-level or dg-note-properties).
- * Accepts absolute/URL paths, or vault-relative names like `Asher.gif` / `img/Asher.gif`.
- */
-function normalizeCardImage(value) {
-  const s = String(value == null ? "" : value).trim();
-  if (!s) return "";
-  if (/^https?:\/\//i.test(s) || s.startsWith("/")) return s;
-  if (s.startsWith("img/")) return `/img/user/${s}`;
-  return `/img/user/img/${s}`;
-}
-
-function getCardImageFromNoteData(data = {}) {
-  const props =
-    data && typeof data === "object" ? data["dg-note-properties"] || {} : {};
-
-  let value;
-  if (Object.prototype.hasOwnProperty.call(props, "cardImage")) {
-    value = props.cardImage;
-  } else if (Object.prototype.hasOwnProperty.call(data, "cardImage")) {
-    value = data.cardImage;
-  } else {
-    return null;
-  }
-
-  const normalized = normalizeCardImage(value);
-  return normalized || null;
-}
-
-function resolveNoteImage(data, content) {
-  return getCardImageFromNoteData(data) || extractFirstImage(content) || "";
+function resolveNoteImage(_data, content) {
+  return extractFirstImage(content) || "";
 }
 
 function extractLangBodies(content) {
@@ -546,47 +517,43 @@ function renderPortfolioCards(notes) {
   return `<div class="dg-link-cards">${cards.join("\n")}</div>`;
 }
 
-function isGifSrc(src) {
-  return /\.gif(?:$|[?#])/i.test(String(src || ""));
+function isCoverImageElement(node) {
+  if (!node || node.nodeType !== 1) return false;
+  const tag = String(node.tagName || "").toUpperCase();
+
+  if (tag === "IMG") return true;
+
+  if (tag === "PICTURE") {
+    return !!node.querySelector("img");
+  }
+
+  if (tag === "P") {
+    const imgs = node.querySelectorAll ? [...node.querySelectorAll("img")] : [];
+    if (imgs.length !== 1) return false;
+    return !String(node.textContent || "")
+      .replace(/\s+/g, "")
+      .length;
+  }
+
+  return false;
 }
 
 /**
- * Remove leading cover GIFs from rendered note HTML so they appear on cards
+ * Remove the leading cover image from rendered note HTML so it appears on cards
  * only (card index still reads the raw markdown image).
  */
-function stripLeadingContentGifs(root) {
+function stripLeadingCardImage(root) {
   if (!root) return;
   const content = root.querySelector(".content") || root;
-  const nodes = [...content.childNodes];
+  const children = [...content.children];
 
-  for (const node of nodes) {
-    if (node.nodeType === 3) {
-      if (!String(node.text || "").trim()) continue;
-      break;
-    }
-    if (node.nodeType !== 1) break;
-
+  for (const node of children) {
     const tag = String(node.tagName || "").toUpperCase();
+    if (tag === "HEADER") continue;
 
-    if (tag === "IMG" && isGifSrc(node.getAttribute("src"))) {
+    if (isCoverImageElement(node)) {
       node.remove();
-      continue;
     }
-
-    if (tag === "P") {
-      const imgs = [...(node.querySelectorAll ? node.querySelectorAll("img") : [])];
-      const hasOnlyGifImage =
-        imgs.length === 1 &&
-        isGifSrc(imgs[0].getAttribute("src")) &&
-        !String(node.textContent || "")
-          .replace(/\s+/g, "")
-          .length;
-      if (hasOnlyGifImage) {
-        node.remove();
-        continue;
-      }
-    }
-
     break;
   }
 }
@@ -598,13 +565,11 @@ module.exports = {
   clearNoteCardIndex,
   lookupCardMeta,
   upgradeLinkCards,
-  stripLeadingContentGifs,
+  stripLeadingCardImage,
   extractDescriptions,
   getCardDescriptionsFromNoteData,
   resolveNoteDescriptions,
-  getCardImageFromNoteData,
   resolveNoteImage,
-  normalizeCardImage,
   extractFirstImage,
   extractLeadingEmoji,
   truncateText,

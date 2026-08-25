@@ -5,14 +5,13 @@ import {
   extractDescriptions,
   getCardDescriptionsFromNoteData,
   resolveNoteDescriptions,
-  getCardImageFromNoteData,
   resolveNoteImage,
   extractFirstImage,
   extractLeadingEmoji,
   truncateText,
   normalizePermalink,
   upgradeLinkCards,
-  stripLeadingContentGifs,
+  stripLeadingCardImage,
   clearNoteCardIndex,
 } from "../linkCardsUtils.js";
 
@@ -167,31 +166,9 @@ Texto do corpo.
     });
   });
 
-  it("reads cardImage from dg-note-properties", () => {
-    expect(
-      getCardImageFromNoteData({
-        "dg-note-properties": { cardImage: "/img/user/img/Asher.gif" },
-      })
-    ).toBe("/img/user/img/Asher.gif");
-  });
-
-  it("normalizes vault-relative cardImage names", () => {
-    expect(
-      getCardImageFromNoteData({ cardImage: "Asher.gif" })
-    ).toBe("/img/user/img/Asher.gif");
-    expect(
-      getCardImageFromNoteData({ cardImage: "img/WebHaven/ferramenta.gif" })
-    ).toBe("/img/user/img/WebHaven/ferramenta.gif");
-  });
-
-  it("prefers cardImage over body image", () => {
-    const content = "![other](/img/user/img/other.png)\n\nHello";
-    expect(
-      resolveNoteImage(
-        { "dg-note-properties": { cardImage: "Asher.gif" } },
-        content
-      )
-    ).toBe("/img/user/img/Asher.gif");
+  it("reads the first body image for cards", () => {
+    const content = "![Asher.gif](/img/user/img/Asher.gif)\n\nHello";
+    expect(resolveNoteImage({}, content)).toBe("/img/user/img/Asher.gif");
   });
 
   it("extracts the first markdown image", () => {
@@ -335,40 +312,58 @@ describe("upgradeLinkCards", () => {
   });
 });
 
-describe("stripLeadingContentGifs", () => {
-  it("removes a leading cover GIF paragraph from note content", () => {
+describe("stripLeadingCardImage", () => {
+  it("removes a leading cover image after the note header", () => {
+    const root = parse(`<main class="content">
+<header><h1>Asher</h1></header>
+<p><picture><img src="/img/user/img/Asher.gif" alt=""></picture></p>
+<h1 id="asher">Asher</h1>
+<p>Body text.</p>
+</main>`);
+
+    stripLeadingCardImage(root);
+
+    expect(root.querySelector("img")).toBeNull();
+    expect(root.querySelector("h1#asher").text).toBe("Asher");
+    expect(root.querySelector("p").text).toBe("Body text.");
+  });
+
+  it("removes a leading cover image paragraph from note content", () => {
     const root = parse(`<main class="content">
 <p><img src="/img/user/img/Asher.gif" alt=""></p>
 <h1>Asher</h1>
 <p>Body text.</p>
 </main>`);
 
-    stripLeadingContentGifs(root);
+    stripLeadingCardImage(root);
 
-    expect(root.querySelector('img[src$=".gif"]')).toBeNull();
+    expect(root.querySelector("img")).toBeNull();
     expect(root.querySelector("h1").text).toBe("Asher");
     expect(root.querySelector("p").text).toBe("Body text.");
   });
 
-  it("keeps non-leading GIFs in the body", () => {
+  it("keeps non-leading images in the body", () => {
     const root = parse(`<main class="content">
+<header></header>
 <h1>Title</h1>
 <p><img src="/img/user/img/later.gif" alt=""></p>
 </main>`);
 
-    stripLeadingContentGifs(root);
+    stripLeadingCardImage(root);
 
-    expect(root.querySelector('img[src$=".gif"]')).toBeTruthy();
+    expect(root.querySelector("img")).toBeTruthy();
   });
 
-  it("does not remove a leading non-GIF image", () => {
+  it("removes a leading non-GIF cover image", () => {
     const root = parse(`<main class="content">
+<header></header>
 <p><img src="/img/user/img/cover.png" alt=""></p>
 <p>Hello</p>
 </main>`);
 
-    stripLeadingContentGifs(root);
+    stripLeadingCardImage(root);
 
-    expect(root.querySelector('img[src$=".png"]')).toBeTruthy();
+    expect(root.querySelector("img")).toBeNull();
+    expect(root.querySelector("p").text).toBe("Hello");
   });
 });
