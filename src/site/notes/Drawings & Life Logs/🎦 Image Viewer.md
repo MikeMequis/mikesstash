@@ -3,9 +3,10 @@
 ---
 
 
+
 :::dg-viewer
 
-![1Desenho.jpg](/img/user/img/Drawings/1Desenho.jpg)
+![Drawings/1Desenho.jpg](/img/user/img/Drawings/1Desenho.jpg)
 
 :::lang pt
 
@@ -18,7 +19,7 @@
 Working on it, sorry!
 :::
 
-![4Desenho.jpg](/img/user/img/Drawings/4Desenho.jpg)
+![Drawings/4Desenho.jpg](/img/user/img/Drawings/4Desenho.jpg)
 
 :::lang pt
 
@@ -31,7 +32,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![5Desenho.jpg](/img/user/img/Drawings/5Desenho.jpg)
+![Drawings/5Desenho.jpg](/img/user/img/Drawings/5Desenho.jpg)
 
 :::lang pt
 
@@ -44,7 +45,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![6Desenho.jpg](/img/user/img/Drawings/6Desenho.jpg)
+![Drawings/6Desenho.jpg](/img/user/img/Drawings/6Desenho.jpg)
 
 :::lang pt
 
@@ -56,7 +57,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![7Desenho.jpg](/img/user/img/Drawings/7Desenho.jpg)
+![Drawings/7Desenho.jpg](/img/user/img/Drawings/7Desenho.jpg)
 
 :::lang pt
 
@@ -69,7 +70,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![8Desenho.jpg](/img/user/img/Drawings/8Desenho.jpg)
+![Drawings/8Desenho.jpg](/img/user/img/Drawings/8Desenho.jpg)
 
 :::lang pt
 
@@ -82,7 +83,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![9Desenho.jpg](/img/user/img/Drawings/9Desenho.jpg)
+![Drawings/9Desenho.jpg](/img/user/img/Drawings/9Desenho.jpg)
 
 :::lang pt
 
@@ -94,7 +95,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![10Desenho.jpg](/img/user/img/Drawings/10Desenho.jpg)
+![Drawings/10Desenho.jpg](/img/user/img/Drawings/10Desenho.jpg)
 
 :::lang pt
 
@@ -106,7 +107,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![11Desenho.jpg](/img/user/img/Drawings/11Desenho.jpg)
+![Drawings/11Desenho.jpg](/img/user/img/Drawings/11Desenho.jpg)
 
 :::lang pt
 
@@ -118,7 +119,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![13Desenho.jpg](/img/user/img/Drawings/13Desenho.jpg)
+![Drawings/13Desenho.jpg](/img/user/img/Drawings/13Desenho.jpg)
 
 :::lang pt
 
@@ -131,7 +132,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![14Desenho.jpg](/img/user/img/Drawings/14Desenho.jpg)
+![Drawings/14Desenho.jpg](/img/user/img/Drawings/14Desenho.jpg)
 
 :::lang pt
 
@@ -144,7 +145,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![15Desenho.jpg](/img/user/img/Drawings/15Desenho.jpg)
+![Drawings/15Desenho.jpg](/img/user/img/Drawings/15Desenho.jpg)
 
 :::lang pt
 
@@ -156,7 +157,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![16Desenho.jpg](/img/user/img/Drawings/16Desenho.jpg)
+![Drawings/16Desenho.jpg](/img/user/img/Drawings/16Desenho.jpg)
 
 :::lang pt
 
@@ -168,7 +169,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![17Desenho.jpg](/img/user/img/Drawings/17Desenho.jpg)
+![Drawings/17Desenho.jpg](/img/user/img/Drawings/17Desenho.jpg)
 
 :::lang pt
 
@@ -180,7 +181,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![18Desenho.jpg](/img/user/img/Drawings/18Desenho.jpg)
+![Drawings/18Desenho.jpg](/img/user/img/Drawings/18Desenho.jpg)
 
 :::lang pt
 
@@ -192,7 +193,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![19Desenho.jpg](/img/user/img/Drawings/19Desenho.jpg)
+![Drawings/19Desenho.jpg](/img/user/img/Drawings/19Desenho.jpg)
 
 :::lang pt
 
@@ -204,7 +205,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![20Desenho.jpg](/img/user/img/Drawings/20Desenho.jpg)
+![Drawings/20Desenho.jpg](/img/user/img/Drawings/20Desenho.jpg)
 
 :::lang pt
 
@@ -216,7 +217,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![21Desenho.jpg](/img/user/img/Drawings/21Desenho.jpg)
+![Drawings/21Desenho.jpg](/img/user/img/Drawings/21Desenho.jpg)
 
 :::lang pt
 
@@ -229,7 +230,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![22Desenho.jpg](/img/user/img/Drawings/22Desenho.jpg)
+![Drawings/22Desenho.jpg](/img/user/img/Drawings/22Desenho.jpg)
 
 :::lang pt
 
@@ -241,7 +242,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![23_24Desenho.jpg](/img/user/img/Drawings/23_24Desenho.jpg)
+![Drawings/23_24Desenho.jpg](/img/user/img/Drawings/23_24Desenho.jpg)
 
 :::lang pt
 
@@ -254,7 +255,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![25Desenho.jpg](/img/user/img/Drawings/25Desenho.jpg)
+![Drawings/25Desenho.jpg](/img/user/img/Drawings/25Desenho.jpg)
 
 :::lang pt
 
@@ -267,7 +268,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![26Desenho.png](/img/user/img/Drawings/26Desenho.png)
+![Drawings/26Desenho.png](/img/user/img/Drawings/26Desenho.png)
 
 :::lang pt
 
@@ -280,7 +281,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![27Desenho.jpg](/img/user/img/Drawings/27Desenho.jpg)
+![Drawings/27Desenho.jpg](/img/user/img/Drawings/27Desenho.jpg)
 
 :::lang pt
 
@@ -293,7 +294,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![28Desenho.jpg](/img/user/img/Drawings/28Desenho.jpg)
+![Drawings/28Desenho.jpg](/img/user/img/Drawings/28Desenho.jpg)
 
 :::lang pt
 
@@ -305,7 +306,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![29Desenho.jpg](/img/user/img/Drawings/29Desenho.jpg)
+![Drawings/29Desenho.jpg](/img/user/img/Drawings/29Desenho.jpg)
 
 :::lang pt
 
@@ -317,7 +318,7 @@ Working on it, sorry!
 Working on it, sorry!
 :::
 
-![30Desenho.jpg](/img/user/img/Drawings/30Desenho.jpg)
+![Drawings/30Desenho.jpg](/img/user/img/Drawings/30Desenho.jpg)
 
 :::lang pt
 

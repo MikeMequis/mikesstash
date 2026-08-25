@@ -3,16 +3,17 @@
 ---
 
 
+
 :::dg-viewer
 
-![16Desenho.jpg](/img/user/img/Drawings/16Desenho.jpg)
+![Drawings/16Desenho.jpg](/img/user/img/Drawings/16Desenho.jpg)
 
-![21Desenho.jpg](/img/user/img/Drawings/21Desenho.jpg)
+![Drawings/21Desenho.jpg](/img/user/img/Drawings/21Desenho.jpg)
 
-![30Desenho.jpg](/img/user/img/Drawings/30Desenho.jpg)
+![Drawings/30Desenho.jpg](/img/user/img/Drawings/30Desenho.jpg)
 
-![17Desenho.jpg](/img/user/img/Drawings/17Desenho.jpg)
+![Drawings/17Desenho.jpg](/img/user/img/Drawings/17Desenho.jpg)
 
-![26Desenho.png](/img/user/img/Drawings/26Desenho.png)
+![Drawings/26Desenho.png](/img/user/img/Drawings/26Desenho.png)
 
 :::dg-viewer

@@ -3,7 +3,8 @@
 ---
 
 
-![conhecimento.gif](/img/user/img/WebHaven/conhecimento.gif)
+
+![WebHaven/conhecimento.gif](/img/user/img/WebHaven/conhecimento.gif)
 
 :::lang pt
 

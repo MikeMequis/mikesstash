@@ -3,7 +3,8 @@
 ---
 
 
-![ferramenta.gif](/img/user/img/WebHaven/ferramenta.gif)
+
+![WebHaven/ferramenta.gif](/img/user/img/WebHaven/ferramenta.gif)
 
 :::lang pt
 
