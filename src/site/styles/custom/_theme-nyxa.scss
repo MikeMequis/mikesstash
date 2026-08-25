@@ -383,9 +383,9 @@ body.theme-nyxa hr {
 body.theme-nyxa h1 {
     font-family: "Daft Font", sans-serif;
 
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2.85rem, 6vw + 1.5rem, 4rem);
 
-    line-height: 0.85;
+    line-height: var(--h1-line-height);
 
     text-transform: uppercase;
 
@@ -395,4 +395,6 @@ body.theme-nyxa h1 {
 
     text-shadow:
         3px 3px 0 var(--nyxa-black);
+
+    padding-bottom: 0.2em;
 }

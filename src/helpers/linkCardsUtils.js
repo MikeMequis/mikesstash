@@ -102,6 +102,39 @@ function extractFirstImage(content) {
   return "";
 }
 
+/**
+ * Optional explicit card image from frontmatter (top-level or dg-note-properties).
+ * Accepts absolute/URL paths, or vault-relative names like `Asher.gif` / `img/Asher.gif`.
+ */
+function normalizeCardImage(value) {
+  const s = String(value == null ? "" : value).trim();
+  if (!s) return "";
+  if (/^https?:\/\//i.test(s) || s.startsWith("/")) return s;
+  if (s.startsWith("img/")) return `/img/user/${s}`;
+  return `/img/user/img/${s}`;
+}
+
+function getCardImageFromNoteData(data = {}) {
+  const props =
+    data && typeof data === "object" ? data["dg-note-properties"] || {} : {};
+
+  let value;
+  if (Object.prototype.hasOwnProperty.call(props, "cardImage")) {
+    value = props.cardImage;
+  } else if (Object.prototype.hasOwnProperty.call(data, "cardImage")) {
+    value = data.cardImage;
+  } else {
+    return null;
+  }
+
+  const normalized = normalizeCardImage(value);
+  return normalized || null;
+}
+
+function resolveNoteImage(data, content) {
+  return getCardImageFromNoteData(data) || extractFirstImage(content) || "";
+}
+
 function extractLangBodies(content) {
   const bodies = { pt: "", en: "" };
   const langBlock = /:::lang\s+(pt|en)\s*\r?\n([\s\S]*?):::/gi;
@@ -230,10 +263,10 @@ function buildNoteCardIndex(notesDir = NOTES_DIR) {
 
     const stem = relative.replace(/\.(md|markdown)$/i, "").replace(/\\/g, "/");
     const titles = getLocalizedTitlesFromNoteData(parsed.data, path.basename(stem));
-    const image = extractFirstImage(parsed.content);
+    const image = resolveNoteImage(parsed.data, parsed.content);
     const descriptions = resolveNoteDescriptions(parsed.data, parsed.content);
     const portfolioContent = stripViewerRegions(parsed.content);
-    const imagePortfolio = extractFirstImage(portfolioContent);
+    const imagePortfolio = resolveNoteImage(parsed.data, portfolioContent);
     const descriptionsPortfolio = resolveNoteDescriptions(
       parsed.data,
       portfolioContent
@@ -513,6 +546,51 @@ function renderPortfolioCards(notes) {
   return `<div class="dg-link-cards">${cards.join("\n")}</div>`;
 }
 
+function isGifSrc(src) {
+  return /\.gif(?:$|[?#])/i.test(String(src || ""));
+}
+
+/**
+ * Remove leading cover GIFs from rendered note HTML so they appear on cards
+ * only (card index still reads the raw markdown image).
+ */
+function stripLeadingContentGifs(root) {
+  if (!root) return;
+  const content = root.querySelector(".content") || root;
+  const nodes = [...content.childNodes];
+
+  for (const node of nodes) {
+    if (node.nodeType === 3) {
+      if (!String(node.text || "").trim()) continue;
+      break;
+    }
+    if (node.nodeType !== 1) break;
+
+    const tag = String(node.tagName || "").toUpperCase();
+
+    if (tag === "IMG" && isGifSrc(node.getAttribute("src"))) {
+      node.remove();
+      continue;
+    }
+
+    if (tag === "P") {
+      const imgs = [...(node.querySelectorAll ? node.querySelectorAll("img") : [])];
+      const hasOnlyGifImage =
+        imgs.length === 1 &&
+        isGifSrc(imgs[0].getAttribute("src")) &&
+        !String(node.textContent || "")
+          .replace(/\s+/g, "")
+          .length;
+      if (hasOnlyGifImage) {
+        node.remove();
+        continue;
+      }
+    }
+
+    break;
+  }
+}
+
 module.exports = {
   isLinkCardsEnabled,
   buildNoteCardIndex,
@@ -520,9 +598,13 @@ module.exports = {
   clearNoteCardIndex,
   lookupCardMeta,
   upgradeLinkCards,
+  stripLeadingContentGifs,
   extractDescriptions,
   getCardDescriptionsFromNoteData,
   resolveNoteDescriptions,
+  getCardImageFromNoteData,
+  resolveNoteImage,
+  normalizeCardImage,
   extractFirstImage,
   extractLeadingEmoji,
   truncateText,

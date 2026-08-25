@@ -1,8 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/minecraft-server-in-android-2024/","title":{"pt":"🌱 Servidor Minecraft no Android (2024)","en":"🌱 Minecraft Server in Android (2024)"},"dg-note-properties":{"title":{"pt":"🌱 Servidor Minecraft no Android (2024)","en":"🌱 Minecraft Server in Android (2024)"},"navOrder":6}}
+{"dg-publish":true,"permalink":"/minecraft-server-in-android-2024/","title":{"pt":"🌱 Servidor Minecraft no Android (2024)","en":"🌱 Minecraft Server in Android (2024)"},"dg-note-properties":{"title":{"pt":"🌱 Servidor Minecraft no Android (2024)","en":"🌱 Minecraft Server in Android (2024)"},"navOrder":6,"cardImage":"/img/user/img/MineServer.gif"}}
 ---
-
-![MineServer.gif](/img/user/img/MineServer.gif)
 
 :::lang pt
 # 🌱 Como Hospedar um Servidor de Minecraft no Android

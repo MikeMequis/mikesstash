@@ -11,6 +11,7 @@ const {
   upgradeLinkCards,
   clearNoteCardIndex,
   renderPortfolioCards,
+  stripLeadingContentGifs,
 } = require("./linkCardsUtils");
 const {
   isPortfolioNote,
@@ -144,6 +145,15 @@ function userEleventySetup(eleventyConfig) {
     }
     const parsed = parse(content);
     upgradePlaylistEmbeds(parsed);
+    return parsed.toString();
+  });
+
+  eleventyConfig.addTransform("strip-leading-card-gifs", function (content) {
+    if (!isMarkdownPage(this.page && this.page.inputPath)) {
+      return content;
+    }
+    const parsed = parse(content);
+    stripLeadingContentGifs(parsed);
     return parsed.toString();
   });
 

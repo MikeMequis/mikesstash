@@ -1,8 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/playlists/","title":{"pt":"🎧 Playlists","en":"🎧 Playlists"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🎧 Playlists","en":"🎧 Playlists"},"navOrder":8}}
+{"dg-publish":true,"permalink":"/playlists/","title":{"pt":"🎧 Playlists","en":"🎧 Playlists"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🎧 Playlists","en":"🎧 Playlists"},"navOrder":8,"cardImage":"/img/user/img/head-bang-head-banging.gif"}}
 ---
-
-![head-bang-head-banging.gif](/img/user/img/head-bang-head-banging.gif)
 
 # 🎧 Playlists
 

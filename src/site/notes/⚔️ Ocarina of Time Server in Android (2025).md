@@ -1,8 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/ocarina-of-time-server-in-android-2025/","title":{"pt":"⚔️ Servidor Ocarina of Time no Android (2025)","en":"⚔️ Ocarina of Time Server in Android (2025)"},"dg-note-properties":{"title":{"pt":"⚔️ Servidor Ocarina of Time no Android (2025)","en":"⚔️ Ocarina of Time Server in Android (2025)"},"navOrder":7}}
+{"dg-publish":true,"permalink":"/ocarina-of-time-server-in-android-2025/","title":{"pt":"⚔️ Servidor Ocarina of Time no Android (2025)","en":"⚔️ Ocarina of Time Server in Android (2025)"},"dg-note-properties":{"title":{"pt":"⚔️ Servidor Ocarina of Time no Android (2025)","en":"⚔️ Ocarina of Time Server in Android (2025)"},"navOrder":7,"cardImage":"/img/user/img/ZeldaServer.gif"}}
 ---
-
-![ZeldaServer.gif](/img/user/img/ZeldaServer.gif)
 
 :::lang pt
 # ⚔️ Como Hospedar um Servidor de Ocarina of Time/Ship of Harkinian no Android

@@ -1,8 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/","title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"},"navOrder":3}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/","title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🎨 Desenhos & Diários","en":"🎨 Drawings & Life Logs"},"navOrder":3,"cardImage":"/img/user/img/Drawings.gif"}}
 ---
-
-![Drawings.gif](/img/user/img/Drawings.gif)
 
 :::lang pt
 

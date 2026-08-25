@@ -17,4 +17,27 @@ body.theme-nyxa {
     --rendered-code-bg: var(--theme-code-inline-bg);
     --rendered-code-text: var(--theme-code-inline-text);
     --hr-color: var(--theme-hr-color);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-block-start: var(--p-spacing);
+        margin-block-end: var(--p-spacing);
+    }
+
+    h1 {
+        line-height: var(--h1-line-height);
+        margin-block-end: calc(var(--p-spacing) * 1.25);
+    }
+
+    h2 {
+        line-height: var(--h2-line-height);
+    }
+
+    h3 {
+        line-height: var(--h3-line-height, var(--h2-line-height));
+    }
 }

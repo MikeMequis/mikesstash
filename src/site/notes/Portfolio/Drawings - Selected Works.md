@@ -15,15 +15,3 @@
 ![26Desenho.png](/img/user/img/Drawings/26Desenho.png)
 
 :::dg-viewer
-
-:::lang pt
-
-[< Voltar](/portfolio/)
-
-:::
-
-:::lang en
-
-[< Back](/portfolio/)
-
-:::

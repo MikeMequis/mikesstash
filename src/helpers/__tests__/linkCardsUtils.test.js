@@ -5,11 +5,14 @@ import {
   extractDescriptions,
   getCardDescriptionsFromNoteData,
   resolveNoteDescriptions,
+  getCardImageFromNoteData,
+  resolveNoteImage,
   extractFirstImage,
   extractLeadingEmoji,
   truncateText,
   normalizePermalink,
   upgradeLinkCards,
+  stripLeadingContentGifs,
   clearNoteCardIndex,
 } from "../linkCardsUtils.js";
 
@@ -164,6 +167,33 @@ Texto do corpo.
     });
   });
 
+  it("reads cardImage from dg-note-properties", () => {
+    expect(
+      getCardImageFromNoteData({
+        "dg-note-properties": { cardImage: "/img/user/img/Asher.gif" },
+      })
+    ).toBe("/img/user/img/Asher.gif");
+  });
+
+  it("normalizes vault-relative cardImage names", () => {
+    expect(
+      getCardImageFromNoteData({ cardImage: "Asher.gif" })
+    ).toBe("/img/user/img/Asher.gif");
+    expect(
+      getCardImageFromNoteData({ cardImage: "img/WebHaven/ferramenta.gif" })
+    ).toBe("/img/user/img/WebHaven/ferramenta.gif");
+  });
+
+  it("prefers cardImage over body image", () => {
+    const content = "![other](/img/user/img/other.png)\n\nHello";
+    expect(
+      resolveNoteImage(
+        { "dg-note-properties": { cardImage: "Asher.gif" } },
+        content
+      )
+    ).toBe("/img/user/img/Asher.gif");
+  });
+
   it("extracts the first markdown image", () => {
     expect(
       extractFirstImage("Hello\n\n![alt](/img/user/img/cover.gif)\n\nMore")
@@ -302,5 +332,43 @@ describe("upgradeLinkCards", () => {
     expect(card.querySelector(".dg-link-card__title").getAttribute("data-title-pt")).toBe(
       "🧱 Asher"
     );
+  });
+});
+
+describe("stripLeadingContentGifs", () => {
+  it("removes a leading cover GIF paragraph from note content", () => {
+    const root = parse(`<main class="content">
+<p><img src="/img/user/img/Asher.gif" alt=""></p>
+<h1>Asher</h1>
+<p>Body text.</p>
+</main>`);
+
+    stripLeadingContentGifs(root);
+
+    expect(root.querySelector('img[src$=".gif"]')).toBeNull();
+    expect(root.querySelector("h1").text).toBe("Asher");
+    expect(root.querySelector("p").text).toBe("Body text.");
+  });
+
+  it("keeps non-leading GIFs in the body", () => {
+    const root = parse(`<main class="content">
+<h1>Title</h1>
+<p><img src="/img/user/img/later.gif" alt=""></p>
+</main>`);
+
+    stripLeadingContentGifs(root);
+
+    expect(root.querySelector('img[src$=".gif"]')).toBeTruthy();
+  });
+
+  it("does not remove a leading non-GIF image", () => {
+    const root = parse(`<main class="content">
+<p><img src="/img/user/img/cover.png" alt=""></p>
+<p>Hello</p>
+</main>`);
+
+    stripLeadingContentGifs(root);
+
+    expect(root.querySelector('img[src$=".png"]')).toBeTruthy();
   });
 });
