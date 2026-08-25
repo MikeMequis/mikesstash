@@ -1,6 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/asher/","title":{"pt":"🛠️ Asher","en":"🛠️ Asher"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":4,"title":{"pt":"🛠️ Asher","en":"🛠️ Asher"},"cardDescription":{"pt":"Plataforma de modding para Dust: An Elysian Tail, desenvolvida para explorar patching de código em runtime e uma infraestrutura modular para criação e gerenciamento de mods.","en":"Modding platform for Dust: An Elysian Tail, built to explore runtime code patching and a modular infrastructure for creating and managing mods."}}}
+{"dg-publish":true,"permalink":"/portfolio/asher/","title":{"pt":"🛠️ Asher","en":"🛠️ Asher"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":4,"cardDescription":{"pt":"Plataforma de modding para Dust: An Elysian Tail, desenvolvida para explorar patching de código em runtime e uma infraestrutura modular para criação e gerenciamento de mods.","en":"Modding platform for Dust: An Elysian Tail, built to explore runtime code patching and a modular infrastructure for creating and managing mods."},"title":{"pt":"🛠️ Asher","en":"🛠️ Asher"}}}
 ---
+
 
 :::lang pt
 

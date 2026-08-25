@@ -1,6 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/home-page/","title":{"pt":"🏡 Página Inicial","en":"🏡 Home Page"},"tags":["gardenEntry"],"dg-note-properties":{"permalink":"/home/","tags":["gardenEntry"],"dgShowComments":false,"dgShowLinkCards":true,"title":{"pt":"🏡 Página Inicial","en":"🏡 Home Page"},"navOrder":1}}
+{"dg-publish":true,"permalink":"/home-page/","title":{"pt":"🏡 Página Inicial","en":"🏡 Home Page"},"tags":["gardenEntry"],"dg-note-properties":{"permalink":"/home/","tags":["gardenEntry"],"dgShowComments":false,"dgShowLinkCards":true,"navOrder":1,"title":{"pt":"🏡 Página Inicial","en":"🏡 Home Page"}}}
 ---
+
 
 [[🎨 Drawings & Life Logs\|🎨 Drawings & Life Logs]]
 [[🐱 Asher\|🐱 Asher]]

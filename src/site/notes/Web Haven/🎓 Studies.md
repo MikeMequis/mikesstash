@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/web-haven/studies/","title":{"pt":"🎓 Estudos","en":"🎓 Studies"},"dg-note-properties":{"title":{"pt":"🎓 Estudos","en":"🎓 Studies"}}}
 ---
 
+
 ![conhecimento.gif](/img/user/img/WebHaven/conhecimento.gif)
 
 :::lang pt

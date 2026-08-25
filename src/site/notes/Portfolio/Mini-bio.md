@@ -1,6 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/mini-bio/","title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"},"dg-note-properties":{"dgShowComments":false,"navOrder":1,"isPortfolioViewableOnly":true,"title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"},"cardDescription":{"pt":"Engenheiro de Computação e desenvolvedor interessado em software, jogos, modding e experimentação técnica, explorando diferentes formas de transformar ideias em projetos.","en":"Computer engineer and developer interested in software, games, modding, and technical experimentation, exploring different ways to turn ideas into projects."}}}
+{"dg-publish":true,"permalink":"/portfolio/mini-bio/","title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"},"dg-note-properties":{"dgShowComments":false,"navOrder":1,"isPortfolioViewableOnly":true,"cardDescription":{"pt":"Engenheiro de Computação e desenvolvedor interessado em software, jogos, modding e experimentação técnica, explorando diferentes formas de transformar ideias em projetos.","en":"Computer engineer and developer interested in software, games, modding, and technical experimentation, exploring different ways to turn ideas into projects."},"title":{"pt":"👤 Mini-bio","en":"👤 Mini-bio"}}}
 ---
+
 
 # 👤 Marcelo Medeiros
 

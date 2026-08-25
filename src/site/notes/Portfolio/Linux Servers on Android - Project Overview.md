@@ -1,6 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/linux-servers-on-android-project-overview/","title":{"pt":"🐧 Servidores Linux em Android — Visão geral de projetos","en":"🐧 Linux Servers on Android - Project Overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":5,"title":{"pt":"🐧 Servidores Linux em Android — Visão geral de projetos","en":"🐧 Linux Servers on Android - Project Overview"},"cardDescription":{"pt":"Experimentos com servidores Linux executados em dispositivos Android, explorando serviços, automação, acesso remoto e diferentes usos para hardware reaproveitado.","en":"Experiments with Linux servers running on Android devices, exploring services, automation, remote access, and different uses for reused hardware."}}}
+{"dg-publish":true,"permalink":"/portfolio/linux-servers-on-android-project-overview/","title":{"pt":"🐧 Servidores Linux em Android — Visão geral de projetos","en":"🐧 Linux Servers on Android - Project Overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":5,"cardDescription":{"pt":"Experimentos com servidores Linux executados em dispositivos Android, explorando serviços, automação, acesso remoto e diferentes usos para hardware reaproveitado.","en":"Experiments with Linux servers running on Android devices, exploring services, automation, remote access, and different uses for reused hardware."},"title":{"pt":"🐧 Servidores Linux em Android — Visão geral de projetos","en":"🐧 Linux Servers on Android - Project Overview"}}}
 ---
+
 
 [[🌱 Minecraft Server in Android (2024)\|🌱 Minecraft Server in Android (2024)]]
 [[⚔️ Ocarina of Time Server in Android (2025)\|⚔️ Ocarina of Time Server in Android (2025)]]

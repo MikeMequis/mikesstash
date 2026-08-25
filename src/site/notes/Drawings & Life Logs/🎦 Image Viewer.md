@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/drawings-and-life-logs/image-viewer/","title":{"pt":"🎦 Visualizador de imagens","en":"🎦 Image Viewer"},"dg-note-properties":{"dgShowComments":false,"dgShowImageViewer":true,"title":{"pt":"🎦 Visualizador de imagens","en":"🎦 Image Viewer"}}}
 ---
 
+
 :::dg-viewer
 
 ![1Desenho.jpg](/img/user/img/Drawings/1Desenho.jpg)

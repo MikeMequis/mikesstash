@@ -1,6 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/mike-s-stash-project-overview/","title":{"pt":"🌐 Mike's Stash - Visão geral de projeto","en":"🌐 Mike's Stash - Project overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":3,"title":{"pt":"🌐 Mike's Stash - Visão geral de projeto","en":"🌐 Mike's Stash - Project overview"},"cardDescription":{"pt":"Meu espaço pessoal na web, desenvolvido como um Digital Garden para organizar projetos, experimentos, referências e registros de aprendizado.","en":"My personal space on the web, built as a Digital Garden to organize projects, experiments, references, and learning notes."}}}
+{"dg-publish":true,"permalink":"/portfolio/mike-s-stash-project-overview/","title":{"pt":"🌐 Mike's Stash - Visão geral de projeto","en":"🌐 Mike's Stash - Project overview"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":3,"cardDescription":{"pt":"Meu espaço pessoal na web, desenvolvido como um Digital Garden para organizar projetos, experimentos, referências e registros de aprendizado.","en":"My personal space on the web, built as a Digital Garden to organize projects, experiments, references, and learning notes."},"title":{"pt":"🌐 Mike's Stash - Visão geral de projeto","en":"🌐 Mike's Stash - Project overview"}}}
 ---
+
 
 :::lang pt
 # 🌐 Site Mike's Stash - Visão geral de projeto

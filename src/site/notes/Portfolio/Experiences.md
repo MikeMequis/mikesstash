@@ -1,6 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/portfolio/experiences/","title":{"pt":"🏆 Experiências","en":"🏆 Experiences"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":2,"title":{"pt":"🏆 Experiências","en":"🏆 Experiences"},"cardDescription":{"pt":"Experiências acadêmicas e profissionais em desenvolvimento de software, reunindo projetos, aprendizados e tecnologias utilizadas ao longo da formação.","en":"Academic and professional experiences in software development, bringing together projects, learnings, and technologies used throughout my education."}}}
+{"dg-publish":true,"permalink":"/portfolio/experiences/","title":{"pt":"🏆 Experiências","en":"🏆 Experiences"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":2,"cardDescription":{"pt":"Experiências acadêmicas e profissionais em desenvolvimento de software, reunindo projetos, aprendizados e tecnologias utilizadas ao longo da formação.","en":"Academic and professional experiences in software development, bringing together projects, learnings, and technologies used throughout my education."},"title":{"pt":"🏆 Experiências","en":"🏆 Experiences"}}}
 ---
+
 
 :::lang pt
 # 🏆 Experiências

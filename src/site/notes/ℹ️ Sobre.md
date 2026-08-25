@@ -1,6 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/sobre/","title":{"pt":"ℹ️ Sobre","en":"ℹ️ About"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"ℹ️ Sobre","en":"ℹ️ About"},"dgShowLinkCards":true,"navOrder":2}}
+{"dg-publish":true,"permalink":"/sobre/","title":{"pt":"ℹ️ Sobre","en":"ℹ️ About"},"dg-note-properties":{"dgShowComments":false,"dgShowLinkCards":true,"navOrder":2,"title":{"pt":"ℹ️ Sobre","en":"ℹ️ About"}}}
 ---
+
 
 # 🏡 Mike's Stash
 
