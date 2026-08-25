@@ -65,8 +65,8 @@ Este projeto não teria sido possível sem o trabalho de outras pessoas e projet
 ### Fontes utilizadas no tema Nyxa
 
 - [Daft Font](https://www.fonttoolbox.com/fonts/daft-font)
-- [Knewave](https://www.theleagueofmoveabletype.com/knewave)
 - [Rubik Dirt](https://fonts.google.com/specimen/Rubik+Dirt)
+- [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
 
 *Última atualização em 21 de Agosto de 2026*
 [[ℹ️ Sobre\|< Voltar]]
@@ -136,8 +136,8 @@ This project would not have been possible without the work of other people and p
 ### Fonts used in the Nyxa theme
 
 - [Daft Font](https://www.fonttoolbox.com/fonts/daft-font)
-- [Knewave](https://www.theleagueofmoveabletype.com/knewave)
 - [Rubik Dirt](https://fonts.google.com/specimen/Rubik+Dirt)
+- [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
 
 *Last updated in August 21th, 2026*
 [[ℹ️ Sobre\|< Back]]

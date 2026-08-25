@@ -78,9 +78,9 @@ Fontes utilizadas:
 
 - **Daft Font**
     
-- **Knewave**
-    
 - **Rubik Dirt**
+
+- **Space Grotesk**
     
 
 ### Lunara
@@ -233,9 +233,9 @@ Fonts used:
 
 - **Daft Font**
     
-- **Knewave**
-    
 - **Rubik Dirt**
+
+- **Space Grotesk**
     
 
 ### Lunara

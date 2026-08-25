@@ -1,4 +1,4 @@
-.theme-select-btn {
+button.theme-select-btn:not(.clickable-icon) {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -12,6 +12,7 @@
     border: var(--terminal-border-dim);
     border-radius: 0;
     background: var(--theme-toggle-bg);
+    background-color: var(--theme-toggle-bg);
     color: var(--theme-toggle-color);
     cursor: pointer;
     box-shadow: var(--theme-search-glow);
@@ -19,12 +20,15 @@
 
     &:hover {
         background: var(--theme-toggle-hover-bg);
+        background-color: var(--theme-toggle-hover-bg);
         color: var(--theme-toggle-hover-color);
         border-color: var(--theme-accent-bright);
+        box-shadow: var(--theme-search-glow);
     }
 
     &[aria-expanded="true"] {
         background: var(--theme-toggle-hover-bg);
+        background-color: var(--theme-toggle-hover-bg);
         color: var(--theme-toggle-hover-color);
         border-color: var(--theme-accent-bright);
     }
@@ -54,7 +58,7 @@
         display: none;
     }
 
-    .theme-option {
+    button.theme-option:not(.clickable-icon) {
         width: 100%;
         padding: 8px 12px;
         display: flex;
@@ -62,7 +66,9 @@
         border: 1px solid transparent;
         border-radius: 0;
         background: transparent;
+        background-color: transparent;
         color: var(--theme-text);
+        box-shadow: none;
         font-family: var(--font-monospace);
         font-size: 0.8rem;
         text-align: left;
@@ -75,11 +81,14 @@
 
         &:hover {
             background: var(--theme-surface-keys-hover);
+            background-color: var(--theme-surface-keys-hover);
             border-color: var(--terminal-border-dim);
+            box-shadow: none;
         }
 
         &.active {
             background: var(--theme-accent);
+            background-color: var(--theme-accent);
             color: var(--theme-on-accent);
             border-color: var(--theme-accent-bright);
 
@@ -92,7 +101,7 @@
     }
 }
 
-.lang-toggle-btn {
+button.lang-toggle-btn:not(.clickable-icon) {
     position: fixed;
     bottom: 20px;
     right: 72px;
@@ -106,6 +115,7 @@
     border: var(--terminal-border-dim);
     border-radius: 0;
     background: var(--theme-toggle-bg);
+    background-color: var(--theme-toggle-bg);
     color: var(--theme-toggle-color);
     cursor: pointer;
     box-shadow: var(--theme-search-glow);
@@ -117,8 +127,10 @@
 
     &:hover {
         background: var(--theme-toggle-hover-bg);
+        background-color: var(--theme-toggle-hover-bg);
         color: var(--theme-toggle-hover-color);
         border-color: var(--theme-accent-bright);
+        box-shadow: var(--theme-search-glow);
     }
 
     .lang-label-pt {
@@ -165,7 +177,17 @@ a.view-toggle-btn {
     user-select: none;
     transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 
-    &:hover {
+    &:visited,
+    &:focus,
+    &:active {
+        color: var(--theme-toggle-color);
+        text-decoration: none;
+        background: var(--theme-toggle-bg);
+        background-color: var(--theme-toggle-bg);
+    }
+
+    &:hover,
+    &:hover:visited {
         background: var(--theme-toggle-hover-bg);
         background-color: var(--theme-toggle-hover-bg);
         color: var(--theme-toggle-hover-color);

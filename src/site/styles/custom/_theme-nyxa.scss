@@ -31,8 +31,8 @@ body.theme-nyxa {
     /* ─────────────── Typography ─────────────── */
 
     --font-text:
-        "Barlow Condensed",
-        "Arial Narrow",
+        "Space Grotesk",
+        "Segoe UI",
         sans-serif;
 
     --font-monospace:
@@ -340,8 +340,8 @@ body.theme-nyxa h2 {
 
 body.theme-nyxa h3 {
     font-family:
-        "Barlow Condensed",
-        "Arial Narrow",
+        "Space Grotesk",
+        "Segoe UI",
         sans-serif;
 
     font-weight: 700;
@@ -395,36 +395,4 @@ body.theme-nyxa h1 {
 
     text-shadow:
         3px 3px 0 var(--nyxa-black);
-}
-
-body.theme-nyxa .nyxa-title {
-    position: relative;
-
-    font-family: "Daft Font", sans-serif;
-
-    color: var(--nyxa-red);
-
-    z-index: 1;
-}
-
-body.theme-nyxa .nyxa-title::before {
-    content: attr(data-text);
-
-    position: absolute;
-
-    inset: 0;
-
-    font-family: "Knewave Outline", sans-serif;
-
-    color: transparent;
-
-    -webkit-text-stroke: 1px var(--nyxa-gray);
-
-    transform:
-        translate(5px, 5px)
-        rotate(1deg);
-
-    z-index: -1;
-
-    pointer-events: none;
 }
