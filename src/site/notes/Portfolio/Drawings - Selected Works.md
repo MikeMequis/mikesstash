@@ -25,48 +25,60 @@
 
 :::lang pt
 
->[!tip] Drawing made in March 14th, 2026
->*Time amount - 2h30*
+>[!tip] Desenho realizado em 14 de Março de 2026
+>*Tempo de desenho - 2h30*
 
 :::
 :::lang en
-Working on it, sorry!
+
+>[!tip] Drawing made in March 14th, 2026
+>*Time amount - 2h30*
+
 :::
 
 ![Drawings/21Desenho.jpg](/img/user/img/Drawings/21Desenho.jpg)
 
 :::lang pt
 
->[!tip] Drawing made in April 11th, 2026
->*Time amount - 2h30*
+>[!tip] Desenho realizado em 11 de Abril de 2026
+>*Tempo de desenho - 2h30*
 
 :::
 :::lang en
-Working on it, sorry!
+
+>[!tip] Drawing made in April 11th, 2026
+>*Time amount - 2h30*
+
 :::
 
 ![Drawings/26Desenho.png](/img/user/img/Drawings/26Desenho.png)
 
 :::lang pt
 
->[!tip] Drawing made in May 23th, 2026
->*Time amount - 3h30*
+>[!tip] Desenho realizado em 23 de Maio de 2026
+>*Tempo de desenho - 3h30*
 
 :::
 :::lang en
-Working on it, sorry!
+
+>[!tip] Drawing made in May 23th, 2026
+>*Time amount - 3h30*
+
 :::
 
 ![Drawings/30Desenho.jpg](/img/user/img/Drawings/30Desenho.jpg)
 
 :::lang pt
 
->[!tip] Drawing made in June 27th and July 4th, 2026
->*Time amount - 4h*
+>[!tip] Desenho realizado nos dias 27 de Junho e 4 de Julho de 2026
+>*Tempo de desenho - 4h*
 
 :::
 :::lang en
-Working on it, sorry!
+
+>[!tip] Drawing made in June 27th and July 4th, 2026
+>*Time amount - 4h*
+
 :::
 
 :::dg-viewer
