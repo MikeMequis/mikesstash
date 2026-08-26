@@ -17,7 +17,7 @@
 :::lang en
 
 >[!tip] Drawing made in March 14th, 2026
->*Time amount - aprox. 3h20*
+>*Drawing time - aprox. 3h20*
 
 :::
 
@@ -32,7 +32,7 @@
 :::lang en
 
 >[!tip] Drawing made in March 14th, 2026
->*Time amount - 2h30*
+>*Drawing time - 2h30*
 
 :::
 
@@ -47,7 +47,7 @@
 :::lang en
 
 >[!tip] Drawing made in April 11th, 2026
->*Time amount - 2h30*
+>*Drawing time - 2h30*
 
 :::
 
@@ -62,7 +62,7 @@
 :::lang en
 
 >[!tip] Drawing made in May 23th, 2026
->*Time amount - 3h30*
+>*Drawing time - 3h30*
 
 :::
 
@@ -77,7 +77,7 @@
 :::lang en
 
 >[!tip] Drawing made in June 27th and July 4th, 2026
->*Time amount - 4h*
+>*Drawing time - 4h*
 
 :::
 
