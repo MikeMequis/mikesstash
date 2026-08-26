@@ -25,13 +25,14 @@ Algumas funcionalidades começaram como pequenos experimentos e acabaram se torn
 - Exibição de *cards* modernos inspirados no *Material Design*;
 - Temas Claro e Escuro;
 - Temas personalizados **Nyxa** e **Lunara**;
-- Mini-bio.
-
-### 🟡 Em desenvolvimento
-
+- Mini-bio & páginas relacionadas;
+- Visualizador de imagens para desenhos;
 - Modo **Portfólio**;
   - Botão e alternância de modo;
   - Páginas envolvidas;
+
+### 🟡 Em desenvolvimento
+
 - Páginas do **Refúgio da Web**;
 - Tradução das histórias de desenho para o inglês;
 - Documentação completa do **Asher**;
@@ -96,13 +97,14 @@ Some features started as small experiments and eventually became important parts
 - Modern *card* layouts inspired by *Material Design*;
 - Light and Dark themes;
 - Custom **Nyxa** and **Lunara** themes;
-- Mini-bio.
-
-### 🟡 In development
-
+- Mini-bio & related pages.
+- Image viewer for drawings;
 - **Portfolio** mode;
   - Mode switch and toggle;
   - Related pages;
+
+### 🟡 In development
+
 - **Web Haven** pages;
 - English translations for drawing stories;
 - Complete **Asher** documentation;
