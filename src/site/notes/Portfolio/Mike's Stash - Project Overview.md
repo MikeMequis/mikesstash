@@ -8,41 +8,9 @@
 
 ## Visão geral
 
-O **Mike's Stash** é um website pessoal desenvolvido como uma extensão do meu **Digital Garden**, com foco em organização, apresentação e publicação de conteúdo.
+O **Mike's Stash** é um website pessoal desenvolvido como uma extensão do **Digital Garden**, com foco em organização, apresentação e publicação de conteúdo.
 
-O projeto evoluiu de uma implementação baseada no template [Digital Garden](https://github.com/oleeskild/digitalgarden) para uma aplicação web personalizada, na qual a estrutura de publicação, a navegação e a apresentação visual foram adaptadas às necessidades do conteúdo.
-
-Além de funcionar como espaço de publicação, o projeto também serviu como um laboratório para experimentar **geração estática de páginas, modelagem de conteúdo, interfaces dinâmicas e personalização de uma base de código existente**.
-
-## 💼 Desenvolvimento do Portfólio
-
-Uma das principais extensões do projeto foi a criação de um **Modo Portfólio** independente da experiência tradicional do Jardim.
-
-A implementação introduziu uma segunda camada de apresentação capaz de transformar notas originalmente organizadas como documentos em **projetos estruturados para apresentação profissional**.
-
-O Portfólio possui:
-
-- Navegação e seleção de projetos através de cards;
-    
-- Agrupamento de conteúdo por projeto;
-    
-- Estrutura de páginas específica para apresentação;
-    
-- Organização própria do _file tree_;
-    
-- Separação entre conteúdo destinado ao Jardim e conteúdo destinado ao Portfólio;
-    
-- Controle de visibilidade através da propriedade `displayMode`.
-    
-
-O `displayMode` permite classificar cada conteúdo como:
-
-- `portfolio` — exibido exclusivamente no Portfólio;
-    
-- `garden` — exibido exclusivamente no Jardim;
-    
-- `both` — compartilhado entre as duas experiências.
-    
+O projeto evoluiu de uma implementação baseada no template [Digital Garden](https://github.com/oleeskild/digitalgarden) para uma aplicação web personalizada, na qual a estrutura de publicação, a navegação e a apresentação visual foram adaptadas às necessidades do conteúdo. O projeto serviu como um laboratório para experimentar **geração estática de páginas, modelagem de conteúdo, interfaces dinâmicas e personalização de uma base de código existente**.
 
 Essa arquitetura permite que **conteúdo e apresentação sejam tratados como camadas independentes**, evitando que a estrutura física dos arquivos determine obrigatoriamente sua representação na interface.
 
@@ -64,31 +32,6 @@ Entre as principais alterações estão:
     
 
 A solução preserva a estrutura baseada em Markdown utilizada pelo Jardim, enquanto adiciona uma camada de apresentação mais estruturada sobre o mesmo conteúdo.
-
-## 🎨 Sistema visual
-
-O projeto também possui um sistema de temas desenvolvido para permitir diferentes identidades visuais sem alterar a estrutura do conteúdo.
-
-Além dos modos **Claro** e **Escuro**, foram desenvolvidos os temas:
-
-### Nyxa
-
-Identidade visual experimental baseada em uma estética mais expressiva, utilizando diferentes famílias tipográficas para títulos, elementos de destaque e componentes da interface.
-
-Fontes utilizadas:
-
-- **Daft Font**
-    
-- **Rubik Dirt**
-
-- **Space Grotesk**
-    
-
-### Lunara
-
-Identidade visual alternativa desenvolvida como contraponto ao Nyxa, utilizando a mesma infraestrutura de temas para apresentar uma interpretação visual distinta da aplicação.
-
-A implementação foi estruturada para manter a separação entre **tokens visuais, componentes e conteúdo**, permitindo a evolução dos temas sem necessidade de modificar as páginas individualmente.
 
 ## 🌐 Internacionalização
 
@@ -163,43 +106,9 @@ O projeto demonstra minha capacidade de **partir de uma solução existente, com
 
 ## Overview
 
-**Mike's Stash** is a personal website developed as an extension of my **Digital Garden**, focused on content organization, presentation, and publishing.
+**Mike's Stash** is a personal website developed as an extension of **Digital Garden**, focused on content organization, presentation, and publishing.
 
-The project evolved from an implementation based on the [Digital Garden](https://github.com/oleeskild/digitalgarden) template into a customized web application, where the publishing structure, navigation, and visual presentation were adapted to the project's requirements.
-
-Beyond serving as a publishing platform, the project became a laboratory for experimenting with **static site generation, content modeling, dynamic interfaces, and customization of an existing codebase**.
-
-## 💼 Portfolio Development
-
-One of the project's main extensions was the creation of an independent **Portfolio Mode**, separate from the traditional Garden experience.
-
-This implementation introduced a second presentation layer capable of transforming content originally organized as documents into **structured projects designed for professional presentation**.
-
-The Portfolio provides:
-
-- Project navigation and selection through cards;
-    
-- Content grouping by project;
-    
-- Dedicated project presentation pages;
-    
-- A Portfolio-specific file tree;
-    
-- Separation between content intended for the Garden and Portfolio;
-    
-- Visibility control through the `displayMode` property.
-    
-
-The `displayMode` property allows each piece of content to be classified as:
-
-- `portfolio` — displayed exclusively in the Portfolio;
-    
-- `garden` — displayed exclusively in the Garden;
-    
-- `both` — shared between both experiences.
-    
-
-This architecture allows **content and presentation to be treated as independent layers**, preventing the physical file structure from strictly determining how content is represented in the interface.
+The project evolved from an implementation based on the [Digital Garden](https://github.com/oleeskild/digitalgarden) template into a customized web application, where the publishing structure, navigation, and visual presentation were adapted to the project's requirements. The project became a laboratory for experimenting with **static site generation, content modeling, dynamic interfaces, and customization of an existing codebase**.
 
 ## ⚙️ Architectural customization
 
@@ -219,31 +128,6 @@ The main changes include:
     
 
 The solution preserves the Markdown-based structure used by the Garden while adding a more structured presentation layer on top of the same content.
-
-## 🎨 Visual system
-
-The project also includes a theme system designed to support different visual identities without changing the underlying content structure.
-
-In addition to **Light** and **Dark** modes, two custom themes were developed:
-
-### Nyxa
-
-An experimental visual identity based on a more expressive aesthetic, using different typefaces for headings, emphasis, and interface components.
-
-Fonts used:
-
-- **Daft Font**
-    
-- **Rubik Dirt**
-
-- **Space Grotesk**
-    
-
-### Lunara
-
-An alternative visual identity developed as a counterpart to Nyxa, using the same theme infrastructure to provide a distinct interpretation of the application.
-
-The implementation keeps **visual tokens, components, and content** separated, allowing the themes to evolve without requiring individual page modifications.
 
 ## 🌐 Internationalization
 

@@ -56,12 +56,6 @@ O projeto exigiu lidar principalmente com:
     
 - exposição segura de uma porta local através de um túnel TCP;
     
-- automação da inicialização dos componentes.
-    
-
-### Resultado
-
-O projeto demonstrou que um smartphone Android pode funcionar como uma plataforma de hospedagem funcional para aplicações de servidor relativamente leves. Além do resultado prático, serviu como uma introdução experimental à **administração Linux, redes, virtualização/isolamento de ambientes e automação através de shell scripts**.
 
 ---
 
@@ -69,9 +63,7 @@ O projeto demonstrou que um smartphone Android pode funcionar como uma plataform
 
 ### Visão geral
 
-Projeto desenvolvido como uma evolução do experimento anterior, utilizando um **smartphone Android como servidor multiplayer para The Legend of Zelda: Ocarina of Time**, através do ecossistema **Ship of Harkinian** e do servidor **Anchor**.
-
-Diferentemente do servidor de Minecraft, o projeto demonstrou que o mesmo conceito poderia ser aplicado a uma aplicação especializada e consideravelmente mais leve. O servidor utiliza uma quantidade estimada de apenas **256–512 MB de RAM**, permitindo sua execução em dispositivos Android menos potentes.
+Projeto desenvolvido como uma evolução do experimento anterior, utilizando um **smartphone Android como servidor multiplayer para The Legend of Zelda: Ocarina of Time**, através da aplicação **Ship of Harkinian** e do servidor **Anchor**.
 
 ### Arquitetura e implementação
 
@@ -93,29 +85,6 @@ Diferentemente do servidor de Minecraft, o projeto demonstrou que o mesmo concei
     
 
 O servidor Anchor foi obtido a partir de um repositório público e executado diretamente no ambiente Linux do Android. Sua porta de execução também pôde ser configurada através de uma variável de ambiente, permitindo adaptar a infraestrutura conforme a necessidade.
-
-### Integração com o cliente
-
-O projeto também envolveu a configuração do **Ship of Harkinian** para utilizar o Anchor como sistema de interação remota.
-
-A configuração do cliente permite definir:
-
-- endereço e porta do servidor;
-    
-- esquema de interação `Anchor`;
-    
-- identificação e nome do jogador;
-    
-- cor do personagem;
-    
-- identificação da sala;
-    
-- janelas de localização dos jogadores;
-    
-- notificações de itens recebidos.
-    
-
-Como o sistema trabalha sobre uma versão modificada do jogo, também foi explorada a utilização de **mods locais**, demonstrando a separação entre modificações visuais ou de conteúdo do cliente e o estado compartilhado pelo servidor.
 
 ### Objetivos e desafios
 
@@ -150,7 +119,7 @@ Além de aprofundar os conhecimentos adquiridos no projeto de Minecraft, o exper
 
 Os dois projetos fazem parte de uma mesma linha de experimentação: **explorar dispositivos acessíveis e ambientes não convencionais como plataformas de computação e hospedagem**.
 
-O primeiro projeto começou como uma experiência de infraestrutura — _"é possível transformar meu celular em um servidor?"_. O segundo levou essa ideia além, utilizando uma aplicação multiplayer completamente diferente e uma arquitetura baseada em Deno.
+O primeiro projeto começou como uma experiência de infraestrutura — _"é possível transformar um celular antigo em um servidor?"_. O segundo levou essa ideia além, utilizando uma aplicação multiplayer completamente diferente e uma arquitetura baseada em Deno.
 
 Juntos, eles representam experiências práticas com:
 
@@ -174,8 +143,6 @@ Juntos, eles representam experiências práticas com:
     
 - **Otimização para hardware limitado**
     
-
-Mais do que simplesmente hospedar dois jogos, os projetos serviram como pequenos laboratórios para entender **como diferentes aplicações podem ser adaptadas para funcionar dentro de ambientes com recursos e restrições incomuns**.
 
 [< Voltar](/portfolio/)
 
@@ -229,12 +196,6 @@ The project required dealing with:
     
 - exposing a local service through a TCP tunnel;
     
-- automating service startup with shell scripts.
-    
-
-### Result
-
-The project demonstrated that an Android smartphone can function as a practical hosting platform for relatively lightweight server applications. Beyond the practical result, it provided hands-on experience with **Linux administration, networking, isolated environments, and shell scripting automation**.
 
 ---
 
@@ -242,9 +203,7 @@ The project demonstrated that an Android smartphone can function as a practical 
 
 ### Overview
 
-A follow-up project that expanded the previous experiment by using an **Android smartphone as a multiplayer server for The Legend of Zelda: Ocarina of Time**, through the **Ship of Harkinian** ecosystem and the **Anchor** server.
-
-Unlike the Minecraft server, this project demonstrated that the same concept could be applied to a specialized and considerably lighter application. The server requires an estimated **256–512 MB of RAM**, allowing it to run on less powerful Android devices.
+A follow-up project that expanded the previous experiment by using an **Android smartphone as a multiplayer server for The Legend of Zelda: Ocarina of Time**, through the **Ship of Harkinian** application and the **Anchor** server.
 
 ### Architecture and implementation
 
@@ -266,29 +225,6 @@ Unlike the Minecraft server, this project demonstrated that the same concept cou
     
 
 The Anchor server was obtained from a public repository and executed directly inside the Android Linux environment. Its listening port could also be configured through an environment variable, allowing the infrastructure to be adapted to different requirements.
-
-### Client integration
-
-The project also involved configuring **Ship of Harkinian** to use Anchor as its remote interaction system.
-
-The client configuration supports:
-
-- server address and port;
-    
-- the `Anchor` interaction scheme;
-    
-- player identification and name;
-    
-- character color;
-    
-- room identification;
-    
-- player location windows;
-    
-- incoming item notifications.
-    
-
-Because the system relies on a modified version of the game, the project also explored **local client-side modifications**, demonstrating the separation between visual or content changes on the client and the state shared through the server.
 
 ### Goals and challenges
 
@@ -323,7 +259,7 @@ In addition to expanding upon the knowledge gained from the Minecraft project, t
 
 Both projects belong to the same line of experimentation: **exploring affordable and unconventional devices as computing and hosting platforms**.
 
-The first project began as an infrastructure experiment — _"can I turn my phone into a server?"_. The second took the idea further by applying it to a completely different multiplayer application and a Deno-based architecture.
+The first project began as an infrastructure experiment — _"can I turn an antique phone into a server?"_. The second took the idea further by applying it to a completely different multiplayer application and a Deno-based architecture.
 
 Together, they represent hands-on experience with:
 
@@ -347,8 +283,6 @@ Together, they represent hands-on experience with:
     
 - **Optimization for constrained hardware**
     
-
-Rather than simply hosting two games, these projects served as small laboratories for understanding **how different applications can be adapted to run in environments with unusual resource constraints and limitations**.
 
 [< Back](/portfolio/)
 

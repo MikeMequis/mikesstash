@@ -10,8 +10,8 @@
 
 ### Junior .NET Developer — Mobilemed Soluções Médicas
 
-**Janeiro de 2025 — Presente**  
-São Bernardo do Campo, São Paulo
+>**Janeiro de 2025 — Presente** 
+>São Bernardo do Campo, São Paulo
 
 Atuação no desenvolvimento e manutenção de aplicações .NET, participando de diferentes etapas do ciclo de vida do software.
 
@@ -36,25 +36,23 @@ Atuação no desenvolvimento e manutenção de aplicações .NET, participando d
 - Produção e manutenção de documentação técnica.
     
 
-A experiência proporciona contato com o ciclo de desenvolvimento de aplicações em um ambiente profissional, desde a implementação e manutenção até a evolução contínua das soluções.
-
 ---
 
 ## 🎓 Formação acadêmica
 
 ### Bacharelado em Engenharia de Computação
 
-**Faculdade Engenheiro Salvador Arena — CEFSA**  
-**Agosto de 2022 — Dezembro de 2026**
+>**Faculdade Engenheiro Salvador Arena — FESA**
+>**Agosto de 2022 — Dezembro de 2026**
 
 Formação multidisciplinar em Engenharia de Computação, combinando fundamentos de programação, sistemas computacionais, bancos de dados e tecnologias de software.
 
-A graduação também proporcionou experiências práticas de desenvolvimento através de projetos acadêmicos, incluindo aplicações em **C#**, sistemas com interfaces gráficas e projetos envolvendo hardware e aquisição de dados.
+A graduação também proporcionou experiências práticas de desenvolvimento através de projetos acadêmicos, incluindo aplicações baseados em **C#, C++, Java e Python** e sistemas com interfaces gráficas e projetos envolvendo hardware e aquisição de dados.
 
 ### Ensino Médio
 
-**Colégio Termomecanica**  
-**Fevereiro de 2018 — Dezembro de 2020**
+>**Colégio Termomecanica**
+>**Fevereiro de 2018 — Dezembro de 2020**
 
 Formação de nível médio concluída antes do ingresso na graduação em Engenharia de Computação.
 
@@ -62,9 +60,9 @@ Formação de nível médio concluída antes do ingresso na graduação em Engen
 
 ## 🧪 Projetos acadêmicos
 
-### Data Hopper
+### [Data Hopper](https://gitlab.com/MikeMequis1/DeathRow)
 
-**Janeiro de 2023 — Dezembro de 2023**
+>**Janeiro de 2023 — Dezembro de 2023**
 
 Projeto acadêmico voltado ao **monitoramento de condições ambientais em ambientes industriais**.
 
@@ -83,11 +81,9 @@ O projeto utilizou um **Arduino UNO R3** para realizar medições de intensidade
 - Registro de medições.
     
 
-O projeto proporcionou experiência prática na integração entre **hardware, sensores e software**.
+### [Virtual Game Death Row](https://github.com/fesa-academic-projects/Data-Hopper)
 
-### Virtual Game Death Row
-
-**Janeiro de 2022 — Dezembro de 2022**
+>**Janeiro de 2022 — Dezembro de 2022**
 
 Projeto acadêmico de desenvolvimento de um **jogo virtual utilizando C#**.
 
@@ -108,7 +104,7 @@ A aplicação contou com uma interface gráfica desenvolvida em **Windows Forms*
 
 ---
 
-## 📜 Certificações
+## [📜 Certificações](https://www.linkedin.com/in/marcelo-m-medeiros/details/certifications/)
 
 - **C# — Aplicando Princípios SOLID na prática**
     
@@ -161,8 +157,8 @@ A aplicação contou com uma interface gráfica desenvolvida em **Windows Forms*
 
 ### Junior .NET Developer — Mobilemed Soluções Médicas
 
-**January 2025 — Present**  
-São Bernardo do Campo, São Paulo, Brazil
+>**January 2025 — Present**  
+>São Bernardo do Campo, São Paulo, Brazil
 
 Working on the development and maintenance of .NET applications, contributing to different stages of the software development lifecycle.
 
@@ -187,7 +183,6 @@ Working on the development and maintenance of .NET applications, contributing to
 - Technical documentation.
     
 
-The experience provides exposure to the complete development cycle of professional software applications, from implementation and maintenance to continuous improvement.
 
 ---
 
@@ -195,17 +190,17 @@ The experience provides exposure to the complete development cycle of profession
 
 ### Bachelor's Degree in Computer Engineering
 
-**Faculdade Engenheiro Salvador Arena — CEFSA**  
-**August 2022 — December 2026**
+>**Faculdade Engenheiro Salvador Arena — FESA**  
+>**August 2022 — December 2026**
 
 Multidisciplinary education in Computer Engineering, combining programming fundamentals, computer systems, databases, and software technologies.
 
-The degree has also provided practical development experience through academic projects, including **C# applications, graphical interfaces, and hardware-based data acquisition projects**.
+The degree has also provided practical development experience through academic projects, including **C#, C++, Java and Python** applications, graphical interfaces, and hardware-based data acquisition projects.
 
 ### High School
 
-**Colégio Termomecanica**  
-**February 2018 — December 2020**
+>**Colégio Termomecanica**  
+>**February 2018 — December 2020**
 
 Completed secondary education prior to pursuing a Bachelor's degree in Computer Engineering.
 
@@ -213,9 +208,9 @@ Completed secondary education prior to pursuing a Bachelor's degree in Computer 
 
 ## 🧪 Academic projects
 
-### Data Hopper
+### [Data Hopper](https://gitlab.com/MikeMequis1/DeathRow)
 
-**January 2023 — December 2023**
+>**January 2023 — December 2023**
 
 Academic project focused on **environmental monitoring in industrial environments**.
 
@@ -234,11 +229,9 @@ The project used an **Arduino UNO R3** to measure light intensity, temperature, 
 - Measurement logging.
     
 
-The project provided practical experience integrating **hardware, sensors, and software**.
+### [Virtual Game Death Row](https://github.com/fesa-academic-projects/Data-Hopper)
 
-### Virtual Game Death Row
-
-**January 2022 — December 2022**
+>**January 2022 — December 2022**
 
 Academic project involving the development of a **virtual game using C#**.
 
@@ -259,7 +252,7 @@ The application featured a graphical interface developed with **Windows Forms**,
 
 ---
 
-## 📜 Certifications
+## [📜 Certifications](https://www.linkedin.com/in/marcelo-m-medeiros/details/certifications/)
 
 - **C# — Applying SOLID Principles in Practice**
     

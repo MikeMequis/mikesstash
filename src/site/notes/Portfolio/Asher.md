@@ -15,59 +15,38 @@ O projeto combina **patching de código em runtime** e **substituição de conte
 
 [Repositório](https://github.com/MikeMequis/Asher)
 
-> Documentação técnica detalhada: [Asher (Jardim)](/asher/)
+> Documentação técnica detalhada: [[🐱 Asher\|Asher (Jardim)]]
 
 ## 🎯 Objetivo
 
-O Asher surgiu da necessidade de criar uma infraestrutura de modding mais organizada para _Dust: An Elysian Tail_, em vez de depender de alterações manuais diretamente nos arquivos do jogo.
-
 A proposta é fornecer uma camada intermediária entre o jogo e os mods, permitindo que diferentes modificações possam ser instaladas e gerenciadas de maneira independente.
 
-O projeto foi inspirado em soluções consolidadas do ecossistema de modding, especialmente **SMAPI**, **SMAPI Content Patcher** e outras plataformas de patching utilizadas como referência arquitetural.
+O projeto foi inspirado em soluções consolidadas do ecossistema de *modding*, especialmente **SMAPI**, **SMAPI Content Patcher** e outras plataformas de *patching* utilizadas como referência arquitetural.
 
 ## 🧩 Arquitetura
 
-A arquitetura do Asher é dividida em componentes com responsabilidades distintas, separando o gerenciamento dos mods da execução das modificações dentro do jogo.
+A arquitetura do Asher é dividida em componentes com responsabilidades distintas, separando o gerenciamento dos *mods* da execução das modificações dentro do jogo.
 
 ### Launcher / Manager
 
-O componente responsável pelo gerenciamento da instalação e execução dos mods.
+O componente responsável pelo gerenciamento da instalação e execução dos *mods*.
 
 Entre suas responsabilidades estão:
 
-- gerenciamento do ambiente de modding;
+- gerenciamento do ambiente de *modding*;
     
-- organização dos mods instalados;
+- organização dos *mods* instalados;
     
 - preparação da execução;
     
-- interação com os componentes de runtime;
+- interação com os componentes de *runtime*;
     
-- gerenciamento do processo de inicialização do jogo.
-    
-
-A separação entre gerenciamento e execução permite que o sistema de modding evolua sem concentrar toda a lógica em um único componente.
 
 ### Runtime
 
 O **Asher Runtime** atua durante a execução do jogo, fornecendo a infraestrutura necessária para aplicar modificações em tempo de execução.
 
-O projeto utiliza **Harmony** como parte de sua infraestrutura de patching, permitindo modificar o comportamento do código existente sem alterar permanentemente os assemblies originais.
-
-Essa abordagem torna as alterações mais controláveis e reversíveis, além de permitir que diferentes mods sejam aplicados sobre o mesmo ambiente.
-
-### Content Replacement
-
-Além de alterações comportamentais através de código, o Asher também contempla a **substituição de conteúdo**.
-
-Essa separação permite trabalhar com dois tipos diferentes de modificação:
-
-- alterações na lógica e comportamento do jogo;
-    
-- substituição ou modificação de recursos utilizados pelo jogo.
-    
-
-A abordagem aproxima a arquitetura do conceito de um **framework de modding**, em vez de simplesmente fornecer um conjunto de hacks específicos para o jogo.
+O projeto utiliza **Harmony** como parte de sua infraestrutura de *patching*, permitindo modificar o comportamento do código existente sem alterar permanentemente os *assemblies* originais. Essa abordagem torna as alterações mais controláveis e reversíveis, além de permitir que diferentes *mods* sejam aplicados sobre o mesmo ambiente.
 
 ## 🔧 Tecnologias
 
@@ -96,8 +75,6 @@ Entre as principais tecnologias e referências utilizadas estão:
 - **DustAetPatchingPlatform**
     
 
-A utilização de uma arquitetura baseada em componentes permite manter responsabilidades separadas e facilita a evolução incremental da plataforma.
-
 ## 🧠 Principais desafios técnicos
 
 O desenvolvimento do Asher envolve problemas diferentes daqueles encontrados no desenvolvimento de uma aplicação convencional.
@@ -116,20 +93,8 @@ Entre os principais desafios estão:
     
 - gerenciar instalação, execução e distribuição de modificações;
     
-- manter a infraestrutura de modding separada da lógica específica de cada mod.
-    
 
 Esses requisitos tornam o projeto particularmente interessante como estudo de **engenharia reversa, extensibilidade de software e arquitetura de sistemas sobre aplicações existentes**.
-
-## 📦 Distribuição e ciclo de execução
-
-O Asher utiliza um fluxo baseado em launcher para controlar o ambiente de modding.
-
-De forma simplificada:
-
-**Launcher → preparação do ambiente → inicialização do Runtime → execução do jogo → aplicação dos mods**
-
-Essa estrutura permite centralizar operações que normalmente seriam realizadas manualmente pelo usuário e cria uma base para futuras funcionalidades de gerenciamento e distribuição.
 
 ## 🚧 Estado do projeto
 
@@ -137,7 +102,7 @@ O Asher permanece em desenvolvimento.
 
 A implementação atual estabelece a base da plataforma e seus principais componentes, enquanto funcionalidades adicionais continuam sendo planejadas e refinadas.
 
-O roadmap contempla a evolução de:
+O *roadmap* contempla a evolução de:
 
 - gerenciamento de mods;
     
@@ -152,38 +117,7 @@ O roadmap contempla a evolução de:
 - documentação e experiência de utilização.
     
 
-A documentação detalhada do Garden acompanha a evolução técnica do projeto, incluindo sua arquitetura, componentes, funcionalidades, processo de build e releases.
-
-## 📌 Competências demonstradas
-
-O desenvolvimento do Asher envolve competências em:
-
-- **C# e .NET**
-    
-- Arquitetura de software modular
-    
-- Desenvolvimento de aplicações desktop
-    
-- WPF e Prism
-    
-- Runtime patching
-    
-- Harmony
-    
-- Engenharia reversa
-    
-- Modding de jogos
-    
-- Gerenciamento de processos
-    
-- Integração entre componentes
-    
-- Desenvolvimento orientado à extensibilidade
-    
-- Git e distribuição de software
-    
-
-Mais do que um projeto de modificação de jogo, o Asher representa um estudo prático de como **construir uma camada de extensibilidade sobre uma aplicação existente**, conciliando limitações impostas pelo software original com uma arquitetura própria para instalação, execução e gerenciamento de modificações.
+A documentação detalhada do Jardim acompanha a evolução técnica do projeto, incluindo sua arquitetura, componentes, funcionalidades, processo de build e releases.
 
 [< Voltar](/portfolio/)
 
@@ -201,11 +135,9 @@ The project combines **runtime code patching** and **content replacement**, aimi
 
 [Repository](https://github.com/MikeMequis/Asher)
 
-> Detailed technical documentation: [Asher (Garden)](/asher/)
+> Detailed technical documentation:  [[🐱 Asher\|Asher (Garden)]]
 
 ## 🎯 Objective
-
-Asher was created to provide a more structured modding infrastructure for _Dust: An Elysian Tail_, avoiding the need for manual modifications directly to the game's files.
 
 The platform introduces an intermediate layer between the game and its mods, allowing different modifications to be installed and managed independently.
 
@@ -229,31 +161,12 @@ Its responsibilities include:
     
 - interaction with runtime components;
     
-- game process startup management.
-    
-
-Separating management from execution allows the modding system to evolve without concentrating all functionality within a single component.
 
 ### Runtime
 
 The **Asher Runtime** operates while the game is running, providing the infrastructure required to apply modifications at runtime.
 
-The project uses **Harmony** as part of its patching infrastructure, allowing existing code behavior to be modified without permanently altering the original assemblies.
-
-This approach makes modifications more controlled and reversible while allowing multiple mods to operate within the same environment.
-
-### Content Replacement
-
-In addition to behavioral modifications through code, Asher also supports **content replacement**.
-
-This separation allows the platform to address two different categories of modifications:
-
-- changes to game logic and behavior;
-    
-- replacement or modification of assets and other game content.
-    
-
-This approach brings the project closer to a **modding framework** rather than a collection of game-specific hacks.
+The project uses **Harmony** as part of its patching infrastructure, allowing existing code behavior to be modified without permanently altering the original assemblies. This approach makes modifications more controlled and reversible while allowing multiple mods to operate within the same environment.
 
 ## 🔧 Technologies
 
@@ -282,8 +195,6 @@ Key technologies and references include:
 - **DustAetPatchingPlatform**
     
 
-The component-based architecture keeps responsibilities separated and enables incremental evolution of the platform.
-
 ## 🧠 Key technical challenges
 
 Asher involves challenges that differ significantly from those found in conventional application development.
@@ -302,20 +213,8 @@ Key challenges include:
     
 - managing mod installation, execution, and distribution;
     
-- keeping the modding infrastructure separate from individual mod logic.
-    
 
 These requirements make the project a practical study in **reverse engineering, software extensibility, and system architecture built around an existing application**.
-
-## 📦 Distribution and execution flow
-
-Asher uses a launcher-based workflow to control the modding environment.
-
-At a high level:
-
-**Launcher → environment preparation → Runtime initialization → game execution → mod application**
-
-This structure centralizes operations that would otherwise have to be performed manually and establishes a foundation for future management and distribution features.
 
 ## 🚧 Project status
 
@@ -339,37 +238,6 @@ The roadmap includes further development of:
     
 
 The detailed Garden documentation tracks the project's technical evolution, including its architecture, components, features, build process, and releases.
-
-## 📌 Skills demonstrated
-
-Asher involves practical experience with:
-
-- **C# and .NET**
-    
-- Modular software architecture
-    
-- Desktop application development
-    
-- WPF and Prism
-    
-- Runtime patching
-    
-- Harmony
-    
-- Reverse engineering
-    
-- Game modding
-    
-- Process management
-    
-- Component integration
-    
-- Extensibility-oriented development
-    
-- Git and software distribution
-    
-
-Rather than being simply a game modification project, Asher represents a practical study of how to **build an extensibility layer around an existing application**, balancing constraints imposed by the original software with a custom architecture for installing, executing, and managing modifications.
 
 [< Back](/portfolio/)
 
