@@ -184,10 +184,10 @@ body.theme-nyxa {
         rgba(17, 17, 17, 0.72);
 
     --theme-tooltip-bg:
-        #181616;
+        var(--theme-surface-modal);
 
     --theme-tooltip-text:
-        #fffdf9;
+        var(--theme-text);
 
     --theme-toggle-bg:
         #fffdf9;
