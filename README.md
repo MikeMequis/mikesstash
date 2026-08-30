@@ -1,6 +1,61 @@
-# Digital Obsidian Garden
-This is the template to be used together with the [Digital Garden Obsidian Plugin](https://github.com/oleeskild/Obsidian-Digital-Garden).
-See the README in the plugin repo for information on how to set it up.
+# Mike's Stash
+
+Personal website built as a customized extension of the [Digital Garden](https://github.com/oleeskild/digitalgarden) template. Combines a Markdown-based Digital Garden with a structured Portfolio experience over the same content base, supporting Portuguese and English.
+
+## Stack
+
+- **Obsidian** — content authoring and management
+- **Markdown** — primary content format
+- **Eleventy (11ty)** — static site generation
+- **Nunjucks** — templates and page composition
+- **Sass** — styles and theming
+- **GitHub** — version control
+- **Vercel** — deploy and hosting
+- **Giscus** — comments
+
+## Setup
+
+Requires Node.js 22.x.
+
+```bash
+npm install
+cp .env.example .env   # then fill in site/Giscus settings
+```
+
+### Commands
+
+```bash
+npm run dev            # get-theme + build:sass + watch sass/eleventy (live reload)
+npm run build          # production build (get-theme + build:sass + build:eleventy)
+npm test               # run Vitest suite
+
+# granular scripts
+npm run get-theme      # fetch the Obsidian theme CSS
+npm run build:sass     # compile Sass (compressed)
+npm run build:eleventy # Eleventy production build
+npm run watch:sass     # watch Sass
+npm run watch:eleventy # Eleventy dev server
+```
+
+## Note Properties
+
+Project-specific frontmatter properties, resolved from `dg-note-properties` (or top-level).
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `title` | `string` \| `{pt, en}` | Bilingual note title (also `title-pt` / `title-en` flat form) |
+| `navOrder` | `number` | Explicit navbar/filetree ordering |
+| `isPortfolioViewableOnly` | `boolean` | Show only in the Portfolio view, hide from the Garden |
+| `cardDescription` | `string` \| `{pt, en}` | Explicit Portfolio card description |
+| `dgShowImageViewer` | `boolean` | Enable the image viewer |
+| `dgShowComments` | `true` | Show Giscus comments |
+| `dgShowLinkCards` | `false` | Render links as cards |
+
+---
+
+## Original README.md - Digital Garden
+
+This project is based on the [Digital Garden](https://github.com/oleeskild/digitalgarden) template, used together with the [Digital Garden Obsidian Plugin](https://github.com/oleeskild/Obsidian-Digital-Garden). See the plugin repo README for publishing setup.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/oleeskild/digitalgarden)
 
