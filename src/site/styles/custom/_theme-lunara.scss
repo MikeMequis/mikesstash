@@ -303,17 +303,21 @@ body.theme-lunara {
 
     --theme-hr-color:
         rgba(188, 183, 229, 0.28);
-}
 
-body.theme-lunara h1 {
-    font-family:
+    --lunara-display-font:
         "Allura",
         "Cormorant Garamond",
         cursive;
 
+    --lunara-display-letter-spacing: 0.01em;
+}
+
+body.theme-lunara h1 {
+    font-family: var(--lunara-display-font);
+
     font-size: 3.2em;
     font-weight: 400;
-    letter-spacing: 0.01em;
+    letter-spacing: var(--lunara-display-letter-spacing);
 
     color: #e8e6ff;
 
