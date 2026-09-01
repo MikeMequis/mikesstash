@@ -20,10 +20,6 @@
     flex:0 0 auto;width:var(--mst-tile-w);font-size:2.8rem;line-height:1;
     white-space:nowrap;transform:translateZ(0);
   }
-  .mst-tile::before{
-    content:"🏡";flex:0 0 auto;line-height:1;
-    font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
-  }
   .mst-tile::after{
     content:"Mike's Stash";display:inline-block;line-height:1;
   }
