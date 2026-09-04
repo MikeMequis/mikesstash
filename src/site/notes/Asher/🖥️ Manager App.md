@@ -4,37 +4,53 @@
 
 :::lang en
 
-`Asher.App` is a WPF application built with **Prism**, **Material Design**, and a modular service layer.
+The Asher manager is an **Electron** application (`Asher.Electron`) backed by **`Asher.Host`**, a headless .NET service that exposes install, uninstall, mod management, and settings over a **JSONL** protocol on stdin/stdout.
 
-## Installation mode
+> The legacy WPF app (`Asher.App`) was removed. Electron + `Asher.Host` is the only manager UI. The manager stays in **Distribution** — it is not deployed into the game folder.
 
-When Asher is not yet installed in a game folder, the app opens in **installation mode** and starts on the **Start** page:
+## Application flow
 
-1. **Start** — welcome and begin installation
-2. **Detect Game** — auto-detect or browse for the Dust folder
-3. **Installing** — deploy runtime, launcher wrapper, and default mods
-4. **Complete** — summary with optional **desktop shortcut** creation
+1. **Electron main** spawns `Asher.Host.exe --jsonl` and waits for a `ready` event
+2. **Renderer** lands on setup, install wizard, or home based on `getApplicationMode` / settings
+3. **IPC** forwards method calls (`getSettings`, `install`, `uninstall`, `getMods`, `launchGame`, `markInstalled`, …) to the host
+4. **Progress** streams back for long operations (install/uninstall)
 
-On finish, the app switches to mod manager mode and navigates to **Home**. If the installer was run from `Distribution\`, the distribution app closes and the installed copy at `[Game]\Asher\Asher.App\Asher.App.exe` is launched automatically.
+## Modes & screens
 
-## Mod manager mode
+| Mode | Screens |
+|------|---------|
+| **Install wizard** | Welcome → Setup (detect/validate game folder) → Installing → Complete (optional launch + minimize) |
+| **Manager** | Home hub, Patch Manager, Settings |
 
-When Asher is already installed (detected from settings or from running inside `[Game]\Asher\Asher.App\`), the app opens in *Manager mode* and starts on **Home**:
+Uninstall lives under **Settings → Removal**, not in the sidebar:
 
-| Page                | Description                                                             |
-| ------------------- | ----------------------------------------------------------------------- |
-| **Home**            | Quick actions — launch game, open Patch Manager, Settings               |
-| **Content Patcher** | Asset replacement UI                                                    |
-| **Patch Manager**   | Enable/disable mods by moving DLLs between `Mods/` and `Mods/disabled/` |
-| **Settings**        | Game path, language, theme, backups, auto-launch                        |
+| Removal mode | Behavior |
+|--------------|----------|
+| **Safe uninstallation** | In-app Host uninstall — restores backup, removes runtime files, returns to wizard |
+| **Total exclusion** | Launches game-folder `Uninstall-Asher.cmd`, then quits the app so locks clear |
 
-## App features
+## Features
 
-- **Localization** — English and Portuguese (Brazil); language changes refresh labels dynamically
-- **Light / Dark theme** — full-window Material Design theming via Settings
-- **Settings persistence** — `settings.json` in AppData, game manager folder, and local app directory
-- **Game launch** — launches `DustAET.exe` (Asher launcher wrapper) from the detected game folder
-- **Desktop shortcut** — optional shortcut to `Asher.App.exe` after installation
+- **Patch Manager** — enable/disable mods by moving DLLs between `Mods/` and `Mods/disabled/` (rejects unknown mods)
+- **Game launch** — starts `DustAET.exe` (Asher launcher wrapper) from the configured folder
+- **Localization** — en-US, pt-BR, es
+- **Theme** — Light / Dark
+- **Toasts** — top-right action banners
+- **Settings auto-save** — preference-only reset (keeps path / installed state)
+- **Always-on install backup** — `BackupEnabled` forced true; not a user toggle
+- **Updates** — packaged Distribution builds can check/apply GitHub Release zips (Settings → Check for updates)
+- **Logging** — manager diagnostics in `{GameFolder}/Asher/AsherLogs/manager_*.log` (with `runtime_*` and `launcher_fatal_*`)
+
+## Development
+
+```bash
+cd Asher.Electron
+npm install
+npm run build:host:debug   # or build:host for Release/dist
+npm start
+```
+
+Smoke tests: `npm run smoke`, `npm run smoke:install`, `npm run smoke:uninstall`, etc.
 
 ---
 [[🐱 Asher\|< Back]]
@@ -43,35 +59,53 @@ When Asher is already installed (detected from settings or from running inside `
 
 :::lang pt
 
-`Asher.App` é uma aplicação WPF construída com **Prism**, **Material Design** e uma camada de serviços modular.
+O gerenciador Asher é uma aplicação **Electron** (`Asher.Electron`) apoiada pelo **`Asher.Host`**, um serviço .NET headless que expõe instalação, desinstalação, gerenciamento de mods e configurações via protocolo **JSONL** em stdin/stdout.
 
-## Modo de instalação
+> O app WPF legado (`Asher.App`) foi removido. Electron + `Asher.Host` é a única UI do gerenciador. O gerenciador permanece em **Distribution** — não é implantado na pasta do jogo.
 
-Quando o Asher ainda não está instalado em uma pasta de jogo, o app abre em **modo de instalação** e inicia na página **Start**:
+## Fluxo da aplicação
 
-1. **Start** — boas-vindas e início da instalação
-2. **Detect Game** — detecção automática ou navegação manual até a pasta do Dust
-3. **Installing** — implantação do runtime, do wrapper do launcher e dos mods padrão
-4. **Complete** — resumo com criação opcional de **atalho na área de trabalho** Ao finalizar, o app muda para o modo de gerenciador de mods e navega até **Home**. Se o instalador tiver sido executado a partir de `Distribution\`, o app de distribuição se fecha e a cópia instalada em `[Game]\Asher\Asher.App\Asher.App.exe` é iniciada automaticamente.
+1. **Electron main** inicia `Asher.Host.exe --jsonl` e aguarda o evento `ready`
+2. **Renderer** abre setup, assistente de instalação ou home conforme `getApplicationMode` / settings
+3. **IPC** encaminha chamadas (`getSettings`, `install`, `uninstall`, `getMods`, `launchGame`, `markInstalled`, …) ao host
+4. **Progresso** é transmitido em operações longas (instalar/desinstalar)
 
-## Modo de gerenciador de mods
+## Modos e telas
 
-Quando o Asher já está instalado (detectado pelas configurações ou por estar sendo executado dentro de `[Game]\Asher\Asher.App\`), o app abre no _modo Gerenciador_ e inicia na **Home**:
+| Modo | Telas |
+|------|-------|
+| **Assistente de instalação** | Welcome → Setup (detectar/validar pasta) → Installing → Complete (launch opcional + minimizar) |
+| **Gerenciador** | Home hub, Patch Manager, Settings |
 
-| Página                     | Descrição                                                            |
-| -------------------------- | -------------------------------------------------------------------- |
-| **Home**                   | Ações rápidas — iniciar o jogo, abrir o Patch Manager, Configurações |
-| **Content Patcher**        | Interface de substituição de assets                                  |
-| **Gerenciador de Patches** | Ativa/desativa mods movendo DLLs entre `Mods/` e `Mods/disabled/`    |
-| **Configurações**          | Caminho do jogo, idioma, tema, backups, inicialização automática     |
+A desinstalação fica em **Settings → Removal**, não na barra lateral:
 
-## Recursos do app
+| Modo de remoção | Comportamento |
+|-----------------|---------------|
+| **Desinstalação segura** | Uninstall in-app via Host — restaura backup, remove runtime, volta ao wizard |
+| **Exclusão total** | Executa `Uninstall-Asher.cmd` na pasta do jogo e encerra o app para liberar locks |
 
-- **Localização** — Inglês e Português (Brasil); mudanças de idioma atualizam os textos dinamicamente
-- **Tema Claro / Escuro** — tema Material Design de janela inteira via Configurações
-- **Persistência de configurações** — `settings.json` no AppData, na pasta do gerenciador do jogo e no diretório local do app
-- **Inicialização do jogo** — inicia o `DustAET.exe` (wrapper do launcher Asher) a partir da pasta do jogo detectada
-- **Atalho na área de trabalho** — atalho opcional para o `Asher.App.exe` após a instalação
+## Recursos
+
+- **Patch Manager** — ativa/desativa mods movendo DLLs entre `Mods/` e `Mods/disabled/` (rejeita mods inexistentes)
+- **Inicialização do jogo** — inicia `DustAET.exe` (wrapper Asher) na pasta configurada
+- **Localização** — en-US, pt-BR, es
+- **Tema** — Light / Dark
+- **Toasts** — banners no canto superior direito
+- **Auto-save de settings** — reset só de preferências (mantém caminho / instalado)
+- **Backup sempre ativo na instalação** — `BackupEnabled` forçado; não é toggle
+- **Atualizações** — builds empacotadas em Distribution podem checar/aplicar zips do GitHub Releases
+- **Logs** — diagnósticos em `{GameFolder}/Asher/AsherLogs/manager_*.log` (com `runtime_*` e `launcher_fatal_*`)
+
+## Desenvolvimento
+
+```bash
+cd Asher.Electron
+npm install
+npm run build:host:debug
+npm start
+```
+
+Testes de fumaça: `npm run smoke`, `npm run smoke:install`, `npm run smoke:uninstall`, etc.
 
 ---
 [[🐱 Asher\|< Voltar]]

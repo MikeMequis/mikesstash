@@ -52,6 +52,8 @@ After installation, the game directory looks like this:
 ├── DustAET.exe                  (Asher.Launcher copy — Steam entry point)
 ├── DustAET.exe.config           (assembly probing: Asher; Asher\Mods)
 ├── DustAET.real.exe             (original game executable, renamed)
+├── Uninstall-Asher.cmd          (emergency restore without the UI)
+├── Uninstall-Asher.ps1
 │
 └── Asher/
     ├── Asher.Runtime.dll
@@ -67,17 +69,15 @@ After installation, the game directory looks like this:
     │   └── disabled/            (mods disabled via Patch Manager)
     │
     ├── AsherLogs/
-    │   └── runtime_YYYYMMDD_HHMMSS.log
+    │   ├── runtime_YYYYMMDD_HHMMSS.log
+    │   ├── manager_YYYYMMDD_HHMMSS.log
+    │   └── launcher_fatal_YYYYMMDD_HHMMSS.log
     │
     ├── patches/                 (content patcher assets, future)
-    ├── Asher.Backup/            (original exe backup)
-    │
-    └── Asher.App/               (manager app + install payload)
-        ├── Asher.App.exe
-        ├── settings.json
-        ├── Asher.Launcher.exe
-        └── DefaultMods/
+    └── Asher.Backup/            (original exe backup — always created on install)
 ```
+
+The **manager UI** lives in the packaged `Distribution/` folder (or extracted zip), not under `Asher/Asher.App/`. Install payload is staged beside `Asher.Host.exe` as `install-payload/` (Launcher, Runtime, SDK, Harmony, default mods).
 
 Folders are created automatically during installation.
 
@@ -136,6 +136,8 @@ Após a instalação, o diretório do jogo fica assim:
 ├── DustAET.exe                  (cópia do Asher.Launcher — ponto de entrada da Steam)
 ├── DustAET.exe.config           (probing de assemblies: Asher; Asher\Mods)
 ├── DustAET.real.exe             (executável original do jogo, renomeado)
+├── Uninstall-Asher.cmd          (restauração de emergência sem a UI)
+├── Uninstall-Asher.ps1
 │
 └── Asher/
     ├── Asher.Runtime.dll
@@ -151,18 +153,15 @@ Após a instalação, o diretório do jogo fica assim:
     │   └── disabled/            (mods desativados via Patch Manager)
     │
     ├── AsherLogs/
-    │   └── runtime_YYYYMMDD_HHMMSS.log
+    │   ├── runtime_YYYYMMDD_HHMMSS.log
+    │   ├── manager_YYYYMMDD_HHMMSS.log
+    │   └── launcher_fatal_YYYYMMDD_HHMMSS.log
     │
     ├── patches/                 (assets do content patcher, futuro)
-    ├── Asher.Backup/            (backup do exe original)
-    │
-    └── Asher.App/               (app gerenciador + payload de instalação)
-        ├── Asher.App.exe
-        ├── settings.json
-        ├── Asher.Launcher.exe
-        └── DefaultMods/
-
+    └── Asher.Backup/            (backup do exe original — sempre criado na instalação)
 ```
+
+A **UI do gerenciador** fica na pasta empacotada `Distribution/` (ou zip extraído), não em `Asher/Asher.App/`. O payload de instalação fica ao lado de `Asher.Host.exe` como `install-payload/` (Launcher, Runtime, SDK, Harmony, mods padrão).
 
 As pastas são criadas automaticamente durante a instalação. 
 

@@ -12,7 +12,7 @@
 
 [Link de Repositório](https://github.com/MikeMequis/Asher)
 
-*Última atualização: 2 de Julho de 2026*
+*Última atualização: 4 de setembro de 2026*
 
 :::
 
@@ -22,7 +22,7 @@
 
 [Repository Link](https://github.com/MikeMequis/Asher)
 
-*Last Updated: July 2, 2026*
+*Last Updated: September 4, 2026*
 
 :::
 

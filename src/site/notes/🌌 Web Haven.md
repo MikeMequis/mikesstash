@@ -28,16 +28,16 @@ A small refuge to take you from the most **useful tools** to the most unexpected
 ---
 
 [[Web Haven/🕹️ Toys\|🕹️ Toys]]
-[[Web Haven/🙏 Co-op Experience\|🙏 Co-op Experience]]
-[[Web Haven/🚂 Steam & PC Utilities\|🚂 Steam & PC Utilities]]
-[[Web Haven/🪆 Community Projects & Collections\|🪆 Community Projects & Collections]]
+[[🙏 Co-op Experience\|🙏 Co-op Experience]]
+[[🚂 Steam & PC Utilities\|🚂 Steam & PC Utilities]]
+[[🪆 Community Projects & Collections\|🪆 Community Projects & Collections]]
 
 ---
 
-[[Web Haven/⚗️ Fan Projects\|⚗️ Fan Projects]]
-[[Web Haven/🖼️ Fan Games\|🖼️ Fan Games]]
-[[Web Haven/🦔 Sonic Fan Games\|🦔 Sonic Fan Games]]
-[[Web Haven/🃏 Hack ROMs\|🃏 Hack ROMs]]
+[[⚗️ Fan Projects\|⚗️ Fan Projects]]
+[[🖼️ Fan Games\|🖼️ Fan Games]]
+[[🦔 Sonic Fan Games\|🦔 Sonic Fan Games]]
+[[🃏 Hack ROMs\|🃏 Hack ROMs]]
 
 ---
 :::lang pt

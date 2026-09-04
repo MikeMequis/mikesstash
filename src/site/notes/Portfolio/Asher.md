@@ -2,7 +2,6 @@
 {"dg-publish":true,"permalink":"/portfolio/asher/","title":{"pt":"🛠️ Asher","en":"🛠️ Asher"},"dg-note-properties":{"dgShowComments":false,"isPortfolioViewableOnly":true,"navOrder":4,"cardDescription":{"pt":"Plataforma de modding para Dust: An Elysian Tail, desenvolvida para explorar patching de código em runtime e uma infraestrutura modular para criação e gerenciamento de mods.","en":"Modding platform for Dust: An Elysian Tail, built to explore runtime code patching and a modular infrastructure for creating and managing mods."},"title":{"pt":"🛠️ Asher","en":"🛠️ Asher"}}}
 ---
 
-
 :::lang pt
 
 # 🛠️ Asher
@@ -25,55 +24,52 @@ O projeto foi inspirado em soluções consolidadas do ecossistema de *modding*, 
 
 ## 🧩 Arquitetura
 
-A arquitetura do Asher é dividida em componentes com responsabilidades distintas, separando o gerenciamento dos *mods* da execução das modificações dentro do jogo.
+A arquitetura do Asher é dividida em componentes com responsabilidades distintas, separando o **gerenciador** (fora do processo do jogo) da **execução** das modificações dentro do jogo.
 
-### Launcher / Manager
+### Gerenciador (Electron + Host)
 
-O componente responsável pelo gerenciamento da instalação e execução dos *mods*.
+O gerenciador é uma aplicação **Electron** (`Asher.Electron`) apoiada por um host headless em C# (`Asher.Host`), comunicando-se via **JSONL** em stdin/stdout.
 
 Entre suas responsabilidades estão:
 
-- gerenciamento do ambiente de *modding*;
-    
-- organização dos *mods* instalados;
-    
-- preparação da execução;
-    
-- interação com os componentes de *runtime*;
-    
+- instalação e desinstalação reversível no diretório do jogo;
+- organização e ativação/desativação de *mods*;
+- configurações, localização e tema;
+- preparação do launcher e lançamento do jogo;
+- empacotamento em Distribution e atualizações via GitHub Releases;
 
-### Runtime
+A UI do gerenciador permanece em Distribution; a pasta do jogo recebe runtime, mods e um helper de emergência (`Uninstall-Asher.cmd`).
 
-O **Asher Runtime** atua durante a execução do jogo, fornecendo a infraestrutura necessária para aplicar modificações em tempo de execução.
+### Launcher / Runtime
+
+O **Asher.Launcher** substitui `DustAET.exe` e controla a ordem de inicialização. O **Asher Runtime** atua durante a execução do jogo, fornecendo a infraestrutura necessária para aplicar modificações em tempo de execução.
 
 O projeto utiliza **Harmony** como parte de sua infraestrutura de *patching*, permitindo modificar o comportamento do código existente sem alterar permanentemente os *assemblies* originais. Essa abordagem torna as alterações mais controláveis e reversíveis, além de permitir que diferentes *mods* sejam aplicados sobre o mesmo ambiente.
 
 ## 🔧 Tecnologias
 
-O projeto utiliza principalmente o ecossistema **.NET/C#**, com componentes específicos para gerenciamento, runtime e patching.
+O projeto utiliza principalmente o ecossistema **.NET/C#**, com um shell de gerenciamento em **Electron**.
 
 Entre as principais tecnologias e referências utilizadas estão:
 
-- **C#**
+- **C#** / **.NET** (Host, Services, Core) e **.NET Framework** (Launcher, Runtime, SDK, patches)
     
-- **.NET**
+- **Electron** (Node.js) — UI do gerenciador
     
-- **WPF**
+- **Harmony** — patching em runtime
     
-- **Prism**
-    
-- **Harmony**
+- **XNA Framework 4.0** — compatibilidade com o jogo
     
 - **Git**
     
 - **Dust: An Elysian Tail**
     
-- **SMAPI**
-    
-- **SMAPI Content Patcher**
+- **SMAPI** / **SMAPI Content Patcher**
     
 - **DustAetPatchingPlatform**
     
+
+> A UI WPF/Prism legada foi descontinuada em setembro de 2026.
 
 ## 🧠 Principais desafios técnicos
 
@@ -91,30 +87,24 @@ Entre os principais desafios estão:
     
 - estabelecer uma arquitetura extensível para diferentes tipos de mods;
     
-- gerenciar instalação, execução e distribuição de modificações;
+- gerenciar instalação, execução e distribuição de modificações (incluindo empacotamento e recuperação de emergência);
     
 
 Esses requisitos tornam o projeto particularmente interessante como estudo de **engenharia reversa, extensibilidade de software e arquitetura de sistemas sobre aplicações existentes**.
 
 ## 🚧 Estado do projeto
 
-O Asher permanece em desenvolvimento.
+A **migração do gerenciador WPF para Electron** está concluída. A implementação atual cobre instalação, desinstalação (segura e total), Patch Manager, lançamento, localização, tema, empacotamento zip/Distribution e updates via GitHub Releases, com cinco patches padrão funcionais.
 
-A implementação atual estabelece a base da plataforma e seus principais componentes, enquanto funcionalidades adicionais continuam sendo planejadas e refinadas.
+O *roadmap* continua com:
 
-O *roadmap* contempla a evolução de:
-
-- gerenciamento de mods;
+- portabilidade de patches adicionais e engenharia reversa;
     
-- infraestrutura de runtime;
+- Content Patcher (quando houver backend);
     
-- instalação e distribuição;
+- metadados de mods e documentação para desenvolvedores;
     
-- suporte a diferentes tipos de modificações;
-    
-- ferramentas para desenvolvimento de mods;
-    
-- documentação e experiência de utilização.
+- polimento opcional do assistente de instalação;
     
 
 A documentação detalhada do Jardim acompanha a evolução técnica do projeto, incluindo sua arquitetura, componentes, funcionalidades, processo de build e releases.
@@ -145,55 +135,57 @@ The project takes inspiration from established modding solutions, particularly *
 
 ## 🧩 Architecture
 
-Asher is divided into components with distinct responsibilities, separating mod management from modification execution inside the game.
+Asher is divided into components with distinct responsibilities, separating the **manager** (outside the game process) from modification **execution** inside the game.
 
-### Launcher / Manager
+### Manager (Electron + Host)
 
-The component responsible for managing the modding environment and launching the game.
+The manager is an **Electron** app (`Asher.Electron`) backed by a headless C# host (`Asher.Host`), communicating over **JSONL** on stdin/stdout.
 
 Its responsibilities include:
 
-- modding environment management;
+- reversible install and uninstall into the game directory;
     
-- organization of installed mods;
+- organizing and enabling/disabling mods;
     
-- execution preparation;
+- settings, localization, and theme;
     
-- interaction with runtime components;
+- launcher preparation and game launch;
+    
+- Distribution packaging and GitHub Releases updates;
     
 
-### Runtime
+The manager UI stays in Distribution; the game folder receives runtime, mods, and an emergency helper (`Uninstall-Asher.cmd`).
 
-The **Asher Runtime** operates while the game is running, providing the infrastructure required to apply modifications at runtime.
+### Launcher / Runtime
+
+**Asher.Launcher** replaces `DustAET.exe` and controls startup order. The **Asher Runtime** operates while the game is running, providing the infrastructure required to apply modifications at runtime.
 
 The project uses **Harmony** as part of its patching infrastructure, allowing existing code behavior to be modified without permanently altering the original assemblies. This approach makes modifications more controlled and reversible while allowing multiple mods to operate within the same environment.
 
 ## 🔧 Technologies
 
-The project primarily uses the **.NET/C# ecosystem**, with dedicated components for management, runtime execution, and patching.
+The project primarily uses the **.NET/C#** ecosystem, with an **Electron** management shell.
 
 Key technologies and references include:
 
-- **C#**
+- **C#** / **.NET** (Host, Services, Core) and **.NET Framework** (Launcher, Runtime, SDK, patches)
     
-- **.NET**
+- **Electron** (Node.js) — manager UI
     
-- **WPF**
+- **Harmony** — runtime patching
     
-- **Prism**
-    
-- **Harmony**
+- **XNA Framework 4.0** — game compatibility
     
 - **Git**
     
 - **Dust: An Elysian Tail**
     
-- **SMAPI**
-    
-- **SMAPI Content Patcher**
+- **SMAPI** / **SMAPI Content Patcher**
     
 - **DustAetPatchingPlatform**
     
+
+> The legacy WPF/Prism UI was retired in September 2026.
 
 ## 🧠 Key technical challenges
 
@@ -211,30 +203,24 @@ Key challenges include:
     
 - establishing an extensible architecture for different types of mods;
     
-- managing mod installation, execution, and distribution;
+- managing mod installation, execution, and distribution (including packaging and emergency recovery);
     
 
 These requirements make the project a practical study in **reverse engineering, software extensibility, and system architecture built around an existing application**.
 
 ## 🚧 Project status
 
-Asher is currently under development.
+The **WPF → Electron manager migration** is complete. The current implementation covers install, uninstall (safe and total), Patch Manager, launch, localization, theme, zip/Distribution packaging, and GitHub Releases updates, with five working default patches.
 
-The current implementation establishes the platform's foundation and its main components, while additional features continue to be planned and refined.
+The roadmap continues with:
 
-The roadmap includes further development of:
-
-- mod management;
+- additional patch porting and reverse engineering;
     
-- runtime infrastructure;
+- Content Patcher (when a backend exists);
     
-- installation and distribution;
+- mod metadata and developer documentation;
     
-- support for different types of modifications;
-    
-- mod development tooling;
-    
-- documentation and user experience.
+- optional install-wizard polish;
     
 
 The detailed Garden documentation tracks the project's technical evolution, including its architecture, components, features, build process, and releases.

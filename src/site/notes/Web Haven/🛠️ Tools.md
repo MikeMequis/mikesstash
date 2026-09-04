@@ -2,8 +2,6 @@
 {"dg-publish":true,"permalink":"/web-haven/tools/","title":{"pt":"🛠️ Ferramentas","en":"🛠️ Tools"},"dg-note-properties":{"title":{"pt":"🛠️ Ferramentas","en":"🛠️ Tools"}}}
 ---
 
-
-
 ![WebHaven/ferramenta.gif](/img/user/img/WebHaven/ferramenta.gif)
 
 :::lang pt

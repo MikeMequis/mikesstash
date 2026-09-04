@@ -21,7 +21,7 @@ Inspired by mature mod loaders such as **SMAPI**, Asher prioritizes **explicit i
 - ✅ 100% runtime patching
 - ✅ Fully reversible (remove mod → original behavior)
 - ✅ Modular and extensible
-- ✅ Clean separation: Launcher → Runtime → SDK → Mods
+- ✅ Clean separation: Electron manager → Host → Launcher → Runtime → SDK → Mods
 - ✅ Comprehensive logging for debugging
 
 ---
@@ -48,7 +48,7 @@ Inspirado em mod loaders maduros como o **SMAPI**, o Asher prioriza uma **ordem 
 - ✅ 100% patching em tempo de execução
 - ✅ Totalmente reversível (remover o mod → comportamento original)
 - ✅ Modular e extensível
-- ✅ Separação clara: Launcher → Runtime → SDK → Mods
+- ✅ Separação clara: gerenciador Electron → Host → Launcher → Runtime → SDK → Mods
 - ✅ Registro de logs abrangente para depuração
 
 ---

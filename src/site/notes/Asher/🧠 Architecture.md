@@ -10,60 +10,64 @@ Asher is built around a **custom launcher**, which guarantees a deterministic in
 **Key principle:**  
 Injection and patching are **controlled and delayed**, never performed blindly at process startup.
 
-This design mirrors proven approaches used by SMAPI and other stable modding platforms.
+A companion **Electron manager app** (`Asher.Electron`) handles installation, mod management, and user settings. It talks to **`Asher.Host`** over JSONL on stdin/stdout — the host wraps `IAsherApplication` / `Asher.Services` without starting a UI or touching the game process directly.
 
-A companion **WPF manager app** (`Asher.App`) handles installation, mod management, and user settings without touching the game process directly.
+> **Note:** The legacy WPF app (`Asher.App`) was retired in September 2026. Electron + `Asher.Host` is the only manager UI. The manager stays in **Distribution**; the game folder receives runtime files + an emergency uninstall helper only.
 
 ## Solution Structure
 
 ```
 /Asher.sln
 │
-├── Asher.App/                  → WPF installer & mod manager (.NET 8, x86)
-├── Asher.UserInterface/        → WPF views, view models, theming
-├── Asher.Services/             → Installation, launch, patch manager, shortcuts
-├── Asher.Core/                 → Paths, settings, shared models
-├── Asher.Localization/         → UI strings (en-US, pt-BR)
+├── Asher.Electron/             → Electron manager UI (HTML/CSS/JS)
+│   ├── src/main/               → Spawns Asher.Host, JSONL IPC, updates
+│   ├── src/preload/            → contextBridge → window.asher
+│   └── src/renderer/           → Controllers, localization, theme, icons
+│
+├── Asher.Host/                 → Headless JSONL service host (.NET 8, x86)
+│   └── Jsonl/JsonlHostSession  → install, uninstall, mods, settings RPC
+│
+├── Asher.Services/             → IAsherApplication + install/launch/patch manager
+├── Asher.Core/                 → Paths, settings, shared models (no UI types)
 │
 ├── Asher.Launcher/             → Custom game launcher (.NET Framework 4.7.2)
 │   └── Program.cs              → Entry point and bootstrap orchestration
 │
 ├── Asher.Runtime/              → Runtime mod loader foundation (.NET Framework 4.7.2)
-│   ├── Bootstrap/
-│   │   ├── AssemblyLoader.cs            → Dynamic mod assembly loading
-│   │   ├── GameLifecycleHooks.cs        → Game lifecycle event hooks
-│   │   ├── GameTitleBootstrap.cs        → Sets game window title
-│   │   ├── HarmonyLifecycleBootstrap.cs → Optional lifecycle hook injection
-│   │   ├── PreInitBootstrap.cs          → PreInit module discovery & execution
-│   │   ├── PatchModuleLoader.cs         → Harmony patch application
-│   │   └── LifecycleModuleLoader.cs     → Lifecycle event registration
-│   ├── Core/
-│   │   ├── GameContext.cs               → Game instance access
-│   │   ├── RuntimeContext.cs            → Configuration and paths
-│   │   ├── RuntimeController.cs         → Initialization and shutdown
-│   │   └── RuntimeResult.cs             → Operation result wrapper
-│   ├── Lifecycle/
-│   │   ├── LifecycleEvent.cs            → Lifecycle state enum
-│   │   └── GameLifecycleEventBus.cs     → Lifecycle state management
-│   ├── RuntimeEntry.cs                  → Public runtime API
-│   ├── RuntimeLogger.cs                 → File-based logging system
-│   └── RuntimeLoggerAdapter.cs          → SDK logger bridge
+│   ├── Bootstrap/              → AssemblyLoader, PreInit, Patch, Lifecycle
+│   ├── Core/                   → RuntimeContext, RuntimeController
+│   ├── RuntimeLogger.cs        → File logging to Asher/AsherLogs/
+│   └── RuntimeEntry.cs         → Public runtime API
 │
 ├── Asher.SDK/                  → API for mod developers (.NET Framework 4.7.2)
-│   ├── Logging/
-│   │   ├── AsherLog.cs                  → Static logger facade
-│   │   └── IAsherLogger.cs              → Logger interface
-│   └── Patching/
-│       ├── AsherLifecycleModuleBase.cs  → Base class for lifecycle monitoring
-│       ├── IAsherLifecycleModule.cs     → Lifecycle event interface
-│       ├── IAsherPatchModule.cs         → Harmony patch module interface
-│       └── IAsherPreInitModule.cs       → PreInit module interface
+│   ├── Logging/                → AsherLog facade
+│   └── Patching/               → IAsherPatchModule, IAsherPreInitModule, lifecycle
 │
-├── Asher.Patching.*/           → Built-in patch mods (DebugEnabler, IntroSkipper, etc.)
+├── Asher.Patching.*/           → Built-in patch mods
+│   ├── DebugEnabler
+│   ├── IntroSkipper
+│   ├── GraphicsDeprofiler
+│   ├── MuteVoiceActing
+│   └── OverheatDisabler
 │
-├── PrepareDistribution.ps1     → Bundles Distribution/ folder for install & deploy
-└── Distribution/               → Output folder (generated, not committed)
+└── Distribution/               → Zip/dir packaging output (npm run dist)
 ```
+
+## Manager ↔ Host Communication
+
+```
+Asher.Electron (renderer)
+    ↓ IPC
+Asher.Electron (main / HostManager)
+    ↓ spawn + JSONL on stdin/stdout
+Asher.Host --jsonl
+    ↓
+IAsherApplication → Asher.Services / Asher.Core
+```
+
+Progress operations (`install`, `uninstall`) stream `progress` events over stdout. The host session guards against late progress callbacks after an operation completes to keep uninstall→reinstall flows stable in a single session.
+
+In-game stack (separate process): `DustAET.exe` (= Asher.Launcher) → Asher.Runtime → Asher.Patching.*.
 
 ---
 [[🐱 Asher\|< Back]]
@@ -74,66 +78,53 @@ A companion **WPF manager app** (`Asher.App`) handles installation, mod manageme
 
 ## Arquitetura Central (Launcher-First)
 
-O Asher é construído em torno de um **launcher personalizado**, que garante uma ordem de inicialização determinística e um comportamento confiável em tempo de execução. 
+O Asher é construído em torno de um **launcher personalizado**, que garante uma ordem de inicialização determinística e um comportamento confiável em tempo de execução.
 
-**Princípio-chave:** 
-A injeção e a aplicação de patches são **controladas e postergada**s, nunca realizadas às cegas na inicialização do processo. 
+**Princípio-chave:**  
+A injeção e a aplicação de patches são **controladas e postergadas**, nunca realizadas às cegas na inicialização do processo.
 
-Esse design espelha abordagens comprovadas usadas pelo SMAPI e outras plataformas de modding estáveis. 
+Um **app gerenciador Electron** complementar (`Asher.Electron`) cuida da instalação, do gerenciamento de mods e das configurações do usuário. Ele se comunica com o **`Asher.Host`** via JSONL em stdin/stdout — o host encapsula `IAsherApplication` / `Asher.Services` sem iniciar UI nem tocar diretamente no processo do jogo.
 
-Um **app gerenciador WPF** complementar (`Asher.App`) cuida da instalação, do gerenciamento de mods e das configurações do usuário sem tocar diretamente no processo do jogo. 
+> **Nota:** O app WPF legado (`Asher.App`) foi descontinuado em setembro de 2026. Electron + `Asher.Host` é a única UI do gerenciador. O gerenciador permanece em **Distribution**; a pasta do jogo recebe só runtime + helper de desinstalação de emergência.
 
 ## Estrutura da Solução
 
 ```
 /Asher.sln
 │
-├── Asher.App/                  → Instalador WPF e gerenciador de mods (.NET 8, x86)
-├── Asher.UserInterface/        → Views, view models e temas do WPF
-├── Asher.Services/             → Instalação, inicialização, patch manager, atalhos
-├── Asher.Core/                 → Caminhos, configurações, modelos compartilhados
-├── Asher.Localization/         → Strings da interface (en-US, pt-BR)
+├── Asher.Electron/             → UI do gerenciador Electron (HTML/CSS/JS)
+│   ├── src/main/               → Inicia Asher.Host, ponte IPC JSONL, updates
+│   ├── src/preload/            → contextBridge → window.asher
+│   └── src/renderer/           → Controllers, localização, tema, ícones
+│
+├── Asher.Host/                 → Host de serviços JSONL headless (.NET 8, x86)
+│   └── Jsonl/JsonlHostSession  → RPC de instalação, desinstalação, mods, settings
+│
+├── Asher.Services/             → IAsherApplication + instalação/launch/patch manager
+├── Asher.Core/                 → Caminhos, configurações, modelos (sem tipos de UI)
 │
 ├── Asher.Launcher/             → Launcher personalizado do jogo (.NET Framework 4.7.2)
-│   └── Program.cs              → Ponto de entrada e orquestração do bootstrap
-│
-├── Asher.Runtime/              → Base do carregador de mods em tempo de execução (.NET Framework 4.7.2)
-│   ├── Bootstrap/
-│   │   ├── AssemblyLoader.cs            → Carregamento dinâmico de assemblies de mods
-│   │   ├── GameLifecycleHooks.cs        → Hooks de eventos do ciclo de vida do jogo
-│   │   ├── GameTitleBootstrap.cs        → Define o título da janela do jogo
-│   │   ├── HarmonyLifecycleBootstrap.cs → Injeção opcional de hooks de ciclo de vida
-│   │   ├── PreInitBootstrap.cs          → Descoberta e execução de módulos PreInit
-│   │   ├── PatchModuleLoader.cs         → Aplicação de patches via Harmony
-│   │   └── LifecycleModuleLoader.cs     → Registro de eventos de ciclo de vida
-│   ├── Core/
-│   │   ├── GameContext.cs               → Acesso à instância do jogo
-│   │   ├── RuntimeContext.cs            → Configuração e caminhos
-│   │   ├── RuntimeController.cs         → Inicialização e encerramento
-│   │   └── RuntimeResult.cs             → Wrapper de resultado de operação
-│   ├── Lifecycle/
-│   │   ├── LifecycleEvent.cs            → Enum de estado do ciclo de vida
-│   │   └── GameLifecycleEventBus.cs     → Gerenciamento de estado do ciclo de vida
-│   ├── RuntimeEntry.cs                  → API pública do runtime
-│   ├── RuntimeLogger.cs                 → Sistema de logging baseado em arquivo
-│   └── RuntimeLoggerAdapter.cs          → Ponte de logger para o SDK
-│
-├── Asher.SDK/                  → API para desenvolvedores de mods (.NET Framework 4.7.2)
-│   ├── Logging/
-│   │   ├── AsherLog.cs                  → Fachada estática de logger
-│   │   └── IAsherLogger.cs              → Interface de logger
-│   └── Patching/
-│       ├── AsherLifecycleModuleBase.cs  → Classe base para monitoramento de ciclo de vida
-│       ├── IAsherLifecycleModule.cs     → Interface de eventos de ciclo de vida
-│       ├── IAsherPatchModule.cs         → Interface de módulo de patch Harmony
-│       └── IAsherPreInitModule.cs       → Interface de módulo PreInit
-│
-├── Asher.Patching.*/           → Mods de patch integrados (DebugEnabler, IntroSkipper, etc.)
-│
-├── PrepareDistribution.ps1     → Empacota a pasta Distribution/ para instalação e implantação
-└── Distribution/               → Pasta de saída (gerada, não commitada)
+├── Asher.Runtime/              → Base do carregador de mods em tempo de execução
+├── Asher.SDK/                  → API para desenvolvedores de mods
+├── Asher.Patching.*/           → Mods integrados (DebugEnabler, IntroSkipper, etc.)
+└── Distribution/               → Saída zip/dir (npm run dist)
+```
+
+## Comunicação Gerenciador ↔ Host
 
 ```
+Asher.Electron (renderer)
+    ↓ IPC
+Asher.Electron (main / HostManager)
+    ↓ spawn + JSONL em stdin/stdout
+Asher.Host --jsonl
+    ↓
+IAsherApplication → Asher.Services / Asher.Core
+```
+
+Operações com progresso (`install`, `uninstall`) enviam eventos `progress` pelo stdout. A sessão do host bloqueia callbacks de progresso tardios após a conclusão da operação, mantendo fluxos de desinstalar→reinstalar estáveis na mesma sessão.
+
+Stack in-game (processo separado): `DustAET.exe` (= Asher.Launcher) → Asher.Runtime → Asher.Patching.*.
 
 [[🐱 Asher\|< Voltar]]
 
