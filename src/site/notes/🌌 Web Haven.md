@@ -23,21 +23,19 @@ A small refuge to take you from the most **useful tools** to the most unexpected
 [[Web Haven/🛠️ Tools\|🛠️ Tools]]
 [[Web Haven/🎓 Studies\|🎓 Studies]]
 [[Web Haven/👾 Game Development\|👾 Game Development]]
+
+---
+
 [[Web Haven/🔖 Bookmarks\|🔖 Bookmarks]]
-
----
-
 [[Web Haven/🕹️ Toys\|🕹️ Toys]]
-[[🙏 Co-op Experience\|🙏 Co-op Experience]]
-[[🚂 Steam & PC Utilities\|🚂 Steam & PC Utilities]]
-[[🪆 Community Projects & Collections\|🪆 Community Projects & Collections]]
+[[Web Haven/🛠️ Game Tools & Utilities\|🛠️ Game Tools & Utilities]]
 
 ---
 
-[[⚗️ Fan Projects\|⚗️ Fan Projects]]
-[[🖼️ Fan Games\|🖼️ Fan Games]]
-[[🦔 Sonic Fan Games\|🦔 Sonic Fan Games]]
-[[🃏 Hack ROMs\|🃏 Hack ROMs]]
+[[Web Haven/🤓 Emulation\|🤓 Emulation]]
+[[Web Haven/🧰 Game Projects & Resources\|🧰 Game Projects & Resources]]
+[[Web Haven/🎮 Fan Games\|🎮 Fan Games]]
+[[Web Haven/🧩 Mods, Hacks & ROM Hacking\|🧩 Mods, Hacks & ROM Hacking]]
 
 ---
 :::lang pt

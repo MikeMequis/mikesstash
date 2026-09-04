@@ -104,8 +104,6 @@ O *roadmap* continua com:
     
 - metadados de mods e documentação para desenvolvedores;
     
-- polimento opcional do assistente de instalação;
-    
 
 A documentação detalhada do Jardim acompanha a evolução técnica do projeto, incluindo sua arquitetura, componentes, funcionalidades, processo de build e releases.
 

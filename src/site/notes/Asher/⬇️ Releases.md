@@ -7,6 +7,7 @@
 # Versões
 
 - [v1.0.0](https://github.com/MikeMequis/Asher/releases/tag/v1.0.0) — Primeira Release
+- [v2.0.0](https://github.com/MikeMequis/Asher/releases/tag/v2.0.0) — Gerenciador em Electron
 
 ---
 [[🐱 Asher\|< Voltar]]
@@ -18,6 +19,7 @@
 # Versões
 
 - [v1.0.0](https://github.com/MikeMequis/Asher/releases/tag/v1.0.0) — First Release
+- [v2.0.0](https://github.com/MikeMequis/Asher/releases/tag/v2.0.0) — Electron Manager
 
 ---
 [[🐱 Asher\|< Back]]
