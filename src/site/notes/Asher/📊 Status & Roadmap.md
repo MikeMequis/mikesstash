@@ -23,7 +23,7 @@
 | Emergency uninstall helper   | ✅ Done      | `Uninstall-Asher.cmd` beside `DustAET.exe`   |
 | Safe vs Total removal        | ✅ Done      | In-app uninstall vs emergency script         |
 | In-app GitHub updates        | ✅ Done      | Packaged Distribution zip apply              |
-| Linux version                | 🔜 Planned  | Runtime patching and UI for Linux port       |
+| Linux version                | ✅ Done      | Discovery, install, LD_PRELOAD launch, AppImage/tar.gz (WSL-validated) |
 | Content patcher              | 🔜 Planned  | XNA ContentManager interception              |
 | Mod metadata (json)          | 🔜 Planned  | mod.json for description, dependencies, etc. |
 | Public Mod API docs          | 🔜 Planned  | Developer documentation and examples         |
@@ -40,6 +40,13 @@
 - Manager logs in `{Game}/Asher/AsherLogs/manager_*.log`
 - Ported **MuteVoiceActing** and **OverheatDisabler**; **IntroSkipper** rewrite
 - Fixed host crash on uninstall→reinstall in one session
+
+### September 2026 — Cross-platform & Linux support
+- Platform abstraction (`IPlatformInfo` + discovery / executable-layout / runtime-deployment / process-launch) with Windows and Linux implementations
+- `getPlatformInfo` + explicit `getInstallState` over JSONL; the renderer derives capabilities from them
+- Linux: Steam/XDG discovery, bootstrap + managed runtime deployment (`install.json`), native `LD_PRELOAD` launch (game stdout/stderr kept off the JSONL channel)
+- Linux packaging: AppImage + tar.gz; `Asher.Services.Tests` (xUnit) and `npm run smoke:platform`
+- Validated on WSL2 with a real Dust Linux install (install/launch/uninstall/reinstall; Harmony + DebugEnabler callback)
 
 ### July 2026 — Core runtime & WPF manager
 - Launcher, runtime bootstrap, first patches, WPF installer (since retired)
@@ -80,7 +87,7 @@ Port remaining gameplay patches from **DustAetPatchingPlatform** into the Asher 
 | Helper de desinstalação de emergência | ✅ Feito      | `Uninstall-Asher.cmd` ao lado de `DustAET.exe`        |
 | Remoção Safe vs Total                 | ✅ Feito      | Uninstall in-app vs script de emergência              |
 | Updates via GitHub in-app             | ✅ Feito      | Apply de zip em Distribution empacotado               |
-| Linux version                         | 🔜 Planejado | Patching em runtime and interface para porte de Linux |
+| Versão Linux                          | ✅ Feito      | Descoberta, instalação, launch via LD_PRELOAD, AppImage/tar.gz (validado no WSL) |
 | Content patcher                       | 🔜 Planejado | Interceptação do XNA ContentManager                   |
 | Metadados de mod (json)               | 🔜 Planejado | mod.json para descrição, dependências, etc.           |
 | Documentação pública da API de Mods   | 🔜 Planejado | Documentação e exemplos para desenvolvedores          |
@@ -98,6 +105,13 @@ Port remaining gameplay patches from **DustAetPatchingPlatform** into the Asher 
 - Logs do gerenciador em `{Game}/Asher/AsherLogs/manager_*.log`
 - Patches **MuteVoiceActing** e **OverheatDisabler**; **IntroSkipper** reescrito
 - Corrigido crash do host ao desinstalar→reinstalar na mesma sessão
+
+### Setembro de 2026 — Cross-platform e suporte a Linux
+- Abstração de plataforma (`IPlatformInfo` + descoberta / layout de executável / deploy de runtime / lançamento de processo) com implementações Windows e Linux
+- `getPlatformInfo` + `getInstallState` explícito via JSONL; o renderer deriva capacidades deles
+- Linux: descoberta Steam/XDG, deploy de bootstrap + runtime gerenciado (`install.json`), lançamento nativo via `LD_PRELOAD` (stdout/stderr do jogo fora do canal JSONL)
+- Empacotamento Linux: AppImage + tar.gz; `Asher.Services.Tests` (xUnit) e `npm run smoke:platform`
+- Validado no WSL2 com uma instalação Linux real do Dust (instalar/lançar/desinstalar/reinstalar; Harmony + callback do DebugEnabler)
 
 ### Julho de 2026 — Runtime central e gerenciador WPF
 - Launcher, bootstrap do runtime, primeiros patches, instalador WPF (desde então descontinuado)

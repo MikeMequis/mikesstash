@@ -32,14 +32,25 @@ Uninstall lives under **Settings → Removal**, not in the sidebar:
 ## Features
 
 - **Patch Manager** — enable/disable mods by moving DLLs between `Mods/` and `Mods/disabled/` (rejects unknown mods)
-- **Game launch** — starts `DustAET.exe` (Asher launcher wrapper) from the configured folder
+- **Game launch** — starts the game from the configured folder (Windows: `DustAET.exe` launcher wrapper; Linux: native `DustAET` with the `LD_PRELOAD` bootstrap environment)
 - **Localization** — en-US, pt-BR, es
 - **Theme** — Light / Dark
 - **Toasts** — top-right action banners
 - **Settings auto-save** — preference-only reset (keeps path / installed state)
 - **Always-on install backup** — `BackupEnabled` forced true; not a user toggle
-- **Updates** — packaged Distribution builds can check/apply GitHub Release zips (Settings → Check for updates)
+- **Updates** — packaged Distribution builds can check/apply GitHub Release zips (Settings → Check for updates); Windows only
 - **Logging** — manager diagnostics in `{GameFolder}/Asher/AsherLogs/manager_*.log` (with `runtime_*` and `launcher_fatal_*`)
+
+## Platform support
+
+The manager is platform-aware through the host contract:
+
+- `getPlatformInfo` — OS capability model (`usesLauncherSwap`, `supportsRecoveryHelper`, executable/library names)
+- `getInstallState` — authoritative install status (`state`, `canUninstall`, `canRestore`, `marker`); the renderer derives uninstall/restore from it instead of backup presence
+- **Windows:** launcher swap, emergency `Uninstall-Asher.cmd`, GitHub Releases updates
+- **Linux:** native `LD_PRELOAD` bootstrap launch, no launcher swap; "Total exclusion" and the in-app updater are hidden (unsupported)
+
+Linux packaging: `npm run dist:linux` (AppImage + tar.gz); Linux dependencies are listed in `docs/Cross-Platform-Architecture.md`.
 
 ## Development
 
@@ -87,14 +98,25 @@ A desinstalação fica em **Settings → Removal**, não na barra lateral:
 ## Recursos
 
 - **Patch Manager** — ativa/desativa mods movendo DLLs entre `Mods/` e `Mods/disabled/` (rejeita mods inexistentes)
-- **Inicialização do jogo** — inicia `DustAET.exe` (wrapper Asher) na pasta configurada
+- **Inicialização do jogo** — inicia o jogo da pasta configurada (Windows: wrapper `DustAET.exe`; Linux: `DustAET` nativo com o ambiente `LD_PRELOAD`)
 - **Localização** — en-US, pt-BR, es
 - **Tema** — Light / Dark
 - **Toasts** — banners no canto superior direito
 - **Auto-save de settings** — reset só de preferências (mantém caminho / instalado)
 - **Backup sempre ativo na instalação** — `BackupEnabled` forçado; não é toggle
-- **Atualizações** — builds empacotadas em Distribution podem checar/aplicar zips do GitHub Releases
+- **Atualizações** — builds empacotadas em Distribution podem checar/aplicar zips do GitHub Releases; somente Windows
 - **Logs** — diagnósticos em `{GameFolder}/Asher/AsherLogs/manager_*.log` (com `runtime_*` e `launcher_fatal_*`)
+
+## Suporte de plataforma
+
+O gerenciador é ciente da plataforma através do contrato do host:
+
+- `getPlatformInfo` — modelo de capacidades do SO (`usesLauncherSwap`, `supportsRecoveryHelper`, nomes de executáveis/bibliotecas)
+- `getInstallState` — status de instalação autoritativo (`state`, `canUninstall`, `canRestore`, `marker`); o renderer deriva desinstalação/restauração dele em vez da presença de backup
+- **Windows:** troca de launcher, `Uninstall-Asher.cmd` de emergência, updates via GitHub Releases
+- **Linux:** lançamento nativo via bootstrap `LD_PRELOAD`, sem troca de launcher; "Exclusão total" e o updater in-app ficam ocultos (não suportados)
+
+Empacotamento Linux: `npm run dist:linux` (AppImage + tar.gz); dependências Linux em `docs/Cross-Platform-Architecture.md`.
 
 ## Desenvolvimento
 

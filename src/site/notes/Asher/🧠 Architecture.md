@@ -24,14 +24,18 @@ A companion **Electron manager app** (`Asher.Electron`) handles installation, mo
 │   ├── src/preload/            → contextBridge → window.asher
 │   └── src/renderer/           → Controllers, localization, theme, icons
 │
-├── Asher.Host/                 → Headless JSONL service host (.NET 8, x86)
+├── Asher.Host/                 → Headless JSONL service host (.NET 8; Windows x86 / Linux x64)
 │   └── Jsonl/JsonlHostSession  → install, uninstall, mods, settings RPC
 │
 ├── Asher.Services/             → IAsherApplication + install/launch/patch manager
+│   └── Platform/               → Windows/Linux platform implementations
 ├── Asher.Core/                 → Paths, settings, shared models (no UI types)
+│   └── Platform/               → IPlatformInfo (platform descriptor)
 │
-├── Asher.Launcher/             → Custom game launcher (.NET Framework 4.7.2)
+├── Asher.Launcher/             → Windows custom game launcher (.NET Framework 4.7.2)
 │   └── Program.cs              → Entry point and bootstrap orchestration
+│
+├── Asher.Linux/                → Linux LD_PRELOAD bootstrap + managed build scripts
 │
 ├── Asher.Runtime/              → Runtime mod loader foundation (.NET Framework 4.7.2)
 │   ├── Bootstrap/              → AssemblyLoader, PreInit, Patch, Lifecycle
@@ -65,9 +69,11 @@ Asher.Host --jsonl
 IAsherApplication → Asher.Services / Asher.Core
 ```
 
-Progress operations (`install`, `uninstall`) stream `progress` events over stdout. The host session guards against late progress callbacks after an operation completes to keep uninstall→reinstall flows stable in a single session.
+Progress operations (`install`, `uninstall`) stream `progress` events over stdout. The host session guards against late progress callbacks after an operation completes to keep uninstall→reinstall flows stable in a single session. `getPlatformInfo` exposes the OS capability model and `getInstallState` is the authoritative install status; the renderer derives install/uninstall capabilities from them.
 
-In-game stack (separate process): `DustAET.exe` (= Asher.Launcher) → Asher.Runtime → Asher.Patching.*.
+OS-specific work is isolated behind small contracts (`IGameFolderDiscovery`, `IGameExecutableLayout`, `IRuntimeDeployment`, `IGameProcessLauncher`); `GameInstallationService` stays shared across Windows and Linux.
+
+In-game stack (separate process): Windows — `DustAET.exe` (= Asher.Launcher) → Asher.Runtime → Asher.Patching.*; Linux — native `DustAET` → `libasher_bootstrap.so` (`LD_PRELOAD`) → Asher.Runtime → Asher.Patching.*.
 
 ---
 [[🐱 Asher\|< Back]]
@@ -97,13 +103,17 @@ Um **app gerenciador Electron** complementar (`Asher.Electron`) cuida da instala
 │   ├── src/preload/            → contextBridge → window.asher
 │   └── src/renderer/           → Controllers, localização, tema, ícones
 │
-├── Asher.Host/                 → Host de serviços JSONL headless (.NET 8, x86)
+├── Asher.Host/                 → Host de serviços JSONL headless (.NET 8; Windows x86 / Linux x64)
 │   └── Jsonl/JsonlHostSession  → RPC de instalação, desinstalação, mods, settings
 │
 ├── Asher.Services/             → IAsherApplication + instalação/launch/patch manager
+│   └── Platform/               → Implementações de plataforma Windows/Linux
 ├── Asher.Core/                 → Caminhos, configurações, modelos (sem tipos de UI)
+│   └── Platform/               → IPlatformInfo (descritor de plataforma)
 │
-├── Asher.Launcher/             → Launcher personalizado do jogo (.NET Framework 4.7.2)
+├── Asher.Launcher/             → Launcher personalizado do Windows (.NET Framework 4.7.2)
+│
+├── Asher.Linux/                → Bootstrap LD_PRELOAD + scripts de build gerenciado (Linux)
 ├── Asher.Runtime/              → Base do carregador de mods em tempo de execução
 ├── Asher.SDK/                  → API para desenvolvedores de mods
 ├── Asher.Patching.*/           → Mods integrados (DebugEnabler, IntroSkipper, etc.)
@@ -122,9 +132,11 @@ Asher.Host --jsonl
 IAsherApplication → Asher.Services / Asher.Core
 ```
 
-Operações com progresso (`install`, `uninstall`) enviam eventos `progress` pelo stdout. A sessão do host bloqueia callbacks de progresso tardios após a conclusão da operação, mantendo fluxos de desinstalar→reinstalar estáveis na mesma sessão.
+Operações com progresso (`install`, `uninstall`) enviam eventos `progress` pelo stdout. A sessão do host bloqueia callbacks de progresso tardios após a conclusão da operação, mantendo fluxos de desinstalar→reinstalar estáveis na mesma sessão. `getPlatformInfo` expõe o modelo de capacidades do SO e `getInstallState` é o status de instalação autoritativo; o renderer deriva as capacidades de instalação/desinstalação deles.
 
-Stack in-game (processo separado): `DustAET.exe` (= Asher.Launcher) → Asher.Runtime → Asher.Patching.*.
+O trabalho específico de SO fica isolado atrás de contratos pequenos (`IGameFolderDiscovery`, `IGameExecutableLayout`, `IRuntimeDeployment`, `IGameProcessLauncher`); o `GameInstallationService` permanece compartilhado entre Windows e Linux.
+
+Stack in-game (processo separado): Windows — `DustAET.exe` (= Asher.Launcher) → Asher.Runtime → Asher.Patching.*; Linux — `DustAET` nativo → `libasher_bootstrap.so` (`LD_PRELOAD`) → Asher.Runtime → Asher.Patching.*.
 
 [[🐱 Asher\|< Voltar]]
 

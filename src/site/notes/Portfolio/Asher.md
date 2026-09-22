@@ -8,7 +8,7 @@
 
 ## Plataforma de modding para Dust: An Elysian Tail
 
-**Asher** é uma plataforma de modding baseada em launcher para [_Dust: An Elysian Tail_](https://store.steampowered.com/app/236090/Dust_An_Elysian_Tail/), desenvolvida com o objetivo de fornecer uma infraestrutura modular para criação, instalação e execução de modificações.
+**Asher** é uma plataforma de modding para Windows e Linux para [_Dust: An Elysian Tail_](https://store.steampowered.com/app/236090/Dust_An_Elysian_Tail/), desenvolvida com o objetivo de fornecer uma infraestrutura modular para criação, instalação e execução de modificações.
 
 O projeto combina **patching de código em runtime** e **substituição de conteúdo**, buscando oferecer uma experiência de modding segura, modular e reversível.
 
@@ -36,13 +36,14 @@ Entre suas responsabilidades estão:
 - organização e ativação/desativação de *mods*;
 - configurações, localização e tema;
 - preparação do launcher e lançamento do jogo;
+- suporte a Windows e Linux (troca de launcher no Windows; bootstrap `LD_PRELOAD` no Linux);
 - empacotamento em Distribution e atualizações via GitHub Releases;
 
 A UI do gerenciador permanece em Distribution; a pasta do jogo recebe runtime, mods e um helper de emergência (`Uninstall-Asher.cmd`).
 
 ### Launcher / Runtime
 
-O **Asher.Launcher** substitui `DustAET.exe` e controla a ordem de inicialização. O **Asher Runtime** atua durante a execução do jogo, fornecendo a infraestrutura necessária para aplicar modificações em tempo de execução.
+No Windows, o **Asher.Launcher** substitui `DustAET.exe` e controla a ordem de inicialização. No Linux, o `DustAET` permanece intacto e o **`libasher_bootstrap.so`** (via `LD_PRELOAD`) se conecta ao Mono embutido. Em ambos, o **Asher Runtime** atua durante a execução do jogo, fornecendo a infraestrutura para aplicar modificações em tempo de execução.
 
 O projeto utiliza **Harmony** como parte de sua infraestrutura de *patching*, permitindo modificar o comportamento do código existente sem alterar permanentemente os *assemblies* originais. Essa abordagem torna as alterações mais controláveis e reversíveis, além de permitir que diferentes *mods* sejam aplicados sobre o mesmo ambiente.
 
@@ -58,11 +59,10 @@ Entre as principais tecnologias e referências utilizadas estão:
     
 - **Harmony** — patching em runtime
     
-- **XNA Framework 4.0** — compatibilidade com o jogo
+- **XNA Framework 4.0** (Windows) / **Mono + FNA** (Linux) — compatibilidade com o jogo
+- **AppImage / tar.gz** — empacotamento Linux
     
 - **Git**
-    
-- **Dust: An Elysian Tail**
     
 - **SMAPI** / **SMAPI Content Patcher**
     
@@ -94,7 +94,7 @@ Esses requisitos tornam o projeto particularmente interessante como estudo de **
 
 ## 🚧 Estado do projeto
 
-A **migração do gerenciador WPF para Electron** está concluída. A implementação atual cobre instalação, desinstalação (segura e total), Patch Manager, lançamento, localização, tema, empacotamento zip/Distribution e updates via GitHub Releases, com cinco patches padrão funcionais.
+A **migração do gerenciador WPF para Electron** está concluída. A implementação atual cobre instalação, desinstalação (segura e total), Patch Manager, lançamento, localização, tema, empacotamento zip/Distribution e updates via GitHub Releases, com cinco patches padrão funcionais. O suporte a **Linux** também foi implementado (descoberta, instalação, lançamento via `LD_PRELOAD` e pacotes AppImage/tar.gz), validado no WSL2 em uma instalação real do jogo.
 
 O *roadmap* continua com:
 
@@ -105,7 +105,7 @@ O *roadmap* continua com:
 - metadados de mods e documentação para desenvolvedores;
     
 
-A documentação detalhada do Jardim acompanha a evolução técnica do projeto, incluindo sua arquitetura, componentes, funcionalidades, processo de build e releases.
+A documentação detalhada do Jardim e do repositório acompanha a evolução técnica do projeto, incluindo sua arquitetura, componentes, funcionalidades, processo de build e releases.
 
 [< Voltar](/portfolio/)
 
@@ -117,7 +117,7 @@ A documentação detalhada do Jardim acompanha a evolução técnica do projeto,
 
 ## Modding platform for Dust: An Elysian Tail
 
-**Asher** is a launcher-based modding platform for [_Dust: An Elysian Tail_](https://store.steampowered.com/app/236090/Dust_An_Elysian_Tail/), designed to provide a modular infrastructure for creating, installing, and running modifications.
+**Asher** is a modding platform for Windows and Linux for [_Dust: An Elysian Tail_](https://store.steampowered.com/app/236090/Dust_An_Elysian_Tail/), designed to provide a modular infrastructure for creating, installing, and running modifications.
 
 The project combines **runtime code patching** and **content replacement**, aiming to provide a safe, modular, and reversible modding experience.
 
@@ -149,6 +149,8 @@ Its responsibilities include:
     
 - launcher preparation and game launch;
     
+- Windows and Linux support (launcher swap on Windows; `LD_PRELOAD` bootstrap on Linux);
+    
 - Distribution packaging and GitHub Releases updates;
     
 
@@ -156,7 +158,7 @@ The manager UI stays in Distribution; the game folder receives runtime, mods, an
 
 ### Launcher / Runtime
 
-**Asher.Launcher** replaces `DustAET.exe` and controls startup order. The **Asher Runtime** operates while the game is running, providing the infrastructure required to apply modifications at runtime.
+On Windows, **Asher.Launcher** replaces `DustAET.exe` and controls startup order. On Linux, `DustAET` stays untouched and **`libasher_bootstrap.so`** (via `LD_PRELOAD`) attaches to the embedded Mono runtime. In both, the **Asher Runtime** operates while the game is running, providing the infrastructure required to apply modifications at runtime.
 
 The project uses **Harmony** as part of its patching infrastructure, allowing existing code behavior to be modified without permanently altering the original assemblies. This approach makes modifications more controlled and reversible while allowing multiple mods to operate within the same environment.
 
@@ -172,11 +174,10 @@ Key technologies and references include:
     
 - **Harmony** — runtime patching
     
-- **XNA Framework 4.0** — game compatibility
+- **XNA Framework 4.0** (Windows) / **Mono + FNA** (Linux) — game compatibility
+- **AppImage / tar.gz** — Linux packaging
     
 - **Git**
-    
-- **Dust: An Elysian Tail**
     
 - **SMAPI** / **SMAPI Content Patcher**
     
@@ -208,7 +209,7 @@ These requirements make the project a practical study in **reverse engineering, 
 
 ## 🚧 Project status
 
-The **WPF → Electron manager migration** is complete. The current implementation covers install, uninstall (safe and total), Patch Manager, launch, localization, theme, zip/Distribution packaging, and GitHub Releases updates, with five working default patches.
+The **WPF → Electron manager migration** is complete. The current implementation covers install, uninstall (safe and total), Patch Manager, launch, localization, theme, zip/Distribution packaging, and GitHub Releases updates, with five working default patches. **Linux** support is implemented as well (discovery, install, `LD_PRELOAD` launch, and AppImage/tar.gz packages), validated on WSL2 with a real game install.
 
 The roadmap continues with:
 
@@ -221,7 +222,7 @@ The roadmap continues with:
 - optional install-wizard polish;
     
 
-The detailed Garden documentation tracks the project's technical evolution, including its architecture, components, features, build process, and releases.
+The detailed Garden and repository documentation tracks the project's technical evolution, including its architecture, components, features, build process, and releases.
 
 [< Back](/portfolio/)
 

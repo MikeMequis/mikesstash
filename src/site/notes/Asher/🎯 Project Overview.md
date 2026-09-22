@@ -12,7 +12,7 @@ Inspired by mature mod loaders such as **SMAPI**, Asher prioritizes **explicit i
 - Asset replacement without modifying `.xnb` files
 - Modular and reversible mod loading
 - UI-based patch selection and configuration
-- Full compatibility with **Steam**, **XNA**, and **.NET Framework**
+- Full compatibility with **Steam**; **XNA** / **.NET Framework** on Windows, **Mono** / **FNA** on Linux
 
 ## Project Principles
 
@@ -21,7 +21,8 @@ Inspired by mature mod loaders such as **SMAPI**, Asher prioritizes **explicit i
 - ✅ 100% runtime patching
 - ✅ Fully reversible (remove mod → original behavior)
 - ✅ Modular and extensible
-- ✅ Clean separation: Electron manager → Host → Launcher → Runtime → SDK → Mods
+- ✅ Clean separation: Electron manager → Host → platform abstraction → Launcher / bootstrap → Runtime → SDK → Mods
+- ✅ Windows and Linux (launcher swap on Windows; `LD_PRELOAD` bootstrap on Linux)
 - ✅ Comprehensive logging for debugging
 
 ---
@@ -39,7 +40,7 @@ Inspirado em mod loaders maduros como o **SMAPI**, o Asher prioriza uma **ordem 
 - Substituição de assets sem modificar arquivos `.xnb`
 - Carregamento de mods modular e reversível
 - Seleção e configuração de patches via interface gráfica
-- Compatibilidade total com **Steam**, **XNA** e **.NET Framework**
+- Compatibilidade total com **Steam**; **XNA** / **.NET Framework** no Windows, **Mono** / **FNA** no Linux
 
 # Princípios do Projeto
 
@@ -48,7 +49,8 @@ Inspirado em mod loaders maduros como o **SMAPI**, o Asher prioriza uma **ordem 
 - ✅ 100% patching em tempo de execução
 - ✅ Totalmente reversível (remover o mod → comportamento original)
 - ✅ Modular e extensível
-- ✅ Separação clara: gerenciador Electron → Host → Launcher → Runtime → SDK → Mods
+- ✅ Separação clara: gerenciador Electron → Host → abstração de plataforma → Launcher / bootstrap → Runtime → SDK → Mods
+- ✅ Windows e Linux (troca de launcher no Windows; bootstrap via `LD_PRELOAD` no Linux)
 - ✅ Registro de logs abrangente para depuração
 
 ---

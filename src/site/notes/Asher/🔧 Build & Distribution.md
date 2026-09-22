@@ -6,10 +6,10 @@
 ## Requirements
 
 - Visual Studio 2022 / `dotnet` CLI
-- Node.js 18+ (for Electron manager)
-- Platform: **x86**
+- Node.js 18+ (22 recommended) for the Electron manager
+- Platform: **x86** on Windows; **x64/AnyCPU** on Linux
 - Configuration: **Release** (for distribution)
-- **Microsoft XNA Framework 4.0** (GAC) — required by `Asher.Runtime` and patching projects
+- **Microsoft XNA Framework 4.0** (GAC) on Windows — required by `Asher.Runtime` and patching projects (Linux uses **FNA**)
 
 ### XNA Framework
 
@@ -60,6 +60,19 @@ Publish requires a GitHub token at repo-root `private/GH_TOKEN` (gitignored). Pa
 
 > Portable-as-primary packaging was retired. Ship path is **zip + `Distribution/`**.
 
+## Linux build & distribution (x64)
+
+Run on a Linux host (AppImage cannot be produced from Windows):
+
+```bash
+cd Asher.Electron
+npm run dist:linux   # publish Host + build Asher.Linux + stage payload + AppImage/tar.gz
+```
+
+Artifacts in `Asher.Electron/dist/`: `Asher-<version>-linux-x86_64.AppImage` and `Asher-<version>-linux-x64.tar.gz` (manager binary `Asher`). Prerequisites: .NET SDK 8, Node.js + npm, `gcc`, a Roslyn C# 9 compiler, and the Electron system libraries — full install commands in `docs/Cross-Platform-Architecture.md` → *Linux dependencies*.
+
+Linux uses **Mono/FNA** instead of XNA (the GAC requirement above is Windows-only). Linux updates are manual GitHub release downloads.
+
 ## Distribution notes
 
 - `0Harmony.dll` must be the **net472** build — wrong Harmony versions cause `System.Runtime` errors at game launch
@@ -76,10 +89,10 @@ Publish requires a GitHub token at repo-root `private/GH_TOKEN` (gitignored). Pa
 ## Requisitos
 
 - Visual Studio 2022 / CLI do `dotnet`
-- Node.js 18+ (para o gerenciador Electron)
-- Plataforma: **x86**
+- Node.js 18+ (22 recomendado) para o gerenciador Electron
+- Plataforma: **x86** no Windows; **x64/AnyCPU** no Linux
 - Configuração: **Release** (para distribuição)
-- **Microsoft XNA Framework 4.0** (GAC) — exigido por `Asher.Runtime` e projetos de patching
+- **Microsoft XNA Framework 4.0** (GAC) no Windows — exigido por `Asher.Runtime` e projetos de patching (Linux usa **FNA**)
 
 ### XNA Framework
 
@@ -129,6 +142,19 @@ O usuário extrai o zip (ou usa `Distribution/`), roda `Asher.exe` e instala na 
 Publish exige token em `private/GH_TOKEN` (gitignored). Builds empacotadas podem checar/aplicar zips do GitHub Releases nas Settings; `npm start` unpackaged não.
 
 > Empacotamento portable-como-primário foi descontinuado. O caminho de ship é **zip + `Distribution/`**.
+
+## Build & distribuição Linux (x64)
+
+Rode em um host Linux (o AppImage não pode ser gerado a partir do Windows):
+
+```bash
+cd Asher.Electron
+npm run dist:linux   # publica Host + build Asher.Linux + staging do payload + AppImage/tar.gz
+```
+
+Artefatos em `Asher.Electron/dist/`: `Asher-<version>-linux-x86_64.AppImage` e `Asher-<version>-linux-x64.tar.gz` (binário do gerenciador `Asher`). Pré-requisitos: .NET SDK 8, Node.js + npm, `gcc`, um compilador Roslyn C# 9 e as bibliotecas de sistema do Electron — comandos completos em `docs/Cross-Platform-Architecture.md` → *Linux dependencies*.
+
+No Linux usa-se **Mono/FNA** em vez de XNA (o requisito de GAC acima é só do Windows). Atualizações no Linux são downloads manuais do GitHub Releases.
 
 ## Notas de distribuição
 

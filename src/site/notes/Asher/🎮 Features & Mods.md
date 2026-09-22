@@ -21,8 +21,10 @@
 - ✅ Launch game from manager / Finish screen
 - ✅ Localization (en-US, pt-BR, es) and Light/Dark theme
 - ✅ Toast notifications; settings auto-save; preference-only reset
-- ✅ Zip + `Distribution/` packaging; GitHub Releases update check/apply
+- ✅ Zip + `Distribution/` packaging; GitHub Releases update check/apply (Windows only)
 - ✅ Manager UI stays in Distribution (not deployed into the game folder)
+- ✅ Windows and Linux support (launcher swap on Windows; native `LD_PRELOAD` bootstrap on Linux)
+- ✅ Linux packaging (AppImage + tar.gz) with Steam/XDG game discovery
 
 ### Working Mods
 * ✅ **Debug Menu Enabler** — `Tab` in pause menu opens debug menu
@@ -58,8 +60,10 @@ All implemented as external, runtime-loaded mods in `Asher/Mods/`.
 - ✅ Inicia o jogo pelo gerenciador / tela Finish
 - ✅ Localização (en-US, pt-BR, es) e tema Light/Dark
 - ✅ Toasts; auto-save de settings; reset só de preferências
-- ✅ Empacotamento zip + `Distribution/`; check/apply de updates via GitHub Releases
+- ✅ Empacotamento zip + `Distribution/`; check/apply de updates via GitHub Releases (somente Windows)
 - ✅ UI do gerenciador fica em Distribution (não implantada na pasta do jogo)
+- ✅ Suporte a Windows e Linux (troca de launcher no Windows; bootstrap nativo via `LD_PRELOAD` no Linux)
+- ✅ Empacotamento Linux (AppImage + tar.gz) com descoberta Steam/XDG do jogo
 
 ### Mods Funcionais
 - ✅ **Debug Menu Enabler** — `Tab` no menu de pausa abre o menu de depuração
