@@ -47,7 +47,6 @@
 - Linux: Steam/XDG discovery, bootstrap + managed runtime deployment (`install.json`), native `LD_PRELOAD` launch (game stdout/stderr kept off the JSONL channel)
 - Linux packaging: AppImage + tar.gz; `Asher.Services.Tests` (xUnit) and `npm run smoke:platform`
 - Validated on WSL2 with a real Dust Linux install (install/launch/uninstall/reinstall; Harmony + DebugEnabler callback)
-- Released as **[v2.1.0](https://github.com/MikeMequis/Asher/releases/tag/v2.1.0)** — Windows NSIS installer + portable zip, Linux AppImage/tar.gz, with `latest.yml` / `latest-linux.yml` update metadata
 
 ### July 2026 — Core runtime & WPF manager
 - Launcher, runtime bootstrap, first patches, WPF installer (since retired)
@@ -113,7 +112,6 @@ Port remaining gameplay patches from **DustAetPatchingPlatform** into the Asher 
 - Linux: descoberta Steam/XDG, deploy de bootstrap + runtime gerenciado (`install.json`), lançamento nativo via `LD_PRELOAD` (stdout/stderr do jogo fora do canal JSONL)
 - Empacotamento Linux: AppImage + tar.gz; `Asher.Services.Tests` (xUnit) e `npm run smoke:platform`
 - Validado no WSL2 com uma instalação Linux real do Dust (instalar/lançar/desinstalar/reinstalar; Harmony + callback do DebugEnabler)
-- Publicado como **[v2.1.0](https://github.com/MikeMequis/Asher/releases/tag/v2.1.0)** — instalador NSIS + zip portátil no Windows, AppImage/tar.gz no Linux, com metadados de update `latest.yml` / `latest-linux.yml`
 
 ### Julho de 2026 — Runtime central e gerenciador WPF
 - Launcher, bootstrap do runtime, primeiros patches, instalador WPF (desde então descontinuado)

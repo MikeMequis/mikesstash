@@ -12,7 +12,7 @@
 
 O projeto combina **patching de código em runtime** e **substituição de conteúdo**, buscando oferecer uma experiência de modding segura, modular e reversível.
 
-[Repositório](https://github.com/MikeMequis/Asher) · [Última release — v2.1.0](https://github.com/MikeMequis/Asher/releases/tag/v2.1.0)
+[Repositório](https://github.com/MikeMequis/Asher)
 
 > Documentação técnica detalhada: [[🐱 Asher\|Asher (Jardim)]]
 
@@ -94,7 +94,7 @@ Esses requisitos tornam o projeto particularmente interessante como estudo de **
 
 ## 🚧 Estado do projeto
 
-A **migração do gerenciador WPF para Electron** está concluída. A implementação atual cobre instalação, desinstalação (segura e total), Patch Manager, lançamento, localização, tema, empacotamento zip/Distribution e updates via GitHub Releases, com cinco patches padrão funcionais. O suporte a **Linux** também foi implementado (descoberta, instalação, lançamento via `LD_PRELOAD` e pacotes AppImage/tar.gz), validado no WSL2 em uma instalação real do jogo. A release **[v2.1.0](https://github.com/MikeMequis/Asher/releases/tag/v2.1.0)** publica o suporte a Linux junto de um instalador NSIS e de um zip portátil para Windows.
+A **migração do gerenciador WPF para Electron** está concluída. A implementação atual cobre instalação, desinstalação (segura e total), Patch Manager, lançamento, localização, tema, empacotamento zip/Distribution e updates via GitHub Releases, com cinco patches padrão funcionais. O suporte a **Linux** também foi implementado (descoberta, instalação, lançamento via `LD_PRELOAD` e pacotes AppImage/tar.gz), validado no WSL2 em uma instalação real do jogo.
 
 O *roadmap* continua com:
 
@@ -121,7 +121,7 @@ A documentação detalhada do Jardim e do repositório acompanha a evolução t�
 
 The project combines **runtime code patching** and **content replacement**, aiming to provide a safe, modular, and reversible modding experience.
 
-[Repository](https://github.com/MikeMequis/Asher) · [Latest release — v2.1.0](https://github.com/MikeMequis/Asher/releases/tag/v2.1.0)
+[Repository](https://github.com/MikeMequis/Asher)
 
 > Detailed technical documentation:  [[🐱 Asher\|Asher (Garden)]]
 
@@ -209,7 +209,7 @@ These requirements make the project a practical study in **reverse engineering, 
 
 ## 🚧 Project status
 
-The **WPF → Electron manager migration** is complete. The current implementation covers install, uninstall (safe and total), Patch Manager, launch, localization, theme, zip/Distribution packaging, and GitHub Releases updates, with five working default patches. **Linux** support is implemented as well (discovery, install, `LD_PRELOAD` launch, and AppImage/tar.gz packages), validated on WSL2 with a real game install. The **[v2.1.0](https://github.com/MikeMequis/Asher/releases/tag/v2.1.0)** release ships the Linux support alongside a Windows NSIS installer and a portable zip.
+The **WPF → Electron manager migration** is complete. The current implementation covers install, uninstall (safe and total), Patch Manager, launch, localization, theme, zip/Distribution packaging, and GitHub Releases updates, with five working default patches. **Linux** support is implemented as well (discovery, install, `LD_PRELOAD` launch, and AppImage/tar.gz packages), validated on WSL2 with a real game install.
 
 The roadmap continues with:
 

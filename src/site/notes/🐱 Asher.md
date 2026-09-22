@@ -12,7 +12,7 @@
 
 [Link de Repositório](https://github.com/MikeMequis/Asher)
 
-*Última atualização: 4 de setembro de 2026*
+*Última atualização: 22 de setembro de 2026*
 
 :::
 
@@ -22,7 +22,7 @@
 
 [Repository Link](https://github.com/MikeMequis/Asher)
 
-*Last Updated: September 4, 2026*
+*Last Updated: September 22, 2026*
 
 :::
 
@@ -42,7 +42,11 @@
 - [**SMAPI**](https://github.com/Pathoschild/SMAPI)
 - [**SMAPI Content Patcher**](https://stardewvalleywiki.com/Modding:Content_Patcher)
 - [**DustAetPatchingPlatform**](https://github.com/GMMan/DustAetPatchingPlatform)
-  - [*Fórum de Discussão Steam*](https://steamcommunity.com/app/236090/discussions/0/540744936409038540/)
+	- [*Fórum de Discussão Steam*](https://steamcommunity.com/app/236090/discussions/0/540744936409038540/)
+- [**Electron**](https://www.electronjs.org/)
+	- [**NSIS + Electron**](https://www.electron.build/docs/nsis/)
+- [**FNA**](https://fna-xna.github.io/)
+- [**WSL**](https://github.com/microsoft/WSL)
 
 [[🏡 Home Page\|< Voltar]]
 
@@ -55,7 +59,11 @@
 - [**SMAPI**](https://github.com/Pathoschild/SMAPI)
 - [**SMAPI Content Patcher**](https://stardewvalleywiki.com/Modding:Content_Patcher)
 - [**DustAetPatchingPlatform**](https://github.com/GMMan/DustAetPatchingPlatform)
-  - [*Steam Forum Discussion*](https://steamcommunity.com/app/236090/discussions/0/540744936409038540/)
+	- [*Steam Forum Discussion*](https://steamcommunity.com/app/236090/discussions/0/540744936409038540/)
+- [**Electron**](https://www.electronjs.org/)
+	- [**NSIS + Electron**](https://www.electron.build/docs/nsis/)
+- [**FNA**](https://fna-xna.github.io/)
+- [**WSL**](https://github.com/microsoft/WSL)
 
 [[🏡 Home Page\|< Back]]
 
