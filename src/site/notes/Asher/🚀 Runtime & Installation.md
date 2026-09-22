@@ -101,6 +101,8 @@ On Linux the game executable is left untouched: Asher attaches to the Mono runti
 
 The game's stdout/stderr are redirected off the manager's JSONL channel; the runtime's own logs stay in `Asher/AsherLogs/`.
 
+The bootstrap waits `ASHER_BOOTSTRAP_SETTLE_MS` (default `1000`) after `mono_get_root_domain` before calling `mono_thread_attach`, so it never attaches while Mono is still initializing (avoids the `object.c:1938 'klass' not met` crash).
+
 ### Installed layout (Linux)
 
 ```
@@ -223,6 +225,8 @@ No Linux o executável do jogo permanece intacto: o Asher se conecta ao runtime 
 ```
 
 O stdout/stderr do jogo são redirecionados para fora do canal JSONL do gerenciador; os logs do runtime permanecem em `Asher/AsherLogs/`.
+
+O bootstrap aguarda `ASHER_BOOTSTRAP_SETTLE_MS` (padrão `1000`) após `mono_get_root_domain` antes de chamar `mono_thread_attach`, evitando anexar enquanto o Mono ainda está inicializando (previne o crash `object.c:1938 'klass' not met`).
 
 ## Estrutura instalada (Linux)
 

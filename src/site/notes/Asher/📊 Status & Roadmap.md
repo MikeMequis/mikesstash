@@ -19,7 +19,7 @@
 | **Asher.Host JSONL**         | ✅ Done      | Headless service for install/mods/settings   |
 | **Patch Manager UI**         | ✅ Done      | Enable/disable mods via folder move          |
 | Game-folder logging          | ✅ Done      | `runtime_*`, `manager_*`, `launcher_fatal_*` |
-| Zip / Distribution packaging | ✅ Done      | `npm run dist`; GitHub publish via token     |
+| Distribution packaging       | ✅ Done      | NSIS installer + portable zip (`win32`) + `latest.yml`; Linux AppImage/tar.gz + `latest-linux.yml` |
 | Emergency uninstall helper   | ✅ Done      | `Uninstall-Asher.cmd` beside `DustAET.exe`   |
 | Safe vs Total removal        | ✅ Done      | In-app uninstall vs emergency script         |
 | In-app GitHub updates        | ✅ Done      | Packaged Distribution zip apply              |
@@ -47,6 +47,7 @@
 - Linux: Steam/XDG discovery, bootstrap + managed runtime deployment (`install.json`), native `LD_PRELOAD` launch (game stdout/stderr kept off the JSONL channel)
 - Linux packaging: AppImage + tar.gz; `Asher.Services.Tests` (xUnit) and `npm run smoke:platform`
 - Validated on WSL2 with a real Dust Linux install (install/launch/uninstall/reinstall; Harmony + DebugEnabler callback)
+- Released as **[v2.1.0](https://github.com/MikeMequis/Asher/releases/tag/v2.1.0)** — Windows NSIS installer + portable zip, Linux AppImage/tar.gz, with `latest.yml` / `latest-linux.yml` update metadata
 
 ### July 2026 — Core runtime & WPF manager
 - Launcher, runtime bootstrap, first patches, WPF installer (since retired)
@@ -83,7 +84,7 @@ Port remaining gameplay patches from **DustAetPatchingPlatform** into the Asher 
 | **Asher.Host JSONL**                  | ✅ Feito      | Serviço headless para instalar/mods/settings          |
 | **UI do Patch Manager**               | ✅ Feito      | Ativar/desativar mods movendo pastas                  |
 | Logs na pasta do jogo                 | ✅ Feito      | `runtime_*`, `manager_*`, `launcher_fatal_*`          |
-| Empacotamento zip / Distribution      | ✅ Feito      | `npm run dist`; publish GitHub via token              |
+| Empacotamento / Distribution          | ✅ Feito      | Instalador NSIS + zip portátil (`win32`) + `latest.yml`; Linux AppImage/tar.gz + `latest-linux.yml` |
 | Helper de desinstalação de emergência | ✅ Feito      | `Uninstall-Asher.cmd` ao lado de `DustAET.exe`        |
 | Remoção Safe vs Total                 | ✅ Feito      | Uninstall in-app vs script de emergência              |
 | Updates via GitHub in-app             | ✅ Feito      | Apply de zip em Distribution empacotado               |
@@ -112,6 +113,7 @@ Port remaining gameplay patches from **DustAetPatchingPlatform** into the Asher 
 - Linux: descoberta Steam/XDG, deploy de bootstrap + runtime gerenciado (`install.json`), lançamento nativo via `LD_PRELOAD` (stdout/stderr do jogo fora do canal JSONL)
 - Empacotamento Linux: AppImage + tar.gz; `Asher.Services.Tests` (xUnit) e `npm run smoke:platform`
 - Validado no WSL2 com uma instalação Linux real do Dust (instalar/lançar/desinstalar/reinstalar; Harmony + callback do DebugEnabler)
+- Publicado como **[v2.1.0](https://github.com/MikeMequis/Asher/releases/tag/v2.1.0)** — instalador NSIS + zip portátil no Windows, AppImage/tar.gz no Linux, com metadados de update `latest.yml` / `latest-linux.yml`
 
 ### Julho de 2026 — Runtime central e gerenciador WPF
 - Launcher, bootstrap do runtime, primeiros patches, instalador WPF (desde então descontinuado)

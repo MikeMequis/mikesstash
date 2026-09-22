@@ -8,8 +8,7 @@
 
 - [v1.0.0](https://github.com/MikeMequis/Asher/releases/tag/v1.0.0) — Primeira Release
 - [v2.0.0](https://github.com/MikeMequis/Asher/releases/tag/v2.0.0) — Gerenciador em Electron
-
-Em desenvolvimento (`develop`): suporte a **Linux** — descoberta, instalação, lançamento via `LD_PRELOAD` e pacotes AppImage/tar.gz. Ainda sem release publicada.
+- [v2.1.0](https://github.com/MikeMequis/Asher/releases/tag/v2.1.0) — **Suporte a Linux** (descoberta, instalação, lançamento via `LD_PRELOAD`, AppImage/tar.gz) e instalador NSIS para Windows
 
 ---
 [[🐱 Asher\|< Voltar]]
@@ -22,8 +21,7 @@ Em desenvolvimento (`develop`): suporte a **Linux** — descoberta, instalação
 
 - [v1.0.0](https://github.com/MikeMequis/Asher/releases/tag/v1.0.0) — First Release
 - [v2.0.0](https://github.com/MikeMequis/Asher/releases/tag/v2.0.0) — Electron Manager
-
-In development (`develop`): **Linux** support — discovery, install, `LD_PRELOAD` launch, and AppImage/tar.gz packages. No release published yet.
+- [v2.1.0](https://github.com/MikeMequis/Asher/releases/tag/v2.1.0) — **Linux support** (discovery, install, `LD_PRELOAD` launch, AppImage/tar.gz) and a Windows NSIS installer
 
 ---
 [[🐱 Asher\|< Back]]

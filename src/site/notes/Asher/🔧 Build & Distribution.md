@@ -21,6 +21,8 @@ Without XNA 4.0 assemblies, `npm run build:host` / patching builds fail or warn 
 
 Steam installs of Dust often already place these assemblies on the machine.
 
+The references resolve from the GAC via `$(WINDIR)\Microsoft.NET\assembly\GAC_32\...` HintPaths so `dotnet build` finds them, and `npm run build:host` skips optional patches (for example GraphicsDeprofiler) instead of failing when XNA is absent.
+
 ## Build the backend (Host + runtime + patches)
 
 From `Asher.Electron/`:
@@ -46,19 +48,17 @@ cd Asher.Electron
 npm start
 ```
 
-## Package Distribution (zip + folder)
+## Package Distribution (installer + zip + folder)
 
 ```bash
 cd Asher.Electron
-npm run dist       # builds zip + syncs repo-root Distribution/
-npm run publish    # publishes GitHub Release (requires private/GH_TOKEN)
+npm run dist       # NSIS installer + portable zip + latest.yml + syncs repo-root Distribution/
+npm run publish    # publishes GitHub Release (installer, zip, update metadata) — requires private/GH_TOKEN
 ```
 
-Users extract the zip (or use `Distribution/`), run `Asher.exe`, then install into the game folder. The manager stays in Distribution. The game folder gets runtime files plus `Uninstall-Asher.cmd` beside `DustAET.exe` for emergency restore.
+Outputs in `Asher.Electron/dist/`: `Asher-Setup-<version>.exe` (NSIS installer), `Asher-<version>-win32.zip` (portable), `latest.yml` (update metadata), plus the unpacked `Distribution/` folder. Users run the installer or extract the zip and run `Asher.exe`, then install into the game folder. The game folder gets runtime files plus `Uninstall-Asher.cmd` beside `DustAET.exe` for emergency restore.
 
 Publish requires a GitHub token at repo-root `private/GH_TOKEN` (gitignored). Packaged builds can check/apply GitHub release zips from Settings; unpackaged `npm start` cannot.
-
-> Portable-as-primary packaging was retired. Ship path is **zip + `Distribution/`**.
 
 ## Linux build & distribution (x64)
 
@@ -66,10 +66,11 @@ Run on a Linux host (AppImage cannot be produced from Windows):
 
 ```bash
 cd Asher.Electron
-npm run dist:linux   # publish Host + build Asher.Linux + stage payload + AppImage/tar.gz
+npm run dist:linux           # Host + Asher.Linux + payload + AppImage/tar.gz + latest-linux.yml
+npm run publish:linux        # same, plus uploads assets/metadata (requires private/GH_TOKEN)
 ```
 
-Artifacts in `Asher.Electron/dist/`: `Asher-<version>-linux-x86_64.AppImage` and `Asher-<version>-linux-x64.tar.gz` (manager binary `Asher`). Prerequisites: .NET SDK 8, Node.js + npm, `gcc`, a Roslyn C# 9 compiler, and the Electron system libraries — full install commands in `docs/Cross-Platform-Architecture.md` → *Linux dependencies*.
+Artifacts in `Asher.Electron/dist/`: `Asher-<version>-linux-x86_64.AppImage`, `Asher-<version>-linux-x64.tar.gz`, and `latest-linux.yml` (manager binary `Asher`). Prerequisites: .NET SDK 8, Node.js + npm, `gcc`, a Roslyn C# 9 compiler, and the Electron system libraries — full install commands in `docs/Cross-Platform-Architecture.md` → *Linux dependencies*.
 
 Linux uses **Mono/FNA** instead of XNA (the GAC requirement above is Windows-only). Linux updates are manual GitHub release downloads.
 
@@ -79,10 +80,11 @@ Linux uses **Mono/FNA** instead of XNA (the GAC requirement above is Windows-onl
 - `install-payload/DefaultMods/` must include all five default patch DLLs
 - Launch the game via **Steam** or the manager's **Launch Game** button — not by running `Asher.Launcher.exe` from the build output directly
 - On Windows, `npm run dist` may need Developer Mode or an elevated terminal if electron-builder's `winCodeSign` cache requires symlink privilege
+- `latest.yml` (Windows, NSIS) and `latest-linux.yml` (Linux, AppImage) are the update metadata published with each release
 
 ---
-[[🐱 Asher\|< Back]]
 
+[[🐱 Asher\|< Back]]
 :::
 
 :::lang pt
@@ -103,6 +105,8 @@ Sem os assemblies do XNA 4.0, `npm run build:host` / builds de patching falham o
 3. Recompile: `cd Asher.Electron && npm run build:host:debug`
 
 Instalações Steam do Dust costumam já trazer esses assemblies.
+
+As referências resolvem a partir do GAC via HintPaths `$(WINDIR)\Microsoft.NET\assembly\GAC_32\...`, então o `dotnet build` as encontra; `npm run build:host` pula patches opcionais (por exemplo GraphicsDeprofiler) em vez de falhar quando o XNA está ausente.
 
 ## Compilar o backend (Host + runtime + patches)
 
@@ -129,19 +133,17 @@ cd Asher.Electron
 npm start
 ```
 
-## Empacotar Distribution (zip + pasta)
+## Empacotar Distribution (instalador + zip + pasta)
 
 ```bash
 cd Asher.Electron
-npm run dist       # gera zip + sincroniza Distribution/ na raiz
-npm run publish    # publica GitHub Release (requer private/GH_TOKEN)
+npm run dist       # instalador NSIS + zip portátil + latest.yml + sincroniza Distribution/ na raiz
+npm run publish    # publica GitHub Release (instalador, zip, metadados de update) — requer private/GH_TOKEN
 ```
 
-O usuário extrai o zip (ou usa `Distribution/`), roda `Asher.exe` e instala na pasta do jogo. O gerenciador fica em Distribution. A pasta do jogo recebe runtime + `Uninstall-Asher.cmd` ao lado de `DustAET.exe` para restauração de emergência.
+Saídas em `Asher.Electron/dist/`: `Asher-Setup-<version>.exe` (instalador NSIS), `Asher-<version>-win32.zip` (portátil), `latest.yml` (metadados de update) e a pasta `Distribution/` descompactada. O usuário roda o instalador ou extrai o zip e roda `Asher.exe`, depois instala na pasta do jogo. A pasta do jogo recebe runtime + `Uninstall-Asher.cmd` ao lado de `DustAET.exe` para restauração de emergência.
 
 Publish exige token em `private/GH_TOKEN` (gitignored). Builds empacotadas podem checar/aplicar zips do GitHub Releases nas Settings; `npm start` unpackaged não.
-
-> Empacotamento portable-como-primário foi descontinuado. O caminho de ship é **zip + `Distribution/`**.
 
 ## Build & distribuição Linux (x64)
 
@@ -149,10 +151,11 @@ Rode em um host Linux (o AppImage não pode ser gerado a partir do Windows):
 
 ```bash
 cd Asher.Electron
-npm run dist:linux   # publica Host + build Asher.Linux + staging do payload + AppImage/tar.gz
+npm run dist:linux           # Host + Asher.Linux + payload + AppImage/tar.gz + latest-linux.yml
+npm run publish:linux        # o mesmo, mais upload de assets/metadados (requer private/GH_TOKEN)
 ```
 
-Artefatos em `Asher.Electron/dist/`: `Asher-<version>-linux-x86_64.AppImage` e `Asher-<version>-linux-x64.tar.gz` (binário do gerenciador `Asher`). Pré-requisitos: .NET SDK 8, Node.js + npm, `gcc`, um compilador Roslyn C# 9 e as bibliotecas de sistema do Electron — comandos completos em `docs/Cross-Platform-Architecture.md` → *Linux dependencies*.
+Artefatos em `Asher.Electron/dist/`: `Asher-<version>-linux-x86_64.AppImage`, `Asher-<version>-linux-x64.tar.gz` e `latest-linux.yml` (binário do gerenciador `Asher`). Pré-requisitos: .NET SDK 8, Node.js + npm, `gcc`, um compilador Roslyn C# 9 e as bibliotecas de sistema do Electron — comandos completos em `docs/Cross-Platform-Architecture.md` → *Linux dependencies*.
 
 No Linux usa-se **Mono/FNA** em vez de XNA (o requisito de GAC acima é só do Windows). Atualizações no Linux são downloads manuais do GitHub Releases.
 
@@ -162,8 +165,9 @@ No Linux usa-se **Mono/FNA** em vez de XNA (o requisito de GAC acima é só do W
 - `install-payload/DefaultMods/` deve incluir os cinco DLLs de patch padrão
 - Inicie o jogo pela **Steam** ou pelo botão **Launch Game** do gerenciador — não execute `Asher.Launcher.exe` diretamente da saída de build
 - No Windows, `npm run dist` pode precisar de Developer Mode ou terminal elevado se o cache `winCodeSign` do electron-builder exigir privilégio de symlink
+- `latest.yml` (Windows, NSIS) e `latest-linux.yml` (Linux, AppImage) são os metadados de update publicados em cada release
 
 ---
-[[🐱 Asher\|< Voltar]]
 
+[[🐱 Asher\|< Voltar]]
 :::
