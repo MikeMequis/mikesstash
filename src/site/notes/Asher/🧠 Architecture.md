@@ -3,16 +3,14 @@
 ---
 
 :::lang en
-## Core Architecture (Launcher-First)
+## Core Architecture (Controlled Startup)
 
-Asher is built around a **custom launcher**, which guarantees a deterministic initialization order and reliable runtime behavior.
+Asher is built around a **controlled entry point**: a custom launcher on Windows and a native bootstrap on Linux. Both guarantee a deterministic initialization order and reliable runtime behavior.
 
 **Key principle:**  
 Injection and patching are **controlled and delayed**, never performed blindly at process startup.
 
-A companion **Electron manager app** (`Asher.Electron`) handles installation, mod management, and user settings. It talks to **`Asher.Host`** over JSONL on stdin/stdout — the host wraps `IAsherApplication` / `Asher.Services` without starting a UI or touching the game process directly.
-
-> **Note:** The legacy WPF app (`Asher.App`) was retired in September 2026. Electron + `Asher.Host` is the only manager UI. The manager stays in **Distribution**; the game folder receives runtime files + an emergency uninstall helper only.
+A companion **Electron manager app** (`Asher.Electron`) handles installation, mod management, and user settings. It talks to **`Asher.Host`** over JSONL on stdin/stdout — the host wraps `IAsherApplication` / `Asher.Services` without starting a UI or touching the game process directly. The manager stays in **Distribution**; the game folder receives runtime files plus an emergency uninstall helper only.
 
 ## Solution Structure
 
@@ -82,16 +80,14 @@ In-game stack (separate process): Windows — `DustAET.exe` (= Asher.Launcher) �
 
 :::lang pt
 
-## Arquitetura Central (Launcher-First)
+## Arquitetura Central (Inicialização Controlada)
 
-O Asher é construído em torno de um **launcher personalizado**, que garante uma ordem de inicialização determinística e um comportamento confiável em tempo de execução.
+O Asher é construído em torno de um **ponto de entrada controlado**: um launcher personalizado no Windows e um bootstrap nativo no Linux. Ambos garantem uma ordem de inicialização determinística e um comportamento confiável em tempo de execução.
 
 **Princípio-chave:**  
 A injeção e a aplicação de patches são **controladas e postergadas**, nunca realizadas às cegas na inicialização do processo.
 
-Um **app gerenciador Electron** complementar (`Asher.Electron`) cuida da instalação, do gerenciamento de mods e das configurações do usuário. Ele se comunica com o **`Asher.Host`** via JSONL em stdin/stdout — o host encapsula `IAsherApplication` / `Asher.Services` sem iniciar UI nem tocar diretamente no processo do jogo.
-
-> **Nota:** O app WPF legado (`Asher.App`) foi descontinuado em setembro de 2026. Electron + `Asher.Host` é a única UI do gerenciador. O gerenciador permanece em **Distribution**; a pasta do jogo recebe só runtime + helper de desinstalação de emergência.
+Um **app gerenciador Electron** complementar (`Asher.Electron`) cuida da instalação, do gerenciamento de mods e das configurações do usuário. Ele se comunica com o **`Asher.Host`** via JSONL em stdin/stdout — o host encapsula `IAsherApplication` / `Asher.Services` sem iniciar UI nem tocar diretamente no processo do jogo. O gerenciador permanece em **Distribution**; a pasta do jogo recebe os arquivos de runtime e um helper de desinstalação de emergência.
 
 ## Estrutura da Solução
 
@@ -99,7 +95,7 @@ Um **app gerenciador Electron** complementar (`Asher.Electron`) cuida da instala
 /Asher.sln
 │
 ├── Asher.Electron/             → UI do gerenciador Electron (HTML/CSS/JS)
-│   ├── src/main/               → Inicia Asher.Host, ponte IPC JSONL, updates
+│   ├── src/main/               → Inicia o Asher.Host, IPC JSONL, updates
 │   ├── src/preload/            → contextBridge → window.asher
 │   └── src/renderer/           → Controllers, localização, tema, ícones
 │
@@ -108,15 +104,31 @@ Um **app gerenciador Electron** complementar (`Asher.Electron`) cuida da instala
 │
 ├── Asher.Services/             → IAsherApplication + instalação/launch/patch manager
 │   └── Platform/               → Implementações de plataforma Windows/Linux
-├── Asher.Core/                 → Caminhos, configurações, modelos (sem tipos de UI)
+├── Asher.Core/                 → Caminhos, configurações, modelos compartilhados (sem tipos de UI)
 │   └── Platform/               → IPlatformInfo (descritor de plataforma)
 │
 ├── Asher.Launcher/             → Launcher personalizado do Windows (.NET Framework 4.7.2)
+│   └── Program.cs              → Entry point e orquestração do bootstrap
 │
 ├── Asher.Linux/                → Bootstrap LD_PRELOAD + scripts de build gerenciado (Linux)
-├── Asher.Runtime/              → Base do carregador de mods em tempo de execução
-├── Asher.SDK/                  → API para desenvolvedores de mods
-├── Asher.Patching.*/           → Mods integrados (DebugEnabler, IntroSkipper, etc.)
+│
+├── Asher.Runtime/              → Base do carregador de mods em runtime (.NET Framework 4.7.2)
+│   ├── Bootstrap/              → AssemblyLoader, PreInit, Patch, Lifecycle
+│   ├── Core/                   → RuntimeContext, RuntimeController
+│   ├── RuntimeLogger.cs        → Logging em arquivo para Asher/AsherLogs/
+│   └── RuntimeEntry.cs         → API pública do runtime
+│
+├── Asher.SDK/                  → API para desenvolvedores de mods (.NET Framework 4.7.2)
+│   ├── Logging/                → Fachada AsherLog
+│   └── Patching/               → IAsherPatchModule, IAsherPreInitModule, lifecycle
+│
+├── Asher.Patching.*/           → Patches integrados
+│   ├── DebugEnabler
+│   ├── IntroSkipper
+│   ├── GraphicsDeprofiler
+│   ├── MuteVoiceActing
+│   └── OverheatDisabler
+│
 └── Distribution/               → Saída zip/dir (npm run dist)
 ```
 

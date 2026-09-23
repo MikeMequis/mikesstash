@@ -3,64 +3,55 @@
 ---
 
 :::lang en
+## Current status
 
-## Project Status Overview
-
-| Area                         | Status      | Notes                                        |
-| ---------------------------- | ----------- | -------------------------------------------- |
-| Solution structure           | ✅ Done      | Multi-project architecture stabilized        |
-| Launcher-based runtime       | ✅ Done      | Wrapper EXE approach validated               |
-| Steam compatibility          | ✅ Done      | Game launches normally via Steam             |
-| Runtime initialization       | ✅ Done      | Logs, lifecycle and folders working          |
-| Harmony bootstrap            | ✅ Done      | Runtime patching confirmed and working       |
-| Mod SDK                      | ✅ Done      | Clean interfaces for mod developers          |
-| Default gameplay patches     | ✅ Done      | 5 built-in patches (see Features & Mods)     |
-| **Electron manager UI**      | ✅ Done      | Replaces retired WPF `Asher.App`             |
-| **Asher.Host JSONL**         | ✅ Done      | Headless service for install/mods/settings   |
-| **Patch Manager UI**         | ✅ Done      | Enable/disable mods via folder move          |
-| Game-folder logging          | ✅ Done      | `runtime_*`, `manager_*`, `launcher_fatal_*` |
-| Distribution packaging       | ✅ Done      | NSIS installer + portable zip (`win32`) + `latest.yml`; Linux AppImage/tar.gz + `latest-linux.yml` |
-| Emergency uninstall helper   | ✅ Done      | `Uninstall-Asher.cmd` beside `DustAET.exe`   |
-| Safe vs Total removal        | ✅ Done      | In-app uninstall vs emergency script         |
-| In-app GitHub updates        | ✅ Done      | Packaged Distribution zip apply              |
-| Linux version                | ✅ Done      | Discovery, install, LD_PRELOAD launch, AppImage/tar.gz (WSL-validated) |
-| Content patcher              | 🔜 Planned  | XNA ContentManager interception              |
-| Mod metadata (json)          | 🔜 Planned  | mod.json for description, dependencies, etc. |
-| Public Mod API docs          | 🔜 Planned  | Developer documentation and examples         |
-| Desktop shortcut             | 🔜 Deferred | After-install shortcut creation              
-
-## Recent milestones
-
-### September 2026 — Electron migration complete + packaging
-- WPF manager retired; `Asher.Electron` + `Asher.Host` is the only UI (Steps 1–20)
-- Settings, home hub, i18n (en/pt/es), Light/Dark theme, toasts, Finish UX
-- Zip + `Distribution/` packaging; manager stays out of the game folder
-- Emergency `Uninstall-Asher.cmd` / `.ps1`; Safe vs Total uninstallation
-- Always-on install backup; GitHub Releases update check/apply
-- Manager logs in `{Game}/Asher/AsherLogs/manager_*.log`
-- Ported **MuteVoiceActing** and **OverheatDisabler**; **IntroSkipper** rewrite
-- Fixed host crash on uninstall→reinstall in one session
-
-### September 2026 — Cross-platform & Linux support
-- Platform abstraction (`IPlatformInfo` + discovery / executable-layout / runtime-deployment / process-launch) with Windows and Linux implementations
-- `getPlatformInfo` + explicit `getInstallState` over JSONL; the renderer derives capabilities from them
-- Linux: Steam/XDG discovery, bootstrap + managed runtime deployment (`install.json`), native `LD_PRELOAD` launch (game stdout/stderr kept off the JSONL channel)
-- Linux packaging: AppImage + tar.gz; `Asher.Services.Tests` (xUnit) and `npm run smoke:platform`
-- Validated on WSL2 with a real Dust Linux install (install/launch/uninstall/reinstall; Harmony + DebugEnabler callback)
-
-### July 2026 — Core runtime & WPF manager
-- Launcher, runtime bootstrap, first patches, WPF installer (since retired)
+| Area | Status | Notes |
+| ---- | ------ | ----- |
+| Solution structure | ✅ Done | Multi-project architecture stabilized |
+| Windows launcher runtime | ✅ Done | `DustAET.exe` swap + `DustAET.real.exe` backup |
+| Steam compatibility | ✅ Done | The game launches normally through Steam |
+| Runtime initialization | ✅ Done | Logs, lifecycle, and folders working |
+| Harmony bootstrap | ✅ Done | Runtime patching confirmed and working |
+| Mod SDK | ✅ Done | Clean interfaces for mod authors |
+| Default patches | ✅ Done | 5 built-in patch modules (see [[Asher/🎯 Project Overview\|🎯 Project Overview]]) |
+| Electron manager UI | ✅ Done | `Asher.Electron` + `Asher.Host` is the manager |
+| JSONL host | ✅ Done | Headless service for install, mods, and settings |
+| Patch Manager | ✅ Done | Enable/disable mods by moving files |
+| Game-folder logging | ✅ Done | `runtime_*`, `manager_*`, `launcher_fatal_*` |
+| Windows packaging | ✅ Done | NSIS installer + portable zip + `latest.yml` |
+| Linux support | ✅ Done | Discovery, install, `LD_PRELOAD` launch, AppImage/tar.gz (validated on WSL2) |
+| Emergency uninstall helper | ✅ Done | `Uninstall-Asher.cmd` beside `DustAET.exe` (Windows) |
+| Safe vs Total removal | ✅ Done | In-app uninstall vs the emergency script (Windows) |
+| In-app GitHub updates | ✅ Done | Packaged builds apply release zips (Windows only) |
+| Content patcher | 🔜 Planned | ContentManager interception — no backend yet |
+| Mod metadata (`mod.json`) | 🔜 Planned | Description, load order, dependencies |
+| Public mod API docs | 🔜 Planned | Developer documentation and examples |
+| Install wizard stepper chrome | ⏸️ Deferred | More complete welcome/stepper flow |
+| Desktop shortcut | ⏸️ Deferred | Post-install shortcut creation |
+| Linux external launch / in-app updater / `.deb` | ⏸️ Deferred | Out of scope for now |
 
 ## Current focus
 
-#### 🟨 Patch porting & reverse engineering
-Port remaining gameplay patches from **DustAetPatchingPlatform** into the Asher module architecture (`IAsherPreInitModule`, `IAsherPatchModule`, lifecycle hooks).
+### 🟨 Patch porting & reverse engineering
+
+Porting the remaining gameplay patches from **DustAetPatchingPlatform** into Asher's module architecture (`IAsherPreInitModule`, `IAsherPatchModule`, lifecycle hooks), and validating each one against the real game.
 
 ## Backlog
 
-- **Mod metadata** — `mod.json` schema, load order, dependencies
-- **Content Patcher** — intercept `ContentManager.Load<T>()`, `content.json` replacements
+- **Mod metadata** — a `mod.json` schema with description, load order, and dependencies
+- **Content patcher** — intercept `ContentManager.Load<T>()` and support `content.json` replacements
 - **Mod configuration UI** — per-mod settings files and manager integration
+- **Public mod API docs** — developer documentation and examples
+- **Customizable Discord Rich Presence**
+
+## Deferred / out of scope
+
+- Content-patcher UI before the backend exists; desktop shortcut creation after install
+- Linux: external Steam/desktop launch, in-app updater, `.deb` packaging
+
+## Future possibilities
+
+- An **Avalonia**-based manager UI, which would share the C#/.NET stack instead of shipping a Chromium runtime. Electron is the current implementation.
 
 ---
 [[🐱 Asher\|< Back]]
@@ -68,67 +59,57 @@ Port remaining gameplay patches from **DustAetPatchingPlatform** into the Asher 
 :::
 
 :::lang pt
+## Status atual
 
-## Visão Geral do Status do Projeto
-
-| Área                                  | Status       | Notas                                                 |
-| ------------------------------------- | ------------ | ----------------------------------------------------- |
-| Estrutura da solução                  | ✅ Feito      | Arquitetura multi-projeto estabilizada                |
-| Runtime baseado em launcher           | ✅ Feito      | Abordagem de EXE wrapper validada                     |
-| Compatibilidade com Steam             | ✅ Feito      | Jogo inicia normalmente via Steam                     |
-| Bootstrap do Harmony                  | ✅ Feito      | Patching em runtime confirmado e funcionando          |
-| SDK de mods                           | ✅ Feito      | Interfaces limpas para desenvolvedores de mods        |
-| Patches de gameplay padrão            | ✅ Feito      | 5 patches integrados (ver Features & Mods)            |
-| **UI Electron do gerenciador**        | ✅ Feito      | Substitui o WPF `Asher.App` descontinuado             |
-| **Asher.Host JSONL**                  | ✅ Feito      | Serviço headless para instalar/mods/settings          |
-| **UI do Patch Manager**               | ✅ Feito      | Ativar/desativar mods movendo pastas                  |
-| Logs na pasta do jogo                 | ✅ Feito      | `runtime_*`, `manager_*`, `launcher_fatal_*`          |
-| Empacotamento / Distribution          | ✅ Feito      | Instalador NSIS + zip portátil (`win32`) + `latest.yml`; Linux AppImage/tar.gz + `latest-linux.yml` |
-| Helper de desinstalação de emergência | ✅ Feito      | `Uninstall-Asher.cmd` ao lado de `DustAET.exe`        |
-| Remoção Safe vs Total                 | ✅ Feito      | Uninstall in-app vs script de emergência              |
-| Updates via GitHub in-app             | ✅ Feito      | Apply de zip em Distribution empacotado               |
-| Versão Linux                          | ✅ Feito      | Descoberta, instalação, launch via LD_PRELOAD, AppImage/tar.gz (validado no WSL) |
-| Content patcher                       | 🔜 Planejado | Interceptação do XNA ContentManager                   |
-| Metadados de mod (json)               | 🔜 Planejado | mod.json para descrição, dependências, etc.           |
-| Documentação pública da API de Mods   | 🔜 Planejado | Documentação e exemplos para desenvolvedores          |
-| Chrome do assistente de instalação    | 🔜 Adiado    | Welcome / stepper mais completo                       |
-| Atalho na área de trabalho            | 🔜 Adiado    | Criação de atalho pós-instalação                      |
-
-## Marcos recentes
-
-### Setembro de 2026 — Migração Electron concluída + empacotamento
-- Gerenciador WPF descontinuado; `Asher.Electron` + `Asher.Host` é a única UI (Steps 1–20)
-- Settings, home hub, i18n (en/pt/es), tema Light/Dark, toasts, UX de Finish
-- Empacotamento zip + `Distribution/`; gerenciador fora da pasta do jogo
-- `Uninstall-Asher.cmd` / `.ps1` de emergência; desinstalação Safe vs Total
-- Backup sempre ativo na instalação; check/apply de updates via GitHub Releases
-- Logs do gerenciador em `{Game}/Asher/AsherLogs/manager_*.log`
-- Patches **MuteVoiceActing** e **OverheatDisabler**; **IntroSkipper** reescrito
-- Corrigido crash do host ao desinstalar→reinstalar na mesma sessão
-
-### Setembro de 2026 — Cross-platform e suporte a Linux
-- Abstração de plataforma (`IPlatformInfo` + descoberta / layout de executável / deploy de runtime / lançamento de processo) com implementações Windows e Linux
-- `getPlatformInfo` + `getInstallState` explícito via JSONL; o renderer deriva capacidades deles
-- Linux: descoberta Steam/XDG, deploy de bootstrap + runtime gerenciado (`install.json`), lançamento nativo via `LD_PRELOAD` (stdout/stderr do jogo fora do canal JSONL)
-- Empacotamento Linux: AppImage + tar.gz; `Asher.Services.Tests` (xUnit) e `npm run smoke:platform`
-- Validado no WSL2 com uma instalação Linux real do Dust (instalar/lançar/desinstalar/reinstalar; Harmony + callback do DebugEnabler)
-
-### Julho de 2026 — Runtime central e gerenciador WPF
-- Launcher, bootstrap do runtime, primeiros patches, instalador WPF (desde então descontinuado)
+| Área | Status | Notas |
+| ---- | ------ | ----- |
+| Estrutura da solução | ✅ Feito | Arquitetura multi-projeto estabilizada |
+| Runtime com launcher no Windows | ✅ Feito | Troca do `DustAET.exe` + backup `DustAET.real.exe` |
+| Compatibilidade com Steam | ✅ Feito | O jogo inicia normalmente pela Steam |
+| Inicialização do runtime | ✅ Feito | Logs, ciclo de vida e pastas funcionando |
+| Bootstrap do Harmony | ✅ Feito | Patching em runtime confirmado e funcionando |
+| SDK de mods | ✅ Feito | Interfaces limpas para autores de mods |
+| Patches padrão | ✅ Feito | 5 módulos de patch integrados (ver [[Asher/🎯 Project Overview\|🎯 Project Overview]]) |
+| UI Electron do gerenciador | ✅ Feito | `Asher.Electron` + `Asher.Host` é o gerenciador |
+| Host JSONL | ✅ Feito | Serviço headless para instalação, mods e settings |
+| Patch Manager | ✅ Feito | Ativa/desativa mods movendo arquivos |
+| Logs na pasta do jogo | ✅ Feito | `runtime_*`, `manager_*`, `launcher_fatal_*` |
+| Empacotamento Windows | ✅ Feito | Instalador NSIS + zip portátil + `latest.yml` |
+| Suporte a Linux | ✅ Feito | Descoberta, instalação, launch via `LD_PRELOAD`, AppImage/tar.gz (validado no WSL2) |
+| Helper de desinstalação de emergência | ✅ Feito | `Uninstall-Asher.cmd` ao lado do `DustAET.exe` (Windows) |
+| Remoção Safe vs Total | ✅ Feito | Uninstall in-app vs script de emergência (Windows) |
+| Updates via GitHub in-app | ✅ Feito | Builds empacotadas aplicam zips de release (somente Windows) |
+| Content patcher | 🔜 Planejado | Interceptação do ContentManager — ainda sem backend |
+| Metadados de mod (`mod.json`) | 🔜 Planejado | Descrição, ordem de carregamento, dependências |
+| Documentação pública da API de mods | 🔜 Planejado | Documentação e exemplos para desenvolvedores |
+| Chrome do assistente de instalação | ⏸️ Adiado | Fluxo de welcome/stepper mais completo |
+| Atalho na área de trabalho | ⏸️ Adiado | Criação de atalho pós-instalação |
+| Linux: launch externo / updater in-app / `.deb` | ⏸️ Adiado | Fora de escopo por ora |
 
 ## Foco atual
 
-#### 🟨 Portabilidade de patches e engenharia reversa
-Portar patches de gameplay restantes do **DustAetPatchingPlatform** para a arquitetura de módulos do Asher.
+### 🟨 Portabilidade de patches e engenharia reversa
+
+Portar os patches de gameplay restantes do **DustAetPatchingPlatform** para a arquitetura de módulos do Asher (`IAsherPreInitModule`, `IAsherPatchModule`, hooks de ciclo de vida) e validar cada um no jogo real.
 
 ## Backlog
 
-- **Metadados de mod** — esquema `mod.json`, ordem de carregamento, dependências
-- **Content Patcher** — interceptar `ContentManager.Load<T>()`, substituições via `content.json`
+- **Metadados de mod** — esquema `mod.json` com descrição, ordem de carregamento e dependências
+- **Content patcher** — interceptar `ContentManager.Load<T>()` e suportar substituições via `content.json`
 - **UI de configuração de mods** — arquivos de configuração por mod e integração no gerenciador
+- **Documentação pública da API de mods** — documentação e exemplos para desenvolvedores
+- **Rich Presence do Discord personalizável**
+
+## Adiado / fora de escopo
+
+- UI de content patcher antes de existir backend; criação de atalho após a instalação
+- Linux: lançamento externo via Steam/atalho, updater in-app, empacotamento `.deb`
+
+## Possibilidades futuras
+
+- Uma UI de gerenciador baseada em **Avalonia**, que compartilharia a stack C#/.NET em vez de embarcar um runtime Chromium. O Electron é a implementação atual.
 
 ---
-
 [[🐱 Asher\|< Voltar]]
 
 :::

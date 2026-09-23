@@ -12,7 +12,7 @@
 
 [Link de Repositório](https://github.com/MikeMequis/Asher)
 
-*Última atualização: 22 de setembro de 2026*
+*Última atualização: 23 de setembro de 2026*
 
 :::
 
@@ -22,7 +22,7 @@
 
 [Repository Link](https://github.com/MikeMequis/Asher)
 
-*Last Updated: September 22, 2026*
+*Last Updated: September 23, 2026*
 
 :::
 
@@ -32,7 +32,7 @@
 [[Asher/🚀 Runtime & Installation\|🚀 Runtime & Installation]]
 [[Asher/🔧 Build & Distribution\|🔧 Build & Distribution]]
 [[Asher/📊 Status & Roadmap\|📊 Status & Roadmap]]
-[[Asher/🎮 Features & Mods\|🎮 Features & Mods]]
+[[Asher/❓ FAQ\|❓ FAQ]]
 [[Asher/⬇️ Releases\|⬇️ Releases]]
 
 :::lang pt

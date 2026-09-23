@@ -78,7 +78,7 @@ After installation, the game directory looks like this:
     └── Asher.Backup/            (original exe backup — always created on install)
 ```
 
-The **manager UI** lives in the packaged `Distribution/` folder (or extracted zip), not under `Asher/Asher.App/`. Install payload is staged beside `Asher.Host.exe` as `install-payload/` (Launcher, Runtime, SDK, Harmony, default mods).
+The **manager UI** lives in the packaged `Distribution/` folder (or extracted zip), not inside the game's `Asher/` folder. Install payload is staged beside `Asher.Host.exe` as `install-payload/` (Launcher, Runtime, SDK, Harmony, default mods).
 Folders are created automatically during installation.
 
 ## Linux (embedded Mono)
@@ -203,7 +203,7 @@ Após a instalação, o diretório do jogo fica assim:
     └── Asher.Backup/            (backup do exe original — sempre criado na instalação)
 ```
 
-A **UI do gerenciador** fica na pasta empacotada `Distribution/` (ou zip extraído), não em `Asher/Asher.App/`. O payload de instalação fica ao lado de `Asher.Host.exe` como `install-payload/` (Launcher, Runtime, SDK, Harmony, mods padrão).
+A **UI do gerenciador** fica na pasta empacotada `Distribution/` (ou zip extraído), não dentro da pasta `Asher/` do jogo. O payload de instalação fica ao lado de `Asher.Host.exe` como `install-payload/` (Launcher, Runtime, SDK, Harmony, mods padrão).
 As pastas são criadas automaticamente durante a instalação. 
 
 # Linux (Mono embutido)

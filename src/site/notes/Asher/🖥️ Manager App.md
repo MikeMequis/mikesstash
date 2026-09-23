@@ -6,7 +6,7 @@
 
 The Asher manager is an **Electron** application (`Asher.Electron`) backed by **`Asher.Host`**, a headless .NET service that exposes install, uninstall, mod management, and settings over a **JSONL** protocol on stdin/stdout.
 
-> The legacy WPF app (`Asher.App`) was removed. Electron + `Asher.Host` is the only manager UI. The manager stays in **Distribution** — it is not deployed into the game folder.
+> The manager stays in **Distribution** — it is not deployed into the game folder.
 
 ## Application flow
 
@@ -72,7 +72,7 @@ Smoke tests: `npm run smoke`, `npm run smoke:install`, `npm run smoke:uninstall`
 
 O gerenciador Asher é uma aplicação **Electron** (`Asher.Electron`) apoiada pelo **`Asher.Host`**, um serviço .NET headless que expõe instalação, desinstalação, gerenciamento de mods e configurações via protocolo **JSONL** em stdin/stdout.
 
-> O app WPF legado (`Asher.App`) foi removido. Electron + `Asher.Host` é a única UI do gerenciador. O gerenciador permanece em **Distribution** — não é implantado na pasta do jogo.
+> O gerenciador permanece em **Distribution** — não é implantado na pasta do jogo.
 
 ## Fluxo da aplicação
 
