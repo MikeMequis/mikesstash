@@ -39,7 +39,7 @@ The installer is convenient for a normal desktop, while the portable build is fl
 
 ## Will the manager move to Avalonia?
 
-Not that we know of. The manager UI is **Electron** (`Asher.Electron`) today, and there is no migration planned or scheduled. An Avalonia-based UI is a possible future direction: it would let the manager share the C#/.NET stack instead of shipping a complete Chromium runtime.
+The manager UI is **Electron** (`Asher.Electron`) today, and there is no migration planned or scheduled. An Avalonia-based UI is a possible future direction: it would let the manager share the C#/.NET stack instead of shipping a complete Chromium runtime.
 
 ## What is the difference between a "mod" and a "patch"?
 
