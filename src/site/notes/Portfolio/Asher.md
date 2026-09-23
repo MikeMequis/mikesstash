@@ -69,8 +69,6 @@ Entre as principais tecnologias e referências utilizadas estão:
 - **DustAetPatchingPlatform**
     
 
-> A UI WPF/Prism legada foi descontinuada em setembro de 2026.
-
 ## 🧠 Principais desafios técnicos
 
 O desenvolvimento do Asher envolve problemas diferentes daqueles encontrados no desenvolvimento de uma aplicação convencional.
@@ -91,21 +89,6 @@ Entre os principais desafios estão:
     
 
 Esses requisitos tornam o projeto particularmente interessante como estudo de **engenharia reversa, extensibilidade de software e arquitetura de sistemas sobre aplicações existentes**.
-
-## 🚧 Estado do projeto
-
-A **migração do gerenciador WPF para Electron** está concluída. A implementação atual cobre instalação, desinstalação (segura e total), Patch Manager, lançamento, localização, tema, empacotamento zip/Distribution e updates via GitHub Releases, com cinco patches padrão funcionais. O suporte a **Linux** também foi implementado (descoberta, instalação, lançamento via `LD_PRELOAD` e pacotes AppImage/tar.gz), validado no WSL2 em uma instalação real do jogo.
-
-O *roadmap* continua com:
-
-- portabilidade de patches adicionais e engenharia reversa;
-    
-- Content Patcher (quando houver backend);
-    
-- metadados de mods e documentação para desenvolvedores;
-    
-
-A documentação detalhada do Jardim e do repositório acompanha a evolução técnica do projeto, incluindo sua arquitetura, componentes, funcionalidades, processo de build e releases.
 
 [< Voltar](/portfolio/)
 
@@ -182,9 +165,6 @@ Key technologies and references include:
 - **SMAPI** / **SMAPI Content Patcher**
     
 - **DustAetPatchingPlatform**
-    
-
-> The legacy WPF/Prism UI was retired in September 2026.
 
 ## 🧠 Key technical challenges
 
@@ -206,23 +186,6 @@ Key challenges include:
     
 
 These requirements make the project a practical study in **reverse engineering, software extensibility, and system architecture built around an existing application**.
-
-## 🚧 Project status
-
-The **WPF → Electron manager migration** is complete. The current implementation covers install, uninstall (safe and total), Patch Manager, launch, localization, theme, zip/Distribution packaging, and GitHub Releases updates, with five working default patches. **Linux** support is implemented as well (discovery, install, `LD_PRELOAD` launch, and AppImage/tar.gz packages), validated on WSL2 with a real game install.
-
-The roadmap continues with:
-
-- additional patch porting and reverse engineering;
-    
-- Content Patcher (when a backend exists);
-    
-- mod metadata and developer documentation;
-    
-- optional install-wizard polish;
-    
-
-The detailed Garden and repository documentation tracks the project's technical evolution, including its architecture, components, features, build process, and releases.
 
 [< Back](/portfolio/)
 
