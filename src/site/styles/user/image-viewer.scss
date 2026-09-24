@@ -3,6 +3,9 @@ body:has(.dg-image-viewer) .content {
   margin-left: calc(var(--dg-filetree-width, 250px) + 20px);
   margin-right: 20px;
   padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  min-height: 100dvh;
 
   @media (max-width: 1400px) {
     margin-left: calc(var(--dg-filetree-width, 250px) + 20px);
@@ -14,7 +17,8 @@ body:has(.dg-image-viewer) .content {
   }
 
   @media (max-width: 800px) {
-    padding-top: var(--dg-content-padding-top-mobile);
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 }
 
@@ -36,6 +40,8 @@ body:has(.dg-image-viewer) .sidebar {
   border-radius: 8px;
   outline: none;
   width: 100%;
+  box-sizing: border-box;
+  max-height: var(--dg-viewer-max-height, calc(100dvh - 40px));
 
   &:focus-visible {
     border-color: var(--interactive-accent, var(--xbox-green, #9bcf00));
@@ -81,17 +87,12 @@ body:has(.dg-image-viewer) .sidebar {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 400px;
-  max-height: calc(100vh - 250px);
+  flex: 1 1 auto;
+  min-height: 0;
   overflow: hidden;
   background: var(--background-primary-alt, rgba(0, 0, 0, 0.2));
   border-radius: 4px;
   touch-action: none;
-
-  @media (max-width: 800px) {
-    min-height: 250px;
-    max-height: calc(100vh - 200px);
-  }
 }
 
 .dg-image-viewer__slide {
@@ -108,14 +109,14 @@ body:has(.dg-image-viewer) .sidebar {
   img,
   picture {
     max-width: 100%;
-    max-height: calc(100vh - 250px);
+    max-height: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
+  }
 
-    @media (max-width: 800px) {
-      max-height: calc(100vh - 200px);
-    }
+  picture {
+    display: contents;
   }
 
   img {
@@ -207,6 +208,9 @@ body:has(.dg-image-viewer) .sidebar {
 .dg-image-viewer__caption {
   width: 100%;
   max-width: 800px;
+  flex: 0 0 auto;
+  max-height: 32dvh;
+  overflow-y: auto;
   padding: 1rem;
   background: var(--theme-surface, rgba(0, 0, 0, 0.3));
   border: 1px solid var(--terminal-border-dim, rgba(155, 207, 0, 0.15));
@@ -241,6 +245,7 @@ body:has(.dg-image-viewer) .sidebar {
 }
 
 .dg-image-viewer__counter {
+  flex: 0 0 auto;
   font-family: var(--font-monospace, monospace);
   font-size: 0.85rem;
   font-weight: 600;
@@ -284,7 +289,7 @@ body.theme-light .dg-image-viewer__caption {
 
 .dg-image-viewer__zoom-img {
   max-width: 95vw;
-  max-height: 95vh;
+  max-height: 95dvh;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -338,6 +343,6 @@ body.dg-image-viewer--zoomed {
 
   .dg-image-viewer__zoom-img {
     max-width: 100vw;
-    max-height: 100vh;
+    max-height: 100dvh;
   }
 }

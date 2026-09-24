@@ -45,9 +45,16 @@
       }
     }
 
-    var images = viewer.querySelectorAll(".dg-image-viewer__slide img");
-    for (var k = 0; k < images.length; k++) {
-      resetTransform(images[k]);
+    var controllers = viewer._dgZoomControllers;
+    if (controllers && controllers.length) {
+      for (var k = 0; k < controllers.length; k++) {
+        controllers[k].reset();
+      }
+    } else {
+      var images = viewer.querySelectorAll(".dg-image-viewer__slide img");
+      for (var m = 0; m < images.length; m++) {
+        resetTransform(images[m]);
+      }
     }
 
     updateButtons(viewer, index, total);
@@ -77,6 +84,155 @@
     var dx = touches[0].clientX - touches[1].clientX;
     var dy = touches[0].clientY - touches[1].clientY;
     return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  function isPortfolioMode() {
+    return window.location.pathname.indexOf("/portfolio/") === 0;
+  }
+
+  function gardenListingHref() {
+    var path = window.location.pathname.replace(/\/+$/, "");
+    var slash = path.lastIndexOf("/");
+    if (slash > 0) {
+      return path.slice(0, slash + 1);
+    }
+    return "/";
+  }
+
+  function clampScale(value) {
+    return Math.max(0.5, Math.min(5, value));
+  }
+
+  // Each image owns its own zoom/pan state so one image's transform can never
+  // leak into another (the previous shared-state version blocked zoom/view for
+  // every slide once the last image was scaled).
+  function setupImageZoom(img) {
+    var state = {
+      scale: 1,
+      translateX: 0,
+      translateY: 0,
+      initialDistance: 0,
+      initialScale: 1,
+      isDragging: false,
+      startX: 0,
+      startY: 0,
+      startTranslateX: 0,
+      startTranslateY: 0,
+    };
+
+    function updateTransform() {
+      applyTransform(img, state.scale, state.translateX, state.translateY);
+      if (state.scale > 1) {
+        img.style.cursor = state.isDragging ? "grabbing" : "grab";
+      } else {
+        img.style.cursor = "zoom-in";
+      }
+    }
+
+    img.addEventListener("wheel", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var delta = e.deltaY > 0 ? 0.9 : 1.1;
+      state.scale = clampScale(state.scale * delta);
+      if (state.scale <= 1) {
+        state.translateX = 0;
+        state.translateY = 0;
+      }
+      updateTransform();
+    }, { passive: false });
+
+    img.addEventListener("touchstart", function (e) {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        state.initialDistance = getDistance(e.touches);
+        state.initialScale = state.scale;
+      } else if (e.touches.length === 1 && state.scale > 1) {
+        state.isDragging = true;
+        state.startX = e.touches[0].clientX;
+        state.startY = e.touches[0].clientY;
+        state.startTranslateX = state.translateX;
+        state.startTranslateY = state.translateY;
+        updateTransform();
+      }
+    }, { passive: false });
+
+    img.addEventListener("touchmove", function (e) {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        var scaleChange = getDistance(e.touches) / state.initialDistance;
+        state.scale = clampScale(state.initialScale * scaleChange);
+        if (state.scale <= 1) {
+          state.translateX = 0;
+          state.translateY = 0;
+        }
+        updateTransform();
+      } else if (e.touches.length === 1 && state.isDragging) {
+        e.preventDefault();
+        state.translateX = state.startTranslateX + (e.touches[0].clientX - state.startX);
+        state.translateY = state.startTranslateY + (e.touches[0].clientY - state.startY);
+        updateTransform();
+      }
+    }, { passive: false });
+
+    img.addEventListener("touchend", function (e) {
+      if (e.touches.length < 2) {
+        state.initialDistance = 0;
+      }
+      if (e.touches.length === 0) {
+        state.isDragging = false;
+        updateTransform();
+      }
+    });
+
+    var dragStartX = 0;
+    var dragStartY = 0;
+    var dragStartTranslateX = 0;
+    var dragStartTranslateY = 0;
+
+    img.addEventListener("mousedown", function (e) {
+      if (state.scale > 1) {
+        e.preventDefault();
+        state.isDragging = true;
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+        dragStartTranslateX = state.translateX;
+        dragStartTranslateY = state.translateY;
+        updateTransform();
+      }
+    });
+
+    img.addEventListener("mousemove", function (e) {
+      if (state.isDragging) {
+        e.preventDefault();
+        state.translateX = dragStartTranslateX + (e.clientX - dragStartX);
+        state.translateY = dragStartTranslateY + (e.clientY - dragStartY);
+        updateTransform();
+      }
+    });
+
+    img.addEventListener("mouseup", function () {
+      state.isDragging = false;
+      updateTransform();
+    });
+
+    img.addEventListener("mouseleave", function () {
+      if (state.isDragging) {
+        state.isDragging = false;
+        updateTransform();
+      }
+    });
+
+    return {
+      state: state,
+      reset: function () {
+        state.scale = 1;
+        state.translateX = 0;
+        state.translateY = 0;
+        state.isDragging = false;
+        resetTransform(img);
+        img.style.cursor = "zoom-in";
+      },
+    };
   }
 
   function openZoomOverlay(imgSrc, imgAlt) {
@@ -294,10 +450,17 @@
 
     if (backBtn) {
       backBtn.addEventListener("click", function () {
-        if (window.history.length > 1) {
-          window.history.back();
+        // Portfolio keeps the previous navigation behavior (browser history).
+        // Garden mode returns to the note's listing (e.g. the drawings listing)
+        // instead of whatever page the visitor happened to view last.
+        if (isPortfolioMode()) {
+          if (window.history.length > 1) {
+            window.history.back();
+          } else {
+            window.location.href = "/";
+          }
         } else {
-          window.location.href = "/";
+          window.location.href = gardenListingHref();
         }
       });
     }
@@ -328,150 +491,27 @@
     });
 
     var images = viewer.querySelectorAll(".dg-image-viewer__slide img");
+    var zoomControllers = [];
     for (var i = 0; i < images.length; i++) {
-      images[i].addEventListener("error", function () {
-        handleImageError(this);
-      });
-      images[i].style.cursor = "zoom-in";
-      images[i].addEventListener("click", function () {
-        if (isZoomed) return;
-        if (imgZoom.scale > 1) return;
-        var src = this.currentSrc || this.src;
-        var alt = this.alt || "";
-        openZoomOverlay(src, alt);
-      });
+      (function (img) {
+        img.addEventListener("error", function () {
+          handleImageError(this);
+        });
+        img.style.cursor = "zoom-in";
 
-      var imgZoom = {
-        scale: 1,
-        translateX: 0,
-        translateY: 0,
-        initialDistance: 0,
-        initialScale: 1,
-        isDragging: false,
-        startX: 0,
-        startY: 0,
-        startTranslateX: 0,
-        startTranslateY: 0,
-      };
+        var controller = setupImageZoom(img);
+        zoomControllers.push(controller);
 
-      var img = images[i];
-
-      function updateImgTransform() {
-        applyTransform(img, imgZoom.scale, imgZoom.translateX, imgZoom.translateY);
-        if (imgZoom.scale > 1) {
-          img.style.cursor = "grab";
-          if (imgZoom.isDragging) {
-            img.style.cursor = "grabbing";
-          }
-        } else {
-          img.style.cursor = "zoom-in";
-        }
-      }
-
-      img.addEventListener("wheel", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var delta = e.deltaY > 0 ? 0.9 : 1.1;
-        var newScale = Math.max(0.5, Math.min(5, imgZoom.scale * delta));
-        imgZoom.scale = newScale;
-        if (newScale <= 1) {
-          imgZoom.translateX = 0;
-          imgZoom.translateY = 0;
-        }
-        updateImgTransform();
-      }, { passive: false });
-
-      img.addEventListener("touchstart", function (e) {
-        if (e.touches.length === 2) {
-          e.preventDefault();
-          imgZoom.initialDistance = getDistance(e.touches);
-          imgZoom.initialScale = imgZoom.scale;
-        } else if (e.touches.length === 1 && imgZoom.scale > 1) {
-          imgZoom.isDragging = true;
-          imgZoom.startX = e.touches[0].clientX;
-          imgZoom.startY = e.touches[0].clientY;
-          imgZoom.startTranslateX = imgZoom.translateX;
-          imgZoom.startTranslateY = imgZoom.translateY;
-          updateImgTransform();
-        }
-      }, { passive: false });
-
-      img.addEventListener("touchmove", function (e) {
-        if (e.touches.length === 2) {
-          e.preventDefault();
-          var currentDistance = getDistance(e.touches);
-          var scaleChange = currentDistance / imgZoom.initialDistance;
-          var newScale = Math.max(0.5, Math.min(5, imgZoom.initialScale * scaleChange));
-          imgZoom.scale = newScale;
-          if (newScale <= 1) {
-            imgZoom.translateX = 0;
-            imgZoom.translateY = 0;
-          }
-          updateImgTransform();
-        } else if (e.touches.length === 1 && imgZoom.isDragging) {
-          e.preventDefault();
-          var dx = e.touches[0].clientX - imgZoom.startX;
-          var dy = e.touches[0].clientY - imgZoom.startY;
-          imgZoom.translateX = imgZoom.startTranslateX + dx;
-          imgZoom.translateY = imgZoom.startTranslateY + dy;
-          updateImgTransform();
-        }
-      }, { passive: false });
-
-      img.addEventListener("touchend", function (e) {
-        if (e.touches.length < 2) {
-          imgZoom.initialDistance = 0;
-        }
-        if (e.touches.length === 0) {
-          imgZoom.isDragging = false;
-          updateImgTransform();
-        }
-      });
-
-      var imgIsDragging = false;
-      var imgDragStartX = 0;
-      var imgDragStartY = 0;
-      var imgDragStartTranslateX = 0;
-      var imgDragStartTranslateY = 0;
-
-      img.addEventListener("mousedown", function (e) {
-        if (imgZoom.scale > 1) {
-          e.preventDefault();
-          imgIsDragging = true;
-          imgZoom.isDragging = true;
-          imgDragStartX = e.clientX;
-          imgDragStartY = e.clientY;
-          imgDragStartTranslateX = imgZoom.translateX;
-          imgDragStartTranslateY = imgZoom.translateY;
-          updateImgTransform();
-        }
-      });
-
-      img.addEventListener("mousemove", function (e) {
-        if (imgIsDragging) {
-          e.preventDefault();
-          var dx = e.clientX - imgDragStartX;
-          var dy = e.clientY - imgDragStartY;
-          imgZoom.translateX = imgDragStartTranslateX + dx;
-          imgZoom.translateY = imgDragStartTranslateY + dy;
-          updateImgTransform();
-        }
-      });
-
-      img.addEventListener("mouseup", function () {
-        imgIsDragging = false;
-        imgZoom.isDragging = false;
-        updateImgTransform();
-      });
-
-      img.addEventListener("mouseleave", function () {
-        if (imgIsDragging) {
-          imgIsDragging = false;
-          imgZoom.isDragging = false;
-          updateImgTransform();
-        }
-      });
+        img.addEventListener("click", function () {
+          if (isZoomed) return;
+          if (controller.state.scale > 1) return;
+          var src = img.currentSrc || img.src;
+          var alt = img.alt || "";
+          openZoomOverlay(src, alt);
+        });
+      })(images[i]);
     }
+    viewer._dgZoomControllers = zoomControllers;
 
     var zoomObserver = new MutationObserver(function () {
       isZoomed = !!document.querySelector(".dg-image-viewer__zoom-overlay");
@@ -487,14 +527,36 @@
     updateCounter(viewer, index, total);
   }
 
+  // Bound the viewer to the actual rendered viewport area so the whole
+  // component (stage, captions, counter, buttons) always stays visible.
+  function updateViewerSize(viewer) {
+    var top = viewer.getBoundingClientRect().top;
+    var available = window.innerHeight - top - 20;
+    if (available < 200) {
+      available = Math.max(window.innerHeight - 20, 200);
+    }
+    viewer.style.setProperty("--dg-viewer-max-height", Math.round(available) + "px");
+  }
+
+  function refreshViewerSizes() {
+    var viewers = document.querySelectorAll("[data-dg-viewer]");
+    for (var i = 0; i < viewers.length; i++) {
+      updateViewerSize(viewers[i]);
+    }
+  }
+
   function initAll() {
     var viewers = document.querySelectorAll("[data-dg-viewer]");
     for (var i = 0; i < viewers.length; i++) {
       initViewer(viewers[i]);
     }
+    refreshViewerSizes();
   }
 
   document.addEventListener("DOMContentLoaded", initAll);
+  window.addEventListener("load", refreshViewerSizes);
+  window.addEventListener("resize", refreshViewerSizes);
+  window.addEventListener("orientationchange", refreshViewerSizes);
 
   var origApplyLang = window.applyLang;
   if (origApplyLang) {

@@ -1,9 +1,10 @@
 const fs = require("fs");
 const path = require("path");
+const sharp = require("sharp");
 
 const MAX_DIM = 512;
 
-function normalizeFavicon(inputPath, outputPath) {
+function normalizeSvgFavicon(inputPath, outputPath) {
   const content = fs.readFileSync(inputPath, "utf8");
 
   const svgTagMatch = content.match(/<svg\b[^>]*>/i);
@@ -75,4 +76,36 @@ function normalizeFavicon(inputPath, outputPath) {
   fs.writeFileSync(outputPath, content.replace(svgTag, newSvgTag));
 }
 
+/**
+ * Raster favicons (jpg/png/webp/...) keep their original colours; the stock
+ * favicon plugin requires a square source, so pad the shorter side with
+ * transparency instead of cropping, distorting, or adding coloured bars.
+ */
+async function normalizeRasterFavicon(inputPath, outputPath) {
+  const metadata = await sharp(inputPath).metadata();
+  const width = metadata.width || 0;
+  const height = metadata.height || 0;
+  const size = Math.min(Math.max(width, height) || MAX_DIM, MAX_DIM);
+
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  await sharp(inputPath)
+    .resize(size, size, {
+      fit: "contain",
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    })
+    .png()
+    .toFile(outputPath);
+}
+
+async function normalizeFavicon(inputPath, outputPath) {
+  const ext = path.extname(inputPath).toLowerCase();
+  if (ext === ".svg") {
+    normalizeSvgFavicon(inputPath, outputPath);
+    return;
+  }
+  await normalizeRasterFavicon(inputPath, outputPath);
+}
+
 module.exports = normalizeFavicon;
+module.exports.normalizeSvgFavicon = normalizeSvgFavicon;
+module.exports.normalizeRasterFavicon = normalizeRasterFavicon;

@@ -179,13 +179,14 @@ function buildViewerHtml(figures, renderMarkdown) {
     `<button class="dg-image-viewer__back" type="button">` +
     `<span class="dg-image-viewer__btn-label" data-title-pt="Voltar" data-title-en="Back">Voltar</span>` +
     `</button>` +
-    `<div class="dg-image-viewer__stage">${slidesHtml}</div>` +
+    `<div class="dg-image-viewer__stage">${slidesHtml}` +
     `<button class="dg-image-viewer__prev" type="button" disabled aria-disabled="true">` +
     `<span class="dg-image-viewer__btn-label" data-title-pt="Anterior" data-title-en="Previous">Previous</span>` +
     `</button>` +
     `<button class="dg-image-viewer__next" type="button"${total <= 1 ? ' disabled aria-disabled="true"' : ""}>` +
     `<span class="dg-image-viewer__btn-label" data-title-pt="Próxima" data-title-en="Next">Next</span>` +
     `</button>` +
+    `</div>` +
     `<div class="dg-image-viewer__caption" aria-live="polite">${captionsHtml}</div>` +
     `<div class="dg-image-viewer__counter" aria-live="polite">` +
     `<span data-counter-pt=" de " data-counter-en=" of ">1 / ${total}</span>` +

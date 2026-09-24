@@ -18,9 +18,16 @@ const matterOptions = {
 const genFavicons = require("eleventy-plugin-gen-favicons/favicon-gen");
 const genFaviconHtml = require("eleventy-plugin-gen-favicons/html-gen");
 const normalizeFavicon = require("./src/site/normalize-favicon.js");
+const { globSync } = require("glob");
 
-const FAVICON_SOURCE = "./src/site/favicon.svg";
-const FAVICON_NORMALIZED = "./.cache/favicon.normalized.svg";
+// Accept any favicon raster/vector dropped into src/site as `favicon.*`, so
+// swapping the artwork's format doesn't require editing this file.
+const FAVICON_CANDIDATES = globSync("src/site/favicon.{png,jpg,jpeg,webp,gif,svg}");
+const FAVICON_SOURCE = FAVICON_CANDIDATES[0] ? `./${FAVICON_CANDIDATES[0]}` : "./src/site/favicon.png";
+const FAVICON_IS_SVG = FAVICON_SOURCE.toLowerCase().endsWith(".svg");
+const FAVICON_NORMALIZED = FAVICON_IS_SVG
+  ? "./.cache/favicon.normalized.svg"
+  : "./.cache/favicon.normalized.png";
 const FAVICON_OUTPUT_DIR = "dist";
 const FAVICON_OPTS = {
   appleIconBgColor: "#123",
@@ -28,10 +35,9 @@ const FAVICON_OPTS = {
   manifestData: {},
   skipCache: false,
 };
-normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
 
 // Eleventy renders pages in parallel; the stock favicons shortcode races on
-// Windows (EBUSY) when many templates write dist/favicon.svg at once.
+// Windows (EBUSY) when many templates write the generated icons at once.
 let faviconHtml = null;
 
 async function ensureFaviconsBuilt() {
@@ -43,7 +49,7 @@ async function ensureFaviconsBuilt() {
   let lastError;
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
-      normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
+      await normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
       const files = await genFavicons(FAVICON_NORMALIZED, FAVICON_OUTPUT_DIR, {
         ...FAVICON_OPTS,
         skipCache: attempt > 1,
