@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/28-de-marco-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/28-de-marco-de-2026/","dg-note-properties":{"navOrder":14}}
 ---
 
 Este foi um desafio que surgiu olhando ao redor em meu quarto, pensando em fazer um desenho de **observação**. Tinha acordado me sentindo **inspirado** e também mais cedo do que de costume, então tinha **tempo de sobra** o suficiente antes da aula.

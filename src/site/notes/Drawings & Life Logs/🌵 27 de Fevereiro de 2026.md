@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/27-de-fevereiro-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/27-de-fevereiro-de-2026/","dg-note-properties":{"navOrder":8}}
 ---
 
 No desenho anterior, não estava convencido.

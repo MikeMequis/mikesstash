@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/28-de-fevereiro-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/28-de-fevereiro-de-2026/","dg-note-properties":{"navOrder":9}}
 ---
 
 Próximo desafio: **Perfil de três quartos**. Agora é dividir a "pizza" em quatro linhas verticais ao invés de duas, ilustrando um rosto olhando **45° para esquerda ou direita**. E também deixando o esfomeado de dieta.

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/faq/","title":{"pt":"❓ FAQ","en":"❓ FAQ"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"❓ FAQ","en":"❓ FAQ"}}}
+{"dg-publish":true,"permalink":"/asher/faq/","title":{"pt":"❓ FAQ","en":"❓ FAQ"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"❓ FAQ","en":"❓ FAQ"},"navOrder":7}}
 ---
 
 :::lang en

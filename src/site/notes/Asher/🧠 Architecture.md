@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/architecture/","title":{"pt":"🧠 Arquitetura","en":"🧠 Architecture"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🧠 Arquitetura","en":"🧠 Architecture"}}}
+{"dg-publish":true,"permalink":"/asher/architecture/","title":{"pt":"🧠 Arquitetura","en":"🧠 Architecture"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🧠 Arquitetura","en":"🧠 Architecture"},"navOrder":2}}
 ---
 
 :::lang en

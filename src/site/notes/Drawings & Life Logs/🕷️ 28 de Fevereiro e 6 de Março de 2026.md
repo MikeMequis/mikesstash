@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/28-de-fevereiro-e-6-de-marco-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/28-de-fevereiro-e-6-de-marco-de-2026/","dg-note-properties":{"navOrder":10}}
 ---
 
 Logo depois de copiar a referência do professor, ele não quis deixar barato.

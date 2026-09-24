@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/manager-app/","title":{"pt":"🖥️ Aplicação Gerenciadora","en":"🖥️ Manager App"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🖥️ Aplicação Gerenciadora","en":"🖥️ Manager App"}}}
+{"dg-publish":true,"permalink":"/asher/manager-app/","title":{"pt":"🖥️ Aplicação Gerenciadora","en":"🖥️ Manager App"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🖥️ Aplicação Gerenciadora","en":"🖥️ Manager App"},"navOrder":3}}
 ---
 
 :::lang en

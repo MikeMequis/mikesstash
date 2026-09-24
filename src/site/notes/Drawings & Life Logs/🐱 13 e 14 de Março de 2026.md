@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/13-e-14-de-marco-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/13-e-14-de-marco-de-2026/","dg-note-properties":{"navOrder":12}}
 ---
 
 Eu sei o que está pensando:

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/11-de-abril-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/11-de-abril-de-2026/","dg-note-properties":{"navOrder":15}}
 ---
 
 Lembra da dificuldade que tive em ilustrar cabelos e pelugens **desarrumados**?

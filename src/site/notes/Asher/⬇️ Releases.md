@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/releases/","title":{"pt":"⬇️ Versões","en":"⬇️ Versions"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"⬇️ Versões","en":"⬇️ Versions"}}}
+{"dg-publish":true,"permalink":"/asher/releases/","title":{"pt":"⬇️ Versões","en":"⬇️ Versions"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"⬇️ Versões","en":"⬇️ Versions"},"navOrder":8}}
 ---
 
 :::lang pt

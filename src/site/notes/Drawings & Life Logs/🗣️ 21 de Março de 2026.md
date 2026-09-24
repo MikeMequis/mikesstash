@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/21-de-marco-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/21-de-marco-de-2026/","dg-note-properties":{"navOrder":13}}
 ---
 
 Esse segue a partir do último desenho do mesmo personagem, porém a referência possuía um erro: ele mostrava uma **boca humana**, embora não seja muito aparente a primeira vista. Porém, queria prosseguir inserindo mais detalhes comparado ao anterior, como a sua **roupa**. A ideia era ter **linhas de expressão** para expressar raiva, mas aqui parecem mais marcas e cicatrizes no seu focinho.

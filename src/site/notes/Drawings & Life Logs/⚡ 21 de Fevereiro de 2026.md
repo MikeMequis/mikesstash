@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/21-de-fevereiro-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/21-de-fevereiro-de-2026/","dg-note-properties":{"navOrder":7}}
 ---
 
 Esta foi a minha **primeira** tentativa em desenhar um personagem **original**.

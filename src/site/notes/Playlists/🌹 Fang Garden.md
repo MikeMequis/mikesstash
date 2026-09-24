@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/playlists/fang-garden/","dg-note-properties":{"dgShowComments":true}}
+{"dg-publish":true,"permalink":"/playlists/fang-garden/","dg-note-properties":{"dgShowComments":true,"navOrder":5}}
 ---
 
 :::lang en

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/7-de-marco-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/7-de-marco-de-2026/","dg-note-properties":{"navOrder":11}}
 ---
 
 Essa representação, ilustrada com o usufruto de lapiseiras de 0.7 e 2 milímetros, indica um típico caso em que a **minha pessoa**, o indivíduo que está atualmente registrando e expondo seus esboços neste local virtual, **subestimou** o tracejado desta personagem, em um perfil de **três quartos** e com a **boca aberta**.

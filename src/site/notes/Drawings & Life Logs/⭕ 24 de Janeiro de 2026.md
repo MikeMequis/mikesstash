@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/24-de-janeiro-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/24-de-janeiro-de-2026/","dg-note-properties":{"navOrder":2}}
 ---
 
 A primeira personagem que fiz logo depois do Cabeça de Ovo, a heroína do **My Hero Academia**. A folha de referência tinham 6 personagens, e logo com ela, o meu instinto foi desenhar os rostos **do mesmo tamanho**. Porém, o conselho do professor e de mais um colega de sala foi desenhar **maior**, quase do tamanho da folha (acabei desenhando grande demais, acabei subestimando o tamanho do cabelo dela...). Isso favorece duas práticas do desenho:

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/25-de-abril-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/25-de-abril-de-2026/","dg-note-properties":{"navOrder":16}}
 ---
 
 Esse foi um desenho **osso duro de roer**. A maior parte tive que **refazer** e **redesenhar**, além de ser um tipo de desenho que, caso **mexer** em uma posição ou a proporção de um elemento, ele alterava ou já mostrava uma **falha** de outra.

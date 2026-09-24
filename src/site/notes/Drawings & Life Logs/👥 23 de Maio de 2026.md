@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/23-de-maio-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/23-de-maio-de-2026/","dg-note-properties":{"navOrder":19}}
 ---
 
 Este foi um **desafio** que eu me impus a fazer no desenho. O exercício proposto pelo professor foi desenhar o rosto da garota a esquerda, contendo uma **expressão** de desinteresse, levemente **inclinado** e tranças. Não foi difícil, já que o desenho feito no dia [[Drawings & Life Logs/🗣️ 21 de Março de 2026\|21 de Março]] apresentava um rosto inclinado, porém em uma perspectiva e expressão diferentes.

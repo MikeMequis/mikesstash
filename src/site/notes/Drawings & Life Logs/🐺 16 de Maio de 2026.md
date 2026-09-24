@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/16-de-maio-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/16-de-maio-de-2026/","dg-note-properties":{"navOrder":18}}
 ---
 
 Este foi um exercício de **meio perfil** que pensei em fazer a partir de um desenho anterior e resolvi desenhar o Oliver novamente.

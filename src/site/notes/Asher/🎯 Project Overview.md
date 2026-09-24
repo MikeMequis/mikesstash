@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/project-overview/","title":{"pt":"🎯 Visão Geral do Projeto","en":"🎯 Project Overview"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🎯 Visão Geral do Projeto","en":"🎯 Project Overview"}}}
+{"dg-publish":true,"permalink":"/asher/project-overview/","title":{"pt":"🎯 Visão Geral do Projeto","en":"🎯 Project Overview"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🎯 Visão Geral do Projeto","en":"🎯 Project Overview"},"navOrder":1}}
 ---
 
 :::lang en

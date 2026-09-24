@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/26-de-junho-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/26-de-junho-de-2026/","dg-note-properties":{"navOrder":22}}
 ---
 
 Queria, novamente, fazer um desenho de **observação** utilizando algum objeto da minha mesa. A ideia inicial era desenhar um pequeno **crânio** com boné e óculos de sol.

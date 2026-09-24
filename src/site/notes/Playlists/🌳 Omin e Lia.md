@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/playlists/omin-e-lia/","dg-note-properties":{"dgShowComments":true}}
+{"dg-publish":true,"permalink":"/playlists/omin-e-lia/","dg-note-properties":{"dgShowComments":true,"navOrder":8}}
 ---
 
 :::lang en

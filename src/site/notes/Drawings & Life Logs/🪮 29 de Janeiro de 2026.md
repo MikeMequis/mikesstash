@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/29-de-janeiro-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/29-de-janeiro-de-2026/","dg-note-properties":{"navOrder":3}}
 ---
 
 Outro personagem da qual subestimei o tamanho do rosto, o **Katsuki Bakugo** do *My Hero Academia*. O cabelo que demorou um século para fazer (não só pelo tamanho mas pela quantidade de mechas e da proporção em relação ao rosto) e também tive que **redesenhar** diferentes partes seguindo as proporções.

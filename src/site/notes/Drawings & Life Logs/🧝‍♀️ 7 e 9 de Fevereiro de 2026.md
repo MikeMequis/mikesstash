@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/7-e-9-de-fevereiro-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/7-e-9-de-fevereiro-de-2026/","dg-note-properties":{"navOrder":5}}
 ---
 
 Dos que desenhei até hoje, esse é o que considero o **mais fiel** a referência. Foi um desafio **um atrás do outro**: as tranças do cabelo, a proporção do rosto e das orelhas... Mas o mais desafiador, sem dúvida, foi o **olho**... Nossa, esses olhos eu tive que redesenhar umas **três vezes**. São os detalhes ao redor do globo ocular, o "alvo" da íris, manter o esquerdo e o direito no mesmo tamanho...

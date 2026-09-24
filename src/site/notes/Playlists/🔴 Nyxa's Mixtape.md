@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/playlists/nyxa-s-mixtape/","dg-note-properties":{"dgShowComments":true}}
+{"dg-publish":true,"permalink":"/playlists/nyxa-s-mixtape/","dg-note-properties":{"dgShowComments":true,"navOrder":1}}
 ---
 
 :::lang en

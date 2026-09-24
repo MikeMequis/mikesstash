@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/17-de-janeiro-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/17-de-janeiro-de-2026/","dg-note-properties":{"navOrder":1}}
 ---
 
 O **primeiro dia oficial** que comecei minhas aulas de desenho. Pense em uma pessoa ansiosa para começar as aulas e que achou que iria se dar muito bem.

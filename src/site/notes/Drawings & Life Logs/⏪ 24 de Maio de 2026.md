@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/24-de-maio-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/24-de-maio-de-2026/","dg-note-properties":{"navOrder":20}}
 ---
 
 Este envolve uma história engraçada e, ao mesmo tempo, bem **especial**.

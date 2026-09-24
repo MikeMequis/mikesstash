@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/30-de-maio-e-20-de-junho-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/30-de-maio-e-20-de-junho-de-2026/","dg-note-properties":{"navOrder":21}}
 ---
 
 Antes que o período te assuste... Não, este desenho não demorou quase um **mês** para ser feito. Nesse intervalo aconteceram alguns compromissos pessoais que interromperam o desenho. Ainda assim... ele demorou **bem mais do que deveria**.

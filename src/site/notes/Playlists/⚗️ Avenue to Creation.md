@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/playlists/avenue-to-creation/","dg-note-properties":{"dgShowComments":true}}
+{"dg-publish":true,"permalink":"/playlists/avenue-to-creation/","dg-note-properties":{"dgShowComments":true,"navOrder":3}}
 ---
 
 :::lang en

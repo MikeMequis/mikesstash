@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/playlists/into-the-rabbit-hole/","dg-note-properties":{"dgShowComments":true}}
+{"dg-publish":true,"permalink":"/playlists/into-the-rabbit-hole/","dg-note-properties":{"dgShowComments":true,"navOrder":6}}
 ---
 
 :::lang en

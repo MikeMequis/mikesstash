@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/asher/build-and-distribution/","title":{"pt":"🔧 Build & Distribuição","en":"🔧 Build & Distribution"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🔧 Build & Distribuição","en":"🔧 Build & Distribution"}}}
+{"dg-publish":true,"permalink":"/asher/build-and-distribution/","title":{"pt":"🔧 Build & Distribuição","en":"🔧 Build & Distribution"},"dg-note-properties":{"dgShowComments":false,"title":{"pt":"🔧 Build & Distribuição","en":"🔧 Build & Distribution"},"navOrder":5}}
 ---
 
 :::lang en

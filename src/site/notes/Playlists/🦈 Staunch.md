@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/playlists/staunch/","dg-note-properties":{"dgShowComments":true}}
+{"dg-publish":true,"permalink":"/playlists/staunch/","dg-note-properties":{"dgShowComments":true,"navOrder":7}}
 ---
 
 :::lang en

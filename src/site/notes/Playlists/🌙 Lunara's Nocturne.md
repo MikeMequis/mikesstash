@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/playlists/lunara-s-nocturne/","dg-note-properties":{"dgShowComments":true}}
+{"dg-publish":true,"permalink":"/playlists/lunara-s-nocturne/","dg-note-properties":{"dgShowComments":true,"navOrder":2}}
 ---
 
 :::lang en

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/27-de-junho-e-4-de-julho-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/27-de-junho-e-4-de-julho-de-2026/","dg-note-properties":{"navOrder":23}}
 ---
 
 ... Sim. Mais um personagem com expressão de surpresa em meio perfil. Porém, este passou por um monte de **zigue-zagues** antes de chegar ao resultado final.

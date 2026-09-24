@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/31-de-janeiro-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/31-de-janeiro-de-2026/","dg-note-properties":{"navOrder":4}}
 ---
 
 Esse teve uma mistura dos dois, contendo as linhas mais **rígidas e retas** da estrutura facial masculina e as linhas mais **curvas** em seu cabelo (dessa vez acertei na proporção do cabelo em relação ao rosto). Dessa vez, o desafio que tive foi desenhar a gola (dá para notar que a linha do queixo está na **mesma** que a da gola) que me confundiu um pouco enquanto desenhava, e o **pescoço**.

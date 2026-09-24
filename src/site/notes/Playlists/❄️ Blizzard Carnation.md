@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/playlists/blizzard-carnation/","dg-note-properties":{"dgShowComments":true}}
+{"dg-publish":true,"permalink":"/playlists/blizzard-carnation/","dg-note-properties":{"dgShowComments":true,"navOrder":4}}
 ---
 
 :::lang en

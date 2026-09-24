@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/12-e-13-de-fevereiro-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/12-e-13-de-fevereiro-de-2026/","dg-note-properties":{"navOrder":6}}
 ---
 
 Esse aqui foi mais um **experimento** do que um desenho propriamente dito durante as aulas da faculdade. Na aula anterior, o professor pediu que, assim que finalizar ou seguir para a próxima etapa, os alunos teriam que **criar** seus próprios personagens com base no que aprendeu. É uma forma de **verificar o traço** ou as formas das quais os alunos se **adaptaram** ou **gostam de fazer** em seus desenhos.

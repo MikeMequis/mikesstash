@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/drawings-and-life-logs/2-e-9-de-maio-de-2026/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/drawings-and-life-logs/2-e-9-de-maio-de-2026/","dg-note-properties":{"navOrder":17}}
 ---
 
 Este aqui foi um **combo dois em um**: além de recriar o desenho feito no dia [[Drawings & Life Logs/🌵 27 de Fevereiro de 2026\|27 de Fevereiro]], aproveitei para desenhar a personagem em **meio perfil** e adicionar **detalhes**.
