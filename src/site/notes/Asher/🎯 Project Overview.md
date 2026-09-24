@@ -49,8 +49,6 @@ Currently, five patch modules ship by default. Each is an external mod loaded at
 
 Asher follows an explicit initialization order and a controlled runtime lifecycle over fragile early injection. Patching is delayed until the runtime is ready, mods are ordinary DLLs that can be added or removed at any time, and the game folder is never treated as Asher's own — Asher's files stay under `Asher/`.
 
-Replacing game content without touching `.xnb` files is a core goal, but the content patcher is not implemented yet. Richer mod metadata, per-mod configuration, and a public mod API are likewise still ahead. [[Asher/📊 Status & Roadmap\|📊 Status & Roadmap]] tracks what is actually done, in progress, and planned.
-
 > [!note] AI-assisted development
 > Asher is built with heavy AI assistance, primarily through **OpenCode**. AI helps with implementation, investigation, refactoring, testing, debugging, and documentation. Architecture, technical direction, scope, validation, and the final call on what ships stay human-directed. See [[Asher/❓ FAQ\|❓ FAQ]] for a fuller answer.
 
@@ -105,8 +103,6 @@ Atualmente, cinco patches são criados por padrão. Cada um é um mod externo ca
 ## Princípios de design
 
 O Asher segue uma ordem de inicialização explícita e um ciclo de vida controlado em runtime, em vez de injeção precoce frágil. O patching é postergado até o runtime estar pronto, os mods são DLLs comuns que podem ser adicionados ou removidos a qualquer momento, e a pasta do jogo nunca é tratada como propriedade do Asher — os arquivos do Asher ficam em `Asher/`.
-
-Substituir conteúdo do jogo sem tocar nos `.xnb` é um objetivo central, mas o content patcher ainda não está implementado. Metadados de mod mais ricos, configuração por mod e uma API pública de mods também estão à frente. A página [[Asher/📊 Status & Roadmap\|📊 Status & Roadmap]] mostra o que está feito, em andamento e planejado.
 
 > [!note] Desenvolvimento assistido por IA
 > O Asher é desenvolvido com forte apoio de IA, principalmente via **OpenCode**. A IA ajuda na implementação, investigação, refatoração, testes, depuração e documentação. Arquitetura, direção técnica, escopo, validação e a decisão final sobre o que entra continuam sendo humanas. Veja a [[Asher/❓ FAQ\|❓ FAQ]] para uma resposta mais completa.

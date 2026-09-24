@@ -17,7 +17,7 @@
 
 :::lang en
 
-# Versões
+# Versions
 
 - [v1.0.0](https://github.com/MikeMequis/Asher/releases/tag/v1.0.0) → First Release
 - [v2.0.0](https://github.com/MikeMequis/Asher/releases/tag/v2.0.0) → **Electron** Manager
