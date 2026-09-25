@@ -3,7 +3,8 @@ const fs = require("fs");
 const matter = require("gray-matter");
 // See src/helpers/matterOptions.js for why frontmatter needs a custom YAML engine.
 const matterOptions = require("./src/helpers/matterOptions");
-const faviconsPlugin = require("eleventy-plugin-gen-favicons");
+const genFavicons = require("eleventy-plugin-gen-favicons/favicon-gen");
+const genFaviconHtml = require("eleventy-plugin-gen-favicons/html-gen");
 const normalizeFavicon = require("./src/site/normalize-favicon.js");
 const { convertMdHrefs } = require("./src/helpers/linkUtils");
 const nodePath = require("path");
@@ -11,6 +12,12 @@ const nodePath = require("path");
 const FAVICON_SOURCE = "./src/site/favicon.svg";
 const FAVICON_NORMALIZED = "./.cache/favicon.normalized.svg";
 normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
+
+// The favicons shortcode is expanded once per page. Generating the icons on
+// every expansion writes the same destination files concurrently (Eleventy
+// renders pages in parallel), which throws EBUSY on Windows — reproduced with
+// `eleventy --serve`. Memoize the generation so it runs once per build.
+let faviconsHtmlPromise = null;
 const tocPlugin = require("eleventy-plugin-nesting-toc");
 const { parse } = require("node-html-parser");
 const htmlMinifier = require("html-minifier-terser");
@@ -850,6 +857,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/site/logo.*": "/" });
   eleventyConfig.on("eleventy.before", () => {
     normalizeFavicon(FAVICON_SOURCE, FAVICON_NORMALIZED);
+    faviconsHtmlPromise = null;
     anchorAttributesCache.clear();
   });
   eleventyConfig.on("eleventy.after", async () => {
@@ -861,7 +869,20 @@ module.exports = function(eleventyConfig) {
     }
   });
   eleventyConfig.addWatchTarget(FAVICON_SOURCE);
-  eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
+  // Registered directly instead of via faviconsPlugin so the icon generation
+  // is deduplicated across pages (see faviconsHtmlPromise above).
+  eleventyConfig.addAsyncShortcode("favicons", (sourceFile, opts) => {
+    if (!faviconsHtmlPromise) {
+      const faviconOpts = Object.assign(
+        { manifestData: {}, generateManifest: true, skipCache: false },
+        opts
+      );
+      faviconsHtmlPromise = genFavicons(sourceFile, "dist", faviconOpts).then(
+        genFaviconHtml
+      );
+    }
+    return faviconsHtmlPromise;
+  });
   eleventyConfig.addPlugin(tocPlugin, {
     ul: true,
     tags: ["h1", "h2", "h3", "h4", "h5", "h6"],
