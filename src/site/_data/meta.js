@@ -6,14 +6,29 @@ module.exports = async (data) => {
   if (baseUrl && !baseUrl.startsWith("http")) {
     baseUrl = "https://" + baseUrl;
   }
-  let themeStyle = globSync("src/site/styles/_theme.*.css")[0] || "";
+  // posix: true keeps forward slashes on Windows, where these paths are
+  // split on "/" and used as URLs (see #416).
+  let themeStyle =
+    globSync("src/site/styles/_theme.*.css", { posix: true })[0] || "";
 
   // Check for logo file (supports multiple image formats)
-  const logoFiles = globSync("src/site/logo.{png,jpg,jpeg,gif,svg,webp}");
+  const logoFiles = globSync("src/site/logo.{png,jpg,jpeg,gif,svg,webp}", {
+    posix: true,
+  });
   let logoPath = "";
   if (logoFiles.length > 0) {
     // Use the first match and convert to site-relative path
     logoPath = "/" + logoFiles[0].split("src/site/")[1];
+  }
+
+  // Logo height override. A bare number means pixels; any other value must
+  // be a simple CSS length (e.g. "3rem") — anything else is ignored so the
+  // env value can't inject arbitrary CSS.
+  let logoHeight = (process.env.LOGO_HEIGHT || "").trim();
+  if (/^\d+(\.\d+)?$/.test(logoHeight)) {
+    logoHeight += "px";
+  } else if (!/^\d+(\.\d+)?(px|rem|em|%|vh|vw|ch)$/.test(logoHeight)) {
+    logoHeight = "";
   }
   if (themeStyle) {
     themeStyle = themeStyle.split("site")[1];
@@ -61,56 +76,22 @@ module.exports = async (data) => {
     bodyClasses.push(styleSettingsBodyClasses);
   }
 
+  // Deprecated: timestamps are rendered by the dg-timestamps plugin, which
+  // reads these env vars itself. Kept here because user components may
+  // still reference meta.timestampSettings.
   let timestampSettings = {
     timestampFormat: process.env.TIMESTAMP_FORMAT || "MMM dd, yyyy h:mm a",
+    dateFormat: process.env.DATE_FORMAT || "MMM dd, yyyy",
     showCreated: process.env.SHOW_CREATED_TIMESTAMP == "true",
     showUpdated: process.env.SHOW_UPDATED_TIMESTAMP == "true",
   };
-
-  const giscus = {
-    repo: process.env.GISCUS_REPO || "",
-    repoId: process.env.GISCUS_REPO_ID || "",
-    category: process.env.GISCUS_CATEGORY || "",
-    categoryId: process.env.GISCUS_CATEGORY_ID || "",
-    lightTheme: process.env.GISCUS_THEME_LIGHT || "light",
-    darkTheme: process.env.GISCUS_THEME_DARK || "dark",
-  };
-
-  // Theme registry: comma-separated "id:Label:giscusTheme" entries.
-  // Example: "dark:Dark:noborder_dark,light:Light:noborder_light"
-  // giscusTheme is optional; falls back to the dark giscus theme when omitted.
-  const parseThemes = (raw) => {
-    const defaults = [
-      { id: "dark", label: "Dark", giscusTheme: giscus.darkTheme },
-      { id: "light", label: "Light", giscusTheme: giscus.lightTheme },
-    ];
-    if (!raw) return defaults;
-    const entries = raw
-      .split(",")
-      .map((part) => part.trim())
-      .filter(Boolean)
-      .map((part) => {
-        const [id, label, giscusTheme] = part.split(":").map((s) => (s || "").trim());
-        return { id, label: label || id, giscusTheme: giscusTheme || "" };
-      })
-      .filter((t) => t.id);
-    return entries.length ? entries : defaults;
-  };
-
-  const themes = parseThemes(process.env.THEMES);
-  const baseTheme = process.env.BASE_THEME || "dark";
-  const defaultTheme = themes.find((t) => t.id === baseTheme) || themes[0];
-  const giscusThemeFor = (themeId) => {
-    const match = themes.find((t) => t.id === themeId);
-    if (match && match.giscusTheme) return match.giscusTheme;
-    return giscus.darkTheme;
-  };
-  giscus.theme = giscusThemeFor(defaultTheme.id);
 
   const uiStrings = {
     backlinkHeader: process.env.UI_BACKLINK_HEADER || "Pages mentioning this page",
     noBacklinksMessage: process.env.UI_NO_BACKLINKS_MESSAGE || "No other pages mentions this page",
     searchButtonText: process.env.UI_SEARCH_BUTTON_TEXT || "Search",
+    pagePanelLabel: process.env.UI_PAGE_PANEL_LABEL || "On this page",
+    pagePanelClose: process.env.UI_PAGE_PANEL_CLOSE || "Close",
     searchPlaceholder: process.env.UI_SEARCH_PLACEHOLDER || "Start typing...",
     searchNotStarted: process.env.UI_SEARCH_NOT_STARTED_TEXT || "Enter your search text in the box above",
     searchEnterHotkey: process.env.UI_SEARCH_ENTER_HOTKEY || "Enter",
@@ -126,42 +107,6 @@ module.exports = async (data) => {
     canvasResetHint: process.env.UI_CANVAS_RESET_HINT || "Double-click to reset",
   };
 
-  const siteNameEn =
-    process.env.SITE_NAME_HEADER_EN ||
-    process.env.SITE_NAME_HEADER ||
-    "Digital Garden";
-  const siteNamePt =
-    process.env.SITE_NAME_HEADER_PT ||
-    process.env.SITE_NAME_HEADER ||
-    siteNameEn;
-  const siteDescriptionEn =
-    process.env.SITE_DESCRIPTION_EN ||
-    process.env.SITE_DESCRIPTION ||
-    "A growing collection of ideas, useful links, projects, drawings, and little discoveries from across the web.";
-  const siteDescriptionPt =
-    process.env.SITE_DESCRIPTION_PT ||
-    process.env.SITE_DESCRIPTION ||
-    siteDescriptionEn;
-  const mainLanguage = process.env.SITE_MAIN_LANGUAGE || "pt";
-  const useEnglishDefaults = mainLanguage === "en";
-
-  const portfolioNameEn =
-    process.env.PORTFOLIO_NAME_HEADER_EN ||
-    process.env.PORTFOLIO_NAME_HEADER ||
-    "Portfolio";
-  const portfolioNamePt =
-    process.env.PORTFOLIO_NAME_HEADER_PT ||
-    process.env.PORTFOLIO_NAME_HEADER ||
-    "Portfólio";
-  const portfolioDescriptionEn =
-    process.env.PORTFOLIO_DESCRIPTION_EN ||
-    process.env.PORTFOLIO_DESCRIPTION ||
-    "Projects, experiences, and selected work in programming, software engineering, and digital creation.";
-  const portfolioDescriptionPt =
-    process.env.PORTFOLIO_DESCRIPTION_PT ||
-    process.env.PORTFOLIO_DESCRIPTION ||
-    "Projetos, experiências e trabalhos selecionados em programação, engenharia de software e criação digital.";
-
   const meta = {
     env: process.env.ELEVENTY_ENV,
     theme: process.env.THEME,
@@ -169,36 +114,14 @@ module.exports = async (data) => {
     bodyClasses: bodyClasses.join(" "),
     noteIconsSettings,
     timestampSettings,
-    siteDescription: useEnglishDefaults ? siteDescriptionEn : siteDescriptionPt,
-    siteDescriptions: {
-      pt: siteDescriptionPt,
-      en: siteDescriptionEn,
-    },
-    baseTheme: defaultTheme.id,
-    themes,
-    siteName: useEnglishDefaults ? siteNameEn : siteNamePt,
-    siteNames: {
-      pt: siteNamePt,
-      en: siteNameEn,
-    },
-    portfolioSiteName: useEnglishDefaults ? portfolioNameEn : portfolioNamePt,
-    portfolioSiteNames: {
-      pt: portfolioNamePt,
-      en: portfolioNameEn,
-    },
-    portfolioSiteDescription: useEnglishDefaults
-      ? portfolioDescriptionEn
-      : portfolioDescriptionPt,
-    portfolioSiteDescriptions: {
-      pt: portfolioDescriptionPt,
-      en: portfolioDescriptionEn,
-    },
+    baseTheme: process.env.BASE_THEME || "dark",
+    siteName: process.env.SITE_NAME_HEADER || "Digital Garden",
     siteLogoPath: logoPath,
-    mainLanguage,
+    logoHeight,
+    mainLanguage: process.env.SITE_MAIN_LANGUAGE || "en",
     siteBaseUrl: baseUrl,
     styleSettingsCss,
     uiStrings,
-    giscus,
     buildDate: new Date(),
   };
 
