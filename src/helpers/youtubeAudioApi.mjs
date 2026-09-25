@@ -1,5 +1,12 @@
 import { Buffer } from "node:buffer";
-import { Innertube, ClientType } from "youtubei.js";
+import { Innertube, ClientType, Log } from "youtubei.js";
+
+// youtubei.js logs a parser warning (and sometimes throws) for responses whose
+// metadata shape it doesn't recognize, e.g. video description sections. Those
+// warnings are internal to the library and don't affect our availability
+// checks, which already fail closed, but they flooded the dev-server console
+// for every video on a page. Only surface real errors.
+Log.setLevel(Log.Level.ERROR);
 
 const CLIENTS = [ClientType.ANDROID, ClientType.IOS, ClientType.WEB, ClientType.TV_EMBEDDED];
 
