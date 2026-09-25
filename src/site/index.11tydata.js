@@ -3,6 +3,7 @@ const path = require("path");
 const settings = require("../helpers/constants");
 const pluginLoader = require("../helpers/pluginLoader");
 const { hasHomePageNote } = require("../helpers/homePage");
+const { getLocalizedTitlesFromNoteData } = require("../helpers/langUtils");
 
 // Fallback front page, rendered only when no published note is marked as the
 // garden's home page (`dg-home` in Obsidian, which the plugin turns into the
@@ -21,8 +22,14 @@ const allSettings = [
   ...pluginLoader.getNoteSettingKeys(),
 ];
 
+// Titles can be plain strings or bilingual maps ({ pt, en }) from the
+// Digital Garden plugin, so resolve them to a string before sorting. Without
+// this, a note with a bilingual title crashes the sort with
+// "a.title.localeCompare is not a function".
 function noteTitle(note) {
-  return (note.data && note.data.title) || note.fileSlug || note.url;
+  const data = (note && note.data) || {};
+  const fallback = note.fileSlug || note.url;
+  return getLocalizedTitlesFromNoteData(data, fallback).default;
 }
 
 module.exports = {
