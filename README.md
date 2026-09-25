@@ -1,67 +1,47 @@
-# Mike's Stash
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="img/digital-garden-dark.svg">
+    <img src="img/digital-garden.svg" alt="Digital Garden logo" width="128" height="128">
+  </picture>
+</p>
 
-Personal website built as a customized extension of the [Digital Garden](https://github.com/oleeskild/digitalgarden) template. Combines a Markdown-based Digital Garden with a structured Portfolio experience over the same content base, supporting Portuguese and English.
-
-## Stack
-
-- **Obsidian** — content authoring and management
-- **Markdown** — primary content format
-- **Eleventy (11ty)** — static site generation
-- **Nunjucks** — templates and page composition
-- **Sass** — styles and theming
-- **GitHub** — version control
-- **Vercel** — deploy and hosting
-- **Giscus** — comments
-
-## Setup
-
-Requires Node.js 22.x.
-
-```bash
-npm install
-cp .env.example .env   # then fill in site/Giscus settings
-```
-
-### Commands
-
-```bash
-npm run dev            # get-theme + build:sass + watch sass/eleventy (live reload)
-npm run build          # production build (get-theme + build:sass + build:eleventy)
-npm test               # run Vitest suite
-
-# granular scripts
-npm run get-theme      # fetch the Obsidian theme CSS
-npm run build:sass     # compile Sass (compressed)
-npm run build:eleventy # Eleventy production build
-npm run watch:sass     # watch Sass
-npm run watch:eleventy # Eleventy dev server
-```
-
-## Note Properties
-
-Project-specific frontmatter properties, resolved from `dg-note-properties` (or top-level).
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `title` | `string` \| `{pt, en}` | Bilingual note title (also `title-pt` / `title-en` flat form) |
-| `navOrder` | `number` | Explicit navbar/filetree ordering |
-| `isPortfolioViewableOnly` | `boolean` | Show only in the Portfolio view, hide from the Garden |
-| `cardDescription` | `string` \| `{pt, en}` | Explicit Portfolio card description |
-| `dgShowImageViewer` | `boolean` | Enable the image viewer |
-| `dgShowComments` | `true` | Show Giscus comments |
-| `dgShowLinkCards` | `false` | Render links as cards |
-
----
-
-## Original README.md - Digital Garden
-
-This project is based on the [Digital Garden](https://github.com/oleeskild/digitalgarden) template, used together with the [Digital Garden Obsidian Plugin](https://github.com/oleeskild/Obsidian-Digital-Garden). See the plugin repo README for publishing setup.
+# Digital Obsidian Garden
+This is the template to be used together with the [Digital Garden Obsidian Plugin](https://github.com/oleeskild/Obsidian-Digital-Garden).
+See the README in the plugin repo for information on how to set it up.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/oleeskild/digitalgarden)
 
 ---
 ## Docs
 Docs are available at [docs.forestry.md](https://docs.forestry.md/)
+
+---
+## Plugins
+
+The garden is extensible through plugins: directories under `src/plugins/`
+that add markup to layout slots, site-wide styles and scripts, and
+build-time Eleventy/markdown-it hooks. Core features like search
+(`dg-search`), link previews (`dg-link-preview`), timestamps
+(`dg-timestamps`), and math (`dg-math`) are themselves plugins built on
+this API — `dg-link-preview` is the smallest one to read first.
+
+- Docs (installing plugins, writing your own): [docs.forestry.md](https://docs.forestry.md/)
+- Reference code: the first-party plugins under [`src/plugins/`](src/plugins/)
+- Building plugins with an AI agent: this repo ships a
+  [`garden-plugin-author` skill](skills/garden-plugin-author/SKILL.md) in
+  the open [Agent Skills](https://skills.sh) format, teaching agents how
+  to create, test, and publish garden plugins. Install it into any
+  harness (Claude Code, Cursor, Codex, …) with:
+
+  ```sh
+  npx skills add oleeskild/digitalgarden
+  ```
+
+To try a third-party plugin manually, drop its directory into
+`src/plugins/` — a valid `garden-plugin.json` is all it takes. Disable any
+plugin via `src/plugins/plugins.json` (`{"plugins": {"dg-search": {"enabled": false}}}`).
+Only install plugins from authors you trust: plugin code runs in your site
+build and in your visitors' browsers.
 
 ---
 ## CSS Variables

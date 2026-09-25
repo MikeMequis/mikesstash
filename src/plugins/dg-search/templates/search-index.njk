@@ -1,10 +1,6 @@
----
-permalink: /searchIndex.json
-eleventyExcludeFromCollections: true
----
-[{% for post in collections.note | gardenVisible | notHidden %}
+[{% for post in collections.note | notHidden %}
 {
-		"title": {{ post.data | noteLocalizedTitle(post.fileSlug) | jsonify | safe }},
+		"title": {% if post.data.title %}{{post.data.title | jsonify | safe }}{% else %}{{post.fileSlug | jsonify | safe }}{% endif %},
 		"date":"{{ post.date }}",
 		"url":"{{ post.url }}",
 		"content": {{ post.templateContent | link | stripForSearch | jsonify | safe }},
