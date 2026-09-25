@@ -76,6 +76,46 @@ module.exports = async (data) => {
     bodyClasses.push(styleSettingsBodyClasses);
   }
 
+  const giscus = {
+    repo: process.env.GISCUS_REPO || "",
+    repoId: process.env.GISCUS_REPO_ID || "",
+    category: process.env.GISCUS_CATEGORY || "",
+    categoryId: process.env.GISCUS_CATEGORY_ID || "",
+    lightTheme: process.env.GISCUS_THEME_LIGHT || "light",
+    darkTheme: process.env.GISCUS_THEME_DARK || "dark",
+  };
+
+  // Theme registry: comma-separated "id:Label:giscusTheme" entries.
+  // Example: "dark:Dark:noborder_dark,light:Light:noborder_light"
+  // giscusTheme is optional; falls back to the dark giscus theme when omitted.
+  const parseThemes = (raw) => {
+    const defaults = [
+      { id: "dark", label: "Dark", giscusTheme: giscus.darkTheme },
+      { id: "light", label: "Light", giscusTheme: giscus.lightTheme },
+    ];
+    if (!raw) return defaults;
+    const entries = raw
+      .split(",")
+      .map((part) => part.trim())
+      .filter(Boolean)
+      .map((part) => {
+        const [id, label, giscusTheme] = part.split(":").map((s) => (s || "").trim());
+        return { id, label: label || id, giscusTheme: giscusTheme || "" };
+      })
+      .filter((t) => t.id);
+    return entries.length ? entries : defaults;
+  };
+
+  const themes = parseThemes(process.env.THEMES);
+  const baseTheme = process.env.BASE_THEME || "dark";
+  const defaultTheme = themes.find((t) => t.id === baseTheme) || themes[0];
+  const giscusThemeFor = (themeId) => {
+    const match = themes.find((t) => t.id === themeId);
+    if (match && match.giscusTheme) return match.giscusTheme;
+    return giscus.darkTheme;
+  };
+  giscus.theme = giscusThemeFor(defaultTheme.id);
+
   // Deprecated: timestamps are rendered by the dg-timestamps plugin, which
   // reads these env vars itself. Kept here because user components may
   // still reference meta.timestampSettings.
@@ -107,6 +147,42 @@ module.exports = async (data) => {
     canvasResetHint: process.env.UI_CANVAS_RESET_HINT || "Double-click to reset",
   };
 
+  const siteNameEn =
+    process.env.SITE_NAME_HEADER_EN ||
+    process.env.SITE_NAME_HEADER ||
+    "Digital Garden";
+  const siteNamePt =
+    process.env.SITE_NAME_HEADER_PT ||
+    process.env.SITE_NAME_HEADER ||
+    siteNameEn;
+  const siteDescriptionEn =
+    process.env.SITE_DESCRIPTION_EN ||
+    process.env.SITE_DESCRIPTION ||
+    "A growing collection of ideas, useful links, projects, drawings, and little discoveries from across the web.";
+  const siteDescriptionPt =
+    process.env.SITE_DESCRIPTION_PT ||
+    process.env.SITE_DESCRIPTION ||
+    siteDescriptionEn;
+  const mainLanguage = process.env.SITE_MAIN_LANGUAGE || "pt";
+  const useEnglishDefaults = mainLanguage === "en";
+
+  const portfolioNameEn =
+    process.env.PORTFOLIO_NAME_HEADER_EN ||
+    process.env.PORTFOLIO_NAME_HEADER ||
+    "Portfolio";
+  const portfolioNamePt =
+    process.env.PORTFOLIO_NAME_HEADER_PT ||
+    process.env.PORTFOLIO_NAME_HEADER ||
+    "Portfólio";
+  const portfolioDescriptionEn =
+    process.env.PORTFOLIO_DESCRIPTION_EN ||
+    process.env.PORTFOLIO_DESCRIPTION ||
+    "Projects, experiences, and selected work in programming, software engineering, and digital creation.";
+  const portfolioDescriptionPt =
+    process.env.PORTFOLIO_DESCRIPTION_PT ||
+    process.env.PORTFOLIO_DESCRIPTION ||
+    "Projetos, experiências e trabalhos selecionados em programação, engenharia de software e criação digital.";
+
   const meta = {
     env: process.env.ELEVENTY_ENV,
     theme: process.env.THEME,
@@ -114,14 +190,37 @@ module.exports = async (data) => {
     bodyClasses: bodyClasses.join(" "),
     noteIconsSettings,
     timestampSettings,
-    baseTheme: process.env.BASE_THEME || "dark",
-    siteName: process.env.SITE_NAME_HEADER || "Digital Garden",
+    siteDescription: useEnglishDefaults ? siteDescriptionEn : siteDescriptionPt,
+    siteDescriptions: {
+      pt: siteDescriptionPt,
+      en: siteDescriptionEn,
+    },
+    baseTheme: defaultTheme.id,
+    themes,
+    siteName: useEnglishDefaults ? siteNameEn : siteNamePt,
+    siteNames: {
+      pt: siteNamePt,
+      en: siteNameEn,
+    },
+    portfolioSiteName: useEnglishDefaults ? portfolioNameEn : portfolioNamePt,
+    portfolioSiteNames: {
+      pt: portfolioNamePt,
+      en: portfolioNameEn,
+    },
+    portfolioSiteDescription: useEnglishDefaults
+      ? portfolioDescriptionEn
+      : portfolioDescriptionPt,
+    portfolioSiteDescriptions: {
+      pt: portfolioDescriptionPt,
+      en: portfolioDescriptionEn,
+    },
     siteLogoPath: logoPath,
     logoHeight,
-    mainLanguage: process.env.SITE_MAIN_LANGUAGE || "en",
+    mainLanguage,
     siteBaseUrl: baseUrl,
     styleSettingsCss,
     uiStrings,
+    giscus,
     buildDate: new Date(),
   };
 

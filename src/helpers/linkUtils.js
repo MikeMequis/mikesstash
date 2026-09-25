@@ -23,6 +23,7 @@ try {
   // bases-engine not available, skip bases link extraction
 }
 const { pickNoteMetadata } = require("./bases-engine/noteMetadata");
+const { getLocalizedTitlesFromNoteData } = require("./langUtils");
 
 /**
  * Resolve a markdown link target to a vault-root-relative path.
@@ -251,9 +252,12 @@ async function computeGraph(data) {
     const content = templateContent?.content || "";
     noteContents.push(content);
 
+    const titles = getLocalizedTitlesFromNoteData(v.data, v.fileSlug);
     nodes[v.url] = {
       id: idx,
-      title: v.data.title || v.fileSlug,
+      title: titles.default,
+      titlePt: titles.pt,
+      titleEn: titles.en,
       url: v.url,
       group,
       home:

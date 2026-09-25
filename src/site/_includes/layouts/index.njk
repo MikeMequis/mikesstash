@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ meta.mainLanguage }}">
   <head>
-    <title>{% if title %}{{ title }}{% else %}{{ page.fileSlug }}{% endif %}</title>
+    <title data-title-pt="{{ userComputed.titles.pt }}" data-title-en="{{ userComputed.titles.en }}">{{ userComputed.titles.default or page.fileSlug }}</title>
     {%include "components/pageheader.njk"%}
     {% set slotName = "common.head" %}{% include "components/pluginSlot.njk" %}
     {% set slotName = "index.head" %}{% include "components/pluginSlot.njk" %}
@@ -12,7 +12,9 @@
       {% include imp %}
     {% endfor %}
   </head>
-  <body class="theme-{{meta.baseTheme}} markdown-preview-view markdown-rendered markdown-preview-section {% if settings.dgShowFileTree !== true %}no-filetree{% endif %} {% if settings.dgHomeLink === true and settings.dgShowFileTree !== true %}has-navbar{% endif %} {{meta.bodyClasses}}">
+  <body class="theme-{{meta.baseTheme}} lang-pt markdown-preview-view markdown-rendered markdown-preview-section {% if settings.dgShowFileTree !== true %}no-filetree{% endif %} {% if settings.dgHomeLink === true and settings.dgShowFileTree !== true %}has-navbar{% endif %} {{meta.bodyClasses}}">
+    {% include "components/themeInit.njk" %}
+    {% include "components/langInit.njk" %}
     {%include "components/notegrowthhistory.njk"%}
     {% set regionName = "navigation" %}
     {% set regionFallback = "components/navbar.njk" %}
@@ -20,7 +22,7 @@
     <main class="content cm-s-obsidian print {{contentClasses}}">
       <header>
       {% if settings.dgShowInlineTitle === true %}
-        <h1>{% if title %}{{ title }}{% else %}{{ page.fileSlug }}{% endif %}</h1>
+        <h1 data-title-pt="{{ userComputed.titles.pt }}" data-title-en="{{ userComputed.titles.en }}">{{ userComputed.titles.default or page.fileSlug }}</h1>
       {% endif %}
 
       <div class="header-meta">
@@ -80,5 +82,10 @@
     {%include "components/lucideIcons.njk"%}
     {%include "components/basesScript.njk"%}
     {%include "components/excalidrawScript.njk"%}
+    {% include "components/viewToggle.njk" %}
+    {% include "components/themeSelect.njk" %}
+    {% include "components/langToggle.njk" %}
+    {% include "components/youtubeVisualizer.njk" %}
+    {% include "components/imageViewerScript.njk" %}
     </body>
   </html>

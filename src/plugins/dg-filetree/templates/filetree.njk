@@ -6,7 +6,7 @@
         <div x-show="isOpen" style="display:none" class="{{'filelist' if step>0}}">
             {%if fileOrFolder.isNote and not fileOrFolder.hide %}
                 <div @click.stop class="notelink {{ 'active-note' if fileOrFolder.permalink === permalink}}">
-                    <a data-note-icon="{{fileOrFolder.noteIcon}}" style="text-decoration: none;" class="filename" href="{{fileOrFolder.permalink}}">{{fileOrFolder.name}} </a>
+                    <a data-note-icon="{{fileOrFolder.noteIcon}}" data-title-pt="{{fileOrFolder.namePt}}" data-title-en="{{fileOrFolder.nameEn}}" style="text-decoration: none;" class="filename" href="{{fileOrFolder.permalink}}">{{fileOrFolder.name}}</a>
                 </div>
             {% elif fileOrFolder.isFolder%}
                 <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as({{currentPath | dump}})}" @click.stop="isOpen=!isOpen">
@@ -24,6 +24,15 @@
         {%endif%}
     {% endmacro %}
 
+    {%- set inPortfolio = portfolioContext is not null -%}
+    {%- set navHref = '/portfolio/' if inPortfolio else '/' -%}
+    {%- set navNamePt = meta.portfolioSiteNames.pt if inPortfolio else meta.siteNames.pt -%}
+    {%- set navNameEn = meta.portfolioSiteNames.en if inPortfolio else meta.siteNames.en -%}
+    {%- set navName = meta.portfolioSiteName if inPortfolio else meta.siteName -%}
+    {%- set navDescPt = meta.portfolioSiteDescriptions.pt if inPortfolio else meta.siteDescriptions.pt -%}
+    {%- set navDescEn = meta.portfolioSiteDescriptions.en if inPortfolio else meta.siteDescriptions.en -%}
+    {%- set navDesc = meta.portfolioSiteDescription if inPortfolio else meta.siteDescription -%}
+
     <div x-init="isDesktop = (window.innerWidth>=1000) ? true: false;"
             x-on:resize.window="isDesktop = (window.innerWidth>=1000) ? true : false;"
             x-data="{isDesktop: true, showFilesMobile: false}">
@@ -36,12 +45,12 @@
                         {% include imp %}
                     {% endfor %}
                     {% if meta.siteLogoPath %}
-                    <a href="/" style="text-decoration: none; flex: 1; display: flex; justify-content: center;">
-                            <img class="site-logo" src="{{meta.siteLogoPath}}" alt="{{meta.siteName}}">
+                    <a href="{{ navHref }}" style="text-decoration: none; flex: 1; display: flex; justify-content: center;">
+                            <img class="site-logo" src="{{meta.siteLogoPath}}" alt="{{navName}}" data-title-pt="{{navNamePt}}" data-title-en="{{navNameEn}}">
                     </a>
                     {% else %}
-                    <a href="/" style="text-decoration: none; text-align: center;">
-                            <h1 style="margin: 15px !important;">{{meta.siteName}}</h1>
+                    <a href="{{ navHref }}" style="text-decoration: none; text-align: center;">
+                            <h1 style="margin: 15px !important;" data-title-pt="{{navNamePt}}" data-title-en="{{navNameEn}}">{{navName}}</h1>
                     </a>
                     {% endif %}
                     {% for imp in dynamics.filetree.afterTitle %}
@@ -64,13 +73,16 @@
             {% include imp %}
         {% endfor %}
          {% if meta.siteLogoPath %}
-         <a href="/" style="text-decoration: none; display: flex; justify-content: center;">
-                   <img class="site-logo" src="{{meta.siteLogoPath}}" alt="{{meta.siteName}}">
+         <a href="{{ navHref }}" style="text-decoration: none; display: flex; justify-content: center;">
+                   <img class="site-logo" src="{{meta.siteLogoPath}}" alt="{{navName}}" data-title-pt="{{navNamePt}}" data-title-en="{{navNameEn}}">
          </a>
          {% else %}
-         <a href="/" style="text-decoration: none; text-align: center;">
-                   <h1 style="text-align:center;">{{meta.siteName}}</h1>
+         <a href="{{ navHref }}" style="text-decoration: none; text-align: center;">
+                   <h1 style="text-align:center;" data-title-pt="{{navNamePt}}" data-title-en="{{navNameEn}}">{{navName}}</h1>
          </a>
+         {% endif %}
+         {% if navDesc %}
+             <p class="site-description" data-desc-pt="{{navDescPt}}" data-desc-en="{{navDescEn}}">{{ navDesc }}</p>
          {% endif %}
          {% for imp in dynamics.filetree.afterTitle %}
             {% include imp %}

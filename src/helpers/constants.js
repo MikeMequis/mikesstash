@@ -10,4 +10,7 @@ exports.ALL_NOTE_SETTINGS = [
   "dgShowInlineTitle",
   "dgShowToc",
   "dgShowTags",
+  // User features (giscus comments, link cards) that aren't owned by a plugin.
+  "dgShowComments",
+  "dgShowLinkCards",
 ];
